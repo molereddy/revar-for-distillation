@@ -1,0 +1,61 @@
+Main Function with logger : Logger(dir=kd_results, use-tf=False, writer=None)
+Arguments : -------------------------------
+batch_size       : 800
+class_num        : 100
+cutout_length    : 16
+data_path        : /home/prathamesh/code/data/cifar/
+dataset          : cifar100
+epochs           : 200
+eval_batch_size  : 800
+file_name        : KD_seed-2_cycles-4_KDfrac-0.5_T-2
+global_rand_seed : -1
+loss_kd_frac     : 0.5
+lr               : 0.1
+model_name       : ResNet10_s
+momentum         : 0.9
+pretrained_student : True
+print_freq       : 100
+print_freq_eval  : 100
+rand_seed        : 2
+save_dir         : ./kd_results/
+sched_cycles     : 4
+teacher          : ResNet10_l
+temperature      : 2
+wd               : 0.0005
+workers          : 8
+Python  Version  : 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Pillow  Version  : 9.2.0
+PyTorch Version  : 1.13.1
+cuDNN   Version  : 8500
+CUDA available   : True
+CUDA GPU numbers : 1
+CUDA_VISIBLE_DEVICES : 0
+Namespace(batch_size=800, class_num=100, cutout_length=16, data_path='/home/prathamesh/code/data/cifar/', dataset='cifar100', epochs=200, eval_batch_size=800, file_name='KD_seed-2_cycles-4_KDfrac-0.5_T-2', global_rand_seed=-1, loss_kd_frac=0.5, lr=0.1, model_name='ResNet10_s', momentum=0.9, pretrained_student=True, print_freq=100, print_freq_eval=100, rand_seed=2, save_dir='./kd_results/', sched_cycles=4, teacher='ResNet10_l', temperature=2, wd=0.0005, workers=8)
+Train:45000	, Valid:5000	, Test:10000
+
+Student: ResNet10_s
+using pretrained student model from /home/anmolreddy/ce_results/CE_with_seed-2_cycles-1_cifar100-ResNet10_smodel_best.pth.tar
+***[2023-05-03 06:09:23]*** before training [Student(CE)] Test loss = 2.553113, accuracy@1 = 33.84, accuracy@5 = 65.83, error@1 = 66.16, error@5 = 34.17
+Scheduling LR update to student 4 time at 50-epoch intervals
+***[2023-05-03 06:09:24]*** [Teacher] Test loss = 1.043272, accuracy@1 = 70.22, accuracy@5 = 92.06, error@1 = 29.78, error@5 = 7.94
+model information : EfficientNetV2_s (CIFAR)
+--------------------------------------------------
+[Student]Params=0.08 MB, FLOPs=4.16 M ... = 0.00 G
+--------------------------------------------------
+
+Started EPOCH:0
+[TRAIN] E: [0][ 0/57]	Loss 3.0594e+00 (3.0594e+00)	Acc@1  26.00 ( 26.00)	Acc@5  53.75 ( 53.75)
+[TRAIN] E: [0][56/57]	Loss 2.7866e+00 (2.9322e+00)	Acc@1  35.00 ( 27.74)	Acc@5  59.00 ( 57.10)
+[EVAL] E: [0][0/7]	Loss 3.0257e+00 (3.0257e+00)	Acc@1  25.50 ( 25.50)	Acc@5  55.38 ( 55.38)
+[EVAL] E: [0][6/7]	Loss 2.6971e+00 (2.9033e+00)	Acc@1  32.50 ( 28.36)	Acc@5  62.50 ( 58.26)
+		 Valid evaluation at end of epoch: loss:2.9033	latest_acc:28.36	LR:0.00 -- best val acc so far 28.36
+
+Started EPOCH:1
+[TRAIN] E: [1][ 0/57]	Loss 2.8678e+00 (2.8678e+00)	Acc@1  28.75 ( 28.75)	Acc@5  57.88 ( 57.88)
+[TRAIN] E: [1][56/57]	Loss 2.9021e+00 (2.8942e+00)	Acc@1  25.00 ( 28.15)	Acc@5  55.00 ( 57.86)
+[EVAL] E: [1][0/7]	Loss 3.5348e+00 (3.5348e+00)	Acc@1  19.75 ( 19.75)	Acc@5  47.75 ( 47.75)
+[EVAL] E: [1][6/7]	Loss 3.2629e+00 (3.5005e+00)	Acc@1  26.50 ( 20.34)	Acc@5  49.50 ( 47.20)
+		 Valid evaluation at end of epoch: loss:3.5005	latest_acc:20.34	LR:0.08 -- best val acc so far 28.36
+
+Started EPOCH:2
+[TRAIN] E: [2][ 0/57]	Loss 2.8165e+00 (2.8165e+00)	Acc@1  31.88 ( 31.88)	Acc@5  63.88 ( 63.88)

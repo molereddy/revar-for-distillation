@@ -1,0 +1,68 @@
+Main Function with logger : Logger(dir=meta_results, use-tf=False, writer=None)
+Arguments : -------------------------------
+batch_size       : 1600
+cutout_length    : 16
+data_path        : /home/prathamesh/code/data/cifar/
+dataset          : cifar100
+epochs           : 400
+eval_batch_size  : 800
+file_name        : meta_seed-1_metalr-0.0001_T-2_400-epochs
+global_rand_seed : -1
+input_size       : 32
+inst_based       : True
+label            : 
+lr               : 0.1
+mcd_weight       : 0.1
+meta_interval    : 1
+meta_lr          : 0.0001
+meta_weight_decay : 0.0
+model_name       : ResNet10_s
+momentum         : 0.9
+pretrained_student : True
+print_freq       : 100
+print_freq_eval  : 100
+rand_seed        : 1
+save_dir         : ./meta_results/
+sched_cycles     : 4
+teacher          : ResNet10_l
+temperature      : 2
+unsup_adapt      : False
+wd               : 0.0005
+workers          : 8
+Python  Version  : 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Pillow  Version  : 9.2.0
+PyTorch Version  : 1.13.1
+cuDNN   Version  : 8500
+CUDA available   : True
+CUDA GPU numbers : 1
+CUDA_VISIBLE_DEVICES : 0
+Namespace(batch_size=1600, class_num=100, cutout_length=16, data_path='/home/prathamesh/code/data/cifar/', dataset='cifar100', epochs=400, eval_batch_size=800, file_name='meta_seed-1_metalr-0.0001_T-2_400-epochs', global_rand_seed=-1, input_size=32, inst_based=True, label='', lr=0.1, mcd_weight=0.1, meta_interval=1, meta_lr=0.0001, meta_weight_decay=0.0, model_name='ResNet10_s', momentum=0.9, pretrained_student=True, print_freq=100, print_freq_eval=100, rand_seed=1, save_dir='./meta_results/', sched_cycles=4, teacher='ResNet10_l', temperature=2, unsup_adapt=False, wd=0.0005, workers=8)
+Train:45000	, Valid:5000	, Test:10000
+
+--------------------------------------------------
+Student :ResNet10_s
+using pretrained student model from /home/anmolreddy/ce_results/CE_with_seed-1_cycles-4_cifar100-ResNet10_smodel_best.pth.tar
+***[2023-05-04 06:18:30]*** before training [Student(CE)] Test loss = 1.772275, accuracy@1 = 51.46, accuracy@5 = 81.32, error@1 = 48.54, error@5 = 18.68
+Scheduling LR update to student 4 time at 100-epoch intervals
+Teacher loaded....
+***[2023-05-04 06:18:31]*** [Teacher] Test loss = 1.045213, accuracy@1 = 70.72, accuracy@5 = 92.22, error@1 = 29.28, error@5 = 7.78
+model information : EfficientNetV2_s (CIFAR)
+--------------------------------------------------
+[Student]Params=0.08 MB, FLOPs=4.16 M ... = 0.00 G
+
+Started EPOCH:0
+[TRAIN] E: [0][ 0/29]	Loss 1.0576e+00 (1.0576e+00)	Acc@1  40.12 ( 40.12)	Acc@5  71.56 ( 71.56)
+[TRAIN] E: [0][28/29]	Loss 1.4942e+00 (1.1667e+00)	Acc@1  37.50 ( 39.16)	Acc@5  70.00 ( 69.34)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.447642	0.485481	0.523635	0.572280	0.722546 with std 0.053380
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.451507	0.482923	0.494889	0.506957	0.578725 with std 0.018577
+[EVAL] E: [0][0/7]	Loss 2.7219e+00 (2.7219e+00)	Acc@1  31.50 ( 31.50)	Acc@5  62.00 ( 62.00)
+[EVAL] E: [0][6/7]	Loss 2.6195e+00 (2.6958e+00)	Acc@1  31.50 ( 33.58)	Acc@5  61.50 ( 62.50)
+		 Valid eval after epoch: loss:2.6958	latest_acc:33.58	LR:0.10 -- best valacc 33.58
+
+Started EPOCH:1
+Training epoch
+[TRAIN] E: [1][ 0/29]	Loss 1.4949e+00 (1.4949e+00)	Acc@1  36.62 ( 36.62)	Acc@5  66.56 ( 66.56)

@@ -1,0 +1,41 @@
+Main Function with logger : Logger(dir=ce_results, use-tf=False, writer=None)
+Arguments : -------------------------------
+batch_size       : 1600
+checkpoint_dir   : ./checkpoint
+class_num        : 100
+cutout_length    : 16
+data_path        : /home/prathamesh/code/data/cifar/
+dataset          : cifar100
+epochs           : 250
+eval_batch_size  : 1600
+eval_frequency   : 1
+global_rand_seed : -1
+input_size       : 32
+inst_based       : True
+log_dir          : ./log
+lr               : 0.1
+mcd_weight       : 0.01
+meta_interval    : 1
+meta_lr          : 1e-05
+meta_weight_decay : 0.0
+model_name       : ResNet10_s
+momentum         : 0.9
+print_freq       : 100
+print_freq_eval  : 100
+rand_seed        : 2007
+save_dir         : ./ce_results
+unsup_adapt      : False
+wd               : 0.0005
+workers          : 8
+Python  Version  : 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Pillow  Version  : 9.2.0
+PyTorch Version  : 1.13.1
+cuDNN   Version  : 8500
+CUDA available   : True
+CUDA GPU numbers : 1
+CUDA_VISIBLE_DEVICES : 0
+Namespace(batch_size=1600, checkpoint_dir='./checkpoint', class_num=100, cutout_length=16, data_path='/home/prathamesh/code/data/cifar/', dataset='cifar100', epochs=250, eval_batch_size=1600, eval_frequency=1, global_rand_seed=-1, input_size=32, inst_based=True, log_dir='./log', lr=0.1, mcd_weight=0.01, meta_interval=1, meta_lr=1e-05, meta_weight_decay=0.0, model_name='ResNet10_s', momentum=0.9, print_freq=100, print_freq_eval=100, rand_seed=2007, save_dir='./ce_results', unsup_adapt=False, wd=0.0005, workers=8)
+Train:50000	, Valid:5000	, Test:5000
+
+--------------------------------------------------
+Student: ResNet10_s

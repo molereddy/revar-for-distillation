@@ -1,0 +1,447 @@
+S=ResNet10_s
+Namespace(batch_size=500, checkpoint_dir='./checkpoint', cutout_length=16, data_path='/home/prathamesh/code/data/cifar/', dataset='cifar100', epochs=200, eval_batch_size=500, eval_frequency=1, global_rand_seed=-1, input_size=32, inst_based=True, log_dir='./log', lr=0.1, mcd_weight=0.01, meta_interval=1, meta_lr=0.01, meta_weight_decay=0.0, model_name='ResNet10_s', momentum=0.9, print_freq=100, print_freq_eval=100, rand_seed=39882, save_dir='./meta_results/', unsup_adapt=False, wd=0.0005, workers=8)
+Files already downloaded and verified
+Files already downloaded and verified
+Main Function with logger : Logger(dir=meta_results, use-tf=False, writer=None)
+Arguments : -------------------------------
+batch_size       : 500
+checkpoint_dir   : ./checkpoint
+class_num        : 100
+cutout_length    : 16
+data_path        : /home/prathamesh/code/data/cifar/
+dataset          : cifar100
+epochs           : 200
+eval_batch_size  : 500
+eval_frequency   : 1
+global_rand_seed : -1
+input_size       : 32
+inst_based       : True
+log_dir          : ./log
+lr               : 0.1
+mcd_weight       : 0.01
+meta_interval    : 1
+meta_lr          : 0.01
+meta_weight_decay : 0.0
+model_name       : ResNet10_s
+momentum         : 0.9
+print_freq       : 100
+print_freq_eval  : 100
+rand_seed        : 39882
+save_dir         : ./meta_results/
+unsup_adapt      : False
+wd               : 0.0005
+workers          : 8
+Python  Version  : 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Pillow  Version  : 9.2.0
+PyTorch Version  : 1.13.1
+cuDNN   Version  : 8500
+CUDA available   : True
+CUDA GPU numbers : 1
+CUDA_VISIBLE_DEVICES : 0
+Student : ResNet10_s
+Teacher loaded....
+model information : EfficientNetV2_s (CIFAR)
+--------------------------------------------------
+[Student]Params=0.08 MB, FLOPs=4.16 M ... = 0.00 G
+--------------------------------------------------
+train_data : Dataset CIFAR100
+    Number of datapoints: 50000
+    Root location: /home/prathamesh/code/data/cifar/
+    Split: Train
+    StandardTransform
+Transform: Compose(
+               RandomCrop(size=(32, 32), padding=4)
+               RandomHorizontalFlip(p=0.5)
+               AutoAugment CIFAR10 Policy
+               ToTensor()
+               CUTOUT(length=16)
+               Normalize(mean=[0.5070588235294118, 0.48666666666666664, 0.4407843137254902], std=[0.26745098039215687, 0.2564705882352941, 0.27607843137254906])
+           )
+valid_data : Dataset CIFAR100
+    Number of datapoints: 10000
+    Root location: /home/prathamesh/code/data/cifar/
+    Split: Test
+    StandardTransform
+Transform: Compose(
+               ToTensor()
+               Normalize(mean=[0.5070588235294118, 0.48666666666666664, 0.4407843137254902], std=[0.26745098039215687, 0.2564705882352941, 0.27607843137254906])
+           )
+Training...
+[TRAIN] E: [0][  0/100]	Loss 1.3046e+01 (1.3046e+01)	Acc@1   1.60 (  1.60)	Acc@5   6.80 (  6.80)
+[TRAIN] E: [0][ 99/100]	Loss 1.1195e+01 (1.1926e+01)	Acc@1   5.40 (  3.77)	Acc@5  21.00 ( 15.15)
+[EVAL] E: [0][ 0/20]	Loss 4.3351e+00 (4.3351e+00)	Acc@1   6.20 (  6.20)	Acc@5  24.60 ( 24.60)
+[EVAL] E: [0][19/20]	Loss 4.3358e+00 (4.3412e+00)	Acc@1   6.80 (  6.96)	Acc@5  27.20 ( 25.56)
+		 LR=0.09990329919350381 -- best acc so far 6.960000109672547
+***[2023-04-24 14:38:31]*** [Post-train] [Student] EVALUATION loss = 4.341207, accuracy@1 = 6.96, accuracy@5 = 25.56, error@1 = 93.04, error@5 = 74.44
+Training...
+[TRAIN] E: [1][  0/100]	Loss 1.0717e+01 (1.0717e+01)	Acc@1   6.60 (  6.60)	Acc@5  24.40 ( 24.40)
+[TRAIN] E: [1][ 99/100]	Loss 1.0482e+01 (1.0783e+01)	Acc@1   7.40 (  7.30)	Acc@5  25.80 ( 24.78)
+[EVAL] E: [1][ 0/20]	Loss 3.9332e+00 (3.9332e+00)	Acc@1  10.00 ( 10.00)	Acc@5  34.60 ( 34.60)
+[EVAL] E: [1][19/20]	Loss 3.7760e+00 (3.8804e+00)	Acc@1  11.00 ( 11.34)	Acc@5  36.60 ( 34.54)
+		 LR=0.09960966273334369 -- best acc so far 11.340000104904174
+***[2023-04-24 14:39:50]*** [Post-train] [Student] EVALUATION loss = 3.880428, accuracy@1 = 11.34, accuracy@5 = 34.54, error@1 = 88.66, error@5 = 65.46
+Training...
+[TRAIN] E: [2][  0/100]	Loss 1.0733e+01 (1.0733e+01)	Acc@1   9.60 (  9.60)	Acc@5  27.00 ( 27.00)
+[TRAIN] E: [2][ 99/100]	Loss 9.6659e+00 (1.0113e+01)	Acc@1  12.80 (  9.94)	Acc@5  34.40 ( 30.69)
+[EVAL] E: [2][ 0/20]	Loss 3.8065e+00 (3.8065e+00)	Acc@1  11.20 ( 11.20)	Acc@5  37.00 ( 37.00)
+[EVAL] E: [2][19/20]	Loss 3.5021e+00 (3.6634e+00)	Acc@1  18.80 ( 15.79)	Acc@5  43.00 ( 40.62)
+		 LR=0.09912023959887407 -- best acc so far 15.790000200271606
+***[2023-04-24 14:41:08]*** [Post-train] [Student] EVALUATION loss = 3.663446, accuracy@1 = 15.79, accuracy@5 = 40.62, error@1 = 84.21, error@5 = 59.38
+Training...
+[TRAIN] E: [3][  0/100]	Loss 9.6688e+00 (9.6688e+00)	Acc@1  12.80 ( 12.80)	Acc@5  37.00 ( 37.00)
+[TRAIN] E: [3][ 99/100]	Loss 8.8288e+00 (9.3660e+00)	Acc@1  15.80 ( 13.06)	Acc@5  42.00 ( 36.36)
+[EVAL] E: [3][ 0/20]	Loss 3.4713e+00 (3.4713e+00)	Acc@1  19.60 ( 19.60)	Acc@5  48.40 ( 48.40)
+[EVAL] E: [3][19/20]	Loss 3.2622e+00 (3.4439e+00)	Acc@1  20.80 ( 18.92)	Acc@5  50.80 ( 47.34)
+		 LR=0.09843696131961058 -- best acc so far 18.920000505447387
+***[2023-04-24 14:42:27]*** [Post-train] [Student] EVALUATION loss = 3.443854, accuracy@1 = 18.92, accuracy@5 = 47.34, error@1 = 81.08, error@5 = 52.66
+Training...
+[TRAIN] E: [4][  0/100]	Loss 8.6712e+00 (8.6712e+00)	Acc@1  17.60 ( 17.60)	Acc@5  42.60 ( 42.60)
+[TRAIN] E: [4][ 99/100]	Loss 8.5345e+00 (8.7833e+00)	Acc@1  19.80 ( 15.81)	Acc@5  42.20 ( 41.06)
+[EVAL] E: [4][ 0/20]	Loss 3.4209e+00 (3.4209e+00)	Acc@1  21.00 ( 21.00)	Acc@5  49.60 ( 49.60)
+[EVAL] E: [4][19/20]	Loss 3.3820e+00 (3.4535e+00)	Acc@1  19.60 ( 20.56)	Acc@5  50.40 ( 49.38)
+		 LR=0.09756252448276127 -- best acc so far 20.560000514984132
+***[2023-04-24 14:43:47]*** [Post-train] [Student] EVALUATION loss = 3.453508, accuracy@1 = 20.56, accuracy@5 = 49.38, error@1 = 79.44, error@5 = 50.62
+Training...
+[TRAIN] E: [5][  0/100]	Loss 8.6194e+00 (8.6194e+00)	Acc@1  16.00 ( 16.00)	Acc@5  40.40 ( 40.40)
+[TRAIN] E: [5][ 99/100]	Loss 8.0490e+00 (8.2851e+00)	Acc@1  18.60 ( 18.02)	Acc@5  44.00 ( 44.60)
+[EVAL] E: [5][ 0/20]	Loss 3.3381e+00 (3.3381e+00)	Acc@1  24.60 ( 24.60)	Acc@5  52.00 ( 52.00)
+[EVAL] E: [5][19/20]	Loss 3.1811e+00 (3.3477e+00)	Acc@1  25.40 ( 23.64)	Acc@5  54.80 ( 53.78)
+		 LR=0.09650038009102904 -- best acc so far 23.64000015258789
+***[2023-04-24 14:45:10]*** [Post-train] [Student] EVALUATION loss = 3.347695, accuracy@1 = 23.64, accuracy@5 = 53.78, error@1 = 76.36, error@5 = 46.22
+Training...
+[TRAIN] E: [6][  0/100]	Loss 7.9769e+00 (7.9769e+00)	Acc@1  21.20 ( 21.20)	Acc@5  49.60 ( 49.60)
+[TRAIN] E: [6][ 99/100]	Loss 8.0050e+00 (7.8217e+00)	Acc@1  16.60 ( 20.14)	Acc@5  44.60 ( 47.81)
+[EVAL] E: [6][ 0/20]	Loss 3.4573e+00 (3.4573e+00)	Acc@1  22.20 ( 22.20)	Acc@5  52.40 ( 52.40)
+[EVAL] E: [6][19/20]	Loss 3.3970e+00 (3.4920e+00)	Acc@1  22.80 ( 23.35)	Acc@5  54.00 ( 53.24)
+		 LR=0.09525471994308041 -- best acc so far 23.64000015258789
+***[2023-04-24 14:46:30]*** [Post-train] [Student] EVALUATION loss = 3.491968, accuracy@1 = 23.35, accuracy@5 = 53.24, error@1 = 76.65, error@5 = 46.76
+Training...
+[TRAIN] E: [7][  0/100]	Loss 7.7693e+00 (7.7693e+00)	Acc@1  18.40 ( 18.40)	Acc@5  46.20 ( 46.20)
+[TRAIN] E: [7][ 99/100]	Loss 7.1392e+00 (7.5005e+00)	Acc@1  20.80 ( 21.91)	Acc@5  51.60 ( 49.99)
+[EVAL] E: [7][ 0/20]	Loss 3.0091e+00 (3.0091e+00)	Acc@1  29.60 ( 29.60)	Acc@5  59.00 ( 59.00)
+[EVAL] E: [7][19/20]	Loss 3.0187e+00 (3.1262e+00)	Acc@1  29.20 ( 26.68)	Acc@5  59.80 ( 58.07)
+		 LR=0.09383046009043135 -- best acc so far 26.680000495910644
+***[2023-04-24 14:47:51]*** [Post-train] [Student] EVALUATION loss = 3.126171, accuracy@1 = 26.68, accuracy@5 = 58.07, error@1 = 73.32, error@5 = 41.93
+Training...
+[TRAIN] E: [8][  0/100]	Loss 7.1439e+00 (7.1439e+00)	Acc@1  20.60 ( 20.60)	Acc@5  48.60 ( 48.60)
+[TRAIN] E: [8][ 99/100]	Loss 7.5319e+00 (7.2060e+00)	Acc@1  19.80 ( 23.11)	Acc@5  48.00 ( 52.14)
+[EVAL] E: [8][ 0/20]	Loss 3.2592e+00 (3.2592e+00)	Acc@1  26.00 ( 26.00)	Acc@5  61.00 ( 61.00)
+[EVAL] E: [8][19/20]	Loss 3.0087e+00 (3.1338e+00)	Acc@1  29.80 ( 29.64)	Acc@5  62.60 ( 61.90)
+		 LR=0.09223322143603785 -- best acc so far 29.640000438690187
+***[2023-04-24 14:49:13]*** [Post-train] [Student] EVALUATION loss = 3.133761, accuracy@1 = 29.64, accuracy@5 = 61.90, error@1 = 70.36, error@5 = 38.10
+Training...
+[TRAIN] E: [9][  0/100]	Loss 7.3502e+00 (7.3502e+00)	Acc@1  20.40 ( 20.40)	Acc@5  51.40 ( 51.40)
+[TRAIN] E: [9][ 99/100]	Loss 7.0123e+00 (7.0142e+00)	Acc@1  23.40 ( 24.30)	Acc@5  52.80 ( 53.60)
+[EVAL] E: [9][ 0/20]	Loss 2.6857e+00 (2.6857e+00)	Acc@1  29.20 ( 29.20)	Acc@5  68.60 ( 68.60)
+[EVAL] E: [9][19/20]	Loss 2.5159e+00 (2.6468e+00)	Acc@1  35.00 ( 32.71)	Acc@5  65.20 ( 65.92)
+		 LR=0.09046930755115985 -- best acc so far 32.71000051498413
+***[2023-04-24 14:50:35]*** [Post-train] [Student] EVALUATION loss = 2.646775, accuracy@1 = 32.71, accuracy@5 = 65.92, error@1 = 67.29, error@5 = 34.08
+Training...
+[TRAIN] E: [10][  0/100]	Loss 6.6642e+00 (6.6642e+00)	Acc@1  26.00 ( 26.00)	Acc@5  57.60 ( 57.60)
+[TRAIN] E: [10][ 99/100]	Loss 6.7230e+00 (6.8234e+00)	Acc@1  24.60 ( 25.27)	Acc@5  57.00 ( 54.64)
+[EVAL] E: [10][ 0/20]	Loss 2.8738e+00 (2.8738e+00)	Acc@1  32.20 ( 32.20)	Acc@5  63.20 ( 63.20)
+[EVAL] E: [10][19/20]	Loss 2.7311e+00 (2.7886e+00)	Acc@1  34.20 ( 32.81)	Acc@5  64.80 ( 65.45)
+		 LR=0.08854567979804538 -- best acc so far 32.81000070571899
+***[2023-04-24 14:51:56]*** [Post-train] [Student] EVALUATION loss = 2.788649, accuracy@1 = 32.81, accuracy@5 = 65.45, error@1 = 67.19, error@5 = 34.55
+Training...
+[TRAIN] E: [11][  0/100]	Loss 6.9199e+00 (6.9199e+00)	Acc@1  26.20 ( 26.20)	Acc@5  56.40 ( 56.40)
+[TRAIN] E: [11][ 99/100]	Loss 6.5773e+00 (6.6868e+00)	Acc@1  31.40 ( 26.09)	Acc@5  60.60 ( 55.84)
+[EVAL] E: [11][ 0/20]	Loss 3.0272e+00 (3.0272e+00)	Acc@1  31.20 ( 31.20)	Acc@5  61.60 ( 61.60)
+[EVAL] E: [11][19/20]	Loss 2.9299e+00 (3.0272e+00)	Acc@1  29.80 ( 30.78)	Acc@5  62.20 ( 62.02)
+		 LR=0.08646992985661404 -- best acc so far 32.81000070571899
+***[2023-04-24 14:53:14]*** [Post-train] [Student] EVALUATION loss = 3.027240, accuracy@1 = 30.78, accuracy@5 = 62.02, error@1 = 69.22, error@5 = 37.98
+Training...
+[TRAIN] E: [12][  0/100]	Loss 6.5314e+00 (6.5314e+00)	Acc@1  27.00 ( 27.00)	Acc@5  55.80 ( 55.80)
+[TRAIN] E: [12][ 99/100]	Loss 6.5199e+00 (6.5193e+00)	Acc@1  29.60 ( 27.46)	Acc@5  57.20 ( 57.15)
+[EVAL] E: [12][ 0/20]	Loss 2.7669e+00 (2.7669e+00)	Acc@1  32.20 ( 32.20)	Acc@5  69.00 ( 69.00)
+[EVAL] E: [12][19/20]	Loss 2.7682e+00 (2.8307e+00)	Acc@1  34.60 ( 33.26)	Acc@5  67.00 ( 66.96)
+		 LR=0.08425024976356474 -- best acc so far 33.260000705718994
+***[2023-04-24 14:54:33]*** [Post-train] [Student] EVALUATION loss = 2.830730, accuracy@1 = 33.26, accuracy@5 = 66.96, error@1 = 66.74, error@5 = 33.04
+Training...
+[TRAIN] E: [13][  0/100]	Loss 6.2838e+00 (6.2838e+00)	Acc@1  32.20 ( 32.20)	Acc@5  63.00 ( 63.00)
+[TRAIN] E: [13][ 99/100]	Loss 6.7089e+00 (6.3868e+00)	Acc@1  23.00 ( 27.78)	Acc@5  53.60 ( 58.28)
+[EVAL] E: [13][ 0/20]	Loss 2.7511e+00 (2.7511e+00)	Acc@1  36.40 ( 36.40)	Acc@5  68.60 ( 68.60)
+[EVAL] E: [13][19/20]	Loss 2.9002e+00 (2.8864e+00)	Acc@1  32.60 ( 33.82)	Acc@5  68.40 ( 66.45)
+		 LR=0.08189539958214935 -- best acc so far 33.82000074386597
+***[2023-04-24 14:55:51]*** [Post-train] [Student] EVALUATION loss = 2.886378, accuracy@1 = 33.82, accuracy@5 = 66.45, error@1 = 66.18, error@5 = 33.55
+Training...
+[TRAIN] E: [14][  0/100]	Loss 6.2688e+00 (6.2688e+00)	Acc@1  31.20 ( 31.20)	Acc@5  61.00 ( 61.00)
+[TRAIN] E: [14][ 99/100]	Loss 6.1254e+00 (6.2556e+00)	Acc@1  29.40 ( 28.68)	Acc@5  58.60 ( 59.04)
+[EVAL] E: [14][ 0/20]	Loss 2.9584e+00 (2.9584e+00)	Acc@1  32.60 ( 32.60)	Acc@5  62.20 ( 62.20)
+[EVAL] E: [14][19/20]	Loss 2.7861e+00 (2.9270e+00)	Acc@1  36.00 ( 32.10)	Acc@5  64.40 ( 63.42)
+		 LR=0.0794146728302052 -- best acc so far 33.82000074386597
+***[2023-04-24 14:57:13]*** [Post-train] [Student] EVALUATION loss = 2.927026, accuracy@1 = 32.10, accuracy@5 = 63.42, error@1 = 67.90, error@5 = 36.58
+Training...
+[TRAIN] E: [15][  0/100]	Loss 6.2993e+00 (6.2993e+00)	Acc@1  32.80 ( 32.80)	Acc@5  59.20 ( 59.20)
+[TRAIN] E: [15][ 99/100]	Loss 6.1637e+00 (6.1502e+00)	Acc@1  28.60 ( 29.49)	Acc@5  58.20 ( 59.61)
+[EVAL] E: [15][ 0/20]	Loss 2.9135e+00 (2.9135e+00)	Acc@1  34.80 ( 34.80)	Acc@5  67.00 ( 67.00)
+[EVAL] E: [15][19/20]	Loss 2.8494e+00 (2.9081e+00)	Acc@1  34.20 ( 33.97)	Acc@5  67.40 ( 66.49)
+		 LR=0.07681785980288601 -- best acc so far 33.97000074386597
+***[2023-04-24 14:58:33]*** [Post-train] [Student] EVALUATION loss = 2.908146, accuracy@1 = 33.97, accuracy@5 = 66.49, error@1 = 66.03, error@5 = 33.51
+Training...
+[TRAIN] E: [16][  0/100]	Loss 6.1654e+00 (6.1654e+00)	Acc@1  31.00 ( 31.00)	Acc@5  59.40 ( 59.40)
+[TRAIN] E: [16][ 99/100]	Loss 6.2039e+00 (6.0662e+00)	Acc@1  27.40 ( 29.94)	Acc@5  59.20 ( 60.06)
+[EVAL] E: [16][ 0/20]	Loss 2.6405e+00 (2.6405e+00)	Acc@1  36.00 ( 36.00)	Acc@5  71.20 ( 71.20)
+[EVAL] E: [16][19/20]	Loss 2.4733e+00 (2.5960e+00)	Acc@1  38.80 ( 36.70)	Acc@5  70.20 ( 69.41)
+		 LR=0.07411520893483951 -- best acc so far 36.70000095367432
+***[2023-04-24 14:59:54]*** [Post-train] [Student] EVALUATION loss = 2.595991, accuracy@1 = 36.70, accuracy@5 = 69.41, error@1 = 63.30, error@5 = 30.59
+Training...
+[TRAIN] E: [17][  0/100]	Loss 6.1456e+00 (6.1456e+00)	Acc@1  28.20 ( 28.20)	Acc@5  58.20 ( 58.20)
+[TRAIN] E: [17][ 99/100]	Loss 6.0131e+00 (5.9945e+00)	Acc@1  31.60 ( 30.35)	Acc@5  59.40 ( 60.60)
+[EVAL] E: [17][ 0/20]	Loss 2.5268e+00 (2.5268e+00)	Acc@1  38.20 ( 38.20)	Acc@5  72.40 ( 72.40)
+[EVAL] E: [17][19/20]	Loss 2.3875e+00 (2.4864e+00)	Acc@1  40.00 ( 38.66)	Acc@5  72.00 ( 71.36)
+		 LR=0.07131738635431821 -- best acc so far 38.66000061035156
+***[2023-04-24 15:01:14]*** [Post-train] [Student] EVALUATION loss = 2.486372, accuracy@1 = 38.66, accuracy@5 = 71.36, error@1 = 61.34, error@5 = 28.64
+Training...
+[TRAIN] E: [18][  0/100]	Loss 5.8674e+00 (5.8674e+00)	Acc@1  33.00 ( 33.00)	Acc@5  62.20 ( 62.20)
+[TRAIN] E: [18][ 99/100]	Loss 6.0546e+00 (5.9197e+00)	Acc@1  31.80 ( 30.74)	Acc@5  61.20 ( 61.42)
+[EVAL] E: [18][ 0/20]	Loss 2.4759e+00 (2.4759e+00)	Acc@1  39.80 ( 39.80)	Acc@5  72.40 ( 72.40)
+[EVAL] E: [18][19/20]	Loss 2.3798e+00 (2.4579e+00)	Acc@1  37.20 ( 37.87)	Acc@5  71.20 ( 70.70)
+		 LR=0.06843543378884386 -- best acc so far 38.66000061035156
+***[2023-04-24 15:02:32]*** [Post-train] [Student] EVALUATION loss = 2.457915, accuracy@1 = 37.87, accuracy@5 = 70.70, error@1 = 62.13, error@5 = 29.30
+Training...
+[TRAIN] E: [19][  0/100]	Loss 5.8291e+00 (5.8291e+00)	Acc@1  31.20 ( 31.20)	Acc@5  61.00 ( 61.00)
+[TRAIN] E: [19][ 99/100]	Loss 5.7176e+00 (5.8472e+00)	Acc@1  30.80 ( 30.90)	Acc@5  61.80 ( 61.42)
+[EVAL] E: [19][ 0/20]	Loss 2.7466e+00 (2.7466e+00)	Acc@1  36.60 ( 36.60)	Acc@5  69.80 ( 69.80)
+[EVAL] E: [19][19/20]	Loss 2.6491e+00 (2.7140e+00)	Acc@1  37.40 ( 37.09)	Acc@5  70.40 ( 68.78)
+		 LR=0.0654807249885535 -- best acc so far 38.66000061035156
+***[2023-04-24 15:03:52]*** [Post-train] [Student] EVALUATION loss = 2.714017, accuracy@1 = 37.09, accuracy@5 = 68.78, error@1 = 62.91, error@5 = 31.22
+Training...
+[TRAIN] E: [20][  0/100]	Loss 5.6380e+00 (5.6380e+00)	Acc@1  32.60 ( 32.60)	Acc@5  63.80 ( 63.80)
+[TRAIN] E: [20][ 99/100]	Loss 5.6721e+00 (5.7721e+00)	Acc@1  32.80 ( 31.89)	Acc@5  63.40 ( 62.18)
+[EVAL] E: [20][ 0/20]	Loss 2.4222e+00 (2.4222e+00)	Acc@1  43.00 ( 43.00)	Acc@5  72.60 ( 72.60)
+[EVAL] E: [20][19/20]	Loss 2.2323e+00 (2.3346e+00)	Acc@1  44.00 ( 40.64)	Acc@5  72.40 ( 73.01)
+		 LR=0.0624649208392038 -- best acc so far 40.64000072479248
+***[2023-04-24 15:05:14]*** [Post-train] [Student] EVALUATION loss = 2.334560, accuracy@1 = 40.64, accuracy@5 = 73.01, error@1 = 59.36, error@5 = 26.99
+Training...
+[TRAIN] E: [21][  0/100]	Loss 5.7717e+00 (5.7717e+00)	Acc@1  32.00 ( 32.00)	Acc@5  58.40 ( 58.40)
+[TRAIN] E: [21][ 99/100]	Loss 5.6342e+00 (5.7029e+00)	Acc@1  33.60 ( 32.15)	Acc@5  61.80 ( 62.64)
+[EVAL] E: [21][ 0/20]	Loss 2.5172e+00 (2.5172e+00)	Acc@1  41.80 ( 41.80)	Acc@5  73.40 ( 73.40)
+[EVAL] E: [21][19/20]	Loss 2.4090e+00 (2.4763e+00)	Acc@1  40.00 ( 39.53)	Acc@5  72.20 ( 72.72)
+		 LR=0.059399923341982436 -- best acc so far 40.64000072479248
+***[2023-04-24 15:06:32]*** [Post-train] [Student] EVALUATION loss = 2.476291, accuracy@1 = 39.53, accuracy@5 = 72.72, error@1 = 60.47, error@5 = 27.28
+Training...
+[TRAIN] E: [22][  0/100]	Loss 5.6118e+00 (5.6118e+00)	Acc@1  31.60 ( 31.60)	Acc@5  64.80 ( 64.80)
+[TRAIN] E: [22][ 99/100]	Loss 5.6859e+00 (5.6278e+00)	Acc@1  30.00 ( 32.37)	Acc@5  62.80 ( 63.03)
+[EVAL] E: [22][ 0/20]	Loss 2.3677e+00 (2.3677e+00)	Acc@1  42.00 ( 42.00)	Acc@5  73.20 ( 73.20)
+[EVAL] E: [22][19/20]	Loss 2.2862e+00 (2.3526e+00)	Acc@1  41.40 ( 40.97)	Acc@5  74.40 ( 73.51)
+		 LR=0.05629782864174672 -- best acc so far 40.97000102996826
+***[2023-04-24 15:07:55]*** [Post-train] [Student] EVALUATION loss = 2.352598, accuracy@1 = 40.97, accuracy@5 = 73.51, error@1 = 59.03, error@5 = 26.49
+Training...
+[TRAIN] E: [23][  0/100]	Loss 5.7093e+00 (5.7093e+00)	Acc@1  32.60 ( 32.60)	Acc@5  61.20 ( 61.20)
+[TRAIN] E: [23][ 99/100]	Loss 5.5944e+00 (5.6052e+00)	Acc@1  34.20 ( 32.63)	Acc@5  65.20 ( 63.41)
+[EVAL] E: [23][ 0/20]	Loss 2.6489e+00 (2.6489e+00)	Acc@1  39.00 ( 39.00)	Acc@5  69.40 ( 69.40)
+[EVAL] E: [23][19/20]	Loss 2.7457e+00 (2.7163e+00)	Acc@1  38.00 ( 36.88)	Acc@5  68.00 ( 69.15)
+		 LR=0.05317087928906627 -- best acc so far 40.97000102996826
+***[2023-04-24 15:09:14]*** [Post-train] [Student] EVALUATION loss = 2.716327, accuracy@1 = 36.88, accuracy@5 = 69.15, error@1 = 63.12, error@5 = 30.85
+Training...
+[TRAIN] E: [24][  0/100]	Loss 5.3612e+00 (5.3612e+00)	Acc@1  31.80 ( 31.80)	Acc@5  65.00 ( 65.00)
+[TRAIN] E: [24][ 99/100]	Loss 5.6488e+00 (5.5053e+00)	Acc@1  27.00 ( 33.38)	Acc@5  62.00 ( 63.88)
+[EVAL] E: [24][ 0/20]	Loss 2.4508e+00 (2.4508e+00)	Acc@1  40.80 ( 40.80)	Acc@5  72.40 ( 72.40)
+[EVAL] E: [24][19/20]	Loss 2.3953e+00 (2.4775e+00)	Acc@1  40.20 ( 39.21)	Acc@5  72.60 ( 72.06)
+		 LR=0.05003141592446882 -- best acc so far 40.97000102996826
+***[2023-04-24 15:10:33]*** [Post-train] [Student] EVALUATION loss = 2.477468, accuracy@1 = 39.21, accuracy@5 = 72.06, error@1 = 60.79, error@5 = 27.94
+Training...
+[TRAIN] E: [25][  0/100]	Loss 5.3309e+00 (5.3309e+00)	Acc@1  37.80 ( 37.80)	Acc@5  64.00 ( 64.00)
+[TRAIN] E: [25][ 99/100]	Loss 5.5642e+00 (5.4680e+00)	Acc@1  32.20 ( 33.59)	Acc@5  63.80 ( 64.14)
+[EVAL] E: [25][ 0/20]	Loss 2.1458e+00 (2.1458e+00)	Acc@1  43.00 ( 43.00)	Acc@5  77.40 ( 77.40)
+[EVAL] E: [25][19/20]	Loss 2.1324e+00 (2.1458e+00)	Acc@1  45.60 ( 43.49)	Acc@5  75.60 ( 76.60)
+		 LR=0.04689182857557008 -- best acc so far 43.49000091552735
+***[2023-04-24 15:11:53]*** [Post-train] [Student] EVALUATION loss = 2.145779, accuracy@1 = 43.49, accuracy@5 = 76.60, error@1 = 56.51, error@5 = 23.40
+Training...
+[TRAIN] E: [26][  0/100]	Loss 5.5952e+00 (5.5952e+00)	Acc@1  30.80 ( 30.80)	Acc@5  60.00 ( 60.00)
+[TRAIN] E: [26][ 99/100]	Loss 5.3904e+00 (5.4572e+00)	Acc@1  32.00 ( 33.61)	Acc@5  65.20 ( 64.37)
+[EVAL] E: [26][ 0/20]	Loss 2.7691e+00 (2.7691e+00)	Acc@1  39.60 ( 39.60)	Acc@5  68.00 ( 68.00)
+[EVAL] E: [26][19/20]	Loss 2.5988e+00 (2.6436e+00)	Acc@1  40.60 ( 38.90)	Acc@5  70.60 ( 70.60)
+		 LR=0.04376450775929509 -- best acc so far 43.49000091552735
+***[2023-04-24 15:13:17]*** [Post-train] [Student] EVALUATION loss = 2.643582, accuracy@1 = 38.90, accuracy@5 = 70.60, error@1 = 61.10, error@5 = 29.40
+Training...
+[TRAIN] E: [27][  0/100]	Loss 5.5416e+00 (5.5416e+00)	Acc@1  32.60 ( 32.60)	Acc@5  62.00 ( 62.00)
+[TRAIN] E: [27][ 99/100]	Loss 5.1654e+00 (5.3990e+00)	Acc@1  38.00 ( 34.42)	Acc@5  66.20 ( 64.57)
+[EVAL] E: [27][ 0/20]	Loss 2.2809e+00 (2.2809e+00)	Acc@1  44.20 ( 44.20)	Acc@5  75.80 ( 75.80)
+[EVAL] E: [27][19/20]	Loss 2.1735e+00 (2.1937e+00)	Acc@1  45.40 ( 42.90)	Acc@5  75.60 ( 75.88)
+		 LR=0.04066179558216874 -- best acc so far 43.49000091552735
+***[2023-04-24 15:14:43]*** [Post-train] [Student] EVALUATION loss = 2.193684, accuracy@1 = 42.90, accuracy@5 = 75.88, error@1 = 57.10, error@5 = 24.12
+Training...
+[TRAIN] E: [28][  0/100]	Loss 5.4202e+00 (5.4202e+00)	Acc@1  35.00 ( 35.00)	Acc@5  64.20 ( 64.20)
+[TRAIN] E: [28][ 99/100]	Loss 5.3990e+00 (5.3466e+00)	Acc@1  34.80 ( 34.73)	Acc@5  64.60 ( 64.88)
+[EVAL] E: [28][ 0/20]	Loss 2.1094e+00 (2.1094e+00)	Acc@1  48.60 ( 48.60)	Acc@5  78.80 ( 78.80)
+[EVAL] E: [28][19/20]	Loss 2.0416e+00 (2.1070e+00)	Acc@1  47.80 ( 45.05)	Acc@5  77.00 ( 77.46)
+		 LR=0.037595937031659775 -- best acc so far 45.050000762939455
+***[2023-04-24 15:16:13]*** [Post-train] [Student] EVALUATION loss = 2.107039, accuracy@1 = 45.05, accuracy@5 = 77.46, error@1 = 54.95, error@5 = 22.54
+Training...
+[TRAIN] E: [29][  0/100]	Loss 5.0608e+00 (5.0608e+00)	Acc@1  35.20 ( 35.20)	Acc@5  65.20 ( 65.20)
+[TRAIN] E: [29][ 99/100]	Loss 5.4626e+00 (5.2950e+00)	Acc@1  34.40 ( 34.93)	Acc@5  66.80 ( 65.43)
+[EVAL] E: [29][ 0/20]	Loss 2.1954e+00 (2.1954e+00)	Acc@1  45.00 ( 45.00)	Acc@5  77.20 ( 77.20)
+[EVAL] E: [29][19/20]	Loss 2.0471e+00 (2.0865e+00)	Acc@1  49.20 ( 45.73)	Acc@5  76.80 ( 77.64)
+		 LR=0.03457903165080953 -- best acc so far 45.73000087738037
+***[2023-04-24 15:17:45]*** [Post-train] [Student] EVALUATION loss = 2.086478, accuracy@1 = 45.73, accuracy@5 = 77.64, error@1 = 54.27, error@5 = 22.36
+Training...
+[TRAIN] E: [30][  0/100]	Loss 5.3020e+00 (5.3020e+00)	Acc@1  33.00 ( 33.00)	Acc@5  67.00 ( 67.00)
+[TRAIN] E: [30][ 99/100]	Loss 5.2686e+00 (5.2546e+00)	Acc@1  35.00 ( 35.47)	Acc@5  63.20 ( 65.91)
+[EVAL] E: [30][ 0/20]	Loss 2.2370e+00 (2.2370e+00)	Acc@1  46.80 ( 46.80)	Acc@5  75.60 ( 75.60)
+[EVAL] E: [30][19/20]	Loss 2.0853e+00 (2.1655e+00)	Acc@1  45.60 ( 44.46)	Acc@5  76.40 ( 75.92)
+		 LR=0.031622985786863234 -- best acc so far 45.73000087738037
+***[2023-04-24 15:19:16]*** [Post-train] [Student] EVALUATION loss = 2.165489, accuracy@1 = 44.46, accuracy@5 = 75.92, error@1 = 55.54, error@5 = 24.08
+Training...
+[TRAIN] E: [31][  0/100]	Loss 5.2999e+00 (5.2999e+00)	Acc@1  33.60 ( 33.60)	Acc@5  64.60 ( 64.60)
+[TRAIN] E: [31][ 99/100]	Loss 5.2487e+00 (5.2070e+00)	Acc@1  34.60 ( 35.16)	Acc@5  64.80 ( 66.30)
+[EVAL] E: [31][ 0/20]	Loss 2.2761e+00 (2.2761e+00)	Acc@1  41.20 ( 41.20)	Acc@5  76.20 ( 76.20)
+[EVAL] E: [31][19/20]	Loss 2.1967e+00 (2.2291e+00)	Acc@1  44.60 ( 43.12)	Acc@5  75.20 ( 75.54)
+		 LR=0.028739465602357014 -- best acc so far 45.73000087738037
+***[2023-04-24 15:20:44]*** [Post-train] [Student] EVALUATION loss = 2.229095, accuracy@1 = 43.12, accuracy@5 = 75.54, error@1 = 56.88, error@5 = 24.46
+Training...
+[TRAIN] E: [32][  0/100]	Loss 5.1826e+00 (5.1826e+00)	Acc@1  34.80 ( 34.80)	Acc@5  65.40 ( 65.40)
+[TRAIN] E: [32][ 99/100]	Loss 5.1570e+00 (5.1894e+00)	Acc@1  35.40 ( 35.81)	Acc@5  64.80 ( 66.12)
+[EVAL] E: [32][ 0/20]	Loss 2.2459e+00 (2.2459e+00)	Acc@1  44.00 ( 44.00)	Acc@5  76.20 ( 76.20)
+[EVAL] E: [32][19/20]	Loss 2.0511e+00 (2.1601e+00)	Acc@1  48.20 ( 44.21)	Acc@5  77.80 ( 76.45)
+		 LR=0.025939851034104035 -- best acc so far 45.73000087738037
+***[2023-04-24 15:22:13]*** [Post-train] [Student] EVALUATION loss = 2.160092, accuracy@1 = 44.21, accuracy@5 = 76.45, error@1 = 55.79, error@5 = 23.55
+Training...
+[TRAIN] E: [33][  0/100]	Loss 5.0858e+00 (5.0858e+00)	Acc@1  37.80 ( 37.80)	Acc@5  66.20 ( 66.20)
+[TRAIN] E: [33][ 99/100]	Loss 5.2404e+00 (5.1572e+00)	Acc@1  33.60 ( 35.53)	Acc@5  66.40 ( 66.56)
+[EVAL] E: [33][ 0/20]	Loss 2.1268e+00 (2.1268e+00)	Acc@1  46.00 ( 46.00)	Acc@5  78.20 ( 78.20)
+[EVAL] E: [33][19/20]	Loss 2.0720e+00 (2.1594e+00)	Acc@1  47.40 ( 45.42)	Acc@5  77.40 ( 77.33)
+		 LR=0.023235190881782965 -- best acc so far 45.73000087738037
+***[2023-04-24 15:23:41]*** [Post-train] [Student] EVALUATION loss = 2.159427, accuracy@1 = 45.42, accuracy@5 = 77.33, error@1 = 54.58, error@5 = 22.67
+Training...
+[TRAIN] E: [34][  0/100]	Loss 5.0131e+00 (5.0131e+00)	Acc@1  37.40 ( 37.40)	Acc@5  67.00 ( 67.00)
+[TRAIN] E: [34][ 99/100]	Loss 5.1603e+00 (5.1144e+00)	Acc@1  35.20 ( 36.14)	Acc@5  65.00 ( 66.61)
+[EVAL] E: [34][ 0/20]	Loss 2.1510e+00 (2.1510e+00)	Acc@1  46.80 ( 46.80)	Acc@5  77.80 ( 77.80)
+[EVAL] E: [34][19/20]	Loss 2.1080e+00 (2.0959e+00)	Acc@1  47.00 ( 45.64)	Acc@5  76.40 ( 77.51)
+		 LR=0.02063615920337333 -- best acc so far 45.73000087738037
+***[2023-04-24 15:25:10]*** [Post-train] [Student] EVALUATION loss = 2.095926, accuracy@1 = 45.64, accuracy@5 = 77.51, error@1 = 54.36, error@5 = 22.49
+Training...
+[TRAIN] E: [35][  0/100]	Loss 5.0851e+00 (5.0851e+00)	Acc@1  34.20 ( 34.20)	Acc@5  66.80 ( 66.80)
+[TRAIN] E: [35][ 99/100]	Loss 4.9844e+00 (5.0589e+00)	Acc@1  38.40 ( 36.44)	Acc@5  68.00 ( 67.22)
+[EVAL] E: [35][ 0/20]	Loss 2.0132e+00 (2.0132e+00)	Acc@1  49.80 ( 49.80)	Acc@5  79.80 ( 79.80)
+[EVAL] E: [35][19/20]	Loss 1.9084e+00 (1.9648e+00)	Acc@1  49.60 ( 47.80)	Acc@5  79.00 ( 79.46)
+		 LR=0.018153013189525176 -- best acc so far 47.800000762939455
+***[2023-04-24 15:26:41]*** [Post-train] [Student] EVALUATION loss = 1.964760, accuracy@1 = 47.80, accuracy@5 = 79.46, error@1 = 52.20, error@5 = 20.54
+Training...
+[TRAIN] E: [36][  0/100]	Loss 5.1694e+00 (5.1694e+00)	Acc@1  36.00 ( 36.00)	Acc@5  66.60 ( 66.60)
+[TRAIN] E: [36][ 99/100]	Loss 5.0573e+00 (5.0548e+00)	Acc@1  38.00 ( 36.58)	Acc@5  65.20 ( 67.03)
+[EVAL] E: [36][ 0/20]	Loss 1.9802e+00 (1.9802e+00)	Acc@1  48.60 ( 48.60)	Acc@5  79.40 ( 79.40)
+[EVAL] E: [36][19/20]	Loss 1.8851e+00 (1.9454e+00)	Acc@1  48.20 ( 47.61)	Acc@5  77.80 ( 79.48)
+		 LR=0.015795552683113678 -- best acc so far 47.800000762939455
+***[2023-04-24 15:28:10]*** [Post-train] [Student] EVALUATION loss = 1.945374, accuracy@1 = 47.61, accuracy@5 = 79.48, error@1 = 52.39, error@5 = 20.52
+Training...
+[TRAIN] E: [37][  0/100]	Loss 4.8652e+00 (4.8652e+00)	Acc@1  36.60 ( 36.60)	Acc@5  66.20 ( 66.20)
+[TRAIN] E: [37][ 99/100]	Loss 5.1094e+00 (5.0069e+00)	Acc@1  37.80 ( 36.56)	Acc@5  67.40 ( 67.29)
+[EVAL] E: [37][ 0/20]	Loss 1.9928e+00 (1.9928e+00)	Acc@1  50.00 ( 50.00)	Acc@5  80.00 ( 80.00)
+[EVAL] E: [37][19/20]	Loss 1.8562e+00 (1.9255e+00)	Acc@1  50.00 ( 48.57)	Acc@5  78.60 ( 79.91)
+		 LR=0.013573081503736362 -- best acc so far 48.57000045776367
+***[2023-04-24 15:29:40]*** [Post-train] [Student] EVALUATION loss = 1.925533, accuracy@1 = 48.57, accuracy@5 = 79.91, error@1 = 51.43, error@5 = 20.09
+Training...
+[TRAIN] E: [38][  0/100]	Loss 4.9903e+00 (4.9903e+00)	Acc@1  35.80 ( 35.80)	Acc@5  67.20 ( 67.20)
+[TRAIN] E: [38][ 99/100]	Loss 4.8343e+00 (4.9799e+00)	Acc@1  35.60 ( 36.92)	Acc@5  70.80 ( 67.70)
+[EVAL] E: [38][ 0/20]	Loss 2.0075e+00 (2.0075e+00)	Acc@1  49.80 ( 49.80)	Acc@5  81.20 ( 81.20)
+[EVAL] E: [38][19/20]	Loss 1.9378e+00 (1.9524e+00)	Acc@1  49.40 ( 48.35)	Acc@5  78.00 ( 79.41)
+		 LR=0.011494370729787729 -- best acc so far 48.57000045776367
+***[2023-04-24 15:31:09]*** [Post-train] [Student] EVALUATION loss = 1.952442, accuracy@1 = 48.35, accuracy@5 = 79.41, error@1 = 51.65, error@5 = 20.59
+Training...
+[TRAIN] E: [39][  0/100]	Loss 5.0278e+00 (5.0278e+00)	Acc@1  37.20 ( 37.20)	Acc@5  66.80 ( 66.80)
+[TRAIN] E: [39][ 99/100]	Loss 5.0619e+00 (4.9685e+00)	Acc@1  34.00 ( 37.19)	Acc@5  66.60 ( 67.87)
+[EVAL] E: [39][ 0/20]	Loss 1.9616e+00 (1.9616e+00)	Acc@1  49.80 ( 49.80)	Acc@5  81.40 ( 81.40)
+[EVAL] E: [39][19/20]	Loss 1.8516e+00 (1.9099e+00)	Acc@1  49.60 ( 48.62)	Acc@5  80.00 ( 80.27)
+		 LR=0.009567624083019949 -- best acc so far 48.620001029968265
+***[2023-04-24 15:32:31]*** [Post-train] [Student] EVALUATION loss = 1.909920, accuracy@1 = 48.62, accuracy@5 = 80.27, error@1 = 51.38, error@5 = 19.73
+Training...
+[TRAIN] E: [40][  0/100]	Loss 4.9890e+00 (4.9890e+00)	Acc@1  38.00 ( 38.00)	Acc@5  67.80 ( 67.80)
+[TRAIN] E: [40][ 99/100]	Loss 4.9928e+00 (4.9536e+00)	Acc@1  33.80 ( 37.18)	Acc@5  68.20 ( 67.84)
+[EVAL] E: [40][ 0/20]	Loss 1.9882e+00 (1.9882e+00)	Acc@1  48.60 ( 48.60)	Acc@5  81.20 ( 81.20)
+[EVAL] E: [40][19/20]	Loss 1.8896e+00 (1.9327e+00)	Acc@1  51.20 ( 48.71)	Acc@5  78.40 ( 79.86)
+		 LR=0.007800445552201014 -- best acc so far 48.71000080108642
+***[2023-04-24 15:33:47]*** [Post-train] [Student] EVALUATION loss = 1.932666, accuracy@1 = 48.71, accuracy@5 = 79.86, error@1 = 51.29, error@5 = 20.14
+Training...
+[TRAIN] E: [41][  0/100]	Loss 4.8423e+00 (4.8423e+00)	Acc@1  36.60 ( 36.60)	Acc@5  67.00 ( 67.00)
+[TRAIN] E: [41][ 99/100]	Loss 4.8680e+00 (4.9189e+00)	Acc@1  38.00 ( 37.71)	Acc@5  69.40 ( 68.06)
+[EVAL] E: [41][ 0/20]	Loss 1.9670e+00 (1.9670e+00)	Acc@1  51.60 ( 51.60)	Acc@5  81.60 ( 81.60)
+[EVAL] E: [41][19/20]	Loss 1.8513e+00 (1.9078e+00)	Acc@1  51.20 ( 48.94)	Acc@5  80.60 ( 80.51)
+		 LR=0.0061998093836449445 -- best acc so far 48.94000091552734
+***[2023-04-24 15:35:04]*** [Post-train] [Student] EVALUATION loss = 1.907847, accuracy@1 = 48.94, accuracy@5 = 80.51, error@1 = 51.06, error@5 = 19.49
+Training...
+[TRAIN] E: [42][  0/100]	Loss 4.7893e+00 (4.7893e+00)	Acc@1  40.60 ( 40.60)	Acc@5  70.40 ( 70.40)
+[TRAIN] E: [42][ 99/100]	Loss 4.7492e+00 (4.8932e+00)	Acc@1  34.40 ( 37.50)	Acc@5  67.40 ( 68.22)
+[EVAL] E: [42][ 0/20]	Loss 1.9377e+00 (1.9377e+00)	Acc@1  48.60 ( 48.60)	Acc@5  82.20 ( 82.20)
+[EVAL] E: [42][19/20]	Loss 1.8155e+00 (1.8632e+00)	Acc@1  51.40 ( 49.48)	Acc@5  80.80 ( 80.79)
+		 LR=0.004772032557047984 -- best acc so far 49.48000087738037
+***[2023-04-24 15:36:21]*** [Post-train] [Student] EVALUATION loss = 1.863170, accuracy@1 = 49.48, accuracy@5 = 80.79, error@1 = 50.52, error@5 = 19.21
+Training...
+[TRAIN] E: [43][  0/100]	Loss 4.9333e+00 (4.9333e+00)	Acc@1  39.80 ( 39.80)	Acc@5  67.80 ( 67.80)
+[TRAIN] E: [43][ 99/100]	Loss 4.6984e+00 (4.8817e+00)	Acc@1  40.20 ( 37.93)	Acc@5  70.20 ( 68.28)
+[EVAL] E: [43][ 0/20]	Loss 1.9014e+00 (1.9014e+00)	Acc@1  51.00 ( 51.00)	Acc@5  82.00 ( 82.00)
+[EVAL] E: [43][19/20]	Loss 1.7953e+00 (1.8595e+00)	Acc@1  52.00 ( 49.56)	Acc@5  80.40 ( 80.92)
+		 LR=0.003522749855255486 -- best acc so far 49.560000610351565
+***[2023-04-24 15:37:37]*** [Post-train] [Student] EVALUATION loss = 1.859548, accuracy@1 = 49.56, accuracy@5 = 80.92, error@1 = 50.44, error@5 = 19.08
+Training...
+[TRAIN] E: [44][  0/100]	Loss 4.8167e+00 (4.8167e+00)	Acc@1  34.20 ( 34.20)	Acc@5  70.20 ( 70.20)
+[TRAIN] E: [44][ 99/100]	Loss 4.7239e+00 (4.8913e+00)	Acc@1  40.60 ( 37.85)	Acc@5  70.40 ( 68.52)
+[EVAL] E: [44][ 0/20]	Loss 1.9305e+00 (1.9305e+00)	Acc@1  51.20 ( 51.20)	Acc@5  82.00 ( 82.00)
+[EVAL] E: [44][19/20]	Loss 1.8074e+00 (1.8603e+00)	Acc@1  52.00 ( 49.64)	Acc@5  80.40 ( 80.87)
+		 LR=0.002456891626348451 -- best acc so far 49.640000915527345
+***[2023-04-24 15:38:54]*** [Post-train] [Student] EVALUATION loss = 1.860265, accuracy@1 = 49.64, accuracy@5 = 80.87, error@1 = 50.36, error@5 = 19.13
+Training...
+[TRAIN] E: [45][  0/100]	Loss 4.9898e+00 (4.9898e+00)	Acc@1  39.20 ( 39.20)	Acc@5  68.00 ( 68.00)
+[TRAIN] E: [45][ 99/100]	Loss 4.8138e+00 (4.8783e+00)	Acc@1  40.60 ( 37.99)	Acc@5  70.20 ( 68.41)
+[EVAL] E: [45][ 0/20]	Loss 1.9191e+00 (1.9191e+00)	Acc@1  51.40 ( 51.40)	Acc@5  82.40 ( 82.40)
+[EVAL] E: [45][19/20]	Loss 1.7962e+00 (1.8620e+00)	Acc@1  52.20 ( 49.83)	Acc@5  80.20 ( 80.97)
+		 LR=0.0015786643258120904 -- best acc so far 49.830000686645505
+***[2023-04-24 15:40:12]*** [Post-train] [Student] EVALUATION loss = 1.861991, accuracy@1 = 49.83, accuracy@5 = 80.97, error@1 = 50.17, error@5 = 19.03
+Training...
+[TRAIN] E: [46][  0/100]	Loss 4.9958e+00 (4.9958e+00)	Acc@1  35.40 ( 35.40)	Acc@5  67.40 ( 67.40)
+[TRAIN] E: [46][ 99/100]	Loss 4.9839e+00 (4.8740e+00)	Acc@1  37.40 ( 38.02)	Acc@5  67.00 ( 68.46)
+[EVAL] E: [46][ 0/20]	Loss 1.9194e+00 (1.9194e+00)	Acc@1  51.60 ( 51.60)	Acc@5  82.60 ( 82.60)
+[EVAL] E: [46][19/20]	Loss 1.8100e+00 (1.8605e+00)	Acc@1  52.20 ( 49.99)	Acc@5  80.40 ( 81.08)
+		 LR=0.0008915339155777136 -- best acc so far 49.99000072479248
+***[2023-04-24 15:41:30]*** [Post-train] [Student] EVALUATION loss = 1.860533, accuracy@1 = 49.99, accuracy@5 = 81.08, error@1 = 50.01, error@5 = 18.92
+Training...
+[TRAIN] E: [47][  0/100]	Loss 4.7546e+00 (4.7546e+00)	Acc@1  40.40 ( 40.40)	Acc@5  71.40 ( 71.40)
+[TRAIN] E: [47][ 99/100]	Loss 4.8123e+00 (4.8849e+00)	Acc@1  39.60 ( 37.62)	Acc@5  72.80 ( 68.27)
+[EVAL] E: [47][ 0/20]	Loss 1.9093e+00 (1.9093e+00)	Acc@1  51.80 ( 51.80)	Acc@5  82.40 ( 82.40)
+[EVAL] E: [47][19/20]	Loss 1.8029e+00 (1.8582e+00)	Acc@1  51.80 ( 50.15)	Acc@5  80.20 ( 80.98)
+		 LR=0.0003982121854544996 -- best acc so far 50.15000057220459
+***[2023-04-24 15:42:50]*** [Post-train] [Student] EVALUATION loss = 1.858246, accuracy@1 = 50.15, accuracy@5 = 80.98, error@1 = 49.85, error@5 = 19.02
+Training...
+[TRAIN] E: [48][  0/100]	Loss 4.9435e+00 (4.9435e+00)	Acc@1  38.60 ( 38.60)	Acc@5  67.60 ( 67.60)
+[TRAIN] E: [48][ 99/100]	Loss 5.0006e+00 (4.9086e+00)	Acc@1  35.40 ( 37.84)	Acc@5  65.00 ( 68.05)
+[EVAL] E: [48][ 0/20]	Loss 1.9362e+00 (1.9362e+00)	Acc@1  50.60 ( 50.60)	Acc@5  81.80 ( 81.80)
+[EVAL] E: [48][19/20]	Loss 1.8033e+00 (1.8765e+00)	Acc@1  51.40 ( 49.56)	Acc@5  80.00 ( 80.83)
+		 LR=0.00010064605093397794 -- best acc so far 50.15000057220459
+***[2023-04-24 15:44:09]*** [Post-train] [Student] EVALUATION loss = 1.876496, accuracy@1 = 49.56, accuracy@5 = 80.83, error@1 = 50.44, error@5 = 19.17
+Training...
+[TRAIN] E: [49][  0/100]	Loss 4.9080e+00 (4.9080e+00)	Acc@1  40.80 ( 40.80)	Acc@5  70.00 ( 70.00)
+[TRAIN] E: [49][ 99/100]	Loss 5.3167e+00 (5.2288e+00)	Acc@1  35.60 ( 35.68)	Acc@5  66.40 ( 66.06)
+[EVAL] E: [49][ 0/20]	Loss 2.0177e+00 (2.0177e+00)	Acc@1  48.80 ( 48.80)	Acc@5  81.80 ( 81.80)
+[EVAL] E: [49][19/20]	Loss 1.9916e+00 (1.9708e+00)	Acc@1  46.20 ( 47.58)	Acc@5  78.60 ( 79.20)
+		 LR=9.869604078449612e-09 -- best acc so far 50.15000057220459
+***[2023-04-24 15:45:24]*** [Post-train] [Student] EVALUATION loss = 1.970808, accuracy@1 = 47.58, accuracy@5 = 79.20, error@1 = 52.42, error@5 = 20.80
+Training...
+[TRAIN] E: [50][  0/100]	Loss 5.2448e+00 (5.2448e+00)	Acc@1  35.20 ( 35.20)	Acc@5  66.00 ( 66.00)
+[TRAIN] E: [50][ 99/100]	Loss 6.9067e+00 (8.0202e+00)	Acc@1  26.60 ( 20.61)	Acc@5  56.80 ( 46.69)
+[EVAL] E: [50][ 0/20]	Loss 2.7892e+00 (2.7892e+00)	Acc@1  35.00 ( 35.00)	Acc@5  66.20 ( 66.20)
+[EVAL] E: [50][19/20]	Loss 2.7228e+00 (2.8623e+00)	Acc@1  34.80 ( 33.38)	Acc@5  65.20 ( 65.29)
+		 LR=0.09990329919350381 -- best acc so far 50.15000057220459
+***[2023-04-24 15:46:44]*** [Post-train] [Student] EVALUATION loss = 2.862340, accuracy@1 = 33.38, accuracy@5 = 65.29, error@1 = 66.62, error@5 = 34.71
+Training...
+[TRAIN] E: [51][  0/100]	Loss 6.7537e+00 (6.7537e+00)	Acc@1  24.00 ( 24.00)	Acc@5  52.20 ( 52.20)
+[TRAIN] E: [51][ 99/100]	Loss 6.0535e+00 (6.4612e+00)	Acc@1  29.60 ( 27.60)	Acc@5  59.00 ( 57.16)
+[EVAL] E: [51][ 0/20]	Loss 2.6697e+00 (2.6697e+00)	Acc@1  36.60 ( 36.60)	Acc@5  67.60 ( 67.60)
+[EVAL] E: [51][19/20]	Loss 2.4483e+00 (2.5916e+00)	Acc@1  40.60 ( 36.25)	Acc@5  69.80 ( 67.94)
+		 LR=0.09960966273334369 -- best acc so far 50.15000057220459
+***[2023-04-24 15:48:00]*** [Post-train] [Student] EVALUATION loss = 2.591597, accuracy@1 = 36.25, accuracy@5 = 67.94, error@1 = 63.75, error@5 = 32.06
+Training...
+[TRAIN] E: [52][  0/100]	Loss 5.8433e+00 (5.8433e+00)	Acc@1  31.60 ( 31.60)	Acc@5  62.00 ( 62.00)
+[TRAIN] E: [52][ 99/100]	Loss 5.6465e+00 (6.0362e+00)	Acc@1  35.20 ( 30.30)	Acc@5  63.20 ( 60.45)
+[EVAL] E: [52][ 0/20]	Loss 2.7543e+00 (2.7543e+00)	Acc@1  36.20 ( 36.20)	Acc@5  67.60 ( 67.60)
+[EVAL] E: [52][19/20]	Loss 2.5825e+00 (2.7142e+00)	Acc@1  36.60 ( 35.64)	Acc@5  69.00 ( 67.58)
+		 LR=0.09912023959887407 -- best acc so far 50.15000057220459
+***[2023-04-24 15:49:17]*** [Post-train] [Student] EVALUATION loss = 2.714182, accuracy@1 = 35.64, accuracy@5 = 67.58, error@1 = 64.36, error@5 = 32.42
+Training...
+[TRAIN] E: [53][  0/100]	Loss 5.9661e+00 (5.9661e+00)	Acc@1  32.20 ( 32.20)	Acc@5  60.20 ( 60.20)
+[TRAIN] E: [53][ 99/100]	Loss 5.7891e+00 (5.8811e+00)	Acc@1  32.80 ( 31.00)	Acc@5  61.00 ( 61.17)
+[EVAL] E: [53][ 0/20]	Loss 2.6659e+00 (2.6659e+00)	Acc@1  41.80 ( 41.80)	Acc@5  69.40 ( 69.40)
+[EVAL] E: [53][19/20]	Loss 2.5501e+00 (2.6565e+00)	Acc@1  38.60 ( 37.61)	Acc@5  68.00 ( 68.77)
+		 LR=0.09843696131961058 -- best acc so far 50.15000057220459
+***[2023-04-24 15:50:28]*** [Post-train] [Student] EVALUATION loss = 2.656475, accuracy@1 = 37.61, accuracy@5 = 68.77, error@1 = 62.39, error@5 = 31.23
+Training...

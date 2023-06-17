@@ -1,0 +1,1452 @@
+Main Function with logger : Logger(dir=kd_results, use-tf=False, writer=None)
+Arguments : -------------------------------
+batch_size       : 1600
+class_num        : 100
+cutout_length    : 16
+data_path        : /home/prathamesh/code/data/cifar/
+dataset          : cifar100
+epochs           : 200
+eval_batch_size  : 1600
+global_rand_seed : -1
+label            : KD0.9_fixed_test
+loss_kd_frac     : 0.9
+lr               : 0.1
+model_name       : ResNet10_s
+momentum         : 0.9
+pretrained_student : True
+print_freq       : 100
+print_freq_eval  : 100
+rand_seed        : 6
+save_dir         : ./kd_results/
+temperature      : 2
+wd               : 0.0005
+workers          : 8
+Python  Version  : 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Pillow  Version  : 9.2.0
+PyTorch Version  : 1.13.1
+cuDNN   Version  : 8500
+CUDA available   : True
+CUDA GPU numbers : 1
+CUDA_VISIBLE_DEVICES : 0
+Train:50000	, Valid:5000	, Test:5000
+
+using pretrained student model from /home/anmolreddy/pretrained/disk-CE-cifar100-ResNet10_s-model_best.pth.tar
+model information : EfficientNetV2_s (CIFAR)
+--------------------------------------------------
+[Student]Params=0.08 MB, FLOPs=4.16 M ... = 0.00 G
+--------------------------------------------------
+train_data : Dataset CIFAR100
+    Number of datapoints: 50000
+    Root location: /home/prathamesh/code/data/cifar/
+    Split: Train
+    StandardTransform
+Transform: Compose(
+               RandomCrop(size=(32, 32), padding=4)
+               RandomHorizontalFlip(p=0.5)
+               AutoAugment CIFAR10 Policy
+               ToTensor()
+               CUTOUT(length=16)
+               Normalize(mean=[0.5070588235294118, 0.48666666666666664, 0.4407843137254902], std=[0.26745098039215687, 0.2564705882352941, 0.27607843137254906])
+           )
+valid_data : <torch.utils.data.dataset.Subset object at 0x7fd2d4570050>
+Train Epoch:0
+
+[TRAIN] E: [0][ 0/32]	Loss 2.2300e+00 (2.2300e+00)	Acc@1  41.81 ( 41.81)	Acc@5  73.25 ( 73.25)
+[TRAIN] E: [0][31/32]	Loss 2.3838e+00 (2.4054e+00)	Acc@1  36.00 ( 38.30)	Acc@5  67.75 ( 68.69)
+[EVAL] E: [0][0/4]	Loss 2.3062e+00 (2.3062e+00)	Acc@1  46.12 ( 46.12)	Acc@5  77.00 ( 77.00)
+[EVAL] E: [0][3/4]	Loss 2.2340e+00 (2.2671e+00)	Acc@1  42.50 ( 45.36)	Acc@5  78.00 ( 76.52)
+		 Test evaluation at end of epoch: latest_acc:45.36 LR=0.09381533400219319 -- best acc so far 45.36
+Train Epoch:1
+
+[TRAIN] E: [1][ 0/32]	Loss 2.4207e+00 (2.4207e+00)	Acc@1  35.06 ( 35.06)	Acc@5  68.62 ( 68.62)
+[TRAIN] E: [1][31/32]	Loss 2.2357e+00 (2.3186e+00)	Acc@1  38.00 ( 38.46)	Acc@5  67.25 ( 69.01)
+[EVAL] E: [1][0/4]	Loss 2.2915e+00 (2.2915e+00)	Acc@1  45.81 ( 45.81)	Acc@5  76.38 ( 76.38)
+[EVAL] E: [1][3/4]	Loss 2.2349e+00 (2.2328e+00)	Acc@1  44.50 ( 45.14)	Acc@5  78.00 ( 76.10)
+		 Test evaluation at end of epoch: latest_acc:45.14 LR=0.07679133974894985 -- best acc so far 45.36
+Train Epoch:2
+
+[TRAIN] E: [2][ 0/32]	Loss 2.2397e+00 (2.2397e+00)	Acc@1  37.06 ( 37.06)	Acc@5  69.19 ( 69.19)
+[TRAIN] E: [2][31/32]	Loss 2.2321e+00 (2.2396e+00)	Acc@1  37.25 ( 39.20)	Acc@5  67.75 ( 69.69)
+[EVAL] E: [2][0/4]	Loss 2.0208e+00 (2.0208e+00)	Acc@1  50.31 ( 50.31)	Acc@5  79.31 ( 79.31)
+[EVAL] E: [2][3/4]	Loss 1.9232e+00 (1.9547e+00)	Acc@1  47.00 ( 50.28)	Acc@5  83.00 ( 80.48)
+		 Test evaluation at end of epoch: latest_acc:50.28 LR=0.05313952597646571 -- best acc so far 50.28
+Train Epoch:3
+
+[TRAIN] E: [3][ 0/32]	Loss 2.1253e+00 (2.1253e+00)	Acc@1  40.56 ( 40.56)	Acc@5  71.56 ( 71.56)
+[TRAIN] E: [3][31/32]	Loss 2.0795e+00 (2.1465e+00)	Acc@1  36.25 ( 40.22)	Acc@5  70.50 ( 70.62)
+[EVAL] E: [3][0/4]	Loss 1.9672e+00 (1.9672e+00)	Acc@1  51.19 ( 51.19)	Acc@5  79.56 ( 79.56)
+[EVAL] E: [3][3/4]	Loss 1.9165e+00 (1.9442e+00)	Acc@1  46.00 ( 49.98)	Acc@5  84.00 ( 79.92)
+		 Test evaluation at end of epoch: latest_acc:49.98 LR=0.028711035421746387 -- best acc so far 50.28
+Train Epoch:4
+
+[TRAIN] E: [4][ 0/32]	Loss 2.1335e+00 (2.1335e+00)	Acc@1  42.06 ( 42.06)	Acc@5  70.81 ( 70.81)
+[TRAIN] E: [4][31/32]	Loss 2.0484e+00 (2.0983e+00)	Acc@1  39.25 ( 40.70)	Acc@5  71.25 ( 70.92)
+[EVAL] E: [4][0/4]	Loss 1.8651e+00 (1.8651e+00)	Acc@1  52.00 ( 52.00)	Acc@5  81.62 ( 81.62)
+[EVAL] E: [4][3/4]	Loss 1.8401e+00 (1.8246e+00)	Acc@1  47.00 ( 51.46)	Acc@5  85.50 ( 82.14)
+		 Test evaluation at end of epoch: latest_acc:51.46 LR=0.009549150281252637 -- best acc so far 51.46
+Train Epoch:5
+
+[TRAIN] E: [5][ 0/32]	Loss 2.0232e+00 (2.0232e+00)	Acc@1  42.69 ( 42.69)	Acc@5  74.25 ( 74.25)
+[TRAIN] E: [5][31/32]	Loss 1.9514e+00 (2.0500e+00)	Acc@1  41.50 ( 41.53)	Acc@5  70.75 ( 71.66)
+[EVAL] E: [5][0/4]	Loss 1.8227e+00 (1.8227e+00)	Acc@1  53.44 ( 53.44)	Acc@5  82.06 ( 82.06)
+[EVAL] E: [5][3/4]	Loss 1.7800e+00 (1.7782e+00)	Acc@1  48.50 ( 52.70)	Acc@5  86.00 ( 82.62)
+		 Test evaluation at end of epoch: latest_acc:52.7 LR=0.00039426493427611206 -- best acc so far 52.7
+Train Epoch:6
+
+[TRAIN] E: [6][ 0/32]	Loss 2.0134e+00 (2.0134e+00)	Acc@1  41.19 ( 41.19)	Acc@5  71.44 ( 71.44)
+[TRAIN] E: [6][31/32]	Loss 2.1551e+00 (2.0353e+00)	Acc@1  37.50 ( 41.73)	Acc@5  68.25 ( 71.73)
+[EVAL] E: [6][0/4]	Loss 1.8186e+00 (1.8186e+00)	Acc@1  52.94 ( 52.94)	Acc@5  82.50 ( 82.50)
+[EVAL] E: [6][3/4]	Loss 1.7693e+00 (1.7739e+00)	Acc@1  47.00 ( 52.50)	Acc@5  87.00 ( 82.72)
+		 Test evaluation at end of epoch: latest_acc:52.5 LR=0.0035111757055874293 -- best acc so far 52.7
+Train Epoch:7
+
+[TRAIN] E: [7][ 0/32]	Loss 2.0044e+00 (2.0044e+00)	Acc@1  44.50 ( 44.50)	Acc@5  73.94 ( 73.94)
+[TRAIN] E: [7][31/32]	Loss 2.0464e+00 (2.0304e+00)	Acc@1  40.25 ( 41.73)	Acc@5  71.00 ( 71.60)
+[EVAL] E: [7][0/4]	Loss 1.8479e+00 (1.8479e+00)	Acc@1  52.56 ( 52.56)	Acc@5  81.56 ( 81.56)
+[EVAL] E: [7][3/4]	Loss 1.8169e+00 (1.8198e+00)	Acc@1  47.00 ( 52.08)	Acc@5  86.00 ( 82.00)
+		 Test evaluation at end of epoch: latest_acc:52.08 LR=0.018128800512565525 -- best acc so far 52.7
+Train Epoch:8
+
+[TRAIN] E: [8][ 0/32]	Loss 2.0310e+00 (2.0310e+00)	Acc@1  42.06 ( 42.06)	Acc@5  72.94 ( 72.94)
+[TRAIN] E: [8][31/32]	Loss 1.9940e+00 (2.0568e+00)	Acc@1  45.25 ( 41.45)	Acc@5  76.00 ( 71.19)
+[EVAL] E: [8][0/4]	Loss 2.0783e+00 (2.0783e+00)	Acc@1  49.12 ( 49.12)	Acc@5  77.88 ( 77.88)
+[EVAL] E: [8][3/4]	Loss 2.0272e+00 (2.0241e+00)	Acc@1  50.50 ( 48.94)	Acc@5  82.00 ( 78.78)
+		 Test evaluation at end of epoch: latest_acc:48.94 LR=0.040630934270713834 -- best acc so far 52.7
+Train Epoch:9
+
+[TRAIN] E: [9][ 0/32]	Loss 2.1417e+00 (2.1417e+00)	Acc@1  39.75 ( 39.75)	Acc@5  70.81 ( 70.81)
+[TRAIN] E: [9][31/32]	Loss 2.1261e+00 (2.1262e+00)	Acc@1  41.00 ( 40.26)	Acc@5  67.75 ( 70.55)
+[EVAL] E: [9][0/4]	Loss 2.3329e+00 (2.3329e+00)	Acc@1  45.56 ( 45.56)	Acc@5  75.44 ( 75.44)
+[EVAL] E: [9][3/4]	Loss 2.3150e+00 (2.2723e+00)	Acc@1  43.00 ( 46.26)	Acc@5  75.50 ( 76.12)
+		 Test evaluation at end of epoch: latest_acc:46.26 LR=0.06545084971874747 -- best acc so far 52.7
+Train Epoch:10
+
+[TRAIN] E: [10][ 0/32]	Loss 2.1393e+00 (2.1393e+00)	Acc@1  40.31 ( 40.31)	Acc@5  69.94 ( 69.94)
+[TRAIN] E: [10][31/32]	Loss 2.3635e+00 (2.2147e+00)	Acc@1  38.50 ( 39.47)	Acc@5  72.75 ( 69.77)
+[EVAL] E: [10][0/4]	Loss 3.6309e+00 (3.6309e+00)	Acc@1  32.12 ( 32.12)	Acc@5  60.56 ( 60.56)
+[EVAL] E: [10][3/4]	Loss 4.0534e+00 (3.5820e+00)	Acc@1  31.50 ( 33.46)	Acc@5  56.50 ( 61.20)
+		 Test evaluation at end of epoch: latest_acc:33.46 LR=0.08644843137107062 -- best acc so far 52.7
+Train Epoch:11
+
+[TRAIN] E: [11][ 0/32]	Loss 2.2983e+00 (2.2983e+00)	Acc@1  40.19 ( 40.19)	Acc@5  70.62 ( 70.62)
+[TRAIN] E: [11][31/32]	Loss 2.1486e+00 (2.2723e+00)	Acc@1  38.75 ( 38.84)	Acc@5  70.75 ( 69.35)
+[EVAL] E: [11][0/4]	Loss 2.8824e+00 (2.8824e+00)	Acc@1  38.25 ( 38.25)	Acc@5  69.56 ( 69.56)
+[EVAL] E: [11][3/4]	Loss 3.0438e+00 (2.8459e+00)	Acc@1  34.50 ( 38.78)	Acc@5  63.50 ( 69.76)
+		 Test evaluation at end of epoch: latest_acc:38.78 LR=0.09842915805643163 -- best acc so far 52.7
+Train Epoch:12
+
+[TRAIN] E: [12][ 0/32]	Loss 2.2363e+00 (2.2363e+00)	Acc@1  39.38 ( 39.38)	Acc@5  69.06 ( 69.06)
+[TRAIN] E: [12][31/32]	Loss 2.4496e+00 (2.2982e+00)	Acc@1  36.50 ( 38.19)	Acc@5  64.50 ( 68.57)
+[EVAL] E: [12][0/4]	Loss 2.7209e+00 (2.7209e+00)	Acc@1  38.25 ( 38.25)	Acc@5  70.50 ( 70.50)
+[EVAL] E: [12][3/4]	Loss 2.5124e+00 (2.6780e+00)	Acc@1  40.50 ( 38.84)	Acc@5  75.50 ( 71.38)
+		 Test evaluation at end of epoch: latest_acc:38.84 LR=0.09842915805643167 -- best acc so far 52.7
+Train Epoch:13
+
+[TRAIN] E: [13][ 0/32]	Loss 2.3651e+00 (2.3651e+00)	Acc@1  38.44 ( 38.44)	Acc@5  68.62 ( 68.62)
+[TRAIN] E: [13][31/32]	Loss 2.2102e+00 (2.3104e+00)	Acc@1  42.25 ( 37.87)	Acc@5  68.50 ( 68.31)
+[EVAL] E: [13][0/4]	Loss 2.2591e+00 (2.2591e+00)	Acc@1  47.31 ( 47.31)	Acc@5  77.56 ( 77.56)
+[EVAL] E: [13][3/4]	Loss 2.1352e+00 (2.1992e+00)	Acc@1  45.00 ( 46.56)	Acc@5  81.50 ( 78.74)
+		 Test evaluation at end of epoch: latest_acc:46.56 LR=0.08644843137107068 -- best acc so far 52.7
+Train Epoch:14
+
+[TRAIN] E: [14][ 0/32]	Loss 2.2300e+00 (2.2300e+00)	Acc@1  38.31 ( 38.31)	Acc@5  68.62 ( 68.62)
+[TRAIN] E: [14][31/32]	Loss 2.1961e+00 (2.2103e+00)	Acc@1  37.75 ( 39.33)	Acc@5  69.25 ( 69.44)
+[EVAL] E: [14][0/4]	Loss 2.2174e+00 (2.2174e+00)	Acc@1  47.88 ( 47.88)	Acc@5  75.81 ( 75.81)
+[EVAL] E: [14][3/4]	Loss 2.0349e+00 (2.1602e+00)	Acc@1  45.00 ( 47.44)	Acc@5  80.50 ( 77.24)
+		 Test evaluation at end of epoch: latest_acc:47.44 LR=0.0654508497187475 -- best acc so far 52.7
+Train Epoch:15
+
+[TRAIN] E: [15][ 0/32]	Loss 2.2562e+00 (2.2562e+00)	Acc@1  38.00 ( 38.00)	Acc@5  68.06 ( 68.06)
+[TRAIN] E: [15][31/32]	Loss 2.0359e+00 (2.1477e+00)	Acc@1  39.75 ( 39.89)	Acc@5  70.50 ( 70.27)
+[EVAL] E: [15][0/4]	Loss 1.9974e+00 (1.9974e+00)	Acc@1  51.56 ( 51.56)	Acc@5  79.69 ( 79.69)
+[EVAL] E: [15][3/4]	Loss 2.0349e+00 (1.9918e+00)	Acc@1  47.50 ( 49.80)	Acc@5  82.50 ( 80.16)
+		 Test evaluation at end of epoch: latest_acc:49.8 LR=0.040630934270713785 -- best acc so far 52.7
+Train Epoch:16
+
+[TRAIN] E: [16][ 0/32]	Loss 2.1499e+00 (2.1499e+00)	Acc@1  37.62 ( 37.62)	Acc@5  69.12 ( 69.12)
+[TRAIN] E: [16][31/32]	Loss 2.0421e+00 (2.0699e+00)	Acc@1  40.00 ( 41.01)	Acc@5  72.50 ( 71.06)
+[EVAL] E: [16][0/4]	Loss 1.8887e+00 (1.8887e+00)	Acc@1  52.69 ( 52.69)	Acc@5  81.56 ( 81.56)
+[EVAL] E: [16][3/4]	Loss 1.8600e+00 (1.8634e+00)	Acc@1  47.00 ( 51.68)	Acc@5  84.00 ( 81.78)
+		 Test evaluation at end of epoch: latest_acc:51.68 LR=0.01812880051256549 -- best acc so far 52.7
+Train Epoch:17
+
+[TRAIN] E: [17][ 0/32]	Loss 2.0891e+00 (2.0891e+00)	Acc@1  41.12 ( 41.12)	Acc@5  71.94 ( 71.94)
+[TRAIN] E: [17][31/32]	Loss 1.9732e+00 (2.0306e+00)	Acc@1  40.25 ( 41.58)	Acc@5  72.25 ( 71.59)
+[EVAL] E: [17][0/4]	Loss 1.8326e+00 (1.8326e+00)	Acc@1  52.62 ( 52.62)	Acc@5  82.25 ( 82.25)
+[EVAL] E: [17][3/4]	Loss 1.7934e+00 (1.7951e+00)	Acc@1  47.00 ( 52.36)	Acc@5  86.00 ( 82.86)
+		 Test evaluation at end of epoch: latest_acc:52.36 LR=0.003511175705587429 -- best acc so far 52.7
+Train Epoch:18
+
+[TRAIN] E: [18][ 0/32]	Loss 2.0160e+00 (2.0160e+00)	Acc@1  41.88 ( 41.88)	Acc@5  72.50 ( 72.50)
+[TRAIN] E: [18][31/32]	Loss 1.9966e+00 (2.0028e+00)	Acc@1  43.00 ( 41.95)	Acc@5  72.00 ( 72.01)
+[EVAL] E: [18][0/4]	Loss 1.8121e+00 (1.8121e+00)	Acc@1  53.81 ( 53.81)	Acc@5  82.44 ( 82.44)
+[EVAL] E: [18][3/4]	Loss 1.7804e+00 (1.7763e+00)	Acc@1  48.50 ( 52.70)	Acc@5  86.00 ( 83.12)
+		 Test evaluation at end of epoch: latest_acc:52.7 LR=0.00039426493427610057 -- best acc so far 52.7
+Train Epoch:19
+
+[TRAIN] E: [19][ 0/32]	Loss 2.0124e+00 (2.0124e+00)	Acc@1  42.94 ( 42.94)	Acc@5  72.75 ( 72.75)
+[TRAIN] E: [19][31/32]	Loss 2.0211e+00 (1.9993e+00)	Acc@1  37.25 ( 41.77)	Acc@5  67.75 ( 71.94)
+[EVAL] E: [19][0/4]	Loss 1.8187e+00 (1.8187e+00)	Acc@1  53.50 ( 53.50)	Acc@5  82.19 ( 82.19)
+[EVAL] E: [19][3/4]	Loss 1.7947e+00 (1.7794e+00)	Acc@1  47.00 ( 52.78)	Acc@5  86.00 ( 82.82)
+		 Test evaluation at end of epoch: latest_acc:52.78 LR=0.009549150281252607 -- best acc so far 52.78
+Train Epoch:20
+
+[TRAIN] E: [20][ 0/32]	Loss 1.9965e+00 (1.9965e+00)	Acc@1  40.50 ( 40.50)	Acc@5  71.12 ( 71.12)
+[TRAIN] E: [20][31/32]	Loss 2.0620e+00 (2.0115e+00)	Acc@1  42.00 ( 41.76)	Acc@5  69.25 ( 71.47)
+[EVAL] E: [20][0/4]	Loss 1.8717e+00 (1.8717e+00)	Acc@1  53.06 ( 53.06)	Acc@5  80.75 ( 80.75)
+[EVAL] E: [20][3/4]	Loss 1.8602e+00 (1.8377e+00)	Acc@1  45.50 ( 52.32)	Acc@5  86.50 ( 81.98)
+		 Test evaluation at end of epoch: latest_acc:52.32 LR=0.02871103542174635 -- best acc so far 52.78
+Train Epoch:21
+
+[TRAIN] E: [21][ 0/32]	Loss 1.9796e+00 (1.9796e+00)	Acc@1  41.56 ( 41.56)	Acc@5  71.94 ( 71.94)
+[TRAIN] E: [21][31/32]	Loss 1.9919e+00 (2.0522e+00)	Acc@1  41.50 ( 41.18)	Acc@5  70.50 ( 71.50)
+[EVAL] E: [21][0/4]	Loss 1.9250e+00 (1.9250e+00)	Acc@1  51.00 ( 51.00)	Acc@5  80.69 ( 80.69)
+[EVAL] E: [21][3/4]	Loss 1.9139e+00 (1.9107e+00)	Acc@1  44.50 ( 50.36)	Acc@5  84.00 ( 80.88)
+		 Test evaluation at end of epoch: latest_acc:50.36 LR=0.05313952597646559 -- best acc so far 52.78
+Train Epoch:22
+
+[TRAIN] E: [22][ 0/32]	Loss 2.1133e+00 (2.1133e+00)	Acc@1  40.44 ( 40.44)	Acc@5  72.69 ( 72.69)
+[TRAIN] E: [22][31/32]	Loss 2.1662e+00 (2.1248e+00)	Acc@1  38.25 ( 40.07)	Acc@5  66.75 ( 70.20)
+[EVAL] E: [22][0/4]	Loss 2.3001e+00 (2.3001e+00)	Acc@1  47.00 ( 47.00)	Acc@5  74.69 ( 74.69)
+[EVAL] E: [22][3/4]	Loss 2.3169e+00 (2.2783e+00)	Acc@1  43.00 ( 45.78)	Acc@5  76.00 ( 75.40)
+		 Test evaluation at end of epoch: latest_acc:45.78 LR=0.07679133974894974 -- best acc so far 52.78
+Train Epoch:23
+
+[TRAIN] E: [23][ 0/32]	Loss 2.1548e+00 (2.1548e+00)	Acc@1  39.81 ( 39.81)	Acc@5  70.06 ( 70.06)
+[TRAIN] E: [23][31/32]	Loss 2.2167e+00 (2.1907e+00)	Acc@1  34.50 ( 39.20)	Acc@5  67.25 ( 69.57)
+[EVAL] E: [23][0/4]	Loss 2.4209e+00 (2.4209e+00)	Acc@1  44.00 ( 44.00)	Acc@5  76.00 ( 76.00)
+[EVAL] E: [23][3/4]	Loss 2.5169e+00 (2.3601e+00)	Acc@1  42.00 ( 44.28)	Acc@5  73.00 ( 75.86)
+		 Test evaluation at end of epoch: latest_acc:44.28 LR=0.09381533400219308 -- best acc so far 52.78
+Train Epoch:24
+
+[TRAIN] E: [24][ 0/32]	Loss 2.1842e+00 (2.1842e+00)	Acc@1  40.69 ( 40.69)	Acc@5  69.31 ( 69.31)
+[TRAIN] E: [24][31/32]	Loss 2.1745e+00 (2.2710e+00)	Acc@1  44.25 ( 38.80)	Acc@5  72.50 ( 68.70)
+[EVAL] E: [24][0/4]	Loss 2.5289e+00 (2.5289e+00)	Acc@1  41.81 ( 41.81)	Acc@5  74.06 ( 74.06)
+[EVAL] E: [24][3/4]	Loss 2.4666e+00 (2.4617e+00)	Acc@1  40.00 ( 42.90)	Acc@5  73.00 ( 74.26)
+		 Test evaluation at end of epoch: latest_acc:42.9 LR=0.09999999999999992 -- best acc so far 52.78
+Train Epoch:25
+
+[TRAIN] E: [25][ 0/32]	Loss 2.3029e+00 (2.3029e+00)	Acc@1  35.69 ( 35.69)	Acc@5  66.31 ( 66.31)
+[TRAIN] E: [25][31/32]	Loss 2.1768e+00 (2.2435e+00)	Acc@1  40.75 ( 38.91)	Acc@5  72.00 ( 69.12)
+[EVAL] E: [25][0/4]	Loss 2.4359e+00 (2.4359e+00)	Acc@1  44.12 ( 44.12)	Acc@5  75.12 ( 75.12)
+[EVAL] E: [25][3/4]	Loss 2.5004e+00 (2.4015e+00)	Acc@1  38.50 ( 43.94)	Acc@5  72.00 ( 75.30)
+		 Test evaluation at end of epoch: latest_acc:43.94 LR=0.09381533400219305 -- best acc so far 52.78
+Train Epoch:26
+
+[TRAIN] E: [26][ 0/32]	Loss 2.2659e+00 (2.2659e+00)	Acc@1  36.69 ( 36.69)	Acc@5  68.62 ( 68.62)
+[TRAIN] E: [26][31/32]	Loss 2.0244e+00 (2.1946e+00)	Acc@1  41.50 ( 39.30)	Acc@5  69.00 ( 69.57)
+[EVAL] E: [26][0/4]	Loss 2.1366e+00 (2.1366e+00)	Acc@1  49.12 ( 49.12)	Acc@5  77.94 ( 77.94)
+[EVAL] E: [26][3/4]	Loss 1.9839e+00 (2.0782e+00)	Acc@1  46.00 ( 48.12)	Acc@5  83.50 ( 78.94)
+		 Test evaluation at end of epoch: latest_acc:48.12 LR=0.07679133974894974 -- best acc so far 52.78
+Train Epoch:27
+
+[TRAIN] E: [27][ 0/32]	Loss 2.1542e+00 (2.1542e+00)	Acc@1  40.50 ( 40.50)	Acc@5  70.94 ( 70.94)
+[TRAIN] E: [27][31/32]	Loss 2.0424e+00 (2.1320e+00)	Acc@1  38.25 ( 40.02)	Acc@5  69.25 ( 70.09)
+[EVAL] E: [27][0/4]	Loss 1.9708e+00 (1.9708e+00)	Acc@1  51.50 ( 51.50)	Acc@5  80.44 ( 80.44)
+[EVAL] E: [27][3/4]	Loss 1.9293e+00 (1.9500e+00)	Acc@1  47.00 ( 50.12)	Acc@5  82.50 ( 80.60)
+		 Test evaluation at end of epoch: latest_acc:50.12 LR=0.053139525976465575 -- best acc so far 52.78
+Train Epoch:28
+
+[TRAIN] E: [28][ 0/32]	Loss 2.0701e+00 (2.0701e+00)	Acc@1  41.81 ( 41.81)	Acc@5  70.88 ( 70.88)
+[TRAIN] E: [28][31/32]	Loss 1.9534e+00 (2.0759e+00)	Acc@1  39.00 ( 40.75)	Acc@5  73.50 ( 70.88)
+[EVAL] E: [28][0/4]	Loss 1.9254e+00 (1.9254e+00)	Acc@1  50.94 ( 50.94)	Acc@5  81.25 ( 81.25)
+[EVAL] E: [28][3/4]	Loss 1.8036e+00 (1.8844e+00)	Acc@1  47.00 ( 50.88)	Acc@5  86.50 ( 81.60)
+		 Test evaluation at end of epoch: latest_acc:50.88 LR=0.028711035421746293 -- best acc so far 52.78
+Train Epoch:29
+
+[TRAIN] E: [29][ 0/32]	Loss 2.0334e+00 (2.0334e+00)	Acc@1  41.31 ( 41.31)	Acc@5  72.12 ( 72.12)
+[TRAIN] E: [29][31/32]	Loss 1.9574e+00 (2.0113e+00)	Acc@1  42.00 ( 41.48)	Acc@5  75.00 ( 71.55)
+[EVAL] E: [29][0/4]	Loss 1.8109e+00 (1.8109e+00)	Acc@1  54.00 ( 54.00)	Acc@5  81.81 ( 81.81)
+[EVAL] E: [29][3/4]	Loss 1.7499e+00 (1.7771e+00)	Acc@1  49.50 ( 53.18)	Acc@5  88.00 ( 82.66)
+		 Test evaluation at end of epoch: latest_acc:53.18 LR=0.009549150281252682 -- best acc so far 53.18
+Train Epoch:30
+
+[TRAIN] E: [30][ 0/32]	Loss 2.0226e+00 (2.0226e+00)	Acc@1  42.12 ( 42.12)	Acc@5  71.50 ( 71.50)
+[TRAIN] E: [30][31/32]	Loss 1.9437e+00 (1.9810e+00)	Acc@1  41.00 ( 41.92)	Acc@5  72.75 ( 71.62)
+[EVAL] E: [30][0/4]	Loss 1.7968e+00 (1.7968e+00)	Acc@1  53.69 ( 53.69)	Acc@5  82.62 ( 82.62)
+[EVAL] E: [30][3/4]	Loss 1.7064e+00 (1.7522e+00)	Acc@1  50.00 ( 53.18)	Acc@5  88.50 ( 83.52)
+		 Test evaluation at end of epoch: latest_acc:53.18 LR=0.0003942649342761166 -- best acc so far 53.18
+Train Epoch:31
+
+[TRAIN] E: [31][ 0/32]	Loss 1.9932e+00 (1.9932e+00)	Acc@1  41.44 ( 41.44)	Acc@5  72.19 ( 72.19)
+[TRAIN] E: [31][31/32]	Loss 1.8761e+00 (1.9782e+00)	Acc@1  42.50 ( 42.31)	Acc@5  74.25 ( 72.02)
+[EVAL] E: [31][0/4]	Loss 1.7994e+00 (1.7994e+00)	Acc@1  53.75 ( 53.75)	Acc@5  82.31 ( 82.31)
+[EVAL] E: [31][3/4]	Loss 1.7023e+00 (1.7565e+00)	Acc@1  51.00 ( 53.06)	Acc@5  88.50 ( 83.18)
+		 Test evaluation at end of epoch: latest_acc:53.06 LR=0.003511175705587443 -- best acc so far 53.18
+Train Epoch:32
+
+[TRAIN] E: [32][ 0/32]	Loss 1.9236e+00 (1.9236e+00)	Acc@1  42.25 ( 42.25)	Acc@5  72.19 ( 72.19)
+[TRAIN] E: [32][31/32]	Loss 1.9489e+00 (1.9824e+00)	Acc@1  43.00 ( 41.93)	Acc@5  71.50 ( 72.00)
+[EVAL] E: [32][0/4]	Loss 1.8504e+00 (1.8504e+00)	Acc@1  53.00 ( 53.00)	Acc@5  81.75 ( 81.75)
+[EVAL] E: [32][3/4]	Loss 1.7127e+00 (1.8005e+00)	Acc@1  49.50 ( 52.80)	Acc@5  88.50 ( 82.38)
+		 Test evaluation at end of epoch: latest_acc:52.8 LR=0.018128800512565574 -- best acc so far 53.18
+Train Epoch:33
+
+[TRAIN] E: [33][ 0/32]	Loss 1.9746e+00 (1.9746e+00)	Acc@1  41.81 ( 41.81)	Acc@5  71.94 ( 71.94)
+[TRAIN] E: [33][31/32]	Loss 2.1536e+00 (2.0043e+00)	Acc@1  40.00 ( 41.54)	Acc@5  70.50 ( 71.95)
+[EVAL] E: [33][0/4]	Loss 1.9710e+00 (1.9710e+00)	Acc@1  50.94 ( 50.94)	Acc@5  79.06 ( 79.06)
+[EVAL] E: [33][3/4]	Loss 1.8121e+00 (1.9102e+00)	Acc@1  53.50 ( 50.84)	Acc@5  86.50 ( 80.54)
+		 Test evaluation at end of epoch: latest_acc:50.84 LR=0.040630934270713875 -- best acc so far 53.18
+Train Epoch:34
+
+[TRAIN] E: [34][ 0/32]	Loss 2.0560e+00 (2.0560e+00)	Acc@1  39.62 ( 39.62)	Acc@5  69.50 ( 69.50)
+[TRAIN] E: [34][31/32]	Loss 2.0204e+00 (2.0373e+00)	Acc@1  44.25 ( 41.19)	Acc@5  74.25 ( 71.05)
+[EVAL] E: [34][0/4]	Loss 1.9698e+00 (1.9698e+00)	Acc@1  50.81 ( 50.81)	Acc@5  80.44 ( 80.44)
+[EVAL] E: [34][3/4]	Loss 1.8334e+00 (1.9148e+00)	Acc@1  48.00 ( 50.54)	Acc@5  86.50 ( 81.36)
+		 Test evaluation at end of epoch: latest_acc:50.54 LR=0.06545084971874733 -- best acc so far 53.18
+Train Epoch:35
+
+[TRAIN] E: [35][ 0/32]	Loss 2.0561e+00 (2.0561e+00)	Acc@1  40.31 ( 40.31)	Acc@5  72.12 ( 72.12)
+[TRAIN] E: [35][31/32]	Loss 2.0779e+00 (2.1230e+00)	Acc@1  43.50 ( 40.16)	Acc@5  73.25 ( 70.40)
+[EVAL] E: [35][0/4]	Loss 2.3262e+00 (2.3262e+00)	Acc@1  46.44 ( 46.44)	Acc@5  76.19 ( 76.19)
+[EVAL] E: [35][3/4]	Loss 2.2391e+00 (2.2509e+00)	Acc@1  45.00 ( 46.56)	Acc@5  79.00 ( 77.22)
+		 Test evaluation at end of epoch: latest_acc:46.56 LR=0.08644843137107051 -- best acc so far 53.18
+Train Epoch:36
+
+[TRAIN] E: [36][ 0/32]	Loss 2.1520e+00 (2.1520e+00)	Acc@1  39.19 ( 39.19)	Acc@5  72.19 ( 72.19)
+[TRAIN] E: [36][31/32]	Loss 2.0058e+00 (2.2428e+00)	Acc@1  42.75 ( 38.63)	Acc@5  70.25 ( 68.92)
+[EVAL] E: [36][0/4]	Loss 2.2178e+00 (2.2178e+00)	Acc@1  48.62 ( 48.62)	Acc@5  77.12 ( 77.12)
+[EVAL] E: [36][3/4]	Loss 2.2928e+00 (2.1862e+00)	Acc@1  42.00 ( 47.20)	Acc@5  79.00 ( 77.72)
+		 Test evaluation at end of epoch: latest_acc:47.2 LR=0.09842915805643154 -- best acc so far 53.18
+Train Epoch:37
+
+[TRAIN] E: [37][ 0/32]	Loss 2.2858e+00 (2.2858e+00)	Acc@1  35.94 ( 35.94)	Acc@5  69.69 ( 69.69)
+[TRAIN] E: [37][31/32]	Loss 2.3660e+00 (2.2274e+00)	Acc@1  36.75 ( 38.64)	Acc@5  67.25 ( 69.13)
+[EVAL] E: [37][0/4]	Loss 2.8180e+00 (2.8180e+00)	Acc@1  40.38 ( 40.38)	Acc@5  69.94 ( 69.94)
+[EVAL] E: [37][3/4]	Loss 2.5095e+00 (2.7092e+00)	Acc@1  43.00 ( 41.12)	Acc@5  73.00 ( 71.90)
+		 Test evaluation at end of epoch: latest_acc:41.12 LR=0.09842915805643157 -- best acc so far 53.18
+Train Epoch:38
+
+[TRAIN] E: [38][ 0/32]	Loss 2.2840e+00 (2.2840e+00)	Acc@1  37.44 ( 37.44)	Acc@5  68.81 ( 68.81)
+[TRAIN] E: [38][31/32]	Loss 2.0754e+00 (2.1946e+00)	Acc@1  39.25 ( 38.90)	Acc@5  71.50 ( 69.31)
+[EVAL] E: [38][0/4]	Loss 2.7253e+00 (2.7253e+00)	Acc@1  42.94 ( 42.94)	Acc@5  72.12 ( 72.12)
+[EVAL] E: [38][3/4]	Loss 2.5344e+00 (2.6225e+00)	Acc@1  38.50 ( 42.30)	Acc@5  76.50 ( 73.44)
+		 Test evaluation at end of epoch: latest_acc:42.3 LR=0.08644843137107056 -- best acc so far 53.18
+Train Epoch:39
+
+[TRAIN] E: [39][ 0/32]	Loss 2.1462e+00 (2.1462e+00)	Acc@1  41.06 ( 41.06)	Acc@5  71.31 ( 71.31)
+[TRAIN] E: [39][31/32]	Loss 2.0691e+00 (2.1471e+00)	Acc@1  38.00 ( 39.72)	Acc@5  67.75 ( 69.93)
+[EVAL] E: [39][0/4]	Loss 2.1799e+00 (2.1799e+00)	Acc@1  47.00 ( 47.00)	Acc@5  77.75 ( 77.75)
+[EVAL] E: [39][3/4]	Loss 2.1299e+00 (2.0831e+00)	Acc@1  43.50 ( 47.98)	Acc@5  78.00 ( 79.18)
+		 Test evaluation at end of epoch: latest_acc:47.98 LR=0.06545084971874734 -- best acc so far 53.18
+Train Epoch:40
+
+[TRAIN] E: [40][ 0/32]	Loss 2.0645e+00 (2.0645e+00)	Acc@1  43.56 ( 43.56)	Acc@5  73.06 ( 73.06)
+[TRAIN] E: [40][31/32]	Loss 2.0572e+00 (2.0980e+00)	Acc@1  39.00 ( 40.56)	Acc@5  69.00 ( 70.94)
+[EVAL] E: [40][0/4]	Loss 2.0330e+00 (2.0330e+00)	Acc@1  50.31 ( 50.31)	Acc@5  80.31 ( 80.31)
+[EVAL] E: [40][3/4]	Loss 1.8943e+00 (1.9699e+00)	Acc@1  49.50 ( 49.66)	Acc@5  86.00 ( 80.90)
+		 Test evaluation at end of epoch: latest_acc:49.66 LR=0.0406309342707139 -- best acc so far 53.18
+Train Epoch:41
+
+[TRAIN] E: [41][ 0/32]	Loss 2.0954e+00 (2.0954e+00)	Acc@1  40.12 ( 40.12)	Acc@5  71.19 ( 71.19)
+[TRAIN] E: [41][31/32]	Loss 1.9523e+00 (2.0386e+00)	Acc@1  42.25 ( 41.49)	Acc@5  70.50 ( 71.32)
+[EVAL] E: [41][0/4]	Loss 1.8666e+00 (1.8666e+00)	Acc@1  52.19 ( 52.19)	Acc@5  81.50 ( 81.50)
+[EVAL] E: [41][3/4]	Loss 1.7743e+00 (1.8089e+00)	Acc@1  49.50 ( 52.24)	Acc@5  88.00 ( 81.88)
+		 Test evaluation at end of epoch: latest_acc:52.24 LR=0.01812880051256547 -- best acc so far 53.18
+Train Epoch:42
+
+[TRAIN] E: [42][ 0/32]	Loss 1.9848e+00 (1.9848e+00)	Acc@1  40.44 ( 40.44)	Acc@5  73.31 ( 73.31)
+[TRAIN] E: [42][31/32]	Loss 1.9961e+00 (1.9823e+00)	Acc@1  42.25 ( 42.08)	Acc@5  74.50 ( 71.95)
+[EVAL] E: [42][0/4]	Loss 1.8093e+00 (1.8093e+00)	Acc@1  53.25 ( 53.25)	Acc@5  82.50 ( 82.50)
+[EVAL] E: [42][3/4]	Loss 1.7681e+00 (1.7626e+00)	Acc@1  48.00 ( 52.88)	Acc@5  87.50 ( 83.20)
+		 Test evaluation at end of epoch: latest_acc:52.88 LR=0.003511175705587468 -- best acc so far 53.18
+Train Epoch:43
+
+[TRAIN] E: [43][ 0/32]	Loss 1.9649e+00 (1.9649e+00)	Acc@1  41.56 ( 41.56)	Acc@5  70.25 ( 70.25)
+[TRAIN] E: [43][31/32]	Loss 1.8443e+00 (1.9678e+00)	Acc@1  45.00 ( 41.87)	Acc@5  74.75 ( 71.87)
+[EVAL] E: [43][0/4]	Loss 1.8109e+00 (1.8109e+00)	Acc@1  53.19 ( 53.19)	Acc@5  82.62 ( 82.62)
+[EVAL] E: [43][3/4]	Loss 1.7585e+00 (1.7584e+00)	Acc@1  49.50 ( 52.94)	Acc@5  89.50 ( 83.46)
+		 Test evaluation at end of epoch: latest_acc:52.94 LR=0.0003942649342761007 -- best acc so far 53.18
+Train Epoch:44
+
+[TRAIN] E: [44][ 0/32]	Loss 1.9864e+00 (1.9864e+00)	Acc@1  39.19 ( 39.19)	Acc@5  70.75 ( 70.75)
+[TRAIN] E: [44][31/32]	Loss 1.9971e+00 (1.9585e+00)	Acc@1  40.25 ( 42.17)	Acc@5  72.50 ( 71.97)
+[EVAL] E: [44][0/4]	Loss 1.8134e+00 (1.8134e+00)	Acc@1  53.50 ( 53.50)	Acc@5  82.44 ( 82.44)
+[EVAL] E: [44][3/4]	Loss 1.7682e+00 (1.7689e+00)	Acc@1  47.50 ( 52.82)	Acc@5  89.00 ( 83.40)
+		 Test evaluation at end of epoch: latest_acc:52.82 LR=0.009549150281252607 -- best acc so far 53.18
+Train Epoch:45
+
+[TRAIN] E: [45][ 0/32]	Loss 1.9242e+00 (1.9242e+00)	Acc@1  41.06 ( 41.06)	Acc@5  69.12 ( 69.12)
+[TRAIN] E: [45][31/32]	Loss 1.9619e+00 (1.9757e+00)	Acc@1  40.75 ( 41.81)	Acc@5  70.25 ( 71.88)
+[EVAL] E: [45][0/4]	Loss 1.8360e+00 (1.8360e+00)	Acc@1  51.81 ( 51.81)	Acc@5  82.25 ( 82.25)
+[EVAL] E: [45][3/4]	Loss 1.8453e+00 (1.8020e+00)	Acc@1  48.50 ( 52.44)	Acc@5  88.00 ( 82.50)
+		 Test evaluation at end of epoch: latest_acc:52.44 LR=0.028711035421746224 -- best acc so far 53.18
+Train Epoch:46
+
+[TRAIN] E: [46][ 0/32]	Loss 2.0229e+00 (2.0229e+00)	Acc@1  40.88 ( 40.88)	Acc@5  70.25 ( 70.25)
+[TRAIN] E: [46][31/32]	Loss 1.9774e+00 (2.0046e+00)	Acc@1  39.75 ( 41.60)	Acc@5  70.00 ( 71.62)
+[EVAL] E: [46][0/4]	Loss 1.9088e+00 (1.9088e+00)	Acc@1  51.56 ( 51.56)	Acc@5  81.62 ( 81.62)
+[EVAL] E: [46][3/4]	Loss 1.8849e+00 (1.8503e+00)	Acc@1  45.50 ( 51.40)	Acc@5  86.50 ( 81.98)
+		 Test evaluation at end of epoch: latest_acc:51.4 LR=0.053139525976465714 -- best acc so far 53.18
+Train Epoch:47
+
+[TRAIN] E: [47][ 0/32]	Loss 2.0549e+00 (2.0549e+00)	Acc@1  41.44 ( 41.44)	Acc@5  72.06 ( 72.06)
+[TRAIN] E: [47][31/32]	Loss 2.1195e+00 (2.0697e+00)	Acc@1  38.25 ( 41.04)	Acc@5  66.25 ( 71.03)
+[EVAL] E: [47][0/4]	Loss 2.1533e+00 (2.1533e+00)	Acc@1  48.50 ( 48.50)	Acc@5  77.94 ( 77.94)
+[EVAL] E: [47][3/4]	Loss 2.0641e+00 (2.1053e+00)	Acc@1  41.50 ( 48.28)	Acc@5  84.50 ( 78.80)
+		 Test evaluation at end of epoch: latest_acc:48.28 LR=0.07679133974894972 -- best acc so far 53.18
+Train Epoch:48
+
+[TRAIN] E: [48][ 0/32]	Loss 2.0787e+00 (2.0787e+00)	Acc@1  41.31 ( 41.31)	Acc@5  70.94 ( 70.94)
+[TRAIN] E: [48][31/32]	Loss 2.1718e+00 (2.1378e+00)	Acc@1  37.50 ( 39.70)	Acc@5  66.00 ( 69.89)
+[EVAL] E: [48][0/4]	Loss 2.6377e+00 (2.6377e+00)	Acc@1  40.06 ( 40.06)	Acc@5  72.75 ( 72.75)
+[EVAL] E: [48][3/4]	Loss 2.5876e+00 (2.5954e+00)	Acc@1  38.50 ( 40.78)	Acc@5  72.50 ( 71.38)
+		 Test evaluation at end of epoch: latest_acc:40.78 LR=0.0938153340021931 -- best acc so far 53.18
+Train Epoch:49
+
+[TRAIN] E: [49][ 0/32]	Loss 2.1335e+00 (2.1335e+00)	Acc@1  38.44 ( 38.44)	Acc@5  69.38 ( 69.38)
+[TRAIN] E: [49][31/32]	Loss 2.1530e+00 (2.1911e+00)	Acc@1  39.50 ( 39.19)	Acc@5  71.75 ( 69.53)
+[EVAL] E: [49][0/4]	Loss 2.1796e+00 (2.1796e+00)	Acc@1  47.44 ( 47.44)	Acc@5  77.94 ( 77.94)
+[EVAL] E: [49][3/4]	Loss 2.1918e+00 (2.1248e+00)	Acc@1  47.50 ( 47.56)	Acc@5  80.00 ( 77.94)
+		 Test evaluation at end of epoch: latest_acc:47.56 LR=0.09999999999999995 -- best acc so far 53.18
+Train Epoch:50
+
+[TRAIN] E: [50][ 0/32]	Loss 2.1811e+00 (2.1811e+00)	Acc@1  37.94 ( 37.94)	Acc@5  67.88 ( 67.88)
+[TRAIN] E: [50][31/32]	Loss 2.2040e+00 (2.2003e+00)	Acc@1  37.00 ( 39.25)	Acc@5  63.25 ( 69.45)
+[EVAL] E: [50][0/4]	Loss 2.4474e+00 (2.4474e+00)	Acc@1  45.62 ( 45.62)	Acc@5  75.50 ( 75.50)
+[EVAL] E: [50][3/4]	Loss 2.2041e+00 (2.3644e+00)	Acc@1  41.50 ( 44.78)	Acc@5  78.50 ( 76.04)
+		 Test evaluation at end of epoch: latest_acc:44.78 LR=0.09381533400219311 -- best acc so far 53.18
+Train Epoch:51
+
+[TRAIN] E: [51][ 0/32]	Loss 2.1142e+00 (2.1142e+00)	Acc@1  40.31 ( 40.31)	Acc@5  70.25 ( 70.25)
+[TRAIN] E: [51][31/32]	Loss 2.0907e+00 (2.1497e+00)	Acc@1  41.25 ( 39.70)	Acc@5  71.00 ( 69.96)
+[EVAL] E: [51][0/4]	Loss 2.3944e+00 (2.3944e+00)	Acc@1  46.44 ( 46.44)	Acc@5  75.19 ( 75.19)
+[EVAL] E: [51][3/4]	Loss 2.3241e+00 (2.3214e+00)	Acc@1  44.00 ( 45.62)	Acc@5  78.50 ( 77.18)
+		 Test evaluation at end of epoch: latest_acc:45.62 LR=0.07679133974894974 -- best acc so far 53.18
+Train Epoch:52
+
+[TRAIN] E: [52][ 0/32]	Loss 2.1532e+00 (2.1532e+00)	Acc@1  40.00 ( 40.00)	Acc@5  68.94 ( 68.94)
+[TRAIN] E: [52][31/32]	Loss 2.1605e+00 (2.1050e+00)	Acc@1  37.75 ( 40.21)	Acc@5  66.50 ( 70.36)
+[EVAL] E: [52][0/4]	Loss 2.1433e+00 (2.1433e+00)	Acc@1  46.62 ( 46.62)	Acc@5  77.06 ( 77.06)
+[EVAL] E: [52][3/4]	Loss 2.1060e+00 (2.0866e+00)	Acc@1  40.00 ( 47.14)	Acc@5  83.00 ( 78.22)
+		 Test evaluation at end of epoch: latest_acc:47.14 LR=0.05313952597646558 -- best acc so far 53.18
+Train Epoch:53
+
+[TRAIN] E: [53][ 0/32]	Loss 2.1016e+00 (2.1016e+00)	Acc@1  41.44 ( 41.44)	Acc@5  70.44 ( 70.44)
+[TRAIN] E: [53][31/32]	Loss 2.1392e+00 (2.0505e+00)	Acc@1  37.25 ( 41.02)	Acc@5  66.50 ( 71.10)
+[EVAL] E: [53][0/4]	Loss 1.8488e+00 (1.8488e+00)	Acc@1  53.56 ( 53.56)	Acc@5  81.19 ( 81.19)
+[EVAL] E: [53][3/4]	Loss 1.8061e+00 (1.7992e+00)	Acc@1  50.00 ( 52.52)	Acc@5  85.50 ( 82.10)
+		 Test evaluation at end of epoch: latest_acc:52.52 LR=0.02871103542174643 -- best acc so far 53.18
+Train Epoch:54
+
+[TRAIN] E: [54][ 0/32]	Loss 2.0047e+00 (2.0047e+00)	Acc@1  40.19 ( 40.19)	Acc@5  70.38 ( 70.38)
+[TRAIN] E: [54][31/32]	Loss 1.9743e+00 (1.9879e+00)	Acc@1  40.50 ( 41.92)	Acc@5  70.50 ( 71.69)
+[EVAL] E: [54][0/4]	Loss 1.8038e+00 (1.8038e+00)	Acc@1  54.56 ( 54.56)	Acc@5  82.50 ( 82.50)
+[EVAL] E: [54][3/4]	Loss 1.7766e+00 (1.7657e+00)	Acc@1  51.50 ( 53.58)	Acc@5  88.00 ( 83.12)
+		 Test evaluation at end of epoch: latest_acc:53.58 LR=0.009549150281252652 -- best acc so far 53.58
+Train Epoch:55
+
+[TRAIN] E: [55][ 0/32]	Loss 1.9724e+00 (1.9724e+00)	Acc@1  41.62 ( 41.62)	Acc@5  73.81 ( 73.81)
+[TRAIN] E: [55][31/32]	Loss 1.9194e+00 (1.9550e+00)	Acc@1  41.50 ( 41.92)	Acc@5  71.50 ( 72.22)
+[EVAL] E: [55][0/4]	Loss 1.7927e+00 (1.7927e+00)	Acc@1  54.62 ( 54.62)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [55][3/4]	Loss 1.7470e+00 (1.7397e+00)	Acc@1  51.50 ( 54.32)	Acc@5  89.00 ( 83.48)
+		 Test evaluation at end of epoch: latest_acc:54.32 LR=0.0003942649342761115 -- best acc so far 54.32
+Train Epoch:56
+
+[TRAIN] E: [56][ 0/32]	Loss 1.9665e+00 (1.9665e+00)	Acc@1  41.69 ( 41.69)	Acc@5  69.12 ( 69.12)
+[TRAIN] E: [56][31/32]	Loss 1.8829e+00 (1.9397e+00)	Acc@1  40.25 ( 42.57)	Acc@5  72.75 ( 72.26)
+[EVAL] E: [56][0/4]	Loss 1.7837e+00 (1.7837e+00)	Acc@1  54.81 ( 54.81)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [56][3/4]	Loss 1.7476e+00 (1.7353e+00)	Acc@1  50.00 ( 54.12)	Acc@5  87.50 ( 83.72)
+		 Test evaluation at end of epoch: latest_acc:54.12 LR=0.003511175705587373 -- best acc so far 54.32
+Train Epoch:57
+
+[TRAIN] E: [57][ 0/32]	Loss 1.9234e+00 (1.9234e+00)	Acc@1  42.88 ( 42.88)	Acc@5  72.75 ( 72.75)
+[TRAIN] E: [57][31/32]	Loss 1.8948e+00 (1.9490e+00)	Acc@1  42.50 ( 42.10)	Acc@5  75.00 ( 72.33)
+[EVAL] E: [57][0/4]	Loss 1.8325e+00 (1.8325e+00)	Acc@1  53.94 ( 53.94)	Acc@5  82.62 ( 82.62)
+[EVAL] E: [57][3/4]	Loss 1.8097e+00 (1.7788e+00)	Acc@1  49.50 ( 53.44)	Acc@5  87.00 ( 83.24)
+		 Test evaluation at end of epoch: latest_acc:53.44 LR=0.01812880051256556 -- best acc so far 54.32
+Train Epoch:58
+
+[TRAIN] E: [58][ 0/32]	Loss 1.9373e+00 (1.9373e+00)	Acc@1  42.56 ( 42.56)	Acc@5  71.88 ( 71.88)
+[TRAIN] E: [58][31/32]	Loss 2.0004e+00 (1.9669e+00)	Acc@1  40.75 ( 41.95)	Acc@5  72.25 ( 71.99)
+[EVAL] E: [58][0/4]	Loss 1.9513e+00 (1.9513e+00)	Acc@1  51.56 ( 51.56)	Acc@5  80.75 ( 80.75)
+[EVAL] E: [58][3/4]	Loss 1.8677e+00 (1.8944e+00)	Acc@1  48.50 ( 51.96)	Acc@5  83.00 ( 81.14)
+		 Test evaluation at end of epoch: latest_acc:51.96 LR=0.040630934270713695 -- best acc so far 54.32
+Train Epoch:59
+
+[TRAIN] E: [59][ 0/32]	Loss 2.0104e+00 (2.0104e+00)	Acc@1  40.38 ( 40.38)	Acc@5  69.94 ( 69.94)
+[TRAIN] E: [59][31/32]	Loss 2.0507e+00 (2.0111e+00)	Acc@1  45.75 ( 41.70)	Acc@5  72.25 ( 71.56)
+[EVAL] E: [59][0/4]	Loss 2.1479e+00 (2.1479e+00)	Acc@1  48.88 ( 48.88)	Acc@5  78.19 ( 78.19)
+[EVAL] E: [59][3/4]	Loss 2.1079e+00 (2.1058e+00)	Acc@1  45.50 ( 48.06)	Acc@5  83.00 ( 79.04)
+		 Test evaluation at end of epoch: latest_acc:48.06 LR=0.06545084971874716 -- best acc so far 54.32
+Train Epoch:60
+
+[TRAIN] E: [60][ 0/32]	Loss 2.0783e+00 (2.0783e+00)	Acc@1  42.75 ( 42.75)	Acc@5  71.06 ( 71.06)
+[TRAIN] E: [60][31/32]	Loss 2.0874e+00 (2.0813e+00)	Acc@1  43.25 ( 40.35)	Acc@5  73.00 ( 70.71)
+[EVAL] E: [60][0/4]	Loss 2.1326e+00 (2.1326e+00)	Acc@1  49.62 ( 49.62)	Acc@5  78.56 ( 78.56)
+[EVAL] E: [60][3/4]	Loss 2.1293e+00 (2.0803e+00)	Acc@1  43.50 ( 49.08)	Acc@5  78.50 ( 78.92)
+		 Test evaluation at end of epoch: latest_acc:49.08 LR=0.08644843137107064 -- best acc so far 54.32
+Train Epoch:61
+
+[TRAIN] E: [61][ 0/32]	Loss 2.1188e+00 (2.1188e+00)	Acc@1  39.56 ( 39.56)	Acc@5  71.44 ( 71.44)
+[TRAIN] E: [61][31/32]	Loss 2.1647e+00 (2.1510e+00)	Acc@1  36.75 ( 39.63)	Acc@5  69.50 ( 69.95)
+[EVAL] E: [61][0/4]	Loss 2.4322e+00 (2.4322e+00)	Acc@1  43.69 ( 43.69)	Acc@5  72.75 ( 72.75)
+[EVAL] E: [61][3/4]	Loss 2.4242e+00 (2.4305e+00)	Acc@1  37.00 ( 42.76)	Acc@5  76.00 ( 72.54)
+		 Test evaluation at end of epoch: latest_acc:42.76 LR=0.0984291580564316 -- best acc so far 54.32
+Train Epoch:62
+
+[TRAIN] E: [62][ 0/32]	Loss 2.1523e+00 (2.1523e+00)	Acc@1  38.88 ( 38.88)	Acc@5  68.50 ( 68.50)
+[TRAIN] E: [62][31/32]	Loss 2.2271e+00 (2.1890e+00)	Acc@1  37.25 ( 39.32)	Acc@5  66.75 ( 69.57)
+[EVAL] E: [62][0/4]	Loss 2.3288e+00 (2.3288e+00)	Acc@1  45.94 ( 45.94)	Acc@5  74.31 ( 74.31)
+[EVAL] E: [62][3/4]	Loss 2.3505e+00 (2.2400e+00)	Acc@1  41.50 ( 46.26)	Acc@5  76.50 ( 75.96)
+		 Test evaluation at end of epoch: latest_acc:46.26 LR=0.09842915805643157 -- best acc so far 54.32
+Train Epoch:63
+
+[TRAIN] E: [63][ 0/32]	Loss 2.1758e+00 (2.1758e+00)	Acc@1  38.94 ( 38.94)	Acc@5  69.44 ( 69.44)
+[TRAIN] E: [63][31/32]	Loss 2.1526e+00 (2.1471e+00)	Acc@1  38.50 ( 40.14)	Acc@5  69.75 ( 69.89)
+[EVAL] E: [63][0/4]	Loss 2.4850e+00 (2.4850e+00)	Acc@1  43.69 ( 43.69)	Acc@5  74.44 ( 74.44)
+[EVAL] E: [63][3/4]	Loss 2.3647e+00 (2.4109e+00)	Acc@1  38.50 ( 43.62)	Acc@5  77.50 ( 75.20)
+		 Test evaluation at end of epoch: latest_acc:43.62 LR=0.08644843137107054 -- best acc so far 54.32
+Train Epoch:64
+
+[TRAIN] E: [64][ 0/32]	Loss 2.0771e+00 (2.0771e+00)	Acc@1  40.75 ( 40.75)	Acc@5  71.00 ( 71.00)
+[TRAIN] E: [64][31/32]	Loss 2.0500e+00 (2.1223e+00)	Acc@1  41.25 ( 40.20)	Acc@5  72.00 ( 70.46)
+[EVAL] E: [64][0/4]	Loss 2.1170e+00 (2.1170e+00)	Acc@1  49.94 ( 49.94)	Acc@5  78.81 ( 78.81)
+[EVAL] E: [64][3/4]	Loss 1.9981e+00 (2.0638e+00)	Acc@1  46.00 ( 49.62)	Acc@5  81.50 ( 79.32)
+		 Test evaluation at end of epoch: latest_acc:49.62 LR=0.06545084971874744 -- best acc so far 54.32
+Train Epoch:65
+
+[TRAIN] E: [65][ 0/32]	Loss 2.0717e+00 (2.0717e+00)	Acc@1  39.62 ( 39.62)	Acc@5  71.25 ( 71.25)
+[TRAIN] E: [65][31/32]	Loss 2.0576e+00 (2.0648e+00)	Acc@1  39.50 ( 40.56)	Acc@5  70.75 ( 70.91)
+[EVAL] E: [65][0/4]	Loss 1.9956e+00 (1.9956e+00)	Acc@1  51.50 ( 51.50)	Acc@5  80.38 ( 80.38)
+[EVAL] E: [65][3/4]	Loss 1.9484e+00 (1.9370e+00)	Acc@1  50.50 ( 50.90)	Acc@5  83.00 ( 80.76)
+		 Test evaluation at end of epoch: latest_acc:50.9 LR=0.04063093427071363 -- best acc so far 54.32
+Train Epoch:66
+
+[TRAIN] E: [66][ 0/32]	Loss 2.0036e+00 (2.0036e+00)	Acc@1  39.69 ( 39.69)	Acc@5  70.06 ( 70.06)
+[TRAIN] E: [66][31/32]	Loss 2.0659e+00 (2.0113e+00)	Acc@1  41.00 ( 41.32)	Acc@5  73.00 ( 71.30)
+[EVAL] E: [66][0/4]	Loss 1.8198e+00 (1.8198e+00)	Acc@1  54.31 ( 54.31)	Acc@5  82.56 ( 82.56)
+[EVAL] E: [66][3/4]	Loss 1.7671e+00 (1.7731e+00)	Acc@1  50.50 ( 53.62)	Acc@5  86.00 ( 83.04)
+		 Test evaluation at end of epoch: latest_acc:53.62 LR=0.018128800512565508 -- best acc so far 54.32
+Train Epoch:67
+
+[TRAIN] E: [67][ 0/32]	Loss 1.9663e+00 (1.9663e+00)	Acc@1  41.31 ( 41.31)	Acc@5  72.12 ( 72.12)
+[TRAIN] E: [67][31/32]	Loss 1.9255e+00 (1.9567e+00)	Acc@1  43.50 ( 42.43)	Acc@5  74.50 ( 72.43)
+[EVAL] E: [67][0/4]	Loss 1.7987e+00 (1.7987e+00)	Acc@1  54.31 ( 54.31)	Acc@5  83.12 ( 83.12)
+[EVAL] E: [67][3/4]	Loss 1.7328e+00 (1.7434e+00)	Acc@1  49.50 ( 54.14)	Acc@5  89.00 ( 83.62)
+		 Test evaluation at end of epoch: latest_acc:54.14 LR=0.003511175705587348 -- best acc so far 54.32
+Train Epoch:68
+
+[TRAIN] E: [68][ 0/32]	Loss 1.8768e+00 (1.8768e+00)	Acc@1  43.81 ( 43.81)	Acc@5  74.12 ( 74.12)
+[TRAIN] E: [68][31/32]	Loss 1.9341e+00 (1.9317e+00)	Acc@1  47.75 ( 42.54)	Acc@5  76.00 ( 72.35)
+[EVAL] E: [68][0/4]	Loss 1.7931e+00 (1.7931e+00)	Acc@1  54.38 ( 54.38)	Acc@5  83.06 ( 83.06)
+[EVAL] E: [68][3/4]	Loss 1.7281e+00 (1.7351e+00)	Acc@1  51.00 ( 54.08)	Acc@5  87.50 ( 83.72)
+		 Test evaluation at end of epoch: latest_acc:54.08 LR=0.00039426493427647207 -- best acc so far 54.32
+Train Epoch:69
+
+[TRAIN] E: [69][ 0/32]	Loss 1.9504e+00 (1.9504e+00)	Acc@1  40.75 ( 40.75)	Acc@5  71.38 ( 71.38)
+[TRAIN] E: [69][31/32]	Loss 1.8459e+00 (1.9320e+00)	Acc@1  44.50 ( 42.47)	Acc@5  73.50 ( 72.28)
+[EVAL] E: [69][0/4]	Loss 1.7947e+00 (1.7947e+00)	Acc@1  53.75 ( 53.75)	Acc@5  82.88 ( 82.88)
+[EVAL] E: [69][3/4]	Loss 1.7435e+00 (1.7365e+00)	Acc@1  47.50 ( 53.80)	Acc@5  88.00 ( 83.58)
+		 Test evaluation at end of epoch: latest_acc:53.8 LR=0.009549150281261186 -- best acc so far 54.32
+Train Epoch:70
+
+[TRAIN] E: [70][ 0/32]	Loss 1.9625e+00 (1.9625e+00)	Acc@1  41.81 ( 41.81)	Acc@5  71.56 ( 71.56)
+[TRAIN] E: [70][31/32]	Loss 1.9886e+00 (1.9454e+00)	Acc@1  41.50 ( 42.32)	Acc@5  70.25 ( 72.22)
+[EVAL] E: [70][0/4]	Loss 1.9234e+00 (1.9234e+00)	Acc@1  52.19 ( 52.19)	Acc@5  80.69 ( 80.69)
+[EVAL] E: [70][3/4]	Loss 1.8565e+00 (1.8555e+00)	Acc@1  49.50 ( 52.24)	Acc@5  85.00 ( 81.80)
+		 Test evaluation at end of epoch: latest_acc:52.24 LR=0.02871103542177237 -- best acc so far 54.32
+Train Epoch:71
+
+[TRAIN] E: [71][ 0/32]	Loss 2.0256e+00 (2.0256e+00)	Acc@1  39.12 ( 39.12)	Acc@5  70.88 ( 70.88)
+[TRAIN] E: [71][31/32]	Loss 2.0877e+00 (1.9870e+00)	Acc@1  41.00 ( 41.74)	Acc@5  68.50 ( 71.71)
+[EVAL] E: [71][0/4]	Loss 1.9562e+00 (1.9562e+00)	Acc@1  52.44 ( 52.44)	Acc@5  80.44 ( 80.44)
+[EVAL] E: [71][3/4]	Loss 1.8738e+00 (1.8890e+00)	Acc@1  46.50 ( 51.74)	Acc@5  86.00 ( 81.42)
+		 Test evaluation at end of epoch: latest_acc:51.74 LR=0.05313952597651352 -- best acc so far 54.32
+Train Epoch:72
+
+[TRAIN] E: [72][ 0/32]	Loss 1.9951e+00 (1.9951e+00)	Acc@1  41.00 ( 41.00)	Acc@5  72.62 ( 72.62)
+[TRAIN] E: [72][31/32]	Loss 2.0481e+00 (2.0598e+00)	Acc@1  39.75 ( 40.79)	Acc@5  69.50 ( 70.83)
+[EVAL] E: [72][0/4]	Loss 2.4041e+00 (2.4041e+00)	Acc@1  45.81 ( 45.81)	Acc@5  74.56 ( 74.56)
+[EVAL] E: [72][3/4]	Loss 2.1995e+00 (2.3030e+00)	Acc@1  44.00 ( 46.12)	Acc@5  79.50 ( 76.60)
+		 Test evaluation at end of epoch: latest_acc:46.12 LR=0.07679133974901889 -- best acc so far 54.32
+Train Epoch:73
+
+[TRAIN] E: [73][ 0/32]	Loss 2.1507e+00 (2.1507e+00)	Acc@1  40.75 ( 40.75)	Acc@5  69.88 ( 69.88)
+[TRAIN] E: [73][31/32]	Loss 2.1248e+00 (2.1308e+00)	Acc@1  38.50 ( 39.89)	Acc@5  69.50 ( 70.11)
+[EVAL] E: [73][0/4]	Loss 2.2252e+00 (2.2252e+00)	Acc@1  48.12 ( 48.12)	Acc@5  76.75 ( 76.75)
+[EVAL] E: [73][3/4]	Loss 2.1590e+00 (2.1693e+00)	Acc@1  46.00 ( 47.80)	Acc@5  76.50 ( 77.86)
+		 Test evaluation at end of epoch: latest_acc:47.8 LR=0.09381533400227778 -- best acc so far 54.32
+Train Epoch:74
+
+[TRAIN] E: [74][ 0/32]	Loss 2.1068e+00 (2.1068e+00)	Acc@1  39.62 ( 39.62)	Acc@5  71.00 ( 71.00)
+[TRAIN] E: [74][31/32]	Loss 2.3092e+00 (2.1563e+00)	Acc@1  35.00 ( 39.64)	Acc@5  69.25 ( 70.07)
+[EVAL] E: [74][0/4]	Loss 2.2810e+00 (2.2810e+00)	Acc@1  45.31 ( 45.31)	Acc@5  76.50 ( 76.50)
+[EVAL] E: [74][3/4]	Loss 2.2116e+00 (2.2054e+00)	Acc@1  41.00 ( 45.98)	Acc@5  79.00 ( 77.44)
+		 Test evaluation at end of epoch: latest_acc:45.98 LR=0.10000000000009004 -- best acc so far 54.32
+Train Epoch:75
+
+[TRAIN] E: [75][ 0/32]	Loss 2.2051e+00 (2.2051e+00)	Acc@1  40.19 ( 40.19)	Acc@5  68.94 ( 68.94)
+[TRAIN] E: [75][31/32]	Loss 2.2107e+00 (2.1587e+00)	Acc@1  41.75 ( 39.63)	Acc@5  72.50 ( 69.90)
+[EVAL] E: [75][0/4]	Loss 2.2643e+00 (2.2643e+00)	Acc@1  46.62 ( 46.62)	Acc@5  75.94 ( 75.94)
+[EVAL] E: [75][3/4]	Loss 2.1223e+00 (2.2195e+00)	Acc@1  45.50 ( 46.32)	Acc@5  79.50 ( 76.84)
+		 Test evaluation at end of epoch: latest_acc:46.32 LR=0.09381533400227775 -- best acc so far 54.32
+Train Epoch:76
+
+[TRAIN] E: [76][ 0/32]	Loss 2.1893e+00 (2.1893e+00)	Acc@1  39.06 ( 39.06)	Acc@5  69.12 ( 69.12)
+[TRAIN] E: [76][31/32]	Loss 2.0592e+00 (2.1482e+00)	Acc@1  40.00 ( 39.61)	Acc@5  67.50 ( 69.65)
+[EVAL] E: [76][0/4]	Loss 2.1008e+00 (2.1008e+00)	Acc@1  49.06 ( 49.06)	Acc@5  79.06 ( 79.06)
+[EVAL] E: [76][3/4]	Loss 1.9760e+00 (2.0346e+00)	Acc@1  45.00 ( 48.88)	Acc@5  87.50 ( 80.04)
+		 Test evaluation at end of epoch: latest_acc:48.88 LR=0.07679133974901896 -- best acc so far 54.32
+Train Epoch:77
+
+[TRAIN] E: [77][ 0/32]	Loss 2.1308e+00 (2.1308e+00)	Acc@1  42.12 ( 42.12)	Acc@5  69.62 ( 69.62)
+[TRAIN] E: [77][31/32]	Loss 2.0610e+00 (2.0806e+00)	Acc@1  41.25 ( 40.52)	Acc@5  73.00 ( 70.51)
+[EVAL] E: [77][0/4]	Loss 1.9255e+00 (1.9255e+00)	Acc@1  51.94 ( 51.94)	Acc@5  80.56 ( 80.56)
+[EVAL] E: [77][3/4]	Loss 1.9164e+00 (1.8850e+00)	Acc@1  46.00 ( 50.92)	Acc@5  83.00 ( 81.22)
+		 Test evaluation at end of epoch: latest_acc:50.92 LR=0.05313952597651367 -- best acc so far 54.32
+Train Epoch:78
+
+[TRAIN] E: [78][ 0/32]	Loss 2.0444e+00 (2.0444e+00)	Acc@1  41.12 ( 41.12)	Acc@5  71.19 ( 71.19)
+[TRAIN] E: [78][31/32]	Loss 1.8490e+00 (2.0109e+00)	Acc@1  45.00 ( 41.23)	Acc@5  76.00 ( 71.10)
+[EVAL] E: [78][0/4]	Loss 1.9440e+00 (1.9440e+00)	Acc@1  51.88 ( 51.88)	Acc@5  81.62 ( 81.62)
+[EVAL] E: [78][3/4]	Loss 1.9155e+00 (1.8918e+00)	Acc@1  48.50 ( 51.44)	Acc@5  85.00 ( 82.28)
+		 Test evaluation at end of epoch: latest_acc:51.44 LR=0.028711035421772155 -- best acc so far 54.32
+Train Epoch:79
+
+[TRAIN] E: [79][ 0/32]	Loss 2.0012e+00 (2.0012e+00)	Acc@1  40.31 ( 40.31)	Acc@5  70.56 ( 70.56)
+[TRAIN] E: [79][31/32]	Loss 1.9436e+00 (1.9651e+00)	Acc@1  43.50 ( 42.05)	Acc@5  70.75 ( 71.89)
+[EVAL] E: [79][0/4]	Loss 1.8171e+00 (1.8171e+00)	Acc@1  53.44 ( 53.44)	Acc@5  82.62 ( 82.62)
+[EVAL] E: [79][3/4]	Loss 1.7549e+00 (1.7598e+00)	Acc@1  48.00 ( 53.20)	Acc@5  86.00 ( 83.08)
+		 Test evaluation at end of epoch: latest_acc:53.2 LR=0.009549150281261276 -- best acc so far 54.32
+Train Epoch:80
+
+[TRAIN] E: [80][ 0/32]	Loss 1.9760e+00 (1.9760e+00)	Acc@1  42.44 ( 42.44)	Acc@5  72.06 ( 72.06)
+[TRAIN] E: [80][31/32]	Loss 1.9021e+00 (1.9286e+00)	Acc@1  43.75 ( 42.44)	Acc@5  73.25 ( 72.22)
+[EVAL] E: [80][0/4]	Loss 1.7828e+00 (1.7828e+00)	Acc@1  53.94 ( 53.94)	Acc@5  83.12 ( 83.12)
+[EVAL] E: [80][3/4]	Loss 1.7542e+00 (1.7315e+00)	Acc@1  48.00 ( 53.78)	Acc@5  86.50 ( 83.72)
+		 Test evaluation at end of epoch: latest_acc:53.78 LR=0.00039426493427648914 -- best acc so far 54.32
+Train Epoch:81
+
+[TRAIN] E: [81][ 0/32]	Loss 1.9229e+00 (1.9229e+00)	Acc@1  43.56 ( 43.56)	Acc@5  73.06 ( 73.06)
+[TRAIN] E: [81][31/32]	Loss 1.8718e+00 (1.9242e+00)	Acc@1  41.25 ( 42.61)	Acc@5  75.50 ( 72.58)
+[EVAL] E: [81][0/4]	Loss 1.7874e+00 (1.7874e+00)	Acc@1  54.12 ( 54.12)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [81][3/4]	Loss 1.7532e+00 (1.7318e+00)	Acc@1  48.00 ( 53.84)	Acc@5  87.00 ( 83.98)
+		 Test evaluation at end of epoch: latest_acc:53.84 LR=0.003511175705590454 -- best acc so far 54.32
+Train Epoch:82
+
+[TRAIN] E: [82][ 0/32]	Loss 1.9374e+00 (1.9374e+00)	Acc@1  43.06 ( 43.06)	Acc@5  72.50 ( 72.50)
+[TRAIN] E: [82][31/32]	Loss 2.0387e+00 (1.9273e+00)	Acc@1  41.25 ( 42.67)	Acc@5  68.75 ( 72.44)
+[EVAL] E: [82][0/4]	Loss 1.7890e+00 (1.7890e+00)	Acc@1  54.19 ( 54.19)	Acc@5  83.19 ( 83.19)
+[EVAL] E: [82][3/4]	Loss 1.7688e+00 (1.7322e+00)	Acc@1  48.50 ( 53.58)	Acc@5  87.50 ( 83.66)
+		 Test evaluation at end of epoch: latest_acc:53.58 LR=0.018128800512581984 -- best acc so far 54.32
+Train Epoch:83
+
+[TRAIN] E: [83][ 0/32]	Loss 1.8865e+00 (1.8865e+00)	Acc@1  42.50 ( 42.50)	Acc@5  73.88 ( 73.88)
+[TRAIN] E: [83][31/32]	Loss 1.9095e+00 (1.9362e+00)	Acc@1  43.75 ( 41.90)	Acc@5  70.00 ( 71.91)
+[EVAL] E: [83][0/4]	Loss 1.8986e+00 (1.8986e+00)	Acc@1  51.94 ( 51.94)	Acc@5  81.50 ( 81.50)
+[EVAL] E: [83][3/4]	Loss 1.8384e+00 (1.8612e+00)	Acc@1  47.50 ( 51.74)	Acc@5  85.00 ( 81.94)
+		 Test evaluation at end of epoch: latest_acc:51.74 LR=0.04063093427075042 -- best acc so far 54.32
+Train Epoch:84
+
+[TRAIN] E: [84][ 0/32]	Loss 1.9433e+00 (1.9433e+00)	Acc@1  43.94 ( 43.94)	Acc@5  73.81 ( 73.81)
+[TRAIN] E: [84][31/32]	Loss 2.0104e+00 (1.9879e+00)	Acc@1  42.50 ( 41.62)	Acc@5  70.25 ( 71.59)
+[EVAL] E: [84][0/4]	Loss 2.0674e+00 (2.0674e+00)	Acc@1  48.69 ( 48.69)	Acc@5  79.25 ( 79.25)
+[EVAL] E: [84][3/4]	Loss 2.0268e+00 (2.0268e+00)	Acc@1  44.00 ( 48.88)	Acc@5  80.50 ( 79.76)
+		 Test evaluation at end of epoch: latest_acc:48.88 LR=0.06545084971880624 -- best acc so far 54.32
+Train Epoch:85
+
+[TRAIN] E: [85][ 0/32]	Loss 1.9471e+00 (1.9471e+00)	Acc@1  40.25 ( 40.25)	Acc@5  70.38 ( 70.38)
+[TRAIN] E: [85][31/32]	Loss 2.1236e+00 (2.0793e+00)	Acc@1  32.75 ( 40.39)	Acc@5  69.25 ( 70.89)
+[EVAL] E: [85][0/4]	Loss 2.3714e+00 (2.3714e+00)	Acc@1  45.62 ( 45.62)	Acc@5  76.06 ( 76.06)
+[EVAL] E: [85][3/4]	Loss 2.3195e+00 (2.3447e+00)	Acc@1  42.50 ( 44.78)	Acc@5  78.50 ( 75.78)
+		 Test evaluation at end of epoch: latest_acc:44.78 LR=0.08644843137114824 -- best acc so far 54.32
+Train Epoch:86
+
+[TRAIN] E: [86][ 0/32]	Loss 2.1112e+00 (2.1112e+00)	Acc@1  40.31 ( 40.31)	Acc@5  70.38 ( 70.38)
+[TRAIN] E: [86][31/32]	Loss 2.1285e+00 (2.1269e+00)	Acc@1  40.25 ( 39.88)	Acc@5  70.50 ( 70.22)
+[EVAL] E: [86][0/4]	Loss 2.1719e+00 (2.1719e+00)	Acc@1  48.19 ( 48.19)	Acc@5  78.31 ( 78.31)
+[EVAL] E: [86][3/4]	Loss 2.1080e+00 (2.1044e+00)	Acc@1  41.50 ( 48.30)	Acc@5  79.00 ( 78.96)
+		 Test evaluation at end of epoch: latest_acc:48.3 LR=0.09842915805652006 -- best acc so far 54.32
+Train Epoch:87
+
+[TRAIN] E: [87][ 0/32]	Loss 2.1539e+00 (2.1539e+00)	Acc@1  40.12 ( 40.12)	Acc@5  70.31 ( 70.31)
+[TRAIN] E: [87][31/32]	Loss 2.1404e+00 (2.1692e+00)	Acc@1  43.50 ( 39.45)	Acc@5  71.00 ( 69.75)
+[EVAL] E: [87][0/4]	Loss 2.1827e+00 (2.1827e+00)	Acc@1  48.38 ( 48.38)	Acc@5  78.38 ( 78.38)
+[EVAL] E: [87][3/4]	Loss 2.0537e+00 (2.1092e+00)	Acc@1  42.00 ( 48.36)	Acc@5  81.00 ( 78.92)
+		 Test evaluation at end of epoch: latest_acc:48.36 LR=0.09842915805652017 -- best acc so far 54.32
+Train Epoch:88
+
+[TRAIN] E: [88][ 0/32]	Loss 2.2314e+00 (2.2314e+00)	Acc@1  39.56 ( 39.56)	Acc@5  67.69 ( 67.69)
+[TRAIN] E: [88][31/32]	Loss 2.2566e+00 (2.1620e+00)	Acc@1  42.75 ( 39.72)	Acc@5  69.75 ( 69.84)
+[EVAL] E: [88][0/4]	Loss 2.4219e+00 (2.4219e+00)	Acc@1  45.56 ( 45.56)	Acc@5  75.38 ( 75.38)
+[EVAL] E: [88][3/4]	Loss 2.1350e+00 (2.3200e+00)	Acc@1  45.00 ( 46.08)	Acc@5  79.50 ( 76.44)
+		 Test evaluation at end of epoch: latest_acc:46.08 LR=0.08644843137114834 -- best acc so far 54.32
+Train Epoch:89
+
+[TRAIN] E: [89][ 0/32]	Loss 2.2236e+00 (2.2236e+00)	Acc@1  39.25 ( 39.25)	Acc@5  68.31 ( 68.31)
+[TRAIN] E: [89][31/32]	Loss 2.1413e+00 (2.1045e+00)	Acc@1  41.00 ( 40.20)	Acc@5  69.75 ( 70.20)
+[EVAL] E: [89][0/4]	Loss 2.1688e+00 (2.1688e+00)	Acc@1  49.69 ( 49.69)	Acc@5  77.81 ( 77.81)
+[EVAL] E: [89][3/4]	Loss 2.2262e+00 (2.1084e+00)	Acc@1  44.00 ( 49.04)	Acc@5  77.00 ( 79.00)
+		 Test evaluation at end of epoch: latest_acc:49.04 LR=0.06545084971880635 -- best acc so far 54.32
+Train Epoch:90
+
+[TRAIN] E: [90][ 0/32]	Loss 2.0505e+00 (2.0505e+00)	Acc@1  41.31 ( 41.31)	Acc@5  70.38 ( 70.38)
+[TRAIN] E: [90][31/32]	Loss 1.9250e+00 (2.0493e+00)	Acc@1  44.75 ( 40.86)	Acc@5  71.25 ( 70.74)
+[EVAL] E: [90][0/4]	Loss 1.9586e+00 (1.9586e+00)	Acc@1  51.56 ( 51.56)	Acc@5  80.06 ( 80.06)
+[EVAL] E: [90][3/4]	Loss 1.7859e+00 (1.9033e+00)	Acc@1  48.50 ( 51.68)	Acc@5  85.00 ( 80.72)
+		 Test evaluation at end of epoch: latest_acc:51.68 LR=0.04063093427075055 -- best acc so far 54.32
+Train Epoch:91
+
+[TRAIN] E: [91][ 0/32]	Loss 1.9373e+00 (1.9373e+00)	Acc@1  40.81 ( 40.81)	Acc@5  72.81 ( 72.81)
+[TRAIN] E: [91][31/32]	Loss 2.0820e+00 (1.9853e+00)	Acc@1  37.25 ( 41.69)	Acc@5  67.25 ( 71.66)
+[EVAL] E: [91][0/4]	Loss 1.9037e+00 (1.9037e+00)	Acc@1  51.69 ( 51.69)	Acc@5  81.00 ( 81.00)
+[EVAL] E: [91][3/4]	Loss 1.7701e+00 (1.8172e+00)	Acc@1  51.00 ( 52.40)	Acc@5  86.00 ( 82.34)
+		 Test evaluation at end of epoch: latest_acc:52.4 LR=0.01812880051258211 -- best acc so far 54.32
+Train Epoch:92
+
+[TRAIN] E: [92][ 0/32]	Loss 1.9673e+00 (1.9673e+00)	Acc@1  44.38 ( 44.38)	Acc@5  71.88 ( 71.88)
+[TRAIN] E: [92][31/32]	Loss 1.9922e+00 (1.9287e+00)	Acc@1  41.00 ( 42.59)	Acc@5  73.75 ( 72.51)
+[EVAL] E: [92][0/4]	Loss 1.7890e+00 (1.7890e+00)	Acc@1  54.00 ( 54.00)	Acc@5  82.44 ( 82.44)
+[EVAL] E: [92][3/4]	Loss 1.7150e+00 (1.7342e+00)	Acc@1  51.00 ( 53.96)	Acc@5  88.50 ( 83.62)
+		 Test evaluation at end of epoch: latest_acc:53.96 LR=0.0035111757055906467 -- best acc so far 54.32
+Train Epoch:93
+
+[TRAIN] E: [93][ 0/32]	Loss 1.8932e+00 (1.8932e+00)	Acc@1  42.38 ( 42.38)	Acc@5  72.81 ( 72.81)
+[TRAIN] E: [93][31/32]	Loss 1.9472e+00 (1.9129e+00)	Acc@1  45.00 ( 42.47)	Acc@5  68.75 ( 72.45)
+[EVAL] E: [93][0/4]	Loss 1.7838e+00 (1.7838e+00)	Acc@1  53.94 ( 53.94)	Acc@5  82.44 ( 82.44)
+[EVAL] E: [93][3/4]	Loss 1.6801e+00 (1.7222e+00)	Acc@1  50.00 ( 54.02)	Acc@5  88.00 ( 83.60)
+		 Test evaluation at end of epoch: latest_acc:54.02 LR=0.0003942649342761173 -- best acc so far 54.32
+Train Epoch:94
+
+[TRAIN] E: [94][ 0/32]	Loss 1.8506e+00 (1.8506e+00)	Acc@1  45.12 ( 45.12)	Acc@5  73.62 ( 73.62)
+[TRAIN] E: [94][31/32]	Loss 1.9781e+00 (1.9109e+00)	Acc@1  40.75 ( 42.37)	Acc@5  73.75 ( 72.32)
+[EVAL] E: [94][0/4]	Loss 1.7875e+00 (1.7875e+00)	Acc@1  53.75 ( 53.75)	Acc@5  82.25 ( 82.25)
+[EVAL] E: [94][3/4]	Loss 1.6722e+00 (1.7322e+00)	Acc@1  51.50 ( 53.98)	Acc@5  88.00 ( 83.52)
+		 Test evaluation at end of epoch: latest_acc:53.98 LR=0.009549150281252574 -- best acc so far 54.32
+Train Epoch:95
+
+[TRAIN] E: [95][ 0/32]	Loss 1.8767e+00 (1.8767e+00)	Acc@1  44.19 ( 44.19)	Acc@5  74.44 ( 74.44)
+[TRAIN] E: [95][31/32]	Loss 1.8835e+00 (1.9256e+00)	Acc@1  44.75 ( 42.33)	Acc@5  70.00 ( 72.21)
+[EVAL] E: [95][0/4]	Loss 1.8610e+00 (1.8610e+00)	Acc@1  52.81 ( 52.81)	Acc@5  81.50 ( 81.50)
+[EVAL] E: [95][3/4]	Loss 1.7124e+00 (1.7976e+00)	Acc@1  49.50 ( 52.70)	Acc@5  87.00 ( 82.14)
+		 Test evaluation at end of epoch: latest_acc:52.7 LR=0.028711035421746172 -- best acc so far 54.32
+Train Epoch:96
+
+[TRAIN] E: [96][ 0/32]	Loss 1.9684e+00 (1.9684e+00)	Acc@1  42.44 ( 42.44)	Acc@5  70.50 ( 70.50)
+[TRAIN] E: [96][31/32]	Loss 2.0019e+00 (1.9698e+00)	Acc@1  39.75 ( 41.77)	Acc@5  72.25 ( 71.80)
+[EVAL] E: [96][0/4]	Loss 1.8978e+00 (1.8978e+00)	Acc@1  51.62 ( 51.62)	Acc@5  82.81 ( 82.81)
+[EVAL] E: [96][3/4]	Loss 1.8838e+00 (1.8757e+00)	Acc@1  46.00 ( 51.56)	Acc@5  84.50 ( 82.18)
+		 Test evaluation at end of epoch: latest_acc:51.56 LR=0.05313952597646566 -- best acc so far 54.32
+Train Epoch:97
+
+[TRAIN] E: [97][ 0/32]	Loss 1.9660e+00 (1.9660e+00)	Acc@1  42.00 ( 42.00)	Acc@5  71.38 ( 71.38)
+[TRAIN] E: [97][31/32]	Loss 1.9849e+00 (2.0169e+00)	Acc@1  42.75 ( 41.20)	Acc@5  71.50 ( 71.38)
+[EVAL] E: [97][0/4]	Loss 2.1489e+00 (2.1489e+00)	Acc@1  47.38 ( 47.38)	Acc@5  78.56 ( 78.56)
+[EVAL] E: [97][3/4]	Loss 2.0151e+00 (2.0999e+00)	Acc@1  42.00 ( 47.40)	Acc@5  85.00 ( 79.02)
+		 Test evaluation at end of epoch: latest_acc:47.4 LR=0.0767913397489497 -- best acc so far 54.32
+Train Epoch:98
+
+[TRAIN] E: [98][ 0/32]	Loss 2.0915e+00 (2.0915e+00)	Acc@1  38.69 ( 38.69)	Acc@5  69.06 ( 69.06)
+[TRAIN] E: [98][31/32]	Loss 2.1362e+00 (2.0959e+00)	Acc@1  40.50 ( 40.40)	Acc@5  74.00 ( 70.31)
+[EVAL] E: [98][0/4]	Loss 2.6743e+00 (2.6743e+00)	Acc@1  39.81 ( 39.81)	Acc@5  69.94 ( 69.94)
+[EVAL] E: [98][3/4]	Loss 2.6632e+00 (2.6688e+00)	Acc@1  34.00 ( 39.56)	Acc@5  75.00 ( 70.60)
+		 Test evaluation at end of epoch: latest_acc:39.56 LR=0.09381533400219322 -- best acc so far 54.32
+Train Epoch:99
+
+[TRAIN] E: [99][ 0/32]	Loss 2.1672e+00 (2.1672e+00)	Acc@1  39.50 ( 39.50)	Acc@5  70.31 ( 70.31)
+[TRAIN] E: [99][31/32]	Loss 2.2849e+00 (2.1437e+00)	Acc@1  33.25 ( 40.10)	Acc@5  65.00 ( 70.11)
+[EVAL] E: [99][0/4]	Loss 2.6589e+00 (2.6589e+00)	Acc@1  41.69 ( 41.69)	Acc@5  71.38 ( 71.38)
+[EVAL] E: [99][3/4]	Loss 2.5822e+00 (2.5697e+00)	Acc@1  36.50 ( 42.14)	Acc@5  73.50 ( 71.88)
+		 Test evaluation at end of epoch: latest_acc:42.14 LR=0.10000000000000002 -- best acc so far 54.32
+Train Epoch:100
+
+[TRAIN] E: [100][ 0/32]	Loss 2.1814e+00 (2.1814e+00)	Acc@1  42.19 ( 42.19)	Acc@5  71.25 ( 71.25)
+[TRAIN] E: [100][31/32]	Loss 2.0827e+00 (2.1428e+00)	Acc@1  42.00 ( 40.13)	Acc@5  71.50 ( 69.88)
+[EVAL] E: [100][0/4]	Loss 2.4041e+00 (2.4041e+00)	Acc@1  43.88 ( 43.88)	Acc@5  75.12 ( 75.12)
+[EVAL] E: [100][3/4]	Loss 2.2019e+00 (2.3347e+00)	Acc@1  44.50 ( 44.36)	Acc@5  80.50 ( 76.36)
+		 Test evaluation at end of epoch: latest_acc:44.36 LR=0.09381533400219327 -- best acc so far 54.32
+Train Epoch:101
+
+[TRAIN] E: [101][ 0/32]	Loss 2.1019e+00 (2.1019e+00)	Acc@1  42.25 ( 42.25)	Acc@5  72.25 ( 72.25)
+[TRAIN] E: [101][31/32]	Loss 2.0039e+00 (2.1167e+00)	Acc@1  41.00 ( 40.04)	Acc@5  74.25 ( 70.31)
+[EVAL] E: [101][0/4]	Loss 2.2215e+00 (2.2215e+00)	Acc@1  47.81 ( 47.81)	Acc@5  78.19 ( 78.19)
+[EVAL] E: [101][3/4]	Loss 2.2712e+00 (2.1806e+00)	Acc@1  44.00 ( 48.02)	Acc@5  78.00 ( 78.28)
+		 Test evaluation at end of epoch: latest_acc:48.02 LR=0.07679133974894985 -- best acc so far 54.32
+Train Epoch:102
+
+[TRAIN] E: [102][ 0/32]	Loss 2.0532e+00 (2.0532e+00)	Acc@1  39.75 ( 39.75)	Acc@5  69.44 ( 69.44)
+[TRAIN] E: [102][31/32]	Loss 2.0482e+00 (2.0671e+00)	Acc@1  39.25 ( 40.88)	Acc@5  70.25 ( 70.88)
+[EVAL] E: [102][0/4]	Loss 2.1239e+00 (2.1239e+00)	Acc@1  48.69 ( 48.69)	Acc@5  77.62 ( 77.62)
+[EVAL] E: [102][3/4]	Loss 2.1910e+00 (2.0634e+00)	Acc@1  45.50 ( 49.08)	Acc@5  80.00 ( 79.36)
+		 Test evaluation at end of epoch: latest_acc:49.08 LR=0.05313952597646585 -- best acc so far 54.32
+Train Epoch:103
+
+[TRAIN] E: [103][ 0/32]	Loss 2.0685e+00 (2.0685e+00)	Acc@1  40.56 ( 40.56)	Acc@5  69.56 ( 69.56)
+[TRAIN] E: [103][31/32]	Loss 1.9799e+00 (2.0079e+00)	Acc@1  41.50 ( 41.18)	Acc@5  74.25 ( 71.32)
+[EVAL] E: [103][0/4]	Loss 1.8614e+00 (1.8614e+00)	Acc@1  52.75 ( 52.75)	Acc@5  80.94 ( 80.94)
+[EVAL] E: [103][3/4]	Loss 1.6810e+00 (1.7971e+00)	Acc@1  52.50 ( 52.60)	Acc@5  90.00 ( 81.92)
+		 Test evaluation at end of epoch: latest_acc:52.6 LR=0.028711035421746342 -- best acc so far 54.32
+Train Epoch:104
+
+[TRAIN] E: [104][ 0/32]	Loss 1.8971e+00 (1.8971e+00)	Acc@1  41.81 ( 41.81)	Acc@5  69.31 ( 69.31)
+[TRAIN] E: [104][31/32]	Loss 1.8940e+00 (1.9429e+00)	Acc@1  41.25 ( 41.83)	Acc@5  72.25 ( 71.74)
+[EVAL] E: [104][0/4]	Loss 1.7727e+00 (1.7727e+00)	Acc@1  53.88 ( 53.88)	Acc@5  82.69 ( 82.69)
+[EVAL] E: [104][3/4]	Loss 1.7179e+00 (1.7250e+00)	Acc@1  52.50 ( 53.90)	Acc@5  88.50 ( 83.54)
+		 Test evaluation at end of epoch: latest_acc:53.9 LR=0.009549150281252689 -- best acc so far 54.32
+Train Epoch:105
+
+[TRAIN] E: [105][ 0/32]	Loss 1.9372e+00 (1.9372e+00)	Acc@1  40.50 ( 40.50)	Acc@5  70.81 ( 70.81)
+[TRAIN] E: [105][31/32]	Loss 1.9136e+00 (1.9227e+00)	Acc@1  40.00 ( 42.36)	Acc@5  75.00 ( 72.25)
+[EVAL] E: [105][0/4]	Loss 1.7842e+00 (1.7842e+00)	Acc@1  55.25 ( 55.25)	Acc@5  82.75 ( 82.75)
+[EVAL] E: [105][3/4]	Loss 1.7087e+00 (1.7259e+00)	Acc@1  52.00 ( 54.76)	Acc@5  87.50 ( 83.76)
+		 Test evaluation at end of epoch: latest_acc:54.76 LR=0.0003942649342760953 -- best acc so far 54.76
+Train Epoch:106
+
+[TRAIN] E: [106][ 0/32]	Loss 1.8756e+00 (1.8756e+00)	Acc@1  43.88 ( 43.88)	Acc@5  74.19 ( 74.19)
+[TRAIN] E: [106][31/32]	Loss 1.8431e+00 (1.9044e+00)	Acc@1  38.00 ( 42.74)	Acc@5  73.00 ( 72.81)
+[EVAL] E: [106][0/4]	Loss 1.7781e+00 (1.7781e+00)	Acc@1  54.69 ( 54.69)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [106][3/4]	Loss 1.7047e+00 (1.7223e+00)	Acc@1  52.00 ( 54.64)	Acc@5  87.50 ( 83.76)
+		 Test evaluation at end of epoch: latest_acc:54.64 LR=0.0035111757055905743 -- best acc so far 54.76
+Train Epoch:107
+
+[TRAIN] E: [107][ 0/32]	Loss 1.8825e+00 (1.8825e+00)	Acc@1  40.44 ( 40.44)	Acc@5  72.62 ( 72.62)
+[TRAIN] E: [107][31/32]	Loss 1.9040e+00 (1.9098e+00)	Acc@1  43.00 ( 42.57)	Acc@5  75.00 ( 72.61)
+[EVAL] E: [107][0/4]	Loss 1.8355e+00 (1.8355e+00)	Acc@1  54.06 ( 54.06)	Acc@5  81.88 ( 81.88)
+[EVAL] E: [107][3/4]	Loss 1.7871e+00 (1.7819e+00)	Acc@1  48.00 ( 53.60)	Acc@5  86.00 ( 82.90)
+		 Test evaluation at end of epoch: latest_acc:53.6 LR=0.018128800512581686 -- best acc so far 54.76
+Train Epoch:108
+
+[TRAIN] E: [108][ 0/32]	Loss 1.9029e+00 (1.9029e+00)	Acc@1  42.56 ( 42.56)	Acc@5  72.00 ( 72.00)
+[TRAIN] E: [108][31/32]	Loss 1.9298e+00 (1.9372e+00)	Acc@1  43.25 ( 42.25)	Acc@5  73.50 ( 72.41)
+[EVAL] E: [108][0/4]	Loss 1.8806e+00 (1.8806e+00)	Acc@1  53.31 ( 53.31)	Acc@5  81.19 ( 81.19)
+[EVAL] E: [108][3/4]	Loss 1.9047e+00 (1.8120e+00)	Acc@1  46.00 ( 52.72)	Acc@5  87.00 ( 82.82)
+		 Test evaluation at end of epoch: latest_acc:52.72 LR=0.04063093427075 -- best acc so far 54.76
+Train Epoch:109
+
+[TRAIN] E: [109][ 0/32]	Loss 1.9945e+00 (1.9945e+00)	Acc@1  41.75 ( 41.75)	Acc@5  70.62 ( 70.62)
+[TRAIN] E: [109][31/32]	Loss 1.9753e+00 (1.9842e+00)	Acc@1  43.00 ( 41.53)	Acc@5  74.00 ( 71.91)
+[EVAL] E: [109][0/4]	Loss 2.0232e+00 (2.0232e+00)	Acc@1  50.44 ( 50.44)	Acc@5  79.88 ( 79.88)
+[EVAL] E: [109][3/4]	Loss 2.0779e+00 (1.9684e+00)	Acc@1  49.00 ( 50.66)	Acc@5  79.00 ( 80.60)
+		 Test evaluation at end of epoch: latest_acc:50.66 LR=0.06545084971880612 -- best acc so far 54.76
+Train Epoch:110
+
+[TRAIN] E: [110][ 0/32]	Loss 2.0504e+00 (2.0504e+00)	Acc@1  41.62 ( 41.62)	Acc@5  72.50 ( 72.50)
+[TRAIN] E: [110][31/32]	Loss 2.1606e+00 (2.0463e+00)	Acc@1  40.75 ( 40.59)	Acc@5  72.50 ( 70.95)
+[EVAL] E: [110][0/4]	Loss 2.2207e+00 (2.2207e+00)	Acc@1  48.19 ( 48.19)	Acc@5  77.62 ( 77.62)
+[EVAL] E: [110][3/4]	Loss 2.1693e+00 (2.1839e+00)	Acc@1  43.00 ( 47.54)	Acc@5  78.50 ( 78.32)
+		 Test evaluation at end of epoch: latest_acc:47.54 LR=0.08644843137114838 -- best acc so far 54.76
+Train Epoch:111
+
+[TRAIN] E: [111][ 0/32]	Loss 2.1807e+00 (2.1807e+00)	Acc@1  37.56 ( 37.56)	Acc@5  69.44 ( 69.44)
+[TRAIN] E: [111][31/32]	Loss 2.1719e+00 (2.1348e+00)	Acc@1  39.75 ( 40.09)	Acc@5  70.25 ( 70.18)
+[EVAL] E: [111][0/4]	Loss 2.4183e+00 (2.4183e+00)	Acc@1  44.62 ( 44.62)	Acc@5  75.38 ( 75.38)
+[EVAL] E: [111][3/4]	Loss 2.3112e+00 (2.3402e+00)	Acc@1  41.00 ( 45.00)	Acc@5  80.00 ( 76.54)
+		 Test evaluation at end of epoch: latest_acc:45.0 LR=0.09842915805652003 -- best acc so far 54.76
+Train Epoch:112
+
+[TRAIN] E: [112][ 0/32]	Loss 2.1738e+00 (2.1738e+00)	Acc@1  39.75 ( 39.75)	Acc@5  68.94 ( 68.94)
+[TRAIN] E: [112][31/32]	Loss 2.0842e+00 (2.1578e+00)	Acc@1  39.50 ( 39.55)	Acc@5  70.50 ( 69.57)
+[EVAL] E: [112][0/4]	Loss 2.6323e+00 (2.6323e+00)	Acc@1  44.44 ( 44.44)	Acc@5  74.56 ( 74.56)
+[EVAL] E: [112][3/4]	Loss 2.5662e+00 (2.5849e+00)	Acc@1  40.00 ( 43.78)	Acc@5  72.00 ( 74.96)
+		 Test evaluation at end of epoch: latest_acc:43.78 LR=0.09842915805652008 -- best acc so far 54.76
+Train Epoch:113
+
+[TRAIN] E: [113][ 0/32]	Loss 2.2017e+00 (2.2017e+00)	Acc@1  39.94 ( 39.94)	Acc@5  68.94 ( 68.94)
+[TRAIN] E: [113][31/32]	Loss 2.0479e+00 (2.1526e+00)	Acc@1  42.25 ( 39.83)	Acc@5  71.00 ( 69.72)
+[EVAL] E: [113][0/4]	Loss 2.1095e+00 (2.1095e+00)	Acc@1  49.44 ( 49.44)	Acc@5  77.94 ( 77.94)
+[EVAL] E: [113][3/4]	Loss 2.1402e+00 (2.0816e+00)	Acc@1  47.50 ( 49.26)	Acc@5  78.50 ( 78.92)
+		 Test evaluation at end of epoch: latest_acc:49.26 LR=0.08644843137114847 -- best acc so far 54.76
+Train Epoch:114
+
+[TRAIN] E: [114][ 0/32]	Loss 2.0804e+00 (2.0804e+00)	Acc@1  41.81 ( 41.81)	Acc@5  71.06 ( 71.06)
+[TRAIN] E: [114][31/32]	Loss 1.9610e+00 (2.0806e+00)	Acc@1  40.75 ( 40.32)	Acc@5  72.75 ( 70.60)
+[EVAL] E: [114][0/4]	Loss 2.1414e+00 (2.1414e+00)	Acc@1  50.38 ( 50.38)	Acc@5  78.25 ( 78.25)
+[EVAL] E: [114][3/4]	Loss 1.8789e+00 (2.0805e+00)	Acc@1  50.00 ( 49.68)	Acc@5  85.00 ( 79.20)
+		 Test evaluation at end of epoch: latest_acc:49.68 LR=0.06545084971880594 -- best acc so far 54.76
+Train Epoch:115
+
+[TRAIN] E: [115][ 0/32]	Loss 2.0783e+00 (2.0783e+00)	Acc@1  40.38 ( 40.38)	Acc@5  71.31 ( 71.31)
+[TRAIN] E: [115][31/32]	Loss 1.9705e+00 (2.0305e+00)	Acc@1  41.75 ( 41.07)	Acc@5  71.25 ( 71.41)
+[EVAL] E: [115][0/4]	Loss 1.9834e+00 (1.9834e+00)	Acc@1  50.19 ( 50.19)	Acc@5  80.81 ( 80.81)
+[EVAL] E: [115][3/4]	Loss 2.1152e+00 (1.9625e+00)	Acc@1  48.00 ( 50.14)	Acc@5  81.50 ( 81.04)
+		 Test evaluation at end of epoch: latest_acc:50.14 LR=0.04063093427075016 -- best acc so far 54.76
+Train Epoch:116
+
+[TRAIN] E: [116][ 0/32]	Loss 1.9650e+00 (1.9650e+00)	Acc@1  41.62 ( 41.62)	Acc@5  72.69 ( 72.69)
+[TRAIN] E: [116][31/32]	Loss 1.9430e+00 (1.9562e+00)	Acc@1  42.00 ( 41.95)	Acc@5  73.00 ( 71.89)
+[EVAL] E: [116][0/4]	Loss 1.8608e+00 (1.8608e+00)	Acc@1  54.00 ( 54.00)	Acc@5  81.94 ( 81.94)
+[EVAL] E: [116][3/4]	Loss 1.8734e+00 (1.8335e+00)	Acc@1  48.50 ( 52.90)	Acc@5  84.50 ( 82.66)
+		 Test evaluation at end of epoch: latest_acc:52.9 LR=0.018128800512581828 -- best acc so far 54.76
+Train Epoch:117
+
+[TRAIN] E: [117][ 0/32]	Loss 1.9433e+00 (1.9433e+00)	Acc@1  41.50 ( 41.50)	Acc@5  72.81 ( 72.81)
+[TRAIN] E: [117][31/32]	Loss 1.8724e+00 (1.9266e+00)	Acc@1  42.75 ( 42.55)	Acc@5  72.75 ( 72.44)
+[EVAL] E: [117][0/4]	Loss 1.7824e+00 (1.7824e+00)	Acc@1  54.25 ( 54.25)	Acc@5  82.50 ( 82.50)
+[EVAL] E: [117][3/4]	Loss 1.6992e+00 (1.7335e+00)	Acc@1  51.00 ( 54.04)	Acc@5  90.00 ( 83.52)
+		 Test evaluation at end of epoch: latest_acc:54.04 LR=0.003511175705590651 -- best acc so far 54.76
+Train Epoch:118
+
+[TRAIN] E: [118][ 0/32]	Loss 1.8483e+00 (1.8483e+00)	Acc@1  43.19 ( 43.19)	Acc@5  72.06 ( 72.06)
+[TRAIN] E: [118][31/32]	Loss 1.9565e+00 (1.9092e+00)	Acc@1  40.50 ( 42.74)	Acc@5  77.75 ( 72.38)
+[EVAL] E: [118][0/4]	Loss 1.7590e+00 (1.7590e+00)	Acc@1  55.00 ( 55.00)	Acc@5  82.81 ( 82.81)
+[EVAL] E: [118][3/4]	Loss 1.7021e+00 (1.7156e+00)	Acc@1  50.50 ( 54.36)	Acc@5  88.50 ( 83.86)
+		 Test evaluation at end of epoch: latest_acc:54.36 LR=0.00039426493427606734 -- best acc so far 54.76
+Train Epoch:119
+
+[TRAIN] E: [119][ 0/32]	Loss 1.8956e+00 (1.8956e+00)	Acc@1  41.56 ( 41.56)	Acc@5  73.12 ( 73.12)
+[TRAIN] E: [119][31/32]	Loss 1.9030e+00 (1.9077e+00)	Acc@1  40.25 ( 42.50)	Acc@5  73.75 ( 72.64)
+[EVAL] E: [119][0/4]	Loss 1.7665e+00 (1.7665e+00)	Acc@1  53.50 ( 53.50)	Acc@5  83.25 ( 83.25)
+[EVAL] E: [119][3/4]	Loss 1.7058e+00 (1.7200e+00)	Acc@1  50.50 ( 53.78)	Acc@5  89.00 ( 83.86)
+		 Test evaluation at end of epoch: latest_acc:53.78 LR=0.00954915028125234 -- best acc so far 54.76
+Train Epoch:120
+
+[TRAIN] E: [120][ 0/32]	Loss 1.9545e+00 (1.9545e+00)	Acc@1  44.31 ( 44.31)	Acc@5  70.75 ( 70.75)
+[TRAIN] E: [120][31/32]	Loss 1.9506e+00 (1.9131e+00)	Acc@1  39.50 ( 42.56)	Acc@5  73.25 ( 72.41)
+[EVAL] E: [120][0/4]	Loss 1.8036e+00 (1.8036e+00)	Acc@1  54.81 ( 54.81)	Acc@5  82.88 ( 82.88)
+[EVAL] E: [120][3/4]	Loss 1.7824e+00 (1.7699e+00)	Acc@1  50.00 ( 53.50)	Acc@5  87.50 ( 83.10)
+		 Test evaluation at end of epoch: latest_acc:53.5 LR=0.02871103542174643 -- best acc so far 54.76
+Train Epoch:121
+
+[TRAIN] E: [121][ 0/32]	Loss 1.9310e+00 (1.9310e+00)	Acc@1  43.50 ( 43.50)	Acc@5  74.62 ( 74.62)
+[TRAIN] E: [121][31/32]	Loss 1.8940e+00 (1.9537e+00)	Acc@1  44.25 ( 42.02)	Acc@5  76.25 ( 72.12)
+[EVAL] E: [121][0/4]	Loss 1.9635e+00 (1.9635e+00)	Acc@1  50.69 ( 50.69)	Acc@5  80.00 ( 80.00)
+[EVAL] E: [121][3/4]	Loss 1.9860e+00 (1.9223e+00)	Acc@1  42.00 ( 50.38)	Acc@5  81.50 ( 80.78)
+		 Test evaluation at end of epoch: latest_acc:50.38 LR=0.05313952597646554 -- best acc so far 54.76
+Train Epoch:122
+
+[TRAIN] E: [122][ 0/32]	Loss 1.9745e+00 (1.9745e+00)	Acc@1  39.94 ( 39.94)	Acc@5  72.75 ( 72.75)
+[TRAIN] E: [122][31/32]	Loss 2.0344e+00 (2.0203e+00)	Acc@1  40.25 ( 41.20)	Acc@5  73.50 ( 71.24)
+[EVAL] E: [122][0/4]	Loss 2.2832e+00 (2.2832e+00)	Acc@1  47.94 ( 47.94)	Acc@5  75.81 ( 75.81)
+[EVAL] E: [122][3/4]	Loss 2.1034e+00 (2.1951e+00)	Acc@1  45.00 ( 47.40)	Acc@5  80.50 ( 77.20)
+		 Test evaluation at end of epoch: latest_acc:47.4 LR=0.07679133974894953 -- best acc so far 54.76
+Train Epoch:123
+
+[TRAIN] E: [123][ 0/32]	Loss 2.0300e+00 (2.0300e+00)	Acc@1  42.38 ( 42.38)	Acc@5  70.56 ( 70.56)
+[TRAIN] E: [123][31/32]	Loss 2.0335e+00 (2.0668e+00)	Acc@1  39.25 ( 40.98)	Acc@5  69.00 ( 70.66)
+[EVAL] E: [123][0/4]	Loss 2.5536e+00 (2.5536e+00)	Acc@1  41.75 ( 41.75)	Acc@5  73.31 ( 73.31)
+[EVAL] E: [123][3/4]	Loss 2.6332e+00 (2.4925e+00)	Acc@1  38.00 ( 42.80)	Acc@5  74.50 ( 74.14)
+		 Test evaluation at end of epoch: latest_acc:42.8 LR=0.09381533400219282 -- best acc so far 54.76
+Train Epoch:124
+
+[TRAIN] E: [124][ 0/32]	Loss 2.1359e+00 (2.1359e+00)	Acc@1  42.75 ( 42.75)	Acc@5  71.62 ( 71.62)
+[TRAIN] E: [124][31/32]	Loss 1.9673e+00 (2.1366e+00)	Acc@1  40.25 ( 39.78)	Acc@5  71.00 ( 69.64)
+[EVAL] E: [124][0/4]	Loss 2.1772e+00 (2.1772e+00)	Acc@1  47.19 ( 47.19)	Acc@5  77.25 ( 77.25)
+[EVAL] E: [124][3/4]	Loss 2.1654e+00 (2.1447e+00)	Acc@1  46.50 ( 46.62)	Acc@5  77.50 ( 78.00)
+		 Test evaluation at end of epoch: latest_acc:46.62 LR=0.09999999999999981 -- best acc so far 54.76
+Train Epoch:125
+
+[TRAIN] E: [125][ 0/32]	Loss 2.1126e+00 (2.1126e+00)	Acc@1  39.00 ( 39.00)	Acc@5  69.94 ( 69.94)
+[TRAIN] E: [125][31/32]	Loss 2.1274e+00 (2.1339e+00)	Acc@1  40.00 ( 39.88)	Acc@5  70.25 ( 70.04)
+[EVAL] E: [125][0/4]	Loss 2.6003e+00 (2.6003e+00)	Acc@1  42.62 ( 42.62)	Acc@5  72.75 ( 72.75)
+[EVAL] E: [125][3/4]	Loss 2.4229e+00 (2.4882e+00)	Acc@1  42.00 ( 43.30)	Acc@5  80.00 ( 74.24)
+		 Test evaluation at end of epoch: latest_acc:43.3 LR=0.09381533400219294 -- best acc so far 54.76
+Train Epoch:126
+
+[TRAIN] E: [126][ 0/32]	Loss 2.1579e+00 (2.1579e+00)	Acc@1  38.88 ( 38.88)	Acc@5  69.44 ( 69.44)
+[TRAIN] E: [126][31/32]	Loss 2.1376e+00 (2.0954e+00)	Acc@1  39.50 ( 40.37)	Acc@5  70.00 ( 70.25)
+[EVAL] E: [126][0/4]	Loss 2.0648e+00 (2.0648e+00)	Acc@1  50.06 ( 50.06)	Acc@5  79.00 ( 79.00)
+[EVAL] E: [126][3/4]	Loss 2.0364e+00 (2.0336e+00)	Acc@1  46.50 ( 48.92)	Acc@5  81.50 ( 79.20)
+		 Test evaluation at end of epoch: latest_acc:48.92 LR=0.07679133974894972 -- best acc so far 54.76
+Train Epoch:127
+
+[TRAIN] E: [127][ 0/32]	Loss 2.0839e+00 (2.0839e+00)	Acc@1  39.12 ( 39.12)	Acc@5  70.38 ( 70.38)
+[TRAIN] E: [127][31/32]	Loss 2.0463e+00 (2.0506e+00)	Acc@1  39.75 ( 40.53)	Acc@5  71.00 ( 70.60)
+[EVAL] E: [127][0/4]	Loss 2.0798e+00 (2.0798e+00)	Acc@1  49.44 ( 49.44)	Acc@5  78.19 ( 78.19)
+[EVAL] E: [127][3/4]	Loss 1.8943e+00 (2.0074e+00)	Acc@1  49.50 ( 49.70)	Acc@5  82.50 ( 79.50)
+		 Test evaluation at end of epoch: latest_acc:49.7 LR=0.05313952597646543 -- best acc so far 54.76
+Train Epoch:128
+
+[TRAIN] E: [128][ 0/32]	Loss 1.9787e+00 (1.9787e+00)	Acc@1  41.69 ( 41.69)	Acc@5  71.31 ( 71.31)
+[TRAIN] E: [128][31/32]	Loss 1.9217e+00 (1.9993e+00)	Acc@1  40.75 ( 41.18)	Acc@5  73.00 ( 71.47)
+[EVAL] E: [128][0/4]	Loss 1.8395e+00 (1.8395e+00)	Acc@1  52.62 ( 52.62)	Acc@5  82.44 ( 82.44)
+[EVAL] E: [128][3/4]	Loss 1.8391e+00 (1.8128e+00)	Acc@1  46.00 ( 52.26)	Acc@5  86.50 ( 82.70)
+		 Test evaluation at end of epoch: latest_acc:52.26 LR=0.028711035421746314 -- best acc so far 54.76
+Train Epoch:129
+
+[TRAIN] E: [129][ 0/32]	Loss 1.9383e+00 (1.9383e+00)	Acc@1  43.06 ( 43.06)	Acc@5  72.94 ( 72.94)
+[TRAIN] E: [129][31/32]	Loss 1.8929e+00 (1.9380e+00)	Acc@1  46.25 ( 42.23)	Acc@5  74.00 ( 72.32)
+[EVAL] E: [129][0/4]	Loss 1.8114e+00 (1.8114e+00)	Acc@1  54.56 ( 54.56)	Acc@5  82.50 ( 82.50)
+[EVAL] E: [129][3/4]	Loss 1.7237e+00 (1.7490e+00)	Acc@1  50.00 ( 54.36)	Acc@5  86.00 ( 83.22)
+		 Test evaluation at end of epoch: latest_acc:54.36 LR=0.00954915028125269 -- best acc so far 54.76
+Train Epoch:130
+
+[TRAIN] E: [130][ 0/32]	Loss 1.9051e+00 (1.9051e+00)	Acc@1  42.38 ( 42.38)	Acc@5  71.81 ( 71.81)
+[TRAIN] E: [130][31/32]	Loss 1.9063e+00 (1.9108e+00)	Acc@1  38.00 ( 42.13)	Acc@5  70.50 ( 72.36)
+[EVAL] E: [130][0/4]	Loss 1.7513e+00 (1.7513e+00)	Acc@1  55.31 ( 55.31)	Acc@5  83.12 ( 83.12)
+[EVAL] E: [130][3/4]	Loss 1.6746e+00 (1.7055e+00)	Acc@1  49.50 ( 54.36)	Acc@5  89.00 ( 83.80)
+		 Test evaluation at end of epoch: latest_acc:54.36 LR=0.0003942649342761445 -- best acc so far 54.76
+Train Epoch:131
+
+[TRAIN] E: [131][ 0/32]	Loss 1.9360e+00 (1.9360e+00)	Acc@1  41.44 ( 41.44)	Acc@5  71.31 ( 71.31)
+[TRAIN] E: [131][31/32]	Loss 1.8460e+00 (1.8930e+00)	Acc@1  42.50 ( 43.10)	Acc@5  74.25 ( 72.59)
+[EVAL] E: [131][0/4]	Loss 1.7530e+00 (1.7530e+00)	Acc@1  55.31 ( 55.31)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [131][3/4]	Loss 1.6804e+00 (1.7077e+00)	Acc@1  49.50 ( 54.38)	Acc@5  89.00 ( 83.64)
+		 Test evaluation at end of epoch: latest_acc:54.38 LR=0.0035111757055907 -- best acc so far 54.76
+Train Epoch:132
+
+[TRAIN] E: [132][ 0/32]	Loss 1.9145e+00 (1.9145e+00)	Acc@1  42.62 ( 42.62)	Acc@5  72.19 ( 72.19)
+[TRAIN] E: [132][31/32]	Loss 1.9373e+00 (1.9019e+00)	Acc@1  40.75 ( 42.56)	Acc@5  69.50 ( 72.71)
+[EVAL] E: [132][0/4]	Loss 1.7866e+00 (1.7866e+00)	Acc@1  54.62 ( 54.62)	Acc@5  83.12 ( 83.12)
+[EVAL] E: [132][3/4]	Loss 1.6979e+00 (1.7381e+00)	Acc@1  50.50 ( 54.10)	Acc@5  87.00 ( 83.28)
+		 Test evaluation at end of epoch: latest_acc:54.1 LR=0.01812880051258196 -- best acc so far 54.76
+Train Epoch:133
+
+[TRAIN] E: [133][ 0/32]	Loss 1.9192e+00 (1.9192e+00)	Acc@1  41.19 ( 41.19)	Acc@5  71.19 ( 71.19)
+[TRAIN] E: [133][31/32]	Loss 1.9278e+00 (1.9194e+00)	Acc@1  45.25 ( 42.55)	Acc@5  72.50 ( 72.42)
+[EVAL] E: [133][0/4]	Loss 1.8643e+00 (1.8643e+00)	Acc@1  53.19 ( 53.19)	Acc@5  82.00 ( 82.00)
+[EVAL] E: [133][3/4]	Loss 1.8708e+00 (1.8378e+00)	Acc@1  48.50 ( 52.68)	Acc@5  84.50 ( 82.48)
+		 Test evaluation at end of epoch: latest_acc:52.68 LR=0.040630934270750374 -- best acc so far 54.76
+Train Epoch:134
+
+[TRAIN] E: [134][ 0/32]	Loss 1.9655e+00 (1.9655e+00)	Acc@1  38.88 ( 38.88)	Acc@5  69.94 ( 69.94)
+[TRAIN] E: [134][31/32]	Loss 1.9924e+00 (1.9766e+00)	Acc@1  39.25 ( 41.75)	Acc@5  73.25 ( 71.51)
+[EVAL] E: [134][0/4]	Loss 2.0873e+00 (2.0873e+00)	Acc@1  50.19 ( 50.19)	Acc@5  78.94 ( 78.94)
+[EVAL] E: [134][3/4]	Loss 2.0242e+00 (2.0308e+00)	Acc@1  47.00 ( 50.08)	Acc@5  79.50 ( 79.98)
+		 Test evaluation at end of epoch: latest_acc:50.08 LR=0.06545084971880619 -- best acc so far 54.76
+Train Epoch:135
+
+[TRAIN] E: [135][ 0/32]	Loss 2.0180e+00 (2.0180e+00)	Acc@1  42.88 ( 42.88)	Acc@5  71.94 ( 71.94)
+[TRAIN] E: [135][31/32]	Loss 2.0039e+00 (2.0324e+00)	Acc@1  41.75 ( 41.07)	Acc@5  71.25 ( 71.13)
+[EVAL] E: [135][0/4]	Loss 2.4058e+00 (2.4058e+00)	Acc@1  46.38 ( 46.38)	Acc@5  75.62 ( 75.62)
+[EVAL] E: [135][3/4]	Loss 2.3161e+00 (2.3554e+00)	Acc@1  45.00 ( 46.90)	Acc@5  75.00 ( 75.96)
+		 Test evaluation at end of epoch: latest_acc:46.9 LR=0.08644843137114873 -- best acc so far 54.76
+Train Epoch:136
+
+[TRAIN] E: [136][ 0/32]	Loss 2.0152e+00 (2.0152e+00)	Acc@1  41.00 ( 41.00)	Acc@5  70.44 ( 70.44)
+[TRAIN] E: [136][31/32]	Loss 2.1041e+00 (2.0984e+00)	Acc@1  38.25 ( 39.93)	Acc@5  66.50 ( 70.48)
+[EVAL] E: [136][0/4]	Loss 2.3810e+00 (2.3810e+00)	Acc@1  45.25 ( 45.25)	Acc@5  75.06 ( 75.06)
+[EVAL] E: [136][3/4]	Loss 2.3138e+00 (2.3258e+00)	Acc@1  39.00 ( 44.68)	Acc@5  75.50 ( 76.00)
+		 Test evaluation at end of epoch: latest_acc:44.68 LR=0.09842915805652025 -- best acc so far 54.76
+Train Epoch:137
+
+[TRAIN] E: [137][ 0/32]	Loss 2.1280e+00 (2.1280e+00)	Acc@1  41.56 ( 41.56)	Acc@5  70.25 ( 70.25)
+[TRAIN] E: [137][31/32]	Loss 2.2071e+00 (2.1246e+00)	Acc@1  42.25 ( 39.95)	Acc@5  73.25 ( 69.98)
+[EVAL] E: [137][0/4]	Loss 2.3742e+00 (2.3742e+00)	Acc@1  44.75 ( 44.75)	Acc@5  74.75 ( 74.75)
+[EVAL] E: [137][3/4]	Loss 2.2028e+00 (2.3181e+00)	Acc@1  44.50 ( 45.44)	Acc@5  75.00 ( 74.96)
+		 Test evaluation at end of epoch: latest_acc:45.44 LR=0.09842915805652015 -- best acc so far 54.76
+Train Epoch:138
+
+[TRAIN] E: [138][ 0/32]	Loss 2.0805e+00 (2.0805e+00)	Acc@1  41.69 ( 41.69)	Acc@5  71.38 ( 71.38)
+[TRAIN] E: [138][31/32]	Loss 1.9302e+00 (2.1949e+00)	Acc@1  45.25 ( 39.23)	Acc@5  71.25 ( 69.51)
+[EVAL] E: [138][0/4]	Loss 2.3706e+00 (2.3706e+00)	Acc@1  44.81 ( 44.81)	Acc@5  74.94 ( 74.94)
+[EVAL] E: [138][3/4]	Loss 2.3323e+00 (2.2789e+00)	Acc@1  38.50 ( 45.14)	Acc@5  78.50 ( 76.50)
+		 Test evaluation at end of epoch: latest_acc:45.14 LR=0.0864484313711484 -- best acc so far 54.76
+Train Epoch:139
+
+[TRAIN] E: [139][ 0/32]	Loss 2.1270e+00 (2.1270e+00)	Acc@1  39.12 ( 39.12)	Acc@5  70.38 ( 70.38)
+[TRAIN] E: [139][31/32]	Loss 2.0250e+00 (2.0930e+00)	Acc@1  37.50 ( 40.16)	Acc@5  71.75 ( 70.54)
+[EVAL] E: [139][0/4]	Loss 2.0321e+00 (2.0321e+00)	Acc@1  49.50 ( 49.50)	Acc@5  80.44 ( 80.44)
+[EVAL] E: [139][3/4]	Loss 2.2082e+00 (2.0097e+00)	Acc@1  43.00 ( 49.38)	Acc@5  80.50 ( 80.22)
+		 Test evaluation at end of epoch: latest_acc:49.38 LR=0.06545084971880642 -- best acc so far 54.76
+Train Epoch:140
+
+[TRAIN] E: [140][ 0/32]	Loss 2.0637e+00 (2.0637e+00)	Acc@1  42.44 ( 42.44)	Acc@5  71.69 ( 71.69)
+[TRAIN] E: [140][31/32]	Loss 1.9599e+00 (2.0215e+00)	Acc@1  41.75 ( 41.04)	Acc@5  71.75 ( 71.17)
+[EVAL] E: [140][0/4]	Loss 1.9271e+00 (1.9271e+00)	Acc@1  52.88 ( 52.88)	Acc@5  80.81 ( 80.81)
+[EVAL] E: [140][3/4]	Loss 1.9357e+00 (1.8822e+00)	Acc@1  45.50 ( 52.18)	Acc@5  80.50 ( 81.40)
+		 Test evaluation at end of epoch: latest_acc:52.18 LR=0.04063093427075062 -- best acc so far 54.76
+Train Epoch:141
+
+[TRAIN] E: [141][ 0/32]	Loss 1.9454e+00 (1.9454e+00)	Acc@1  42.88 ( 42.88)	Acc@5  72.44 ( 72.44)
+[TRAIN] E: [141][31/32]	Loss 1.9305e+00 (1.9557e+00)	Acc@1  40.50 ( 42.05)	Acc@5  67.75 ( 71.74)
+[EVAL] E: [141][0/4]	Loss 1.7841e+00 (1.7841e+00)	Acc@1  53.38 ( 53.38)	Acc@5  81.75 ( 81.75)
+[EVAL] E: [141][3/4]	Loss 1.7301e+00 (1.7431e+00)	Acc@1  49.50 ( 53.14)	Acc@5  87.50 ( 82.78)
+		 Test evaluation at end of epoch: latest_acc:53.14 LR=0.01812880051258161 -- best acc so far 54.76
+Train Epoch:142
+
+[TRAIN] E: [142][ 0/32]	Loss 1.9437e+00 (1.9437e+00)	Acc@1  41.25 ( 41.25)	Acc@5  72.75 ( 72.75)
+[TRAIN] E: [142][31/32]	Loss 1.9072e+00 (1.9241e+00)	Acc@1  39.75 ( 42.52)	Acc@5  71.00 ( 72.15)
+[EVAL] E: [142][0/4]	Loss 1.7710e+00 (1.7710e+00)	Acc@1  55.12 ( 55.12)	Acc@5  83.19 ( 83.19)
+[EVAL] E: [142][3/4]	Loss 1.6907e+00 (1.7147e+00)	Acc@1  52.50 ( 54.48)	Acc@5  86.50 ( 83.84)
+		 Test evaluation at end of epoch: latest_acc:54.48 LR=0.003511175705590537 -- best acc so far 54.76
+Train Epoch:143
+
+[TRAIN] E: [143][ 0/32]	Loss 1.9244e+00 (1.9244e+00)	Acc@1  40.94 ( 40.94)	Acc@5  71.62 ( 71.62)
+[TRAIN] E: [143][31/32]	Loss 1.9772e+00 (1.8992e+00)	Acc@1  38.50 ( 42.70)	Acc@5  69.00 ( 72.58)
+[EVAL] E: [143][0/4]	Loss 1.7588e+00 (1.7588e+00)	Acc@1  54.81 ( 54.81)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [143][3/4]	Loss 1.6730e+00 (1.7091e+00)	Acc@1  51.00 ( 54.58)	Acc@5  88.00 ( 84.02)
+		 Test evaluation at end of epoch: latest_acc:54.58 LR=0.00039426493427610615 -- best acc so far 54.76
+Train Epoch:144
+
+[TRAIN] E: [144][ 0/32]	Loss 1.9166e+00 (1.9166e+00)	Acc@1  43.56 ( 43.56)	Acc@5  71.88 ( 71.88)
+[TRAIN] E: [144][31/32]	Loss 1.8479e+00 (1.8984e+00)	Acc@1  44.25 ( 42.72)	Acc@5  73.25 ( 72.62)
+[EVAL] E: [144][0/4]	Loss 1.7733e+00 (1.7733e+00)	Acc@1  54.75 ( 54.75)	Acc@5  83.25 ( 83.25)
+[EVAL] E: [144][3/4]	Loss 1.7080e+00 (1.7249e+00)	Acc@1  52.50 ( 54.34)	Acc@5  87.50 ( 84.12)
+		 Test evaluation at end of epoch: latest_acc:54.34 LR=0.009549150281252545 -- best acc so far 54.76
+Train Epoch:145
+
+[TRAIN] E: [145][ 0/32]	Loss 1.8940e+00 (1.8940e+00)	Acc@1  43.50 ( 43.50)	Acc@5  71.81 ( 71.81)
+[TRAIN] E: [145][31/32]	Loss 2.0093e+00 (1.9029e+00)	Acc@1  44.75 ( 42.63)	Acc@5  75.25 ( 72.64)
+[EVAL] E: [145][0/4]	Loss 1.7992e+00 (1.7992e+00)	Acc@1  54.75 ( 54.75)	Acc@5  82.75 ( 82.75)
+[EVAL] E: [145][3/4]	Loss 1.7654e+00 (1.7620e+00)	Acc@1  52.00 ( 53.64)	Acc@5  88.50 ( 83.36)
+		 Test evaluation at end of epoch: latest_acc:53.64 LR=0.028711035421746106 -- best acc so far 54.76
+Train Epoch:146
+
+[TRAIN] E: [146][ 0/32]	Loss 1.9225e+00 (1.9225e+00)	Acc@1  42.31 ( 42.31)	Acc@5  71.94 ( 71.94)
+[TRAIN] E: [146][31/32]	Loss 2.0204e+00 (1.9304e+00)	Acc@1  43.75 ( 42.11)	Acc@5  71.75 ( 72.16)
+[EVAL] E: [146][0/4]	Loss 1.9905e+00 (1.9905e+00)	Acc@1  51.19 ( 51.19)	Acc@5  80.38 ( 80.38)
+[EVAL] E: [146][3/4]	Loss 1.8947e+00 (1.9237e+00)	Acc@1  48.00 ( 50.98)	Acc@5  83.50 ( 81.22)
+		 Test evaluation at end of epoch: latest_acc:50.98 LR=0.053139525976465915 -- best acc so far 54.76
+Train Epoch:147
+
+[TRAIN] E: [147][ 0/32]	Loss 1.8977e+00 (1.8977e+00)	Acc@1  43.19 ( 43.19)	Acc@5  72.50 ( 72.50)
+[TRAIN] E: [147][31/32]	Loss 2.0301e+00 (2.0051e+00)	Acc@1  42.00 ( 41.38)	Acc@5  73.00 ( 71.33)
+[EVAL] E: [147][0/4]	Loss 2.2423e+00 (2.2423e+00)	Acc@1  47.31 ( 47.31)	Acc@5  75.94 ( 75.94)
+[EVAL] E: [147][3/4]	Loss 2.0791e+00 (2.1402e+00)	Acc@1  47.50 ( 47.38)	Acc@5  78.50 ( 77.36)
+		 Test evaluation at end of epoch: latest_acc:47.38 LR=0.07679133974894992 -- best acc so far 54.76
+Train Epoch:148
+
+[TRAIN] E: [148][ 0/32]	Loss 2.0352e+00 (2.0352e+00)	Acc@1  41.62 ( 41.62)	Acc@5  71.44 ( 71.44)
+[TRAIN] E: [148][31/32]	Loss 1.9556e+00 (2.0582e+00)	Acc@1  41.00 ( 40.66)	Acc@5  74.00 ( 70.85)
+[EVAL] E: [148][0/4]	Loss 2.6539e+00 (2.6539e+00)	Acc@1  42.56 ( 42.56)	Acc@5  71.00 ( 71.00)
+[EVAL] E: [148][3/4]	Loss 2.5208e+00 (2.5768e+00)	Acc@1  41.50 ( 42.30)	Acc@5  75.50 ( 72.64)
+		 Test evaluation at end of epoch: latest_acc:42.3 LR=0.09381533400219319 -- best acc so far 54.76
+Train Epoch:149
+
+[TRAIN] E: [149][ 0/32]	Loss 2.0656e+00 (2.0656e+00)	Acc@1  40.00 ( 40.00)	Acc@5  72.50 ( 72.50)
+[TRAIN] E: [149][31/32]	Loss 2.2243e+00 (2.1104e+00)	Acc@1  37.00 ( 40.06)	Acc@5  65.50 ( 70.39)
+[EVAL] E: [149][0/4]	Loss 2.2980e+00 (2.2980e+00)	Acc@1  45.00 ( 45.00)	Acc@5  76.19 ( 76.19)
+[EVAL] E: [149][3/4]	Loss 2.1639e+00 (2.2480e+00)	Acc@1  39.00 ( 45.20)	Acc@5  79.50 ( 76.38)
+		 Test evaluation at end of epoch: latest_acc:45.2 LR=0.10000000000000003 -- best acc so far 54.76
+Train Epoch:150
+
+[TRAIN] E: [150][ 0/32]	Loss 2.1068e+00 (2.1068e+00)	Acc@1  41.44 ( 41.44)	Acc@5  70.50 ( 70.50)
+[TRAIN] E: [150][31/32]	Loss 2.0841e+00 (2.1681e+00)	Acc@1  44.25 ( 39.14)	Acc@5  70.25 ( 69.66)
+[EVAL] E: [150][0/4]	Loss 2.6937e+00 (2.6937e+00)	Acc@1  41.38 ( 41.38)	Acc@5  70.56 ( 70.56)
+[EVAL] E: [150][3/4]	Loss 2.5283e+00 (2.6132e+00)	Acc@1  41.00 ( 41.20)	Acc@5  72.00 ( 71.42)
+		 Test evaluation at end of epoch: latest_acc:41.2 LR=0.09381533400219333 -- best acc so far 54.76
+Train Epoch:151
+
+[TRAIN] E: [151][ 0/32]	Loss 2.1400e+00 (2.1400e+00)	Acc@1  42.69 ( 42.69)	Acc@5  71.44 ( 71.44)
+[TRAIN] E: [151][31/32]	Loss 1.9728e+00 (2.1086e+00)	Acc@1  39.50 ( 40.38)	Acc@5  70.25 ( 70.43)
+[EVAL] E: [151][0/4]	Loss 2.0747e+00 (2.0747e+00)	Acc@1  49.94 ( 49.94)	Acc@5  79.00 ( 79.00)
+[EVAL] E: [151][3/4]	Loss 1.9690e+00 (1.9996e+00)	Acc@1  47.00 ( 49.98)	Acc@5  85.00 ( 80.04)
+		 Test evaluation at end of epoch: latest_acc:49.98 LR=0.07679133974895021 -- best acc so far 54.76
+Train Epoch:152
+
+[TRAIN] E: [152][ 0/32]	Loss 2.0259e+00 (2.0259e+00)	Acc@1  42.00 ( 42.00)	Acc@5  70.75 ( 70.75)
+[TRAIN] E: [152][31/32]	Loss 1.9181e+00 (2.0398e+00)	Acc@1  42.00 ( 40.85)	Acc@5  72.00 ( 70.93)
+[EVAL] E: [152][0/4]	Loss 1.9999e+00 (1.9999e+00)	Acc@1  50.12 ( 50.12)	Acc@5  79.38 ( 79.38)
+[EVAL] E: [152][3/4]	Loss 1.8452e+00 (1.9538e+00)	Acc@1  52.50 ( 50.38)	Acc@5  84.50 ( 79.86)
+		 Test evaluation at end of epoch: latest_acc:50.38 LR=0.05313952597646557 -- best acc so far 54.76
+Train Epoch:153
+
+[TRAIN] E: [153][ 0/32]	Loss 1.9582e+00 (1.9582e+00)	Acc@1  44.56 ( 44.56)	Acc@5  74.50 ( 74.50)
+[TRAIN] E: [153][31/32]	Loss 2.0403e+00 (1.9788e+00)	Acc@1  37.25 ( 41.58)	Acc@5  71.00 ( 71.67)
+[EVAL] E: [153][0/4]	Loss 1.8649e+00 (1.8649e+00)	Acc@1  53.31 ( 53.31)	Acc@5  82.19 ( 82.19)
+[EVAL] E: [153][3/4]	Loss 1.8379e+00 (1.8116e+00)	Acc@1  46.00 ( 52.78)	Acc@5  85.00 ( 82.80)
+		 Test evaluation at end of epoch: latest_acc:52.78 LR=0.02871103542174639 -- best acc so far 54.76
+Train Epoch:154
+
+[TRAIN] E: [154][ 0/32]	Loss 1.9235e+00 (1.9235e+00)	Acc@1  42.62 ( 42.62)	Acc@5  71.88 ( 71.88)
+[TRAIN] E: [154][31/32]	Loss 1.8963e+00 (1.9214e+00)	Acc@1  42.25 ( 42.29)	Acc@5  72.75 ( 72.27)
+[EVAL] E: [154][0/4]	Loss 1.7973e+00 (1.7973e+00)	Acc@1  55.25 ( 55.25)	Acc@5  82.56 ( 82.56)
+[EVAL] E: [154][3/4]	Loss 1.6905e+00 (1.7330e+00)	Acc@1  51.00 ( 54.58)	Acc@5  86.50 ( 83.40)
+		 Test evaluation at end of epoch: latest_acc:54.58 LR=0.009549150281252718 -- best acc so far 54.76
+Train Epoch:155
+
+[TRAIN] E: [155][ 0/32]	Loss 1.9125e+00 (1.9125e+00)	Acc@1  42.69 ( 42.69)	Acc@5  72.44 ( 72.44)
+[TRAIN] E: [155][31/32]	Loss 1.8309e+00 (1.8965e+00)	Acc@1  42.00 ( 42.78)	Acc@5  74.50 ( 72.41)
+[EVAL] E: [155][0/4]	Loss 1.7529e+00 (1.7529e+00)	Acc@1  55.81 ( 55.81)	Acc@5  83.06 ( 83.06)
+[EVAL] E: [155][3/4]	Loss 1.6730e+00 (1.6987e+00)	Acc@1  49.50 ( 55.04)	Acc@5  90.00 ( 84.02)
+		 Test evaluation at end of epoch: latest_acc:55.04 LR=0.00039426493427614497 -- best acc so far 55.04
+Train Epoch:156
+
+[TRAIN] E: [156][ 0/32]	Loss 1.9311e+00 (1.9311e+00)	Acc@1  41.44 ( 41.44)	Acc@5  70.94 ( 70.94)
+[TRAIN] E: [156][31/32]	Loss 1.8607e+00 (1.8872e+00)	Acc@1  44.00 ( 42.80)	Acc@5  72.50 ( 72.67)
+[EVAL] E: [156][0/4]	Loss 1.7538e+00 (1.7538e+00)	Acc@1  55.44 ( 55.44)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [156][3/4]	Loss 1.6684e+00 (1.6976e+00)	Acc@1  50.00 ( 54.88)	Acc@5  89.50 ( 83.90)
+		 Test evaluation at end of epoch: latest_acc:54.88 LR=0.003511175705590425 -- best acc so far 55.04
+Train Epoch:157
+
+[TRAIN] E: [157][ 0/32]	Loss 1.8507e+00 (1.8507e+00)	Acc@1  44.56 ( 44.56)	Acc@5  74.44 ( 74.44)
+[TRAIN] E: [157][31/32]	Loss 1.8940e+00 (1.8889e+00)	Acc@1  45.75 ( 42.98)	Acc@5  73.00 ( 72.73)
+[EVAL] E: [157][0/4]	Loss 1.7953e+00 (1.7953e+00)	Acc@1  55.50 ( 55.50)	Acc@5  81.88 ( 81.88)
+[EVAL] E: [157][3/4]	Loss 1.7001e+00 (1.7319e+00)	Acc@1  52.00 ( 54.92)	Acc@5  89.00 ( 83.20)
+		 Test evaluation at end of epoch: latest_acc:54.92 LR=0.01812880051258192 -- best acc so far 55.04
+Train Epoch:158
+
+[TRAIN] E: [158][ 0/32]	Loss 1.9332e+00 (1.9332e+00)	Acc@1  42.12 ( 42.12)	Acc@5  72.44 ( 72.44)
+[TRAIN] E: [158][31/32]	Loss 1.8073e+00 (1.9132e+00)	Acc@1  48.50 ( 42.52)	Acc@5  75.00 ( 72.22)
+[EVAL] E: [158][0/4]	Loss 2.0898e+00 (2.0898e+00)	Acc@1  50.00 ( 50.00)	Acc@5  79.19 ( 79.19)
+[EVAL] E: [158][3/4]	Loss 2.1207e+00 (2.0305e+00)	Acc@1  46.00 ( 50.04)	Acc@5  84.00 ( 80.46)
+		 Test evaluation at end of epoch: latest_acc:50.04 LR=0.04063093427075026 -- best acc so far 55.04
+Train Epoch:159
+
+[TRAIN] E: [159][ 0/32]	Loss 1.9112e+00 (1.9112e+00)	Acc@1  41.94 ( 41.94)	Acc@5  71.44 ( 71.44)
+[TRAIN] E: [159][31/32]	Loss 2.0535e+00 (1.9520e+00)	Acc@1  39.75 ( 42.00)	Acc@5  69.00 ( 72.16)
+[EVAL] E: [159][0/4]	Loss 2.0653e+00 (2.0653e+00)	Acc@1  49.88 ( 49.88)	Acc@5  79.19 ( 79.19)
+[EVAL] E: [159][3/4]	Loss 1.9367e+00 (1.9777e+00)	Acc@1  47.00 ( 50.80)	Acc@5  84.00 ( 80.54)
+		 Test evaluation at end of epoch: latest_acc:50.8 LR=0.06545084971880602 -- best acc so far 55.04
+Train Epoch:160
+
+[TRAIN] E: [160][ 0/32]	Loss 1.9380e+00 (1.9380e+00)	Acc@1  42.69 ( 42.69)	Acc@5  72.88 ( 72.88)
+[TRAIN] E: [160][31/32]	Loss 2.2142e+00 (2.0349e+00)	Acc@1  36.25 ( 41.10)	Acc@5  65.75 ( 71.04)
+[EVAL] E: [160][0/4]	Loss 2.1087e+00 (2.1087e+00)	Acc@1  48.38 ( 48.38)	Acc@5  79.19 ( 79.19)
+[EVAL] E: [160][3/4]	Loss 2.1923e+00 (2.0666e+00)	Acc@1  43.50 ( 48.42)	Acc@5  80.50 ( 79.66)
+		 Test evaluation at end of epoch: latest_acc:48.42 LR=0.08644843137114806 -- best acc so far 55.04
+Train Epoch:161
+
+[TRAIN] E: [161][ 0/32]	Loss 2.0782e+00 (2.0782e+00)	Acc@1  40.69 ( 40.69)	Acc@5  70.62 ( 70.62)
+[TRAIN] E: [161][31/32]	Loss 2.0487e+00 (2.0838e+00)	Acc@1  39.75 ( 40.01)	Acc@5  70.50 ( 70.18)
+[EVAL] E: [161][0/4]	Loss 2.1770e+00 (2.1770e+00)	Acc@1  47.88 ( 47.88)	Acc@5  77.12 ( 77.12)
+[EVAL] E: [161][3/4]	Loss 2.1844e+00 (2.1305e+00)	Acc@1  45.00 ( 47.14)	Acc@5  77.00 ( 78.34)
+		 Test evaluation at end of epoch: latest_acc:47.14 LR=0.09842915805651986 -- best acc so far 55.04
+Train Epoch:162
+
+[TRAIN] E: [162][ 0/32]	Loss 2.0853e+00 (2.0853e+00)	Acc@1  40.31 ( 40.31)	Acc@5  70.44 ( 70.44)
+[TRAIN] E: [162][31/32]	Loss 2.2262e+00 (2.1101e+00)	Acc@1  37.25 ( 39.81)	Acc@5  68.00 ( 70.29)
+[EVAL] E: [162][0/4]	Loss 2.4274e+00 (2.4274e+00)	Acc@1  47.25 ( 47.25)	Acc@5  76.19 ( 76.19)
+[EVAL] E: [162][3/4]	Loss 2.3738e+00 (2.3691e+00)	Acc@1  44.00 ( 46.28)	Acc@5  76.50 ( 76.80)
+		 Test evaluation at end of epoch: latest_acc:46.28 LR=0.0984291580565201 -- best acc so far 55.04
+Train Epoch:163
+
+[TRAIN] E: [163][ 0/32]	Loss 2.1006e+00 (2.1006e+00)	Acc@1  41.31 ( 41.31)	Acc@5  69.94 ( 69.94)
+[TRAIN] E: [163][31/32]	Loss 1.9854e+00 (2.1218e+00)	Acc@1  43.75 ( 39.97)	Acc@5  73.00 ( 69.97)
+[EVAL] E: [163][0/4]	Loss 2.1588e+00 (2.1588e+00)	Acc@1  48.06 ( 48.06)	Acc@5  78.00 ( 78.00)
+[EVAL] E: [163][3/4]	Loss 2.0776e+00 (2.0974e+00)	Acc@1  44.50 ( 48.26)	Acc@5  83.00 ( 78.94)
+		 Test evaluation at end of epoch: latest_acc:48.26 LR=0.0864484313711487 -- best acc so far 55.04
+Train Epoch:164
+
+[TRAIN] E: [164][ 0/32]	Loss 2.0396e+00 (2.0396e+00)	Acc@1  40.62 ( 40.62)	Acc@5  71.50 ( 71.50)
+[TRAIN] E: [164][31/32]	Loss 2.0411e+00 (2.0597e+00)	Acc@1  41.75 ( 40.65)	Acc@5  70.50 ( 70.78)
+[EVAL] E: [164][0/4]	Loss 2.0450e+00 (2.0450e+00)	Acc@1  50.12 ( 50.12)	Acc@5  78.50 ( 78.50)
+[EVAL] E: [164][3/4]	Loss 1.8945e+00 (1.9875e+00)	Acc@1  50.50 ( 49.42)	Acc@5  83.50 ( 79.66)
+		 Test evaluation at end of epoch: latest_acc:49.42 LR=0.06545084971880695 -- best acc so far 55.04
+Train Epoch:165
+
+[TRAIN] E: [165][ 0/32]	Loss 2.0396e+00 (2.0396e+00)	Acc@1  38.94 ( 38.94)	Acc@5  70.75 ( 70.75)
+[TRAIN] E: [165][31/32]	Loss 1.9884e+00 (2.0043e+00)	Acc@1  42.50 ( 41.46)	Acc@5  69.50 ( 71.26)
+[EVAL] E: [165][0/4]	Loss 2.0037e+00 (2.0037e+00)	Acc@1  52.38 ( 52.38)	Acc@5  81.06 ( 81.06)
+[EVAL] E: [165][3/4]	Loss 1.9862e+00 (1.9763e+00)	Acc@1  48.00 ( 51.78)	Acc@5  81.50 ( 81.06)
+		 Test evaluation at end of epoch: latest_acc:51.78 LR=0.040630934270749826 -- best acc so far 55.04
+Train Epoch:166
+
+[TRAIN] E: [166][ 0/32]	Loss 1.9581e+00 (1.9581e+00)	Acc@1  43.06 ( 43.06)	Acc@5  70.69 ( 70.69)
+[TRAIN] E: [166][31/32]	Loss 1.9230e+00 (1.9553e+00)	Acc@1  41.25 ( 41.98)	Acc@5  71.50 ( 71.95)
+[EVAL] E: [166][0/4]	Loss 1.8283e+00 (1.8283e+00)	Acc@1  53.62 ( 53.62)	Acc@5  82.81 ( 82.81)
+[EVAL] E: [166][3/4]	Loss 1.7282e+00 (1.7699e+00)	Acc@1  51.50 ( 53.28)	Acc@5  87.00 ( 83.24)
+		 Test evaluation at end of epoch: latest_acc:53.28 LR=0.018128800512581568 -- best acc so far 55.04
+Train Epoch:167
+
+[TRAIN] E: [167][ 0/32]	Loss 1.8982e+00 (1.8982e+00)	Acc@1  44.12 ( 44.12)	Acc@5  71.75 ( 71.75)
+[TRAIN] E: [167][31/32]	Loss 1.8119e+00 (1.9010e+00)	Acc@1  42.00 ( 42.45)	Acc@5  72.50 ( 72.21)
+[EVAL] E: [167][0/4]	Loss 1.7574e+00 (1.7574e+00)	Acc@1  55.44 ( 55.44)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [167][3/4]	Loss 1.6919e+00 (1.7130e+00)	Acc@1  52.00 ( 54.40)	Acc@5  85.50 ( 83.94)
+		 Test evaluation at end of epoch: latest_acc:54.4 LR=0.0035111757055905357 -- best acc so far 55.04
+Train Epoch:168
+
+[TRAIN] E: [168][ 0/32]	Loss 1.8979e+00 (1.8979e+00)	Acc@1  40.44 ( 40.44)	Acc@5  71.56 ( 71.56)
+[TRAIN] E: [168][31/32]	Loss 1.7984e+00 (1.8830e+00)	Acc@1  44.50 ( 42.94)	Acc@5  73.25 ( 72.75)
+[EVAL] E: [168][0/4]	Loss 1.7481e+00 (1.7481e+00)	Acc@1  55.88 ( 55.88)	Acc@5  82.81 ( 82.81)
+[EVAL] E: [168][3/4]	Loss 1.6815e+00 (1.7082e+00)	Acc@1  52.50 ( 54.64)	Acc@5  87.50 ( 84.18)
+		 Test evaluation at end of epoch: latest_acc:54.64 LR=0.00039426493427610626 -- best acc so far 55.04
+Train Epoch:169
+
+[TRAIN] E: [169][ 0/32]	Loss 1.8981e+00 (1.8981e+00)	Acc@1  41.81 ( 41.81)	Acc@5  72.00 ( 72.00)
+[TRAIN] E: [169][31/32]	Loss 1.7963e+00 (1.8788e+00)	Acc@1  42.75 ( 43.18)	Acc@5  75.50 ( 73.00)
+[EVAL] E: [169][0/4]	Loss 1.7520e+00 (1.7520e+00)	Acc@1  55.62 ( 55.62)	Acc@5  82.62 ( 82.62)
+[EVAL] E: [169][3/4]	Loss 1.7038e+00 (1.7202e+00)	Acc@1  52.00 ( 54.74)	Acc@5  86.00 ( 84.02)
+		 Test evaluation at end of epoch: latest_acc:54.74 LR=0.009549150281252538 -- best acc so far 55.04
+Train Epoch:170
+
+[TRAIN] E: [170][ 0/32]	Loss 1.9149e+00 (1.9149e+00)	Acc@1  42.81 ( 42.81)	Acc@5  71.75 ( 71.75)
+[TRAIN] E: [170][31/32]	Loss 1.8775e+00 (1.8877e+00)	Acc@1  40.25 ( 42.85)	Acc@5  71.50 ( 72.65)
+[EVAL] E: [170][0/4]	Loss 1.7667e+00 (1.7667e+00)	Acc@1  54.69 ( 54.69)	Acc@5  82.25 ( 82.25)
+[EVAL] E: [170][3/4]	Loss 1.7684e+00 (1.7451e+00)	Acc@1  51.00 ( 53.98)	Acc@5  87.50 ( 83.16)
+		 Test evaluation at end of epoch: latest_acc:53.98 LR=0.02871103542174609 -- best acc so far 55.04
+Train Epoch:171
+
+[TRAIN] E: [171][ 0/32]	Loss 1.8871e+00 (1.8871e+00)	Acc@1  45.44 ( 45.44)	Acc@5  72.56 ( 72.56)
+[TRAIN] E: [171][31/32]	Loss 2.0068e+00 (1.9325e+00)	Acc@1  43.75 ( 42.06)	Acc@5  72.25 ( 72.20)
+[EVAL] E: [171][0/4]	Loss 1.9466e+00 (1.9466e+00)	Acc@1  51.06 ( 51.06)	Acc@5  80.81 ( 80.81)
+[EVAL] E: [171][3/4]	Loss 1.8709e+00 (1.9003e+00)	Acc@1  50.50 ( 51.16)	Acc@5  83.50 ( 81.50)
+		 Test evaluation at end of epoch: latest_acc:51.16 LR=0.05313952597646522 -- best acc so far 55.04
+Train Epoch:172
+
+[TRAIN] E: [172][ 0/32]	Loss 2.0146e+00 (2.0146e+00)	Acc@1  41.81 ( 41.81)	Acc@5  71.19 ( 71.19)
+[TRAIN] E: [172][31/32]	Loss 2.1151e+00 (1.9948e+00)	Acc@1  38.50 ( 41.21)	Acc@5  68.25 ( 71.21)
+[EVAL] E: [172][0/4]	Loss 2.2468e+00 (2.2468e+00)	Acc@1  47.81 ( 47.81)	Acc@5  78.12 ( 78.12)
+[EVAL] E: [172][3/4]	Loss 2.1898e+00 (2.1845e+00)	Acc@1  43.50 ( 47.48)	Acc@5  84.50 ( 79.10)
+		 Test evaluation at end of epoch: latest_acc:47.48 LR=0.07679133974894935 -- best acc so far 55.04
+Train Epoch:173
+
+[TRAIN] E: [173][ 0/32]	Loss 2.0373e+00 (2.0373e+00)	Acc@1  41.19 ( 41.19)	Acc@5  70.69 ( 70.69)
+[TRAIN] E: [173][31/32]	Loss 2.0036e+00 (2.0551e+00)	Acc@1  40.00 ( 40.76)	Acc@5  73.50 ( 70.74)
+[EVAL] E: [173][0/4]	Loss 2.3544e+00 (2.3544e+00)	Acc@1  44.81 ( 44.81)	Acc@5  76.50 ( 76.50)
+[EVAL] E: [173][3/4]	Loss 2.3106e+00 (2.3318e+00)	Acc@1  45.00 ( 45.44)	Acc@5  79.00 ( 76.54)
+		 Test evaluation at end of epoch: latest_acc:45.44 LR=0.09381533400219283 -- best acc so far 55.04
+Train Epoch:174
+
+[TRAIN] E: [174][ 0/32]	Loss 2.1172e+00 (2.1172e+00)	Acc@1  41.25 ( 41.25)	Acc@5  70.25 ( 70.25)
+[TRAIN] E: [174][31/32]	Loss 1.9866e+00 (2.1127e+00)	Acc@1  41.00 ( 39.95)	Acc@5  69.50 ( 70.10)
+[EVAL] E: [174][0/4]	Loss 2.4357e+00 (2.4357e+00)	Acc@1  45.75 ( 45.75)	Acc@5  74.94 ( 74.94)
+[EVAL] E: [174][3/4]	Loss 2.2215e+00 (2.3763e+00)	Acc@1  41.50 ( 45.34)	Acc@5  80.50 ( 75.44)
+		 Test evaluation at end of epoch: latest_acc:45.34 LR=0.1 -- best acc so far 55.04
+Train Epoch:175
+
+[TRAIN] E: [175][ 0/32]	Loss 2.1600e+00 (2.1600e+00)	Acc@1  38.38 ( 38.38)	Acc@5  69.38 ( 69.38)
+[TRAIN] E: [175][31/32]	Loss 1.9760e+00 (2.1084e+00)	Acc@1  37.75 ( 40.12)	Acc@5  70.50 ( 70.32)
+[EVAL] E: [175][0/4]	Loss 2.6827e+00 (2.6827e+00)	Acc@1  42.50 ( 42.50)	Acc@5  72.06 ( 72.06)
+[EVAL] E: [175][3/4]	Loss 2.3914e+00 (2.6107e+00)	Acc@1  46.00 ( 42.04)	Acc@5  79.00 ( 73.36)
+		 Test evaluation at end of epoch: latest_acc:42.04 LR=0.09381533400219332 -- best acc so far 55.04
+Train Epoch:176
+
+[TRAIN] E: [176][ 0/32]	Loss 2.0844e+00 (2.0844e+00)	Acc@1  40.25 ( 40.25)	Acc@5  71.00 ( 71.00)
+[TRAIN] E: [176][31/32]	Loss 2.1558e+00 (2.0941e+00)	Acc@1  38.00 ( 40.01)	Acc@5  70.75 ( 70.47)
+[EVAL] E: [176][0/4]	Loss 2.0618e+00 (2.0618e+00)	Acc@1  48.31 ( 48.31)	Acc@5  79.62 ( 79.62)
+[EVAL] E: [176][3/4]	Loss 2.0158e+00 (1.9899e+00)	Acc@1  43.00 ( 49.32)	Acc@5  84.50 ( 80.74)
+		 Test evaluation at end of epoch: latest_acc:49.32 LR=0.0767913397489496 -- best acc so far 55.04
+Train Epoch:177
+
+[TRAIN] E: [177][ 0/32]	Loss 2.0898e+00 (2.0898e+00)	Acc@1  40.00 ( 40.00)	Acc@5  69.31 ( 69.31)
+[TRAIN] E: [177][31/32]	Loss 2.1168e+00 (2.0415e+00)	Acc@1  38.75 ( 40.59)	Acc@5  71.50 ( 70.77)
+[EVAL] E: [177][0/4]	Loss 1.9893e+00 (1.9893e+00)	Acc@1  49.81 ( 49.81)	Acc@5  80.38 ( 80.38)
+[EVAL] E: [177][3/4]	Loss 1.8719e+00 (1.9401e+00)	Acc@1  48.50 ( 50.72)	Acc@5  85.50 ( 80.88)
+		 Test evaluation at end of epoch: latest_acc:50.72 LR=0.053139525976465554 -- best acc so far 55.04
+Train Epoch:178
+
+[TRAIN] E: [178][ 0/32]	Loss 2.0161e+00 (2.0161e+00)	Acc@1  41.31 ( 41.31)	Acc@5  71.62 ( 71.62)
+[TRAIN] E: [178][31/32]	Loss 2.0721e+00 (1.9726e+00)	Acc@1  45.75 ( 41.69)	Acc@5  72.75 ( 71.89)
+[EVAL] E: [178][0/4]	Loss 1.9536e+00 (1.9536e+00)	Acc@1  50.81 ( 50.81)	Acc@5  80.75 ( 80.75)
+[EVAL] E: [178][3/4]	Loss 1.8304e+00 (1.8825e+00)	Acc@1  51.50 ( 51.62)	Acc@5  84.50 ( 81.24)
+		 Test evaluation at end of epoch: latest_acc:51.62 LR=0.028711035421746387 -- best acc so far 55.04
+Train Epoch:179
+
+[TRAIN] E: [179][ 0/32]	Loss 1.9395e+00 (1.9395e+00)	Acc@1  41.62 ( 41.62)	Acc@5  70.50 ( 70.50)
+[TRAIN] E: [179][31/32]	Loss 1.8820e+00 (1.9200e+00)	Acc@1  48.50 ( 42.36)	Acc@5  76.00 ( 72.22)
+[EVAL] E: [179][0/4]	Loss 1.7673e+00 (1.7673e+00)	Acc@1  54.00 ( 54.00)	Acc@5  82.69 ( 82.69)
+[EVAL] E: [179][3/4]	Loss 1.7098e+00 (1.7115e+00)	Acc@1  50.50 ( 54.54)	Acc@5  87.00 ( 83.58)
+		 Test evaluation at end of epoch: latest_acc:54.54 LR=0.00954915028125273 -- best acc so far 55.04
+Train Epoch:180
+
+[TRAIN] E: [180][ 0/32]	Loss 1.9298e+00 (1.9298e+00)	Acc@1  41.06 ( 41.06)	Acc@5  73.31 ( 73.31)
+[TRAIN] E: [180][31/32]	Loss 1.9296e+00 (1.8837e+00)	Acc@1  41.00 ( 42.82)	Acc@5  68.50 ( 72.84)
+[EVAL] E: [180][0/4]	Loss 1.7572e+00 (1.7572e+00)	Acc@1  55.50 ( 55.50)	Acc@5  83.62 ( 83.62)
+[EVAL] E: [180][3/4]	Loss 1.6662e+00 (1.7006e+00)	Acc@1  50.50 ( 55.02)	Acc@5  88.00 ( 84.30)
+		 Test evaluation at end of epoch: latest_acc:55.02 LR=0.0003942649342761507 -- best acc so far 55.04
+Train Epoch:181
+
+[TRAIN] E: [181][ 0/32]	Loss 1.8967e+00 (1.8967e+00)	Acc@1  41.94 ( 41.94)	Acc@5  72.12 ( 72.12)
+[TRAIN] E: [181][31/32]	Loss 1.9927e+00 (1.8690e+00)	Acc@1  40.50 ( 42.93)	Acc@5  71.50 ( 72.55)
+[EVAL] E: [181][0/4]	Loss 1.7552e+00 (1.7552e+00)	Acc@1  55.38 ( 55.38)	Acc@5  83.38 ( 83.38)
+[EVAL] E: [181][3/4]	Loss 1.6733e+00 (1.6987e+00)	Acc@1  50.50 ( 55.16)	Acc@5  88.50 ( 84.06)
+		 Test evaluation at end of epoch: latest_acc:55.16 LR=0.003511175705584101 -- best acc so far 55.16
+Train Epoch:182
+
+[TRAIN] E: [182][ 0/32]	Loss 1.8387e+00 (1.8387e+00)	Acc@1  42.94 ( 42.94)	Acc@5  72.56 ( 72.56)
+[TRAIN] E: [182][31/32]	Loss 1.8458e+00 (1.8688e+00)	Acc@1  42.75 ( 42.90)	Acc@5  75.25 ( 72.76)
+[EVAL] E: [182][0/4]	Loss 1.7818e+00 (1.7818e+00)	Acc@1  54.25 ( 54.25)	Acc@5  83.00 ( 83.00)
+[EVAL] E: [182][3/4]	Loss 1.7008e+00 (1.7261e+00)	Acc@1  52.50 ( 54.44)	Acc@5  87.50 ( 83.78)
+		 Test evaluation at end of epoch: latest_acc:54.44 LR=0.018128800512548737 -- best acc so far 55.16
+Train Epoch:183
+
+[TRAIN] E: [183][ 0/32]	Loss 1.9512e+00 (1.9512e+00)	Acc@1  42.88 ( 42.88)	Acc@5  73.12 ( 73.12)
+[TRAIN] E: [183][31/32]	Loss 1.9837e+00 (1.9112e+00)	Acc@1  44.25 ( 42.35)	Acc@5  72.25 ( 72.09)
+[EVAL] E: [183][0/4]	Loss 1.9520e+00 (1.9520e+00)	Acc@1  51.31 ( 51.31)	Acc@5  80.75 ( 80.75)
+[EVAL] E: [183][3/4]	Loss 1.9914e+00 (1.9329e+00)	Acc@1  44.50 ( 50.44)	Acc@5  82.50 ( 81.30)
+		 Test evaluation at end of epoch: latest_acc:50.44 LR=0.04063093427067649 -- best acc so far 55.16
+Train Epoch:184
+
+[TRAIN] E: [184][ 0/32]	Loss 1.9198e+00 (1.9198e+00)	Acc@1  42.69 ( 42.69)	Acc@5  72.44 ( 72.44)
+[TRAIN] E: [184][31/32]	Loss 2.0869e+00 (1.9630e+00)	Acc@1  41.25 ( 41.97)	Acc@5  69.50 ( 71.92)
+[EVAL] E: [184][0/4]	Loss 1.9802e+00 (1.9802e+00)	Acc@1  51.94 ( 51.94)	Acc@5  80.19 ( 80.19)
+[EVAL] E: [184][3/4]	Loss 1.8680e+00 (1.9355e+00)	Acc@1  48.50 ( 51.86)	Acc@5  84.00 ( 80.82)
+		 Test evaluation at end of epoch: latest_acc:51.86 LR=0.06545084971868828 -- best acc so far 55.16
+Train Epoch:185
+
+[TRAIN] E: [185][ 0/32]	Loss 1.9601e+00 (1.9601e+00)	Acc@1  42.38 ( 42.38)	Acc@5  73.25 ( 73.25)
+[TRAIN] E: [185][31/32]	Loss 2.0599e+00 (2.0187e+00)	Acc@1  39.25 ( 41.15)	Acc@5  70.25 ( 71.50)
+[EVAL] E: [185][0/4]	Loss 2.4440e+00 (2.4440e+00)	Acc@1  44.94 ( 44.94)	Acc@5  75.62 ( 75.62)
+[EVAL] E: [185][3/4]	Loss 2.2495e+00 (2.3641e+00)	Acc@1  41.50 ( 45.74)	Acc@5  81.50 ( 76.38)
+		 Test evaluation at end of epoch: latest_acc:45.74 LR=0.08644843137099249 -- best acc so far 55.16
+Train Epoch:186
+
+[TRAIN] E: [186][ 0/32]	Loss 2.0007e+00 (2.0007e+00)	Acc@1  42.81 ( 42.81)	Acc@5  71.44 ( 71.44)
+[TRAIN] E: [186][31/32]	Loss 2.0672e+00 (2.0791e+00)	Acc@1  43.25 ( 40.31)	Acc@5  76.00 ( 70.71)
+[EVAL] E: [186][0/4]	Loss 2.2713e+00 (2.2713e+00)	Acc@1  46.62 ( 46.62)	Acc@5  76.25 ( 76.25)
+[EVAL] E: [186][3/4]	Loss 2.1706e+00 (2.2013e+00)	Acc@1  45.00 ( 46.66)	Acc@5  79.50 ( 76.92)
+		 Test evaluation at end of epoch: latest_acc:46.66 LR=0.09842915805634292 -- best acc so far 55.16
+Train Epoch:187
+
+[TRAIN] E: [187][ 0/32]	Loss 2.0885e+00 (2.0885e+00)	Acc@1  41.62 ( 41.62)	Acc@5  72.81 ( 72.81)
+[TRAIN] E: [187][31/32]	Loss 2.0711e+00 (2.1142e+00)	Acc@1  38.75 ( 40.04)	Acc@5  68.00 ( 70.20)
+[EVAL] E: [187][0/4]	Loss 2.5693e+00 (2.5693e+00)	Acc@1  42.94 ( 42.94)	Acc@5  74.06 ( 74.06)
+[EVAL] E: [187][3/4]	Loss 2.4425e+00 (2.4544e+00)	Acc@1  38.50 ( 43.28)	Acc@5  76.50 ( 75.48)
+		 Test evaluation at end of epoch: latest_acc:43.28 LR=0.09842915805634282 -- best acc so far 55.16
+Train Epoch:188
+
+[TRAIN] E: [188][ 0/32]	Loss 2.0961e+00 (2.0961e+00)	Acc@1  42.25 ( 42.25)	Acc@5  70.38 ( 70.38)
+[TRAIN] E: [188][31/32]	Loss 2.0642e+00 (2.1153e+00)	Acc@1  38.00 ( 39.78)	Acc@5  68.00 ( 70.04)
+[EVAL] E: [188][0/4]	Loss 2.7037e+00 (2.7037e+00)	Acc@1  42.12 ( 42.12)	Acc@5  71.62 ( 71.62)
+[EVAL] E: [188][3/4]	Loss 2.7601e+00 (2.7043e+00)	Acc@1  41.00 ( 42.08)	Acc@5  70.50 ( 71.92)
+		 Test evaluation at end of epoch: latest_acc:42.08 LR=0.08644843137099271 -- best acc so far 55.16
+Train Epoch:189
+
+[TRAIN] E: [189][ 0/32]	Loss 2.1388e+00 (2.1388e+00)	Acc@1  38.19 ( 38.19)	Acc@5  68.81 ( 68.81)
+[TRAIN] E: [189][31/32]	Loss 1.9700e+00 (2.0821e+00)	Acc@1  40.75 ( 40.25)	Acc@5  69.00 ( 70.22)
+[EVAL] E: [189][0/4]	Loss 2.0290e+00 (2.0290e+00)	Acc@1  49.12 ( 49.12)	Acc@5  79.50 ( 79.50)
+[EVAL] E: [189][3/4]	Loss 1.9742e+00 (1.9458e+00)	Acc@1  46.00 ( 49.98)	Acc@5  83.00 ( 80.58)
+		 Test evaluation at end of epoch: latest_acc:49.98 LR=0.0654508497186886 -- best acc so far 55.16
+Train Epoch:190
+
+[TRAIN] E: [190][ 0/32]	Loss 2.0869e+00 (2.0869e+00)	Acc@1  40.06 ( 40.06)	Acc@5  69.50 ( 69.50)
+[TRAIN] E: [190][31/32]	Loss 1.9410e+00 (2.0053e+00)	Acc@1  41.50 ( 41.63)	Acc@5  71.50 ( 71.47)
+[EVAL] E: [190][0/4]	Loss 2.0468e+00 (2.0468e+00)	Acc@1  50.75 ( 50.75)	Acc@5  79.81 ( 79.81)
+[EVAL] E: [190][3/4]	Loss 1.9792e+00 (1.9934e+00)	Acc@1  46.50 ( 50.76)	Acc@5  83.00 ( 80.88)
+		 Test evaluation at end of epoch: latest_acc:50.76 LR=0.04063093427067749 -- best acc so far 55.16
+Train Epoch:191
+
+[TRAIN] E: [191][ 0/32]	Loss 1.9919e+00 (1.9919e+00)	Acc@1  42.44 ( 42.44)	Acc@5  73.19 ( 73.19)
+[TRAIN] E: [191][31/32]	Loss 1.9818e+00 (1.9517e+00)	Acc@1  42.00 ( 42.23)	Acc@5  68.75 ( 71.88)
+[EVAL] E: [191][0/4]	Loss 1.8012e+00 (1.8012e+00)	Acc@1  54.50 ( 54.50)	Acc@5  83.06 ( 83.06)
+[EVAL] E: [191][3/4]	Loss 1.7635e+00 (1.7526e+00)	Acc@1  51.50 ( 53.72)	Acc@5  87.50 ( 83.54)
+		 Test evaluation at end of epoch: latest_acc:53.72 LR=0.01812880051254954 -- best acc so far 55.16
+Train Epoch:192
+
+[TRAIN] E: [192][ 0/32]	Loss 1.9350e+00 (1.9350e+00)	Acc@1  41.31 ( 41.31)	Acc@5  71.31 ( 71.31)
+[TRAIN] E: [192][31/32]	Loss 1.9324e+00 (1.9065e+00)	Acc@1  42.00 ( 42.66)	Acc@5  67.75 ( 72.28)
+[EVAL] E: [192][0/4]	Loss 1.7700e+00 (1.7700e+00)	Acc@1  55.75 ( 55.75)	Acc@5  82.88 ( 82.88)
+[EVAL] E: [192][3/4]	Loss 1.7058e+00 (1.7143e+00)	Acc@1  52.00 ( 54.52)	Acc@5  89.00 ( 84.18)
+		 Test evaluation at end of epoch: latest_acc:54.52 LR=0.00351117570558449 -- best acc so far 55.16
+Train Epoch:193
+
+[TRAIN] E: [193][ 0/32]	Loss 1.8432e+00 (1.8432e+00)	Acc@1  44.25 ( 44.25)	Acc@5  73.88 ( 73.88)
+[TRAIN] E: [193][31/32]	Loss 2.0934e+00 (1.8787e+00)	Acc@1  38.25 ( 42.85)	Acc@5  69.00 ( 72.44)
+[EVAL] E: [193][0/4]	Loss 1.7609e+00 (1.7609e+00)	Acc@1  55.50 ( 55.50)	Acc@5  83.19 ( 83.19)
+[EVAL] E: [193][3/4]	Loss 1.6788e+00 (1.7066e+00)	Acc@1  53.00 ( 54.84)	Acc@5  90.00 ( 84.26)
+		 Test evaluation at end of epoch: latest_acc:54.84 LR=0.00039426493427681023 -- best acc so far 55.16
+Train Epoch:194
+
+[TRAIN] E: [194][ 0/32]	Loss 1.9453e+00 (1.9453e+00)	Acc@1  43.44 ( 43.44)	Acc@5  72.25 ( 72.25)
+[TRAIN] E: [194][31/32]	Loss 1.9181e+00 (1.8844e+00)	Acc@1  41.25 ( 42.72)	Acc@5  69.75 ( 72.64)
+[EVAL] E: [194][0/4]	Loss 1.7622e+00 (1.7622e+00)	Acc@1  55.56 ( 55.56)	Acc@5  83.44 ( 83.44)
+[EVAL] E: [194][3/4]	Loss 1.6637e+00 (1.7053e+00)	Acc@1  53.50 ( 55.36)	Acc@5  88.50 ( 84.26)
+		 Test evaluation at end of epoch: latest_acc:55.36 LR=0.009549150281269706 -- best acc so far 55.36
+Train Epoch:195
+
+[TRAIN] E: [195][ 0/32]	Loss 1.9175e+00 (1.9175e+00)	Acc@1  42.25 ( 42.25)	Acc@5  72.25 ( 72.25)
+[TRAIN] E: [195][31/32]	Loss 1.8493e+00 (1.8903e+00)	Acc@1  42.25 ( 42.96)	Acc@5  72.75 ( 72.89)
+[EVAL] E: [195][0/4]	Loss 1.8122e+00 (1.8122e+00)	Acc@1  53.44 ( 53.44)	Acc@5  82.81 ( 82.81)
+[EVAL] E: [195][3/4]	Loss 1.7146e+00 (1.7515e+00)	Acc@1  50.00 ( 53.40)	Acc@5  88.50 ( 83.46)
+		 Test evaluation at end of epoch: latest_acc:53.4 LR=0.028711035421797742 -- best acc so far 55.36
+Train Epoch:196
+
+[TRAIN] E: [196][ 0/32]	Loss 1.9089e+00 (1.9089e+00)	Acc@1  41.38 ( 41.38)	Acc@5  71.81 ( 71.81)
+[TRAIN] E: [196][31/32]	Loss 2.0035e+00 (1.9228e+00)	Acc@1  43.50 ( 42.29)	Acc@5  72.00 ( 72.26)
+[EVAL] E: [196][0/4]	Loss 1.9927e+00 (1.9927e+00)	Acc@1  50.94 ( 50.94)	Acc@5  79.31 ( 79.31)
+[EVAL] E: [196][3/4]	Loss 1.9489e+00 (1.9833e+00)	Acc@1  44.50 ( 50.02)	Acc@5  84.00 ( 79.72)
+		 Test evaluation at end of epoch: latest_acc:50.02 LR=0.053139525976560846 -- best acc so far 55.36
+Train Epoch:197
+
+[TRAIN] E: [197][ 0/32]	Loss 1.9440e+00 (1.9440e+00)	Acc@1  44.12 ( 44.12)	Acc@5  74.81 ( 74.81)
+[TRAIN] E: [197][31/32]	Loss 1.9236e+00 (1.9826e+00)	Acc@1  47.75 ( 41.66)	Acc@5  75.00 ( 71.82)
+[EVAL] E: [197][0/4]	Loss 2.1157e+00 (2.1157e+00)	Acc@1  48.44 ( 48.44)	Acc@5  78.12 ( 78.12)
+[EVAL] E: [197][3/4]	Loss 2.1578e+00 (2.0655e+00)	Acc@1  46.00 ( 48.44)	Acc@5  80.00 ( 79.08)
+		 Test evaluation at end of epoch: latest_acc:48.44 LR=0.07679133974908811 -- best acc so far 55.36
+Train Epoch:198
+
+[TRAIN] E: [198][ 0/32]	Loss 2.0773e+00 (2.0773e+00)	Acc@1  40.31 ( 40.31)	Acc@5  70.69 ( 70.69)
+[TRAIN] E: [198][31/32]	Loss 2.0558e+00 (2.0776e+00)	Acc@1  39.00 ( 40.77)	Acc@5  69.50 ( 70.60)
+[EVAL] E: [198][0/4]	Loss 2.2454e+00 (2.2454e+00)	Acc@1  47.88 ( 47.88)	Acc@5  76.94 ( 76.94)
+[EVAL] E: [198][3/4]	Loss 2.0686e+00 (2.1415e+00)	Acc@1  47.50 ( 47.48)	Acc@5  79.50 ( 78.52)
+		 Test evaluation at end of epoch: latest_acc:47.48 LR=0.09381533400236201 -- best acc so far 55.36
+Train Epoch:199
+
+[TRAIN] E: [199][ 0/32]	Loss 2.1210e+00 (2.1210e+00)	Acc@1  39.94 ( 39.94)	Acc@5  70.88 ( 70.88)
+[TRAIN] E: [199][31/32]	Loss 2.1707e+00 (2.1277e+00)	Acc@1  39.25 ( 40.11)	Acc@5  67.75 ( 69.95)
+[EVAL] E: [199][0/4]	Loss 3.0187e+00 (3.0187e+00)	Acc@1  39.12 ( 39.12)	Acc@5  69.38 ( 69.38)
+[EVAL] E: [199][3/4]	Loss 2.8460e+00 (2.9621e+00)	Acc@1  39.50 ( 39.46)	Acc@5  69.00 ( 69.98)
+		 Test evaluation at end of epoch: latest_acc:39.46 LR=0.10000000000018006 -- best acc so far 55.36
+***[2023-04-27 20:11:41]*** [Post-train] [Student] Test loss = 1.747721, accuracy@1 = 54.62, accuracy@5 = 83.20, error@1 = 45.38, error@5 = 16.80

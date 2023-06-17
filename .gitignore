@@ -1,0 +1,11 @@
+__pycache__/
+.cache/
+.config/
+.docker/
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+.local/
+.vscode-server/
+.vscode/
+.ssh/

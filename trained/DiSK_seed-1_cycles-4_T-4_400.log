@@ -1,0 +1,4563 @@
+Main Function with logger : Logger(dir=trained, use-tf=False, writer=None)
+Arguments : -------------------------------
+KD_temperature   : 4.0
+KD_temperature_s : 4.0
+Ti               : 50
+_ckpt            : ""
+alt_min_every_n_epochs : 1
+b_add_sparsity_alt_min : 0
+base_method      : hybrid_kd_inst
+base_opt_type    : sgd
+base_strategy    : 1
+batch_size       : 1000
+budget_Ti        : 20
+budget_g         : 0.6
+budget_g_gamma   : 0.9
+budget_g_max     : 0.6
+budget_g_min     : 0.4
+checkpoint_dir   : ./checkpoint
+class_num        : 100
+cov              : 0.38
+cutout_length    : 16
+data_path        : /home/prathamesh/code/data/cifar/
+dataset          : cifar100
+epochs           : 400
+eps              : 1.0
+eval_batch_size  : 1000
+eval_frequency   : 1
+extra_model_path : None
+file_name        : DiSK_seed-1_cycles-4_T-4_400
+g_denom          : 0.2
+g_iters          : 250
+g_lr             : 0.1
+g_lr_init        : 0.1
+gate_arch        : 1
+gate_conf        : 1
+gate_label       : 1
+global_model_ckpt : /home/anmolreddy/pretrained/disk-CE-cifar100-ResNet10_l-model_best.pth.tar
+global_model_name : ResNet10_l
+global_opt_type  : adam
+global_rand_seed : -1
+init_epochs      : 5
+kg               : 3
+kt               : 3
+l_args_wts       : 1.0
+l_aux            : 0.1
+l_g_clf          : 0.5
+l_kl             : 0.0
+l_nll            : 0.9
+l_oracle         : 0.0
+l_sg             : 0.6
+lmbda            : 5.0
+lmbda_adaptive   : 5
+lmbda_dual       : 5.0
+lmbda_min        : 1.0
+log_dir          : ./log
+lr               : 0.0125
+lr_type          : cosine
+max_ce           : 5.0
+model_ckpt       : /home/anmolreddy/pretrained/disk-CE-cifar100-ResNet10_s-model_best.pth.tar
+model_name       : ResNet10_s
+model_source     : normal
+momentum         : 0.9
+n_base_strategy  : 1
+n_parts          : 1
+negative         : False
+optim_config     : ./configs/opts/CIFAR-E300-W5-L1-COS.config
+penalty          : 24
+percentile_t_prob_th : 0.6
+primal_budget_update : 0
+print_freq       : 100
+print_freq_eval  : 100
+procedure        : opt-sc-oracle-routing-joint-scheme
+r_wd             : 1e-05
+rand_seed        : 1
+restart_g_learn  : 0
+restart_s_learn  : 0
+resume_ckpt      : None
+rho              : 2.0
+routing_name     : b24_default
+routing_opt_type : sgd
+s_iters          : 250
+s_lr             : 0.1
+save_dir         : ./trained/
+sched_cycles     : 4
+shuffle          : 1
+strategy         : 1
+t_iters          : 5005
+t_lr             : 0.0001
+tau              : 0.8
+tau2             : 0.8
+temp             : 4
+topK             : 10
+train_scheme     : 2
+use_alt_min      : 1
+use_auxiliary    : 1
+use_g_clf        : 0
+use_g_y_routing  : 0
+use_kl           : 0
+use_only_bn      : 0
+use_oracle       : 0
+use_prob         : 50
+use_prob_wts     : 0
+warmup_epochs    : 5
+wd               : 1e-05
+workers          : 8
+Python  Version  : 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Pillow  Version  : 9.2.0
+PyTorch Version  : 1.13.1
+cuDNN   Version  : 8500
+CUDA available   : True
+CUDA GPU numbers : 1
+CUDA_VISIBLE_DEVICES : 0
+Namespace(KD_temperature=4.0, KD_temperature_s=4.0, Ti=50, _ckpt='""', alt_min_every_n_epochs=1, b_add_sparsity_alt_min=0, base_method='hybrid_kd_inst', base_opt_type='sgd', base_strategy=1, batch_size=1000, budget_Ti=20, budget_g=0.6, budget_g_gamma=0.9, budget_g_max=0.6, budget_g_min=0.4, checkpoint_dir='./checkpoint', class_num=100, cov=0.38, cutout_length=16, data_path='/home/prathamesh/code/data/cifar/', dataset='cifar100', epochs=400, eps=1.0, eval_batch_size=1000, eval_frequency=1, extra_model_path=None, file_name='DiSK_seed-1_cycles-4_T-4_400', g_denom=0.2, g_iters=250, g_lr=0.1, g_lr_init=0.1, gate_arch=1, gate_conf=1, gate_label=1, global_model_ckpt='/home/anmolreddy/pretrained/disk-CE-cifar100-ResNet10_l-model_best.pth.tar', global_model_name='ResNet10_l', global_opt_type='adam', global_rand_seed=-1, init_epochs=5, kg=3, kt=3, l_args_wts=1.0, l_aux=0.1, l_g_clf=0.5, l_kl=0.0, l_nll=0.9, l_oracle=0.0, l_sg=0.6, lmbda=5.0, lmbda_adaptive=5, lmbda_dual=5.0, lmbda_min=1.0, log_dir='./log', lr=0.0125, lr_type='cosine', max_ce=5.0, model_ckpt='/home/anmolreddy/pretrained/disk-CE-cifar100-ResNet10_s-model_best.pth.tar', model_name='ResNet10_s', model_source='normal', momentum=0.9, n_base_strategy=1, n_parts=1, negative=False, optim_config='./configs/opts/CIFAR-E300-W5-L1-COS.config', penalty=24, percentile_t_prob_th=0.6, primal_budget_update=0, print_freq=100, print_freq_eval=100, procedure='opt-sc-oracle-routing-joint-scheme', r_wd=1e-05, rand_seed=1, restart_g_learn=0, restart_s_learn=0, resume_ckpt=None, rho=2.0, routing_name='b24_default', routing_opt_type='sgd', s_iters=250, s_lr=0.1, save_dir='./trained/', sched_cycles=4, shuffle=1, strategy=1, t_iters=5005, t_lr=0.0001, tau=0.8, tau2=0.8, temp=4, topK=10, train_scheme=2, use_alt_min=1, use_auxiliary=1, use_g_clf=0, use_g_y_routing=0, use_kl=0, use_only_bn=0, use_oracle=0, use_prob=50, use_prob_wts=0, warmup_epochs=5, wd=1e-05, workers=8)
+Train:45000	, Valid:5000	, Test:10000
+
+Student: ResNet10_s
+using pretrained student model from /home/anmolreddy/ce_results/CE_with_seed-1_cycles-4_cifar100-ResNet10_smodel_best.pth.tar
+model information : EfficientNetV2_s (CIFAR)
+--------------------------------------------------
+[Teacher]Params=1.19 MB, FLOPs=63.82 M ... = 0.06 G
+model information : EfficientNetV2_s (CIFAR)
+--------------------------------------------------
+[Student]Params=0.08 MB, FLOPs=4.16 M ... = 0.00 G
+--------------------------------------------------
+train_data : <torch.utils.data.dataset.Subset object at 0x7ff059760950>
+valid_data : <torch.utils.data.dataset.Subset object at 0x7ff035a95850>
+***[2023-05-10 06:49:50]*** before training [Student(CE)] Test loss = 1.772279, accuracy@1 = 51.44, accuracy@5 = 81.32, error@1 = 48.56, error@5 = 18.68
+***[2023-05-10 06:49:51]*** [Teacher] Test loss = 1.045213, accuracy@1 = 70.72, accuracy@5 = 92.22, error@1 = 29.28, error@5 = 7.78
+len models before freeze --38
+len Global models before freeze --38
+['gating']
+		 LR=0.1 init-LR=0.1 -- base-LR=0.1 -- global-LR=0.0001
+['gating']
+		 LR=0.1 init-LR=0.09045084971874738 -- base-LR=0.1 -- global-LR=0.0001
+['gating']
+		 LR=0.1 init-LR=0.06545084971874737 -- base-LR=0.1 -- global-LR=0.0001
+['gating']
+		 LR=0.1 init-LR=0.03454915028125263 -- base-LR=0.1 -- global-LR=0.0001
+['gating']
+		 LR=0.1 init-LR=0.009549150281252633 -- base-LR=0.1 -- global-LR=0.0001
+dual_update_step
+ old -- 5.0 -- new 10.57297420501709 -- grad 5.57297420501709
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.1 init-LR=0.009549150281252633 -- student-LR=0.1 -- teacher-LR=0.0001
+		 Valid evaluation at end of epoch: latest_acc:28.10 -- best val acc so far 28.10
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09997532801828658 init-LR=0.009549150281252633 -- student-LR=0.09997532801828658 -- teacher-LR=9.997532801828658e-05
+		 Valid evaluation at end of epoch: latest_acc:29.10 -- best val acc so far 29.10
+dual_update_step
+ old -- 10.57297420501709 -- new 16.99490213394165 -- grad 6.4219279289245605
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09990133642141358 init-LR=0.009549150281252633 -- student-LR=0.09990133642141358 -- teacher-LR=9.990133642141359e-05
+		 Valid evaluation at end of epoch: latest_acc:31.12 -- best val acc so far 31.12
+dual_update_step
+ old -- 16.99490213394165 -- new 23.492472648620605 -- grad 6.497570514678955
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.099778098230154 init-LR=0.009549150281252633 -- student-LR=0.099778098230154 -- teacher-LR=9.977809823015401e-05
+		 Valid evaluation at end of epoch: latest_acc:31.54 -- best val acc so far 31.54
+dual_update_step
+ old -- 23.492472648620605 -- new 30.018765449523926 -- grad 6.52629280090332
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0996057350657239 init-LR=0.009549150281252633 -- student-LR=0.0996057350657239 -- teacher-LR=9.96057350657239e-05
+		 Valid evaluation at end of epoch: latest_acc:28.78 -- best val acc so far 31.54
+dual_update_step
+ old -- 30.018765449523926 -- new 36.995627880096436 -- grad 6.97686243057251
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0993844170297569 init-LR=0.009549150281252633 -- student-LR=0.0993844170297569 -- teacher-LR=9.938441702975689e-05
+		 Valid evaluation at end of epoch: latest_acc:29.76 -- best val acc so far 31.54
+dual_update_step
+ old -- 36.995627880096436 -- new 43.82336950302124 -- grad 6.827741622924805
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09911436253643445 init-LR=0.009549150281252633 -- student-LR=0.09911436253643445 -- teacher-LR=9.911436253643445e-05
+		 Valid evaluation at end of epoch: latest_acc:31.70 -- best val acc so far 31.70
+dual_update_step
+ old -- 43.82336950302124 -- new 50.534167766571045 -- grad 6.710798263549805
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09879583809693737 init-LR=0.009549150281252633 -- student-LR=0.09879583809693737 -- teacher-LR=9.879583809693738e-05
+		 Valid evaluation at end of epoch: latest_acc:33.24 -- best val acc so far 33.24
+dual_update_step
+ old -- 50.534167766571045 -- new 57.167057514190674 -- grad 6.632889747619629
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09842915805643156 init-LR=0.009549150281252633 -- student-LR=0.09842915805643156 -- teacher-LR=9.842915805643155e-05
+		 Valid evaluation at end of epoch: latest_acc:31.22 -- best val acc so far 33.24
+dual_update_step
+ old -- 57.167057514190674 -- new 64.12764167785645 -- grad 6.9605841636657715
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09801468428384716 init-LR=0.009549150281252633 -- student-LR=0.09801468428384716 -- teacher-LR=9.801468428384716e-05
+		 Valid evaluation at end of epoch: latest_acc:32.26 -- best val acc so far 33.24
+dual_update_step
+ old -- 5.0 -- new 11.907648086547852 -- grad 6.907648086547852
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09755282581475769 init-LR=0.009549150281252633 -- student-LR=0.09755282581475769 -- teacher-LR=9.755282581475769e-05
+		 Valid evaluation at end of epoch: latest_acc:33.92 -- best val acc so far 33.92
+dual_update_step
+ old -- 11.907648086547852 -- new 18.6654109954834 -- grad 6.757762908935547
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09704403844771128 init-LR=0.009549150281252633 -- student-LR=0.09704403844771128 -- teacher-LR=9.704403844771128e-05
+		 Valid evaluation at end of epoch: latest_acc:33.24 -- best val acc so far 33.92
+dual_update_step
+ old -- 18.6654109954834 -- new 25.396484375 -- grad 6.731073379516602
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09648882429441258 init-LR=0.009549150281252633 -- student-LR=0.09648882429441258 -- teacher-LR=9.648882429441257e-05
+		 Valid evaluation at end of epoch: latest_acc:32.12 -- best val acc so far 33.92
+dual_update_step
+ old -- 25.396484375 -- new 32.252286434173584 -- grad 6.855802059173584
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09588773128419906 init-LR=0.009549150281252633 -- student-LR=0.09588773128419906 -- teacher-LR=9.588773128419906e-05
+		 Valid evaluation at end of epoch: latest_acc:30.58 -- best val acc so far 33.92
+dual_update_step
+ old -- 32.252286434173584 -- new 39.54609489440918 -- grad 7.293808460235596
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09524135262330098 init-LR=0.009549150281252633 -- student-LR=0.09524135262330098 -- teacher-LR=9.524135262330098e-05
+		 Valid evaluation at end of epoch: latest_acc:34.90 -- best val acc so far 34.90
+dual_update_step
+ old -- 39.54609489440918 -- new 46.27251434326172 -- grad 6.726419448852539
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09455032620941839 init-LR=0.009549150281252633 -- student-LR=0.09455032620941839 -- teacher-LR=9.45503262094184e-05
+		 Valid evaluation at end of epoch: latest_acc:34.16 -- best val acc so far 34.90
+dual_update_step
+ old -- 46.27251434326172 -- new 53.104421615600586 -- grad 6.831907272338867
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09381533400219318 init-LR=0.009549150281252633 -- student-LR=0.09381533400219318 -- teacher-LR=9.381533400219318e-05
+		 Valid evaluation at end of epoch: latest_acc:34.66 -- best val acc so far 34.90
+dual_update_step
+ old -- 53.104421615600586 -- new 59.929978370666504 -- grad 6.825556755065918
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09303710135019719 init-LR=0.009549150281252633 -- student-LR=0.09303710135019719 -- teacher-LR=9.30371013501972e-05
+		 Valid evaluation at end of epoch: latest_acc:33.94 -- best val acc so far 34.90
+dual_update_step
+ old -- 59.929978370666504 -- new 66.88957643508911 -- grad 6.959598064422607
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09221639627510075 init-LR=0.009549150281252633 -- student-LR=0.09221639627510075 -- teacher-LR=9.221639627510076e-05
+		 Valid evaluation at end of epoch: latest_acc:34.74 -- best val acc so far 34.90
+dual_update_step
+ old -- 66.88957643508911 -- new 73.88722944259644 -- grad 6.997653007507324
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0913540287137281 init-LR=0.009549150281252633 -- student-LR=0.0913540287137281 -- teacher-LR=9.135402871372808e-05
+		 Valid evaluation at end of epoch: latest_acc:32.22 -- best val acc so far 34.90
+dual_update_step
+ old -- 5.0 -- new 11.78200101852417 -- grad 6.78200101852417
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09045084971874738 init-LR=0.009549150281252633 -- student-LR=0.09045084971874738 -- teacher-LR=9.045084971874738e-05
+		 Valid evaluation at end of epoch: latest_acc:36.14 -- best val acc so far 36.14
+dual_update_step
+ old -- 11.78200101852417 -- new 18.37864875793457 -- grad 6.5966477394104
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08950775061878452 init-LR=0.009549150281252633 -- student-LR=0.08950775061878452 -- teacher-LR=8.950775061878452e-05
+		 Valid evaluation at end of epoch: latest_acc:26.94 -- best val acc so far 36.14
+dual_update_step
+ old -- 18.37864875793457 -- new 25.680813312530518 -- grad 7.302164554595947
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08852566213878947 init-LR=0.009549150281252633 -- student-LR=0.08852566213878947 -- teacher-LR=8.852566213878947e-05
+		 Valid evaluation at end of epoch: latest_acc:33.48 -- best val acc so far 36.14
+dual_update_step
+ old -- 25.680813312530518 -- new 32.429834842681885 -- grad 6.749021530151367
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08750555348152299 init-LR=0.009549150281252633 -- student-LR=0.08750555348152299 -- teacher-LR=8.750555348152298e-05
+		 Valid evaluation at end of epoch: latest_acc:35.56 -- best val acc so far 36.14
+dual_update_step
+ old -- 32.429834842681885 -- new 38.962997913360596 -- grad 6.533163070678711
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08644843137107058 init-LR=0.009549150281252633 -- student-LR=0.08644843137107058 -- teacher-LR=8.644843137107059e-05
+		 Valid evaluation at end of epoch: latest_acc:36.24 -- best val acc so far 36.24
+dual_update_step
+ old -- 38.962997913360596 -- new 45.550373554229736 -- grad 6.587375640869141
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08535533905932738 init-LR=0.009549150281252633 -- student-LR=0.08535533905932738 -- teacher-LR=8.535533905932738e-05
+		 Valid evaluation at end of epoch: latest_acc:36.56 -- best val acc so far 36.56
+dual_update_step
+ old -- 45.550373554229736 -- new 52.10907793045044 -- grad 6.558704376220703
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08422735529643444 init-LR=0.009549150281252633 -- student-LR=0.08422735529643444 -- teacher-LR=8.422735529643444e-05
+		 Valid evaluation at end of epoch: latest_acc:35.82 -- best val acc so far 36.56
+dual_update_step
+ old -- 52.10907793045044 -- new 58.66254901885986 -- grad 6.553471088409424
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0830655932661826 init-LR=0.009549150281252633 -- student-LR=0.0830655932661826 -- teacher-LR=8.306559326618259e-05
+		 Valid evaluation at end of epoch: latest_acc:37.16 -- best val acc so far 37.16
+dual_update_step
+ old -- 58.66254901885986 -- new 65.15857601165771 -- grad 6.496026992797852
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08187119948743449 init-LR=0.009549150281252633 -- student-LR=0.08187119948743449 -- teacher-LR=8.18711994874345e-05
+		 Valid evaluation at end of epoch: latest_acc:33.48 -- best val acc so far 37.16
+dual_update_step
+ old -- 65.15857601165771 -- new 72.14872646331787 -- grad 6.990150451660156
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08064535268264883 init-LR=0.009549150281252633 -- student-LR=0.08064535268264883 -- teacher-LR=8.064535268264883e-05
+		 Valid evaluation at end of epoch: latest_acc:35.46 -- best val acc so far 37.16
+dual_update_step
+ old -- 5.0 -- new 11.735648155212402 -- grad 6.735648155212402
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07938926261462367 init-LR=0.009549150281252633 -- student-LR=0.07938926261462367 -- teacher-LR=7.938926261462367e-05
+		 Valid evaluation at end of epoch: latest_acc:36.28 -- best val acc so far 37.16
+dual_update_step
+ old -- 11.735648155212402 -- new 18.44236183166504 -- grad 6.706713676452637
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07810416889260655 init-LR=0.009549150281252633 -- student-LR=0.07810416889260655 -- teacher-LR=7.810416889260655e-05
+		 Valid evaluation at end of epoch: latest_acc:31.26 -- best val acc so far 37.16
+dual_update_step
+ old -- 18.44236183166504 -- new 25.798171043395996 -- grad 7.355809211730957
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07679133974894983 init-LR=0.009549150281252633 -- student-LR=0.07679133974894983 -- teacher-LR=7.679133974894983e-05
+		 Valid evaluation at end of epoch: latest_acc:37.82 -- best val acc so far 37.82
+dual_update_step
+ old -- 25.798171043395996 -- new 32.445526123046875 -- grad 6.647355079650879
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07545207078751857 init-LR=0.009549150281252633 -- student-LR=0.07545207078751857 -- teacher-LR=7.545207078751857e-05
+		 Valid evaluation at end of epoch: latest_acc:37.68 -- best val acc so far 37.82
+dual_update_step
+ old -- 32.445526123046875 -- new 39.10593271255493 -- grad 6.660406589508057
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07408768370508577 init-LR=0.009549150281252633 -- student-LR=0.07408768370508577 -- teacher-LR=7.408768370508576e-05
+		 Valid evaluation at end of epoch: latest_acc:37.46 -- best val acc so far 37.82
+dual_update_step
+ old -- 39.10593271255493 -- new 45.670783042907715 -- grad 6.564850330352783
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07269952498697733 init-LR=0.009549150281252633 -- student-LR=0.07269952498697733 -- teacher-LR=7.269952498697734e-05
+		 Valid evaluation at end of epoch: latest_acc:35.22 -- best val acc so far 37.82
+dual_update_step
+ old -- 45.670783042907715 -- new 52.57897901535034 -- grad 6.908195972442627
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07128896457825364 init-LR=0.009549150281252633 -- student-LR=0.07128896457825364 -- teacher-LR=7.128896457825364e-05
+		 Valid evaluation at end of epoch: latest_acc:35.58 -- best val acc so far 37.82
+dual_update_step
+ old -- 52.57897901535034 -- new 59.4526686668396 -- grad 6.873689651489258
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06985739453173903 init-LR=0.009549150281252633 -- student-LR=0.06985739453173903 -- teacher-LR=6.985739453173903e-05
+		 Valid evaluation at end of epoch: latest_acc:36.92 -- best val acc so far 37.82
+dual_update_step
+ old -- 59.4526686668396 -- new 66.36272621154785 -- grad 6.910057544708252
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06840622763423392 init-LR=0.009549150281252633 -- student-LR=0.06840622763423392 -- teacher-LR=6.840622763423391e-05
+		 Valid evaluation at end of epoch: latest_acc:38.22 -- best val acc so far 38.22
+dual_update_step
+ old -- 66.36272621154785 -- new 73.04476833343506 -- grad 6.682042121887207
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06693689601226459 init-LR=0.009549150281252633 -- student-LR=0.06693689601226459 -- teacher-LR=6.693689601226458e-05
+		 Valid evaluation at end of epoch: latest_acc:39.26 -- best val acc so far 39.26
+dual_update_step
+ old -- 5.0 -- new 11.527293682098389 -- grad 6.527293682098389
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06545084971874737 init-LR=0.009549150281252633 -- student-LR=0.06545084971874737 -- teacher-LR=6.545084971874738e-05
+		 Valid evaluation at end of epoch: latest_acc:35.70 -- best val acc so far 39.26
+dual_update_step
+ old -- 11.527293682098389 -- new 18.22713279724121 -- grad 6.699839115142822
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06394955530196147 init-LR=0.009549150281252633 -- student-LR=0.06394955530196147 -- teacher-LR=6.394955530196147e-05
+		 Valid evaluation at end of epoch: latest_acc:38.96 -- best val acc so far 39.26
+dual_update_step
+ old -- 18.22713279724121 -- new 24.64158058166504 -- grad 6.414447784423828
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.062434494358242734 init-LR=0.009549150281252633 -- student-LR=0.062434494358242734 -- teacher-LR=6.243449435824273e-05
+		 Valid evaluation at end of epoch: latest_acc:37.76 -- best val acc so far 39.26
+dual_update_step
+ old -- 24.64158058166504 -- new 31.20391845703125 -- grad 6.562337875366211
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06090716206982714 init-LR=0.009549150281252633 -- student-LR=0.06090716206982714 -- teacher-LR=6.090716206982714e-05
+		 Valid evaluation at end of epoch: latest_acc:38.18 -- best val acc so far 39.26
+dual_update_step
+ old -- 31.20391845703125 -- new 37.685194969177246 -- grad 6.481276512145996
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05936906572928624 init-LR=0.009549150281252633 -- student-LR=0.05936906572928624 -- teacher-LR=5.9369065729286245e-05
+		 Valid evaluation at end of epoch: latest_acc:38.56 -- best val acc so far 39.26
+dual_update_step
+ old -- 37.685194969177246 -- new 44.110995292663574 -- grad 6.425800323486328
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05782172325201155 init-LR=0.009549150281252633 -- student-LR=0.05782172325201155 -- teacher-LR=5.782172325201155e-05
+		 Valid evaluation at end of epoch: latest_acc:39.08 -- best val acc so far 39.26
+dual_update_step
+ old -- 44.110995292663574 -- new 50.55526399612427 -- grad 6.444268703460693
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05626666167821523 init-LR=0.009549150281252633 -- student-LR=0.05626666167821523 -- teacher-LR=5.626666167821523e-05
+		 Valid evaluation at end of epoch: latest_acc:35.86 -- best val acc so far 39.26
+dual_update_step
+ old -- 50.55526399612427 -- new 57.40735197067261 -- grad 6.85208797454834
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05470541566592572 init-LR=0.009549150281252633 -- student-LR=0.05470541566592572 -- teacher-LR=5.4705415665925717e-05
+		 Valid evaluation at end of epoch: latest_acc:36.82 -- best val acc so far 39.26
+dual_update_step
+ old -- 57.40735197067261 -- new 64.11054182052612 -- grad 6.703189849853516
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05313952597646568 init-LR=0.009549150281252633 -- student-LR=0.05313952597646568 -- teacher-LR=5.313952597646568e-05
+		 Valid evaluation at end of epoch: latest_acc:39.64 -- best val acc so far 39.64
+dual_update_step
+ old -- 64.11054182052612 -- new 70.60836172103882 -- grad 6.497819900512695
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05157053795390642 init-LR=0.009549150281252633 -- student-LR=0.05157053795390642 -- teacher-LR=5.157053795390642e-05
+		 Valid evaluation at end of epoch: latest_acc:40.30 -- best val acc so far 40.30
+dual_update_step
+ old -- 5.0 -- new 11.489245891571045 -- grad 6.489245891571045
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05 init-LR=0.009549150281252633 -- student-LR=0.05 -- teacher-LR=5e-05
+		 Valid evaluation at end of epoch: latest_acc:34.16 -- best val acc so far 40.30
+dual_update_step
+ old -- 11.489245891571045 -- new 18.480494499206543 -- grad 6.991248607635498
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04842946204609359 init-LR=0.009549150281252633 -- student-LR=0.04842946204609359 -- teacher-LR=4.8429462046093585e-05
+		 Valid evaluation at end of epoch: latest_acc:39.92 -- best val acc so far 40.30
+dual_update_step
+ old -- 18.480494499206543 -- new 24.99178171157837 -- grad 6.511287212371826
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04686047402353433 init-LR=0.009549150281252633 -- student-LR=0.04686047402353433 -- teacher-LR=4.6860474023534335e-05
+		 Valid evaluation at end of epoch: latest_acc:40.08 -- best val acc so far 40.30
+dual_update_step
+ old -- 24.99178171157837 -- new 31.437121868133545 -- grad 6.445340156555176
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04529458433407429 init-LR=0.009549150281252633 -- student-LR=0.04529458433407429 -- teacher-LR=4.529458433407429e-05
+		 Valid evaluation at end of epoch: latest_acc:37.26 -- best val acc so far 40.30
+dual_update_step
+ old -- 31.437121868133545 -- new 38.34017848968506 -- grad 6.903056621551514
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0437333383217848 init-LR=0.009549150281252633 -- student-LR=0.0437333383217848 -- teacher-LR=4.3733338321784795e-05
+		 Valid evaluation at end of epoch: latest_acc:39.64 -- best val acc so far 40.30
+dual_update_step
+ old -- 38.34017848968506 -- new 44.88988208770752 -- grad 6.549703598022461
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.042178276747988463 init-LR=0.009549150281252633 -- student-LR=0.042178276747988463 -- teacher-LR=4.217827674798846e-05
+		 Valid evaluation at end of epoch: latest_acc:38.74 -- best val acc so far 40.30
+dual_update_step
+ old -- 44.88988208770752 -- new 51.49928665161133 -- grad 6.609404563903809
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04063093427071377 init-LR=0.009549150281252633 -- student-LR=0.04063093427071377 -- teacher-LR=4.0630934270713774e-05
+		 Valid evaluation at end of epoch: latest_acc:40.08 -- best val acc so far 40.30
+dual_update_step
+ old -- 51.49928665161133 -- new 58.0251669883728 -- grad 6.525880336761475
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03909283793017289 init-LR=0.009549150281252633 -- student-LR=0.03909283793017289 -- teacher-LR=3.9092837930172884e-05
+		 Valid evaluation at end of epoch: latest_acc:40.56 -- best val acc so far 40.56
+dual_update_step
+ old -- 58.0251669883728 -- new 64.55613422393799 -- grad 6.5309672355651855
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03756550564175726 init-LR=0.009549150281252633 -- student-LR=0.03756550564175726 -- teacher-LR=3.756550564175726e-05
+		 Valid evaluation at end of epoch: latest_acc:40.56 -- best val acc so far 40.56
+dual_update_step
+ old -- 64.55613422393799 -- new 70.99678611755371 -- grad 6.440651893615723
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.036050444698038545 init-LR=0.009549150281252633 -- student-LR=0.036050444698038545 -- teacher-LR=3.605044469803854e-05
+		 Valid evaluation at end of epoch: latest_acc:38.44 -- best val acc so far 40.56
+dual_update_step
+ old -- 5.0 -- new 11.442334175109863 -- grad 6.442334175109863
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03454915028125265 init-LR=0.009549150281252633 -- student-LR=0.03454915028125265 -- teacher-LR=3.454915028125264e-05
+		 Valid evaluation at end of epoch: latest_acc:40.64 -- best val acc so far 40.64
+dual_update_step
+ old -- 11.442334175109863 -- new 17.895745277404785 -- grad 6.453411102294922
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03306310398773543 init-LR=0.009549150281252633 -- student-LR=0.03306310398773543 -- teacher-LR=3.3063103987735433e-05
+		 Valid evaluation at end of epoch: latest_acc:40.80 -- best val acc so far 40.80
+dual_update_step
+ old -- 17.895745277404785 -- new 24.305372714996338 -- grad 6.409627437591553
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03159377236576612 init-LR=0.009549150281252633 -- student-LR=0.03159377236576612 -- teacher-LR=3.159377236576612e-05
+		 Valid evaluation at end of epoch: latest_acc:39.62 -- best val acc so far 40.80
+dual_update_step
+ old -- 24.305372714996338 -- new 30.70440912246704 -- grad 6.399036407470703
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.030142605468260964 init-LR=0.009549150281252633 -- student-LR=0.030142605468260964 -- teacher-LR=3.0142605468260964e-05
+		 Valid evaluation at end of epoch: latest_acc:40.46 -- best val acc so far 40.80
+dual_update_step
+ old -- 30.70440912246704 -- new 37.090835094451904 -- grad 6.386425971984863
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02871103542174637 init-LR=0.009549150281252633 -- student-LR=0.02871103542174637 -- teacher-LR=2.8711035421746367e-05
+		 Valid evaluation at end of epoch: latest_acc:38.60 -- best val acc so far 40.80
+dual_update_step
+ old -- 37.090835094451904 -- new 43.67805194854736 -- grad 6.587216854095459
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.027300475013022664 init-LR=0.009549150281252633 -- student-LR=0.027300475013022664 -- teacher-LR=2.7300475013022663e-05
+		 Valid evaluation at end of epoch: latest_acc:41.02 -- best val acc so far 41.02
+dual_update_step
+ old -- 43.67805194854736 -- new 50.074795722961426 -- grad 6.3967437744140625
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02591231629491423 init-LR=0.009549150281252633 -- student-LR=0.02591231629491423 -- teacher-LR=2.591231629491423e-05
+		 Valid evaluation at end of epoch: latest_acc:40.40 -- best val acc so far 41.02
+dual_update_step
+ old -- 50.074795722961426 -- new 56.52773141860962 -- grad 6.452935695648193
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.024547929212481435 init-LR=0.009549150281252633 -- student-LR=0.024547929212481435 -- teacher-LR=2.4547929212481435e-05
+		 Valid evaluation at end of epoch: latest_acc:40.98 -- best val acc so far 41.02
+dual_update_step
+ old -- 56.52773141860962 -- new 62.932844161987305 -- grad 6.4051127433776855
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02320866025105016 init-LR=0.009549150281252633 -- student-LR=0.02320866025105016 -- teacher-LR=2.3208660251050158e-05
+		 Valid evaluation at end of epoch: latest_acc:40.06 -- best val acc so far 41.02
+dual_update_step
+ old -- 62.932844161987305 -- new 69.35700178146362 -- grad 6.424157619476318
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.021895831107393467 init-LR=0.009549150281252633 -- student-LR=0.021895831107393467 -- teacher-LR=2.1895831107393467e-05
+		 Valid evaluation at end of epoch: latest_acc:40.52 -- best val acc so far 41.02
+dual_update_step
+ old -- 5.0 -- new 11.383756637573242 -- grad 6.383756637573242
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02061073738537635 init-LR=0.009549150281252633 -- student-LR=0.02061073738537635 -- teacher-LR=2.061073738537635e-05
+		 Valid evaluation at end of epoch: latest_acc:39.76 -- best val acc so far 41.02
+dual_update_step
+ old -- 11.383756637573242 -- new 17.79975652694702 -- grad 6.415999889373779
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.019354647317351172 init-LR=0.009549150281252633 -- student-LR=0.019354647317351172 -- teacher-LR=1.935464731735117e-05
+		 Valid evaluation at end of epoch: latest_acc:39.44 -- best val acc so far 41.02
+dual_update_step
+ old -- 17.79975652694702 -- new 24.38274097442627 -- grad 6.582984447479248
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.018128800512565515 init-LR=0.009549150281252633 -- student-LR=0.018128800512565515 -- teacher-LR=1.8128800512565513e-05
+		 Valid evaluation at end of epoch: latest_acc:40.88 -- best val acc so far 41.02
+dual_update_step
+ old -- 24.38274097442627 -- new 30.772481441497803 -- grad 6.389740467071533
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.016934406733817416 init-LR=0.009549150281252633 -- student-LR=0.016934406733817416 -- teacher-LR=1.6934406733817414e-05
+		 Valid evaluation at end of epoch: latest_acc:40.78 -- best val acc so far 41.02
+dual_update_step
+ old -- 30.772481441497803 -- new 37.198744773864746 -- grad 6.426263332366943
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.015772644703565566 init-LR=0.009549150281252633 -- student-LR=0.015772644703565566 -- teacher-LR=1.5772644703565565e-05
+		 Valid evaluation at end of epoch: latest_acc:40.26 -- best val acc so far 41.02
+dual_update_step
+ old -- 37.198744773864746 -- new 43.7470965385437 -- grad 6.548351764678955
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.014644660940672627 init-LR=0.009549150281252633 -- student-LR=0.014644660940672627 -- teacher-LR=1.4644660940672627e-05
+		 Valid evaluation at end of epoch: latest_acc:40.56 -- best val acc so far 41.02
+dual_update_step
+ old -- 43.7470965385437 -- new 50.20953559875488 -- grad 6.462439060211182
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.013551568628929435 init-LR=0.009549150281252633 -- student-LR=0.013551568628929435 -- teacher-LR=1.3551568628929434e-05
+		 Valid evaluation at end of epoch: latest_acc:40.84 -- best val acc so far 41.02
+dual_update_step
+ old -- 50.20953559875488 -- new 56.530478954315186 -- grad 6.320943355560303
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.012494446518477021 init-LR=0.009549150281252633 -- student-LR=0.012494446518477021 -- teacher-LR=1.2494446518477022e-05
+		 Valid evaluation at end of epoch: latest_acc:40.44 -- best val acc so far 41.02
+dual_update_step
+ old -- 56.530478954315186 -- new 62.92599439620972 -- grad 6.395515441894531
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.011474337861210543 init-LR=0.009549150281252633 -- student-LR=0.011474337861210543 -- teacher-LR=1.1474337861210543e-05
+		 Valid evaluation at end of epoch: latest_acc:41.36 -- best val acc so far 41.36
+dual_update_step
+ old -- 62.92599439620972 -- new 69.33176136016846 -- grad 6.40576696395874
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.01049224938121548 init-LR=0.009549150281252633 -- student-LR=0.01049224938121548 -- teacher-LR=1.049224938121548e-05
+		 Valid evaluation at end of epoch: latest_acc:41.64 -- best val acc so far 41.64
+dual_update_step
+ old -- 5.0 -- new 11.442510604858398 -- grad 6.442510604858398
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.009549150281252633 init-LR=0.009549150281252633 -- student-LR=0.009549150281252633 -- teacher-LR=9.549150281252633e-06
+		 Valid evaluation at end of epoch: latest_acc:40.70 -- best val acc so far 41.64
+dual_update_step
+ old -- 11.442510604858398 -- new 17.931676387786865 -- grad 6.489165782928467
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.008645971286271915 init-LR=0.009549150281252633 -- student-LR=0.008645971286271915 -- teacher-LR=8.645971286271914e-06
+		 Valid evaluation at end of epoch: latest_acc:41.46 -- best val acc so far 41.64
+dual_update_step
+ old -- 17.931676387786865 -- new 24.282336235046387 -- grad 6.3506598472595215
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.007783603724899258 init-LR=0.009549150281252633 -- student-LR=0.007783603724899258 -- teacher-LR=7.783603724899257e-06
+		 Valid evaluation at end of epoch: latest_acc:41.66 -- best val acc so far 41.66
+dual_update_step
+ old -- 24.282336235046387 -- new 30.62782049179077 -- grad 6.345484256744385
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.006962898649802813 init-LR=0.009549150281252633 -- student-LR=0.006962898649802813 -- teacher-LR=6.962898649802812e-06
+		 Valid evaluation at end of epoch: latest_acc:42.00 -- best val acc so far 42.00
+dual_update_step
+ old -- 30.62782049179077 -- new 36.9725399017334 -- grad 6.344719409942627
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.006184665997806821 init-LR=0.009549150281252633 -- student-LR=0.006184665997806821 -- teacher-LR=6.184665997806821e-06
+		 Valid evaluation at end of epoch: latest_acc:41.30 -- best val acc so far 42.00
+dual_update_step
+ old -- 36.9725399017334 -- new 43.32210302352905 -- grad 6.349563121795654
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.005449673790581611 init-LR=0.009549150281252633 -- student-LR=0.005449673790581611 -- teacher-LR=5.449673790581611e-06
+		 Valid evaluation at end of epoch: latest_acc:42.70 -- best val acc so far 42.70
+dual_update_step
+ old -- 43.32210302352905 -- new 49.689284801483154 -- grad 6.367181777954102
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.004758647376699033 init-LR=0.009549150281252633 -- student-LR=0.004758647376699033 -- teacher-LR=4.758647376699032e-06
+		 Valid evaluation at end of epoch: latest_acc:41.22 -- best val acc so far 42.70
+dual_update_step
+ old -- 49.689284801483154 -- new 56.04900503158569 -- grad 6.359720230102539
+primal_budget_update_step
+ -- old epsilon=0.3949667207502329 -- new epsilon= 0.4 -- grad tensor(1.2479, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.004112268715800955 init-LR=0.009549150281252633 -- student-LR=0.004112268715800955 -- teacher-LR=4.112268715800954e-06
+		 Valid evaluation at end of epoch: latest_acc:40.88 -- best val acc so far 42.70
+dual_update_step
+ old -- 56.04900503158569 -- new 62.41210746765137 -- grad 6.363102436065674
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0035111757055874327 init-LR=0.009549150281252633 -- student-LR=0.0035111757055874327 -- teacher-LR=3.511175705587433e-06
+		 Valid evaluation at end of epoch: latest_acc:43.28 -- best val acc so far 43.28
+dual_update_step
+ old -- 62.41210746765137 -- new 68.79945039749146 -- grad 6.387342929840088
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0029559615522887273 init-LR=0.009549150281252633 -- student-LR=0.0029559615522887273 -- teacher-LR=2.9559615522887273e-06
+		 Valid evaluation at end of epoch: latest_acc:41.96 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.367125511169434 -- grad 6.367125511169434
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0024471741852423235 init-LR=0.009549150281252633 -- student-LR=0.0024471741852423235 -- teacher-LR=2.4471741852423237e-06
+		 Valid evaluation at end of epoch: latest_acc:41.50 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.367125511169434 -- new 17.745805740356445 -- grad 6.378680229187012
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0019853157161528524 init-LR=0.009549150281252633 -- student-LR=0.0019853157161528524 -- teacher-LR=1.9853157161528523e-06
+		 Valid evaluation at end of epoch: latest_acc:41.94 -- best val acc so far 43.28
+dual_update_step
+ old -- 17.745805740356445 -- new 24.094034671783447 -- grad 6.348228931427002
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0015708419435684518 init-LR=0.009549150281252633 -- student-LR=0.0015708419435684518 -- teacher-LR=1.570841943568452e-06
+		 Valid evaluation at end of epoch: latest_acc:41.68 -- best val acc so far 43.28
+dual_update_step
+ old -- 24.094034671783447 -- new 30.40247869491577 -- grad 6.308444023132324
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0012041619030626338 init-LR=0.009549150281252633 -- student-LR=0.0012041619030626338 -- teacher-LR=1.2041619030626339e-06
+		 Valid evaluation at end of epoch: latest_acc:41.12 -- best val acc so far 43.28
+dual_update_step
+ old -- 30.40247869491577 -- new 36.715880393981934 -- grad 6.313401699066162
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.000885637463565564 init-LR=0.009549150281252633 -- student-LR=0.000885637463565564 -- teacher-LR=8.85637463565564e-07
+		 Valid evaluation at end of epoch: latest_acc:42.24 -- best val acc so far 43.28
+dual_update_step
+ old -- 36.715880393981934 -- new 43.06713008880615 -- grad 6.351249694824219
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0006155829702431171 init-LR=0.009549150281252633 -- student-LR=0.0006155829702431171 -- teacher-LR=6.15582970243117e-07
+		 Valid evaluation at end of epoch: latest_acc:42.22 -- best val acc so far 43.28
+dual_update_step
+ old -- 43.06713008880615 -- new 49.447474002838135 -- grad 6.380343914031982
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0003942649342761118 init-LR=0.009549150281252633 -- student-LR=0.0003942649342761118 -- teacher-LR=3.9426493427611177e-07
+		 Valid evaluation at end of epoch: latest_acc:42.18 -- best val acc so far 43.28
+dual_update_step
+ old -- 49.447474002838135 -- new 55.781296730041504 -- grad 6.333822727203369
+primal_budget_update_step
+ -- old epsilon=0.3993945838721686 -- new epsilon= 0.4 -- grad tensor(1.2418, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0002219017698460002 init-LR=0.009549150281252633 -- student-LR=0.0002219017698460002 -- teacher-LR=2.219017698460002e-07
+		 Valid evaluation at end of epoch: latest_acc:43.14 -- best val acc so far 43.28
+dual_update_step
+ old -- 55.781296730041504 -- new 62.11556673049927 -- grad 6.334270000457764
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=9.866357858642206e-05 init-LR=0.009549150281252633 -- student-LR=9.866357858642206e-05 -- teacher-LR=9.866357858642205e-08
+		 Valid evaluation at end of epoch: latest_acc:42.36 -- best val acc so far 43.28
+dual_update_step
+ old -- 62.11556673049927 -- new 68.42559003829956 -- grad 6.310023307800293
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=2.467198171342e-05 init-LR=0.009549150281252633 -- student-LR=2.467198171342e-05 -- teacher-LR=2.467198171342e-08
+		 Valid evaluation at end of epoch: latest_acc:41.44 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.424634456634521 -- grad 6.4246344566345215
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.1 init-LR=0.009549150281252633 -- student-LR=0.1 -- teacher-LR=0.0001
+		 Valid evaluation at end of epoch: latest_acc:42.14 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.424634456634521 -- new 17.910675525665283 -- grad 6.486041069030762
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09997532801828658 init-LR=0.009549150281252633 -- student-LR=0.09997532801828658 -- teacher-LR=9.997532801828658e-05
+		 Valid evaluation at end of epoch: latest_acc:32.36 -- best val acc so far 43.28
+dual_update_step
+ old -- 17.910675525665283 -- new 25.319621562957764 -- grad 7.4089460372924805
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09990133642141358 init-LR=0.009549150281252633 -- student-LR=0.09990133642141358 -- teacher-LR=9.990133642141359e-05
+		 Valid evaluation at end of epoch: latest_acc:35.86 -- best val acc so far 43.28
+dual_update_step
+ old -- 25.319621562957764 -- new 32.34816598892212 -- grad 7.0285444259643555
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.099778098230154 init-LR=0.009549150281252633 -- student-LR=0.099778098230154 -- teacher-LR=9.977809823015401e-05
+		 Valid evaluation at end of epoch: latest_acc:37.34 -- best val acc so far 43.28
+dual_update_step
+ old -- 32.34816598892212 -- new 39.250640869140625 -- grad 6.902474880218506
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0996057350657239 init-LR=0.009549150281252633 -- student-LR=0.0996057350657239 -- teacher-LR=9.96057350657239e-05
+		 Valid evaluation at end of epoch: latest_acc:34.28 -- best val acc so far 43.28
+dual_update_step
+ old -- 39.250640869140625 -- new 46.42965269088745 -- grad 7.179011821746826
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0993844170297569 init-LR=0.009549150281252633 -- student-LR=0.0993844170297569 -- teacher-LR=9.938441702975689e-05
+		 Valid evaluation at end of epoch: latest_acc:36.96 -- best val acc so far 43.28
+dual_update_step
+ old -- 46.42965269088745 -- new 53.34620952606201 -- grad 6.9165568351745605
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09911436253643445 init-LR=0.009549150281252633 -- student-LR=0.09911436253643445 -- teacher-LR=9.911436253643445e-05
+		 Valid evaluation at end of epoch: latest_acc:36.80 -- best val acc so far 43.28
+dual_update_step
+ old -- 53.34620952606201 -- new 60.352089405059814 -- grad 7.005879878997803
+primal_budget_update_step
+ -- old epsilon=0.36371434362936017 -- new epsilon= 0.4 -- grad tensor(1.3449, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09879583809693737 init-LR=0.009549150281252633 -- student-LR=0.09879583809693737 -- teacher-LR=9.879583809693738e-05
+		 Valid evaluation at end of epoch: latest_acc:36.78 -- best val acc so far 43.28
+dual_update_step
+ old -- 60.352089405059814 -- new 67.26617956161499 -- grad 6.914090156555176
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09842915805643156 init-LR=0.009549150281252633 -- student-LR=0.09842915805643156 -- teacher-LR=9.842915805643155e-05
+		 Valid evaluation at end of epoch: latest_acc:38.56 -- best val acc so far 43.28
+dual_update_step
+ old -- 67.26617956161499 -- new 74.1013035774231 -- grad 6.8351240158081055
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09801468428384716 init-LR=0.009549150281252633 -- student-LR=0.09801468428384716 -- teacher-LR=9.801468428384716e-05
+		 Valid evaluation at end of epoch: latest_acc:37.70 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.82771348953247 -- grad 6.827713489532471
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09755282581475769 init-LR=0.009549150281252633 -- student-LR=0.09755282581475769 -- teacher-LR=9.755282581475769e-05
+		 Valid evaluation at end of epoch: latest_acc:36.64 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.82771348953247 -- new 18.680706024169922 -- grad 6.852992534637451
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09704403844771128 init-LR=0.009549150281252633 -- student-LR=0.09704403844771128 -- teacher-LR=9.704403844771128e-05
+		 Valid evaluation at end of epoch: latest_acc:31.88 -- best val acc so far 43.28
+dual_update_step
+ old -- 18.680706024169922 -- new 26.175701141357422 -- grad 7.4949951171875
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09648882429441258 init-LR=0.009549150281252633 -- student-LR=0.09648882429441258 -- teacher-LR=9.648882429441257e-05
+		 Valid evaluation at end of epoch: latest_acc:37.94 -- best val acc so far 43.28
+dual_update_step
+ old -- 26.175701141357422 -- new 32.9011025428772 -- grad 6.725401401519775
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09588773128419906 init-LR=0.009549150281252633 -- student-LR=0.09588773128419906 -- teacher-LR=9.588773128419906e-05
+		 Valid evaluation at end of epoch: latest_acc:38.68 -- best val acc so far 43.28
+dual_update_step
+ old -- 32.9011025428772 -- new 39.70728826522827 -- grad 6.806185722351074
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09524135262330098 init-LR=0.009549150281252633 -- student-LR=0.09524135262330098 -- teacher-LR=9.524135262330098e-05
+		 Valid evaluation at end of epoch: latest_acc:36.46 -- best val acc so far 43.28
+dual_update_step
+ old -- 39.70728826522827 -- new 46.669888496398926 -- grad 6.962600231170654
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09455032620941839 init-LR=0.009549150281252633 -- student-LR=0.09455032620941839 -- teacher-LR=9.45503262094184e-05
+		 Valid evaluation at end of epoch: latest_acc:39.38 -- best val acc so far 43.28
+dual_update_step
+ old -- 46.669888496398926 -- new 53.35253572463989 -- grad 6.682647228240967
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09381533400219318 init-LR=0.009549150281252633 -- student-LR=0.09381533400219318 -- teacher-LR=9.381533400219318e-05
+		 Valid evaluation at end of epoch: latest_acc:37.58 -- best val acc so far 43.28
+dual_update_step
+ old -- 53.35253572463989 -- new 60.16597366333008 -- grad 6.8134379386901855
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09303710135019719 init-LR=0.009549150281252633 -- student-LR=0.09303710135019719 -- teacher-LR=9.30371013501972e-05
+		 Valid evaluation at end of epoch: latest_acc:35.24 -- best val acc so far 43.28
+dual_update_step
+ old -- 60.16597366333008 -- new 67.3127384185791 -- grad 7.146764755249023
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09221639627510075 init-LR=0.009549150281252633 -- student-LR=0.09221639627510075 -- teacher-LR=9.221639627510076e-05
+		 Valid evaluation at end of epoch: latest_acc:39.74 -- best val acc so far 43.28
+dual_update_step
+ old -- 67.3127384185791 -- new 73.96057891845703 -- grad 6.64784049987793
+primal_budget_update_step
+ -- old epsilon=0.39888149456689315 -- new epsilon= 0.4 -- grad tensor(1.6118, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0913540287137281 init-LR=0.009549150281252633 -- student-LR=0.0913540287137281 -- teacher-LR=9.135402871372808e-05
+		 Valid evaluation at end of epoch: latest_acc:37.90 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.952317714691162 -- grad 6.952317714691162
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09045084971874738 init-LR=0.009549150281252633 -- student-LR=0.09045084971874738 -- teacher-LR=9.045084971874738e-05
+		 Valid evaluation at end of epoch: latest_acc:38.12 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.952317714691162 -- new 18.919591903686523 -- grad 6.967274188995361
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08950775061878452 init-LR=0.009549150281252633 -- student-LR=0.08950775061878452 -- teacher-LR=8.950775061878452e-05
+		 Valid evaluation at end of epoch: latest_acc:37.76 -- best val acc so far 43.28
+dual_update_step
+ old -- 18.919591903686523 -- new 26.017115116119385 -- grad 7.097523212432861
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08852566213878947 init-LR=0.009549150281252633 -- student-LR=0.08852566213878947 -- teacher-LR=8.852566213878947e-05
+		 Valid evaluation at end of epoch: latest_acc:37.66 -- best val acc so far 43.28
+dual_update_step
+ old -- 26.017115116119385 -- new 32.91968011856079 -- grad 6.902565002441406
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08750555348152299 init-LR=0.009549150281252633 -- student-LR=0.08750555348152299 -- teacher-LR=8.750555348152298e-05
+		 Valid evaluation at end of epoch: latest_acc:38.26 -- best val acc so far 43.28
+dual_update_step
+ old -- 32.91968011856079 -- new 39.73368692398071 -- grad 6.814006805419922
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08644843137107058 init-LR=0.009549150281252633 -- student-LR=0.08644843137107058 -- teacher-LR=8.644843137107059e-05
+		 Valid evaluation at end of epoch: latest_acc:39.54 -- best val acc so far 43.28
+dual_update_step
+ old -- 39.73368692398071 -- new 46.57574224472046 -- grad 6.842055320739746
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08535533905932738 init-LR=0.009549150281252633 -- student-LR=0.08535533905932738 -- teacher-LR=8.535533905932738e-05
+		 Valid evaluation at end of epoch: latest_acc:37.20 -- best val acc so far 43.28
+dual_update_step
+ old -- 46.57574224472046 -- new 53.6321063041687 -- grad 7.056364059448242
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08422735529643444 init-LR=0.009549150281252633 -- student-LR=0.08422735529643444 -- teacher-LR=8.422735529643444e-05
+		 Valid evaluation at end of epoch: latest_acc:40.20 -- best val acc so far 43.28
+dual_update_step
+ old -- 53.6321063041687 -- new 60.4076623916626 -- grad 6.7755560874938965
+primal_budget_update_step
+ -- old epsilon=0.3355872042205747 -- new epsilon= 0.4 -- grad tensor(1.3438, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0830655932661826 init-LR=0.009549150281252633 -- student-LR=0.0830655932661826 -- teacher-LR=8.306559326618259e-05
+		 Valid evaluation at end of epoch: latest_acc:41.16 -- best val acc so far 43.28
+dual_update_step
+ old -- 60.4076623916626 -- new 67.00503921508789 -- grad 6.597376823425293
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08187119948743449 init-LR=0.009549150281252633 -- student-LR=0.08187119948743449 -- teacher-LR=8.18711994874345e-05
+		 Valid evaluation at end of epoch: latest_acc:39.62 -- best val acc so far 43.28
+dual_update_step
+ old -- 67.00503921508789 -- new 73.76112937927246 -- grad 6.75609016418457
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08064535268264883 init-LR=0.009549150281252633 -- student-LR=0.08064535268264883 -- teacher-LR=8.064535268264883e-05
+		 Valid evaluation at end of epoch: latest_acc:39.82 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.734000205993652 -- grad 6.734000205993652
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07938926261462367 init-LR=0.009549150281252633 -- student-LR=0.07938926261462367 -- teacher-LR=7.938926261462367e-05
+		 Valid evaluation at end of epoch: latest_acc:39.26 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.734000205993652 -- new 18.51436948776245 -- grad 6.780369281768799
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07810416889260655 init-LR=0.009549150281252633 -- student-LR=0.07810416889260655 -- teacher-LR=7.810416889260655e-05
+		 Valid evaluation at end of epoch: latest_acc:40.50 -- best val acc so far 43.28
+dual_update_step
+ old -- 18.51436948776245 -- new 25.27487564086914 -- grad 6.7605061531066895
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07679133974894983 init-LR=0.009549150281252633 -- student-LR=0.07679133974894983 -- teacher-LR=7.679133974894983e-05
+		 Valid evaluation at end of epoch: latest_acc:37.32 -- best val acc so far 43.28
+dual_update_step
+ old -- 25.27487564086914 -- new 32.06600904464722 -- grad 6.791133403778076
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07545207078751857 init-LR=0.009549150281252633 -- student-LR=0.07545207078751857 -- teacher-LR=7.545207078751857e-05
+		 Valid evaluation at end of epoch: latest_acc:37.90 -- best val acc so far 43.28
+dual_update_step
+ old -- 32.06600904464722 -- new 38.89083814620972 -- grad 6.8248291015625
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07408768370508577 init-LR=0.009549150281252633 -- student-LR=0.07408768370508577 -- teacher-LR=7.408768370508576e-05
+		 Valid evaluation at end of epoch: latest_acc:40.22 -- best val acc so far 43.28
+dual_update_step
+ old -- 38.89083814620972 -- new 45.520695209503174 -- grad 6.629857063293457
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07269952498697733 init-LR=0.009549150281252633 -- student-LR=0.07269952498697733 -- teacher-LR=7.269952498697734e-05
+		 Valid evaluation at end of epoch: latest_acc:39.58 -- best val acc so far 43.28
+dual_update_step
+ old -- 45.520695209503174 -- new 52.096200466156006 -- grad 6.575505256652832
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07128896457825364 init-LR=0.009549150281252633 -- student-LR=0.07128896457825364 -- teacher-LR=7.128896457825364e-05
+		 Valid evaluation at end of epoch: latest_acc:40.22 -- best val acc so far 43.28
+dual_update_step
+ old -- 52.096200466156006 -- new 58.643146991729736 -- grad 6.5469465255737305
+primal_budget_update_step
+ -- old epsilon=0.3922522587227046 -- new epsilon= 0.4 -- grad tensor(1.3049, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06985739453173903 init-LR=0.009549150281252633 -- student-LR=0.06985739453173903 -- teacher-LR=6.985739453173903e-05
+		 Valid evaluation at end of epoch: latest_acc:35.22 -- best val acc so far 43.28
+dual_update_step
+ old -- 58.643146991729736 -- new 65.73201560974121 -- grad 7.088868618011475
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06840622763423392 init-LR=0.009549150281252633 -- student-LR=0.06840622763423392 -- teacher-LR=6.840622763423391e-05
+		 Valid evaluation at end of epoch: latest_acc:38.92 -- best val acc so far 43.28
+dual_update_step
+ old -- 65.73201560974121 -- new 72.48073148727417 -- grad 6.748715877532959
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06693689601226459 init-LR=0.009549150281252633 -- student-LR=0.06693689601226459 -- teacher-LR=6.693689601226458e-05
+		 Valid evaluation at end of epoch: latest_acc:41.18 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.685102939605713 -- grad 6.685102939605713
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06545084971874737 init-LR=0.009549150281252633 -- student-LR=0.06545084971874737 -- teacher-LR=6.545084971874738e-05
+		 Valid evaluation at end of epoch: latest_acc:39.22 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.685102939605713 -- new 18.591930866241455 -- grad 6.906827926635742
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06394955530196147 init-LR=0.009549150281252633 -- student-LR=0.06394955530196147 -- teacher-LR=6.394955530196147e-05
+		 Valid evaluation at end of epoch: latest_acc:41.36 -- best val acc so far 43.28
+dual_update_step
+ old -- 18.591930866241455 -- new 25.39460563659668 -- grad 6.802674770355225
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.062434494358242734 init-LR=0.009549150281252633 -- student-LR=0.062434494358242734 -- teacher-LR=6.243449435824273e-05
+		 Valid evaluation at end of epoch: latest_acc:40.38 -- best val acc so far 43.28
+dual_update_step
+ old -- 25.39460563659668 -- new 32.22626256942749 -- grad 6.8316569328308105
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06090716206982714 init-LR=0.009549150281252633 -- student-LR=0.06090716206982714 -- teacher-LR=6.090716206982714e-05
+		 Valid evaluation at end of epoch: latest_acc:39.68 -- best val acc so far 43.28
+dual_update_step
+ old -- 32.22626256942749 -- new 39.08450508117676 -- grad 6.858242511749268
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05936906572928624 init-LR=0.009549150281252633 -- student-LR=0.05936906572928624 -- teacher-LR=5.9369065729286245e-05
+		 Valid evaluation at end of epoch: latest_acc:40.58 -- best val acc so far 43.28
+dual_update_step
+ old -- 39.08450508117676 -- new 45.873533725738525 -- grad 6.789028644561768
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05782172325201155 init-LR=0.009549150281252633 -- student-LR=0.05782172325201155 -- teacher-LR=5.782172325201155e-05
+		 Valid evaluation at end of epoch: latest_acc:35.90 -- best val acc so far 43.28
+dual_update_step
+ old -- 45.873533725738525 -- new 53.09414625167847 -- grad 7.220612525939941
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05626666167821523 init-LR=0.009549150281252633 -- student-LR=0.05626666167821523 -- teacher-LR=5.626666167821523e-05
+		 Valid evaluation at end of epoch: latest_acc:40.72 -- best val acc so far 43.28
+dual_update_step
+ old -- 53.09414625167847 -- new 59.795793533325195 -- grad 6.7016472816467285
+primal_budget_update_step
+ -- old epsilon=0.31027277875266773 -- new epsilon= 0.4 -- grad tensor(1.3293, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05470541566592572 init-LR=0.009549150281252633 -- student-LR=0.05470541566592572 -- teacher-LR=5.4705415665925717e-05
+		 Valid evaluation at end of epoch: latest_acc:41.62 -- best val acc so far 43.28
+dual_update_step
+ old -- 59.795793533325195 -- new 66.45458698272705 -- grad 6.6587934494018555
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05313952597646568 init-LR=0.009549150281252633 -- student-LR=0.05313952597646568 -- teacher-LR=5.313952597646568e-05
+		 Valid evaluation at end of epoch: latest_acc:40.30 -- best val acc so far 43.28
+dual_update_step
+ old -- 66.45458698272705 -- new 73.0838041305542 -- grad 6.629217147827148
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05157053795390642 init-LR=0.009549150281252633 -- student-LR=0.05157053795390642 -- teacher-LR=5.157053795390642e-05
+		 Valid evaluation at end of epoch: latest_acc:40.74 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.631734848022461 -- grad 6.631734848022461
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05 init-LR=0.009549150281252633 -- student-LR=0.05 -- teacher-LR=5e-05
+		 Valid evaluation at end of epoch: latest_acc:40.80 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.631734848022461 -- new 18.318481922149658 -- grad 6.686747074127197
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04842946204609359 init-LR=0.009549150281252633 -- student-LR=0.04842946204609359 -- teacher-LR=4.8429462046093585e-05
+		 Valid evaluation at end of epoch: latest_acc:41.74 -- best val acc so far 43.28
+dual_update_step
+ old -- 18.318481922149658 -- new 24.881869316101074 -- grad 6.563387393951416
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04686047402353433 init-LR=0.009549150281252633 -- student-LR=0.04686047402353433 -- teacher-LR=4.6860474023534335e-05
+		 Valid evaluation at end of epoch: latest_acc:41.56 -- best val acc so far 43.28
+dual_update_step
+ old -- 24.881869316101074 -- new 31.439560890197754 -- grad 6.55769157409668
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04529458433407429 init-LR=0.009549150281252633 -- student-LR=0.04529458433407429 -- teacher-LR=4.529458433407429e-05
+		 Valid evaluation at end of epoch: latest_acc:39.58 -- best val acc so far 43.28
+dual_update_step
+ old -- 31.439560890197754 -- new 38.10449028015137 -- grad 6.664929389953613
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0437333383217848 init-LR=0.009549150281252633 -- student-LR=0.0437333383217848 -- teacher-LR=4.3733338321784795e-05
+		 Valid evaluation at end of epoch: latest_acc:41.72 -- best val acc so far 43.28
+dual_update_step
+ old -- 38.10449028015137 -- new 44.57716941833496 -- grad 6.472679138183594
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.042178276747988463 init-LR=0.009549150281252633 -- student-LR=0.042178276747988463 -- teacher-LR=4.217827674798846e-05
+		 Valid evaluation at end of epoch: latest_acc:39.82 -- best val acc so far 43.28
+dual_update_step
+ old -- 44.57716941833496 -- new 51.11642074584961 -- grad 6.539251327514648
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04063093427071377 init-LR=0.009549150281252633 -- student-LR=0.04063093427071377 -- teacher-LR=4.0630934270713774e-05
+		 Valid evaluation at end of epoch: latest_acc:41.10 -- best val acc so far 43.28
+dual_update_step
+ old -- 51.11642074584961 -- new 57.562503814697266 -- grad 6.446083068847656
+primal_budget_update_step
+ -- old epsilon=0.38920737273793304 -- new epsilon= 0.4 -- grad tensor(1.2794, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03909283793017289 init-LR=0.009549150281252633 -- student-LR=0.03909283793017289 -- teacher-LR=3.9092837930172884e-05
+		 Valid evaluation at end of epoch: latest_acc:40.86 -- best val acc so far 43.28
+dual_update_step
+ old -- 57.562503814697266 -- new 64.03235006332397 -- grad 6.469846248626709
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03756550564175726 init-LR=0.009549150281252633 -- student-LR=0.03756550564175726 -- teacher-LR=3.756550564175726e-05
+		 Valid evaluation at end of epoch: latest_acc:41.32 -- best val acc so far 43.28
+dual_update_step
+ old -- 64.03235006332397 -- new 70.50395250320435 -- grad 6.471602439880371
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.036050444698038545 init-LR=0.009549150281252633 -- student-LR=0.036050444698038545 -- teacher-LR=3.605044469803854e-05
+		 Valid evaluation at end of epoch: latest_acc:42.50 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.685244083404541 -- grad 6.685244083404541
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03454915028125265 init-LR=0.009549150281252633 -- student-LR=0.03454915028125265 -- teacher-LR=3.454915028125264e-05
+		 Valid evaluation at end of epoch: latest_acc:41.66 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.685244083404541 -- new 18.502694129943848 -- grad 6.817450046539307
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03306310398773543 init-LR=0.009549150281252633 -- student-LR=0.03306310398773543 -- teacher-LR=3.3063103987735433e-05
+		 Valid evaluation at end of epoch: latest_acc:41.60 -- best val acc so far 43.28
+dual_update_step
+ old -- 18.502694129943848 -- new 25.206366539001465 -- grad 6.703672409057617
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03159377236576612 init-LR=0.009549150281252633 -- student-LR=0.03159377236576612 -- teacher-LR=3.159377236576612e-05
+		 Valid evaluation at end of epoch: latest_acc:40.46 -- best val acc so far 43.28
+dual_update_step
+ old -- 25.206366539001465 -- new 31.990318298339844 -- grad 6.783951759338379
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.030142605468260964 init-LR=0.009549150281252633 -- student-LR=0.030142605468260964 -- teacher-LR=3.0142605468260964e-05
+		 Valid evaluation at end of epoch: latest_acc:41.66 -- best val acc so far 43.28
+dual_update_step
+ old -- 31.990318298339844 -- new 38.77126979827881 -- grad 6.780951499938965
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02871103542174637 init-LR=0.009549150281252633 -- student-LR=0.02871103542174637 -- teacher-LR=2.8711035421746367e-05
+		 Valid evaluation at end of epoch: latest_acc:42.52 -- best val acc so far 43.28
+dual_update_step
+ old -- 38.77126979827881 -- new 45.43568134307861 -- grad 6.664411544799805
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.027300475013022664 init-LR=0.009549150281252633 -- student-LR=0.027300475013022664 -- teacher-LR=2.7300475013022663e-05
+		 Valid evaluation at end of epoch: latest_acc:39.90 -- best val acc so far 43.28
+dual_update_step
+ old -- 45.43568134307861 -- new 52.19608545303345 -- grad 6.760404109954834
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02591231629491423 init-LR=0.009549150281252633 -- student-LR=0.02591231629491423 -- teacher-LR=2.591231629491423e-05
+		 Valid evaluation at end of epoch: latest_acc:42.26 -- best val acc so far 43.28
+dual_update_step
+ old -- 52.19608545303345 -- new 58.79747676849365 -- grad 6.601391315460205
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.024547929212481435 init-LR=0.009549150281252633 -- student-LR=0.024547929212481435 -- teacher-LR=2.4547929212481435e-05
+		 Valid evaluation at end of epoch: latest_acc:42.42 -- best val acc so far 43.28
+dual_update_step
+ old -- 58.79747676849365 -- new 65.38636064529419 -- grad 6.588883876800537
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02320866025105016 init-LR=0.009549150281252633 -- student-LR=0.02320866025105016 -- teacher-LR=2.3208660251050158e-05
+		 Valid evaluation at end of epoch: latest_acc:42.20 -- best val acc so far 43.28
+dual_update_step
+ old -- 65.38636064529419 -- new 71.94906234741211 -- grad 6.56270170211792
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.021895831107393467 init-LR=0.009549150281252633 -- student-LR=0.021895831107393467 -- teacher-LR=2.1895831107393467e-05
+		 Valid evaluation at end of epoch: latest_acc:42.88 -- best val acc so far 43.28
+dual_update_step
+ old -- 5.0 -- new 11.536872863769531 -- grad 6.536872863769531
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02061073738537635 init-LR=0.009549150281252633 -- student-LR=0.02061073738537635 -- teacher-LR=2.061073738537635e-05
+		 Valid evaluation at end of epoch: latest_acc:43.00 -- best val acc so far 43.28
+dual_update_step
+ old -- 11.536872863769531 -- new 18.045496940612793 -- grad 6.508624076843262
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.019354647317351172 init-LR=0.009549150281252633 -- student-LR=0.019354647317351172 -- teacher-LR=1.935464731735117e-05
+		 Valid evaluation at end of epoch: latest_acc:43.16 -- best val acc so far 43.28
+dual_update_step
+ old -- 18.045496940612793 -- new 24.573758602142334 -- grad 6.528261661529541
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.018128800512565515 init-LR=0.009549150281252633 -- student-LR=0.018128800512565515 -- teacher-LR=1.8128800512565513e-05
+		 Valid evaluation at end of epoch: latest_acc:41.68 -- best val acc so far 43.28
+dual_update_step
+ old -- 24.573758602142334 -- new 31.091113090515137 -- grad 6.517354488372803
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.016934406733817416 init-LR=0.009549150281252633 -- student-LR=0.016934406733817416 -- teacher-LR=1.6934406733817414e-05
+		 Valid evaluation at end of epoch: latest_acc:42.26 -- best val acc so far 43.28
+dual_update_step
+ old -- 31.091113090515137 -- new 37.50420331954956 -- grad 6.413090229034424
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.015772644703565566 init-LR=0.009549150281252633 -- student-LR=0.015772644703565566 -- teacher-LR=1.5772644703565565e-05
+		 Valid evaluation at end of epoch: latest_acc:40.88 -- best val acc so far 43.28
+dual_update_step
+ old -- 37.50420331954956 -- new 43.93868112564087 -- grad 6.434477806091309
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.014644660940672627 init-LR=0.009549150281252633 -- student-LR=0.014644660940672627 -- teacher-LR=1.4644660940672627e-05
+		 Valid evaluation at end of epoch: latest_acc:41.84 -- best val acc so far 43.28
+dual_update_step
+ old -- 43.93868112564087 -- new 50.27639436721802 -- grad 6.337713241577148
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.013551568628929435 init-LR=0.009549150281252633 -- student-LR=0.013551568628929435 -- teacher-LR=1.3551568628929434e-05
+		 Valid evaluation at end of epoch: latest_acc:43.34 -- best val acc so far 43.34
+dual_update_step
+ old -- 50.27639436721802 -- new 56.64799213409424 -- grad 6.371597766876221
+primal_budget_update_step
+ -- old epsilon=0.3864669753516387 -- new epsilon= 0.4 -- grad tensor(1.2596, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.012494446518477021 init-LR=0.009549150281252633 -- student-LR=0.012494446518477021 -- teacher-LR=1.2494446518477022e-05
+		 Valid evaluation at end of epoch: latest_acc:41.64 -- best val acc so far 43.34
+dual_update_step
+ old -- 56.64799213409424 -- new 63.09526777267456 -- grad 6.447275638580322
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.011474337861210543 init-LR=0.009549150281252633 -- student-LR=0.011474337861210543 -- teacher-LR=1.1474337861210543e-05
+		 Valid evaluation at end of epoch: latest_acc:42.42 -- best val acc so far 43.34
+dual_update_step
+ old -- 63.09526777267456 -- new 69.46900701522827 -- grad 6.373739242553711
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.01049224938121548 init-LR=0.009549150281252633 -- student-LR=0.01049224938121548 -- teacher-LR=1.049224938121548e-05
+		 Valid evaluation at end of epoch: latest_acc:42.22 -- best val acc so far 43.34
+dual_update_step
+ old -- 5.0 -- new 11.619077682495117 -- grad 6.619077682495117
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.009549150281252633 init-LR=0.009549150281252633 -- student-LR=0.009549150281252633 -- teacher-LR=9.549150281252633e-06
+		 Valid evaluation at end of epoch: latest_acc:43.20 -- best val acc so far 43.34
+dual_update_step
+ old -- 11.619077682495117 -- new 18.283292770385742 -- grad 6.664215087890625
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.008645971286271915 init-LR=0.009549150281252633 -- student-LR=0.008645971286271915 -- teacher-LR=8.645971286271914e-06
+		 Valid evaluation at end of epoch: latest_acc:42.40 -- best val acc so far 43.34
+dual_update_step
+ old -- 18.283292770385742 -- new 24.921568870544434 -- grad 6.638276100158691
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.007783603724899258 init-LR=0.009549150281252633 -- student-LR=0.007783603724899258 -- teacher-LR=7.783603724899257e-06
+		 Valid evaluation at end of epoch: latest_acc:42.74 -- best val acc so far 43.34
+dual_update_step
+ old -- 24.921568870544434 -- new 31.53801679611206 -- grad 6.616447925567627
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.006962898649802813 init-LR=0.009549150281252633 -- student-LR=0.006962898649802813 -- teacher-LR=6.962898649802812e-06
+		 Valid evaluation at end of epoch: latest_acc:42.90 -- best val acc so far 43.34
+dual_update_step
+ old -- 31.53801679611206 -- new 38.13422441482544 -- grad 6.596207618713379
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.006184665997806821 init-LR=0.009549150281252633 -- student-LR=0.006184665997806821 -- teacher-LR=6.184665997806821e-06
+		 Valid evaluation at end of epoch: latest_acc:41.98 -- best val acc so far 43.34
+dual_update_step
+ old -- 38.13422441482544 -- new 44.876595973968506 -- grad 6.742371559143066
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.005449673790581611 init-LR=0.009549150281252633 -- student-LR=0.005449673790581611 -- teacher-LR=5.449673790581611e-06
+		 Valid evaluation at end of epoch: latest_acc:42.92 -- best val acc so far 43.34
+dual_update_step
+ old -- 44.876595973968506 -- new 51.45865869522095 -- grad 6.582062721252441
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.004758647376699033 init-LR=0.009549150281252633 -- student-LR=0.004758647376699033 -- teacher-LR=4.758647376699032e-06
+		 Valid evaluation at end of epoch: latest_acc:42.20 -- best val acc so far 43.34
+dual_update_step
+ old -- 51.45865869522095 -- new 58.01113271713257 -- grad 6.552474021911621
+primal_budget_update_step
+ -- old epsilon=0.2669851112025469 -- new epsilon= 0.4 -- grad tensor(1.2917, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.004112268715800955 init-LR=0.009549150281252633 -- student-LR=0.004112268715800955 -- teacher-LR=4.112268715800954e-06
+		 Valid evaluation at end of epoch: latest_acc:42.92 -- best val acc so far 43.34
+dual_update_step
+ old -- 58.01113271713257 -- new 64.53442573547363 -- grad 6.5232930183410645
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0035111757055874327 init-LR=0.009549150281252633 -- student-LR=0.0035111757055874327 -- teacher-LR=3.511175705587433e-06
+		 Valid evaluation at end of epoch: latest_acc:43.08 -- best val acc so far 43.34
+dual_update_step
+ old -- 64.53442573547363 -- new 71.01939010620117 -- grad 6.484964370727539
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0029559615522887273 init-LR=0.009549150281252633 -- student-LR=0.0029559615522887273 -- teacher-LR=2.9559615522887273e-06
+		 Valid evaluation at end of epoch: latest_acc:42.76 -- best val acc so far 43.34
+dual_update_step
+ old -- 5.0 -- new 11.504112720489502 -- grad 6.504112720489502
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0024471741852423235 init-LR=0.009549150281252633 -- student-LR=0.0024471741852423235 -- teacher-LR=2.4471741852423237e-06
+		 Valid evaluation at end of epoch: latest_acc:42.06 -- best val acc so far 43.34
+dual_update_step
+ old -- 11.504112720489502 -- new 17.928746700286865 -- grad 6.424633979797363
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0019853157161528524 init-LR=0.009549150281252633 -- student-LR=0.0019853157161528524 -- teacher-LR=1.9853157161528523e-06
+		 Valid evaluation at end of epoch: latest_acc:42.66 -- best val acc so far 43.34
+dual_update_step
+ old -- 17.928746700286865 -- new 24.357351779937744 -- grad 6.428605079650879
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0015708419435684518 init-LR=0.009549150281252633 -- student-LR=0.0015708419435684518 -- teacher-LR=1.570841943568452e-06
+		 Valid evaluation at end of epoch: latest_acc:43.02 -- best val acc so far 43.34
+dual_update_step
+ old -- 24.357351779937744 -- new 30.762051582336426 -- grad 6.404699802398682
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0012041619030626338 init-LR=0.009549150281252633 -- student-LR=0.0012041619030626338 -- teacher-LR=1.2041619030626339e-06
+		 Valid evaluation at end of epoch: latest_acc:42.74 -- best val acc so far 43.34
+dual_update_step
+ old -- 30.762051582336426 -- new 37.12777376174927 -- grad 6.365722179412842
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.000885637463565564 init-LR=0.009549150281252633 -- student-LR=0.000885637463565564 -- teacher-LR=8.85637463565564e-07
+		 Valid evaluation at end of epoch: latest_acc:43.38 -- best val acc so far 43.38
+dual_update_step
+ old -- 37.12777376174927 -- new 43.44348669052124 -- grad 6.315712928771973
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0006155829702431171 init-LR=0.009549150281252633 -- student-LR=0.0006155829702431171 -- teacher-LR=6.15582970243117e-07
+		 Valid evaluation at end of epoch: latest_acc:43.76 -- best val acc so far 43.76
+dual_update_step
+ old -- 43.44348669052124 -- new 49.755940437316895 -- grad 6.312453746795654
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0003942649342761118 init-LR=0.009549150281252633 -- student-LR=0.0003942649342761118 -- teacher-LR=3.9426493427611177e-07
+		 Valid evaluation at end of epoch: latest_acc:42.24 -- best val acc so far 43.76
+dual_update_step
+ old -- 49.755940437316895 -- new 56.06882047653198 -- grad 6.312880039215088
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0002219017698460002 init-LR=0.009549150281252633 -- student-LR=0.0002219017698460002 -- teacher-LR=2.219017698460002e-07
+		 Valid evaluation at end of epoch: latest_acc:43.16 -- best val acc so far 43.76
+dual_update_step
+ old -- 56.06882047653198 -- new 62.38843536376953 -- grad 6.319614887237549
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=9.866357858642206e-05 init-LR=0.009549150281252633 -- student-LR=9.866357858642206e-05 -- teacher-LR=9.866357858642205e-08
+		 Valid evaluation at end of epoch: latest_acc:42.78 -- best val acc so far 43.76
+dual_update_step
+ old -- 62.38843536376953 -- new 68.7090425491333 -- grad 6.3206071853637695
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=2.467198171342e-05 init-LR=0.009549150281252633 -- student-LR=2.467198171342e-05 -- teacher-LR=2.467198171342e-08
+		 Valid evaluation at end of epoch: latest_acc:43.00 -- best val acc so far 43.76
+dual_update_step
+ old -- 5.0 -- new 11.625516414642334 -- grad 6.625516414642334
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.1 init-LR=0.009549150281252633 -- student-LR=0.1 -- teacher-LR=0.0001
+		 Valid evaluation at end of epoch: latest_acc:42.06 -- best val acc so far 43.76
+dual_update_step
+ old -- 11.625516414642334 -- new 18.281745433807373 -- grad 6.656229019165039
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09997532801828658 init-LR=0.009549150281252633 -- student-LR=0.09997532801828658 -- teacher-LR=9.997532801828658e-05
+		 Valid evaluation at end of epoch: latest_acc:38.66 -- best val acc so far 43.76
+dual_update_step
+ old -- 18.281745433807373 -- new 25.35735273361206 -- grad 7.0756072998046875
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09990133642141358 init-LR=0.009549150281252633 -- student-LR=0.09990133642141358 -- teacher-LR=9.990133642141359e-05
+		 Valid evaluation at end of epoch: latest_acc:39.82 -- best val acc so far 43.76
+dual_update_step
+ old -- 25.35735273361206 -- new 32.390408992767334 -- grad 7.033056259155273
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.099778098230154 init-LR=0.009549150281252633 -- student-LR=0.099778098230154 -- teacher-LR=9.977809823015401e-05
+		 Valid evaluation at end of epoch: latest_acc:38.90 -- best val acc so far 43.76
+dual_update_step
+ old -- 32.390408992767334 -- new 39.54696035385132 -- grad 7.156551361083984
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0996057350657239 init-LR=0.009549150281252633 -- student-LR=0.0996057350657239 -- teacher-LR=9.96057350657239e-05
+		 Valid evaluation at end of epoch: latest_acc:39.14 -- best val acc so far 43.76
+dual_update_step
+ old -- 39.54696035385132 -- new 46.54295492172241 -- grad 6.995994567871094
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0993844170297569 init-LR=0.009549150281252633 -- student-LR=0.0993844170297569 -- teacher-LR=9.938441702975689e-05
+		 Valid evaluation at end of epoch: latest_acc:39.64 -- best val acc so far 43.76
+dual_update_step
+ old -- 46.54295492172241 -- new 53.442848205566406 -- grad 6.899893283843994
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09911436253643445 init-LR=0.009549150281252633 -- student-LR=0.09911436253643445 -- teacher-LR=9.911436253643445e-05
+		 Valid evaluation at end of epoch: latest_acc:39.86 -- best val acc so far 43.76
+dual_update_step
+ old -- 53.442848205566406 -- new 60.45448637008667 -- grad 7.011638164520264
+primal_budget_update_step
+ -- old epsilon=0.24853089503644277 -- new epsilon= 0.4 -- grad tensor(1.3495, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09879583809693737 init-LR=0.009549150281252633 -- student-LR=0.09879583809693737 -- teacher-LR=9.879583809693738e-05
+		 Valid evaluation at end of epoch: latest_acc:35.98 -- best val acc so far 43.76
+dual_update_step
+ old -- 60.45448637008667 -- new 67.7505874633789 -- grad 7.296101093292236
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09842915805643156 init-LR=0.009549150281252633 -- student-LR=0.09842915805643156 -- teacher-LR=9.842915805643155e-05
+		 Valid evaluation at end of epoch: latest_acc:38.24 -- best val acc so far 43.76
+dual_update_step
+ old -- 67.7505874633789 -- new 74.79741382598877 -- grad 7.046826362609863
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09801468428384716 init-LR=0.009549150281252633 -- student-LR=0.09801468428384716 -- teacher-LR=9.801468428384716e-05
+		 Valid evaluation at end of epoch: latest_acc:38.58 -- best val acc so far 43.76
+dual_update_step
+ old -- 5.0 -- new 11.983657360076904 -- grad 6.983657360076904
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09755282581475769 init-LR=0.009549150281252633 -- student-LR=0.09755282581475769 -- teacher-LR=9.755282581475769e-05
+		 Valid evaluation at end of epoch: latest_acc:36.90 -- best val acc so far 43.76
+dual_update_step
+ old -- 11.983657360076904 -- new 19.108965396881104 -- grad 7.125308036804199
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09704403844771128 init-LR=0.009549150281252633 -- student-LR=0.09704403844771128 -- teacher-LR=9.704403844771128e-05
+		 Valid evaluation at end of epoch: latest_acc:37.12 -- best val acc so far 43.76
+dual_update_step
+ old -- 19.108965396881104 -- new 26.121032238006592 -- grad 7.012066841125488
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09648882429441258 init-LR=0.009549150281252633 -- student-LR=0.09648882429441258 -- teacher-LR=9.648882429441257e-05
+		 Valid evaluation at end of epoch: latest_acc:39.68 -- best val acc so far 43.76
+dual_update_step
+ old -- 26.121032238006592 -- new 32.80891752243042 -- grad 6.687885284423828
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09588773128419906 init-LR=0.009549150281252633 -- student-LR=0.09588773128419906 -- teacher-LR=9.588773128419906e-05
+		 Valid evaluation at end of epoch: latest_acc:37.32 -- best val acc so far 43.76
+dual_update_step
+ old -- 32.80891752243042 -- new 39.758399963378906 -- grad 6.949482440948486
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09524135262330098 init-LR=0.009549150281252633 -- student-LR=0.09524135262330098 -- teacher-LR=9.524135262330098e-05
+		 Valid evaluation at end of epoch: latest_acc:39.88 -- best val acc so far 43.76
+dual_update_step
+ old -- 39.758399963378906 -- new 46.49459266662598 -- grad 6.73619270324707
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09455032620941839 init-LR=0.009549150281252633 -- student-LR=0.09455032620941839 -- teacher-LR=9.45503262094184e-05
+		 Valid evaluation at end of epoch: latest_acc:36.82 -- best val acc so far 43.76
+dual_update_step
+ old -- 46.49459266662598 -- new 53.4465537071228 -- grad 6.951961040496826
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09381533400219318 init-LR=0.009549150281252633 -- student-LR=0.09381533400219318 -- teacher-LR=9.381533400219318e-05
+		 Valid evaluation at end of epoch: latest_acc:38.58 -- best val acc so far 43.76
+dual_update_step
+ old -- 53.4465537071228 -- new 60.40269756317139 -- grad 6.956143856048584
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09303710135019719 init-LR=0.009549150281252633 -- student-LR=0.09303710135019719 -- teacher-LR=9.30371013501972e-05
+		 Valid evaluation at end of epoch: latest_acc:40.60 -- best val acc so far 43.76
+dual_update_step
+ old -- 60.40269756317139 -- new 66.98653888702393 -- grad 6.583841323852539
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09221639627510075 init-LR=0.009549150281252633 -- student-LR=0.09221639627510075 -- teacher-LR=9.221639627510076e-05
+		 Valid evaluation at end of epoch: latest_acc:41.02 -- best val acc so far 43.76
+dual_update_step
+ old -- 66.98653888702393 -- new 73.49228096008301 -- grad 6.505742073059082
+primal_budget_update_step
+ -- old epsilon=0.3953309645244104 -- new epsilon= 0.4 -- grad tensor(1.6003, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0913540287137281 init-LR=0.009549150281252633 -- student-LR=0.0913540287137281 -- teacher-LR=9.135402871372808e-05
+		 Valid evaluation at end of epoch: latest_acc:41.50 -- best val acc so far 43.76
+dual_update_step
+ old -- 5.0 -- new 12.032433986663818 -- grad 7.032433986663818
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09045084971874738 init-LR=0.009549150281252633 -- student-LR=0.09045084971874738 -- teacher-LR=9.045084971874738e-05
+		 Valid evaluation at end of epoch: latest_acc:40.34 -- best val acc so far 43.76
+dual_update_step
+ old -- 12.032433986663818 -- new 19.022197723388672 -- grad 6.9897637367248535
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08950775061878452 init-LR=0.009549150281252633 -- student-LR=0.08950775061878452 -- teacher-LR=8.950775061878452e-05
+		 Valid evaluation at end of epoch: latest_acc:41.34 -- best val acc so far 43.76
+dual_update_step
+ old -- 19.022197723388672 -- new 25.98469305038452 -- grad 6.96249532699585
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08852566213878947 init-LR=0.009549150281252633 -- student-LR=0.08852566213878947 -- teacher-LR=8.852566213878947e-05
+		 Valid evaluation at end of epoch: latest_acc:37.64 -- best val acc so far 43.76
+dual_update_step
+ old -- 25.98469305038452 -- new 33.199530601501465 -- grad 7.214837551116943
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08750555348152299 init-LR=0.009549150281252633 -- student-LR=0.08750555348152299 -- teacher-LR=8.750555348152298e-05
+		 Valid evaluation at end of epoch: latest_acc:39.94 -- best val acc so far 43.76
+dual_update_step
+ old -- 33.199530601501465 -- new 40.147122859954834 -- grad 6.947592258453369
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08644843137107058 init-LR=0.009549150281252633 -- student-LR=0.08644843137107058 -- teacher-LR=8.644843137107059e-05
+		 Valid evaluation at end of epoch: latest_acc:40.18 -- best val acc so far 43.76
+dual_update_step
+ old -- 40.147122859954834 -- new 47.115617752075195 -- grad 6.968494892120361
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08535533905932738 init-LR=0.009549150281252633 -- student-LR=0.08535533905932738 -- teacher-LR=8.535533905932738e-05
+		 Valid evaluation at end of epoch: latest_acc:40.24 -- best val acc so far 43.76
+dual_update_step
+ old -- 47.115617752075195 -- new 54.05204248428345 -- grad 6.936424732208252
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08422735529643444 init-LR=0.009549150281252633 -- student-LR=0.08422735529643444 -- teacher-LR=8.422735529643444e-05
+		 Valid evaluation at end of epoch: latest_acc:40.58 -- best val acc so far 43.76
+dual_update_step
+ old -- 54.05204248428345 -- new 60.98834848403931 -- grad 6.936305999755859
+primal_budget_update_step
+ -- old epsilon=0.23192210048694903 -- new epsilon= 0.4 -- grad tensor(1.3585, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0830655932661826 init-LR=0.009549150281252633 -- student-LR=0.0830655932661826 -- teacher-LR=8.306559326618259e-05
+		 Valid evaluation at end of epoch: latest_acc:40.68 -- best val acc so far 43.76
+dual_update_step
+ old -- 60.98834848403931 -- new 67.83163690567017 -- grad 6.843288421630859
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08187119948743449 init-LR=0.009549150281252633 -- student-LR=0.08187119948743449 -- teacher-LR=8.18711994874345e-05
+		 Valid evaluation at end of epoch: latest_acc:39.36 -- best val acc so far 43.76
+dual_update_step
+ old -- 67.83163690567017 -- new 74.74409818649292 -- grad 6.912461280822754
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08064535268264883 init-LR=0.009549150281252633 -- student-LR=0.08064535268264883 -- teacher-LR=8.064535268264883e-05
+		 Valid evaluation at end of epoch: latest_acc:40.76 -- best val acc so far 43.76
+dual_update_step
+ old -- 5.0 -- new 11.771640300750732 -- grad 6.771640300750732
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07938926261462367 init-LR=0.009549150281252633 -- student-LR=0.07938926261462367 -- teacher-LR=7.938926261462367e-05
+		 Valid evaluation at end of epoch: latest_acc:41.92 -- best val acc so far 43.76
+dual_update_step
+ old -- 11.771640300750732 -- new 18.484496116638184 -- grad 6.712855815887451
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07810416889260655 init-LR=0.009549150281252633 -- student-LR=0.07810416889260655 -- teacher-LR=7.810416889260655e-05
+		 Valid evaluation at end of epoch: latest_acc:41.56 -- best val acc so far 43.76
+dual_update_step
+ old -- 18.484496116638184 -- new 25.171669483184814 -- grad 6.687173366546631
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07679133974894983 init-LR=0.009549150281252633 -- student-LR=0.07679133974894983 -- teacher-LR=7.679133974894983e-05
+		 Valid evaluation at end of epoch: latest_acc:39.52 -- best val acc so far 43.76
+dual_update_step
+ old -- 25.171669483184814 -- new 32.029168128967285 -- grad 6.857498645782471
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07545207078751857 init-LR=0.009549150281252633 -- student-LR=0.07545207078751857 -- teacher-LR=7.545207078751857e-05
+		 Valid evaluation at end of epoch: latest_acc:41.64 -- best val acc so far 43.76
+dual_update_step
+ old -- 32.029168128967285 -- new 38.62178421020508 -- grad 6.592616081237793
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07408768370508577 init-LR=0.009549150281252633 -- student-LR=0.07408768370508577 -- teacher-LR=7.408768370508576e-05
+		 Valid evaluation at end of epoch: latest_acc:38.16 -- best val acc so far 43.76
+dual_update_step
+ old -- 38.62178421020508 -- new 45.607401847839355 -- grad 6.985617637634277
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07269952498697733 init-LR=0.009549150281252633 -- student-LR=0.07269952498697733 -- teacher-LR=7.269952498697734e-05
+		 Valid evaluation at end of epoch: latest_acc:38.50 -- best val acc so far 43.76
+dual_update_step
+ old -- 45.607401847839355 -- new 52.38231372833252 -- grad 6.774911880493164
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07128896457825364 init-LR=0.009549150281252633 -- student-LR=0.07128896457825364 -- teacher-LR=7.128896457825364e-05
+		 Valid evaluation at end of epoch: latest_acc:41.50 -- best val acc so far 43.76
+dual_update_step
+ old -- 52.38231372833252 -- new 58.869882106781006 -- grad 6.487568378448486
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06985739453173903 init-LR=0.009549150281252633 -- student-LR=0.06985739453173903 -- teacher-LR=6.985739453173903e-05
+		 Valid evaluation at end of epoch: latest_acc:42.06 -- best val acc so far 43.76
+dual_update_step
+ old -- 58.869882106781006 -- new 65.32414531707764 -- grad 6.454263210296631
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06840622763423392 init-LR=0.009549150281252633 -- student-LR=0.06840622763423392 -- teacher-LR=6.840622763423391e-05
+		 Valid evaluation at end of epoch: latest_acc:40.74 -- best val acc so far 43.76
+dual_update_step
+ old -- 65.32414531707764 -- new 71.90347099304199 -- grad 6.5793256759643555
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06693689601226459 init-LR=0.009549150281252633 -- student-LR=0.06693689601226459 -- teacher-LR=6.693689601226458e-05
+		 Valid evaluation at end of epoch: latest_acc:41.28 -- best val acc so far 43.76
+dual_update_step
+ old -- 5.0 -- new 11.896390438079834 -- grad 6.896390438079834
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06545084971874737 init-LR=0.009549150281252633 -- student-LR=0.06545084971874737 -- teacher-LR=6.545084971874738e-05
+		 Valid evaluation at end of epoch: latest_acc:38.28 -- best val acc so far 43.76
+dual_update_step
+ old -- 11.896390438079834 -- new 19.358103275299072 -- grad 7.461712837219238
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06394955530196147 init-LR=0.009549150281252633 -- student-LR=0.06394955530196147 -- teacher-LR=6.394955530196147e-05
+		 Valid evaluation at end of epoch: latest_acc:40.34 -- best val acc so far 43.76
+dual_update_step
+ old -- 19.358103275299072 -- new 26.451106548309326 -- grad 7.093003273010254
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.062434494358242734 init-LR=0.009549150281252633 -- student-LR=0.062434494358242734 -- teacher-LR=6.243449435824273e-05
+		 Valid evaluation at end of epoch: latest_acc:40.96 -- best val acc so far 43.76
+dual_update_step
+ old -- 26.451106548309326 -- new 33.334548473358154 -- grad 6.883441925048828
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06090716206982714 init-LR=0.009549150281252633 -- student-LR=0.06090716206982714 -- teacher-LR=6.090716206982714e-05
+		 Valid evaluation at end of epoch: latest_acc:40.66 -- best val acc so far 43.76
+dual_update_step
+ old -- 33.334548473358154 -- new 40.30565357208252 -- grad 6.971105098724365
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05936906572928624 init-LR=0.009549150281252633 -- student-LR=0.05936906572928624 -- teacher-LR=5.9369065729286245e-05
+		 Valid evaluation at end of epoch: latest_acc:40.30 -- best val acc so far 43.76
+dual_update_step
+ old -- 40.30565357208252 -- new 47.386168003082275 -- grad 7.080514430999756
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05782172325201155 init-LR=0.009549150281252633 -- student-LR=0.05782172325201155 -- teacher-LR=5.782172325201155e-05
+		 Valid evaluation at end of epoch: latest_acc:41.62 -- best val acc so far 43.76
+dual_update_step
+ old -- 47.386168003082275 -- new 54.4086480140686 -- grad 7.022480010986328
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05626666167821523 init-LR=0.009549150281252633 -- student-LR=0.05626666167821523 -- teacher-LR=5.626666167821523e-05
+		 Valid evaluation at end of epoch: latest_acc:42.10 -- best val acc so far 43.76
+dual_update_step
+ old -- 54.4086480140686 -- new 61.2630033493042 -- grad 6.854355335235596
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05470541566592572 init-LR=0.009549150281252633 -- student-LR=0.05470541566592572 -- teacher-LR=5.4705415665925717e-05
+		 Valid evaluation at end of epoch: latest_acc:41.16 -- best val acc so far 43.76
+dual_update_step
+ old -- 61.2630033493042 -- new 68.18293619155884 -- grad 6.919932842254639
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05313952597646568 init-LR=0.009549150281252633 -- student-LR=0.05313952597646568 -- teacher-LR=5.313952597646568e-05
+		 Valid evaluation at end of epoch: latest_acc:39.92 -- best val acc so far 43.76
+dual_update_step
+ old -- 68.18293619155884 -- new 75.07401323318481 -- grad 6.891077041625977
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05157053795390642 init-LR=0.009549150281252633 -- student-LR=0.05157053795390642 -- teacher-LR=5.157053795390642e-05
+		 Valid evaluation at end of epoch: latest_acc:42.22 -- best val acc so far 43.76
+dual_update_step
+ old -- 5.0 -- new 11.648685932159424 -- grad 6.648685932159424
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05 init-LR=0.009549150281252633 -- student-LR=0.05 -- teacher-LR=5e-05
+		 Valid evaluation at end of epoch: latest_acc:42.12 -- best val acc so far 43.76
+dual_update_step
+ old -- 11.648685932159424 -- new 18.324357509613037 -- grad 6.675671577453613
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04842946204609359 init-LR=0.009549150281252633 -- student-LR=0.04842946204609359 -- teacher-LR=4.8429462046093585e-05
+		 Valid evaluation at end of epoch: latest_acc:43.54 -- best val acc so far 43.76
+dual_update_step
+ old -- 18.324357509613037 -- new 24.90676784515381 -- grad 6.5824103355407715
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04686047402353433 init-LR=0.009549150281252633 -- student-LR=0.04686047402353433 -- teacher-LR=4.6860474023534335e-05
+		 Valid evaluation at end of epoch: latest_acc:42.08 -- best val acc so far 43.76
+dual_update_step
+ old -- 24.90676784515381 -- new 31.5940203666687 -- grad 6.687252521514893
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04529458433407429 init-LR=0.009549150281252633 -- student-LR=0.04529458433407429 -- teacher-LR=4.529458433407429e-05
+		 Valid evaluation at end of epoch: latest_acc:41.92 -- best val acc so far 43.76
+dual_update_step
+ old -- 31.5940203666687 -- new 38.13306665420532 -- grad 6.539046287536621
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0437333383217848 init-LR=0.009549150281252633 -- student-LR=0.0437333383217848 -- teacher-LR=4.3733338321784795e-05
+		 Valid evaluation at end of epoch: latest_acc:41.98 -- best val acc so far 43.76
+dual_update_step
+ old -- 38.13306665420532 -- new 44.6386022567749 -- grad 6.50553560256958
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.042178276747988463 init-LR=0.009549150281252633 -- student-LR=0.042178276747988463 -- teacher-LR=4.217827674798846e-05
+		 Valid evaluation at end of epoch: latest_acc:40.90 -- best val acc so far 43.76
+dual_update_step
+ old -- 44.6386022567749 -- new 51.1743426322937 -- grad 6.535740375518799
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04063093427071377 init-LR=0.009549150281252633 -- student-LR=0.04063093427071377 -- teacher-LR=4.0630934270713774e-05
+		 Valid evaluation at end of epoch: latest_acc:42.08 -- best val acc so far 43.76
+dual_update_step
+ old -- 51.1743426322937 -- new 57.606563568115234 -- grad 6.432220935821533
+primal_budget_update_step
+ -- old epsilon=0.37798517140131904 -- new epsilon= 0.4 -- grad tensor(1.2794, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03909283793017289 init-LR=0.009549150281252633 -- student-LR=0.03909283793017289 -- teacher-LR=3.9092837930172884e-05
+		 Valid evaluation at end of epoch: latest_acc:39.80 -- best val acc so far 43.76
+dual_update_step
+ old -- 57.606563568115234 -- new 64.2350492477417 -- grad 6.628485679626465
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03756550564175726 init-LR=0.009549150281252633 -- student-LR=0.03756550564175726 -- teacher-LR=3.756550564175726e-05
+		 Valid evaluation at end of epoch: latest_acc:40.34 -- best val acc so far 43.76
+dual_update_step
+ old -- 64.2350492477417 -- new 70.98020648956299 -- grad 6.745157241821289
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.036050444698038545 init-LR=0.009549150281252633 -- student-LR=0.036050444698038545 -- teacher-LR=3.605044469803854e-05
+		 Valid evaluation at end of epoch: latest_acc:41.92 -- best val acc so far 43.76
+dual_update_step
+ old -- 5.0 -- new 11.912082195281982 -- grad 6.912082195281982
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03454915028125265 init-LR=0.009549150281252633 -- student-LR=0.03454915028125265 -- teacher-LR=3.454915028125264e-05
+		 Valid evaluation at end of epoch: latest_acc:42.04 -- best val acc so far 43.76
+dual_update_step
+ old -- 11.912082195281982 -- new 18.836918354034424 -- grad 6.924836158752441
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03306310398773543 init-LR=0.009549150281252633 -- student-LR=0.03306310398773543 -- teacher-LR=3.3063103987735433e-05
+		 Valid evaluation at end of epoch: latest_acc:42.24 -- best val acc so far 43.76
+dual_update_step
+ old -- 18.836918354034424 -- new 25.758248805999756 -- grad 6.921330451965332
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03159377236576612 init-LR=0.009549150281252633 -- student-LR=0.03159377236576612 -- teacher-LR=3.159377236576612e-05
+		 Valid evaluation at end of epoch: latest_acc:41.76 -- best val acc so far 43.76
+dual_update_step
+ old -- 25.758248805999756 -- new 32.6841721534729 -- grad 6.9259233474731445
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.030142605468260964 init-LR=0.009549150281252633 -- student-LR=0.030142605468260964 -- teacher-LR=3.0142605468260964e-05
+		 Valid evaluation at end of epoch: latest_acc:41.82 -- best val acc so far 43.76
+dual_update_step
+ old -- 32.6841721534729 -- new 39.72292900085449 -- grad 7.038756847381592
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02871103542174637 init-LR=0.009549150281252633 -- student-LR=0.02871103542174637 -- teacher-LR=2.8711035421746367e-05
+		 Valid evaluation at end of epoch: latest_acc:43.34 -- best val acc so far 43.76
+dual_update_step
+ old -- 39.72292900085449 -- new 46.60348129272461 -- grad 6.880552291870117
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.027300475013022664 init-LR=0.009549150281252633 -- student-LR=0.027300475013022664 -- teacher-LR=2.7300475013022663e-05
+		 Valid evaluation at end of epoch: latest_acc:43.72 -- best val acc so far 43.76
+dual_update_step
+ old -- 46.60348129272461 -- new 53.428523540496826 -- grad 6.825042247772217
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02591231629491423 init-LR=0.009549150281252633 -- student-LR=0.02591231629491423 -- teacher-LR=2.591231629491423e-05
+		 Valid evaluation at end of epoch: latest_acc:42.44 -- best val acc so far 43.76
+dual_update_step
+ old -- 53.428523540496826 -- new 60.18401050567627 -- grad 6.755486965179443
+primal_budget_update_step
+ -- old epsilon=0.20352106180731475 -- new epsilon= 0.4 -- grad tensor(1.3383, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.024547929212481435 init-LR=0.009549150281252633 -- student-LR=0.024547929212481435 -- teacher-LR=2.4547929212481435e-05
+		 Valid evaluation at end of epoch: latest_acc:42.66 -- best val acc so far 43.76
+dual_update_step
+ old -- 60.18401050567627 -- new 66.91376543045044 -- grad 6.72975492477417
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02320866025105016 init-LR=0.009549150281252633 -- student-LR=0.02320866025105016 -- teacher-LR=2.3208660251050158e-05
+		 Valid evaluation at end of epoch: latest_acc:43.54 -- best val acc so far 43.76
+dual_update_step
+ old -- 66.91376543045044 -- new 73.52215051651001 -- grad 6.60838508605957
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.021895831107393467 init-LR=0.009549150281252633 -- student-LR=0.021895831107393467 -- teacher-LR=2.1895831107393467e-05
+		 Valid evaluation at end of epoch: latest_acc:42.22 -- best val acc so far 43.76
+dual_update_step
+ old -- 5.0 -- new 11.658358097076416 -- grad 6.658358097076416
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02061073738537635 init-LR=0.009549150281252633 -- student-LR=0.02061073738537635 -- teacher-LR=2.061073738537635e-05
+		 Valid evaluation at end of epoch: latest_acc:42.34 -- best val acc so far 43.76
+dual_update_step
+ old -- 11.658358097076416 -- new 18.316003799438477 -- grad 6.6576457023620605
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.019354647317351172 init-LR=0.009549150281252633 -- student-LR=0.019354647317351172 -- teacher-LR=1.935464731735117e-05
+		 Valid evaluation at end of epoch: latest_acc:42.12 -- best val acc so far 43.76
+dual_update_step
+ old -- 18.316003799438477 -- new 24.89111852645874 -- grad 6.575114727020264
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.018128800512565515 init-LR=0.009549150281252633 -- student-LR=0.018128800512565515 -- teacher-LR=1.8128800512565513e-05
+		 Valid evaluation at end of epoch: latest_acc:43.10 -- best val acc so far 43.76
+dual_update_step
+ old -- 24.89111852645874 -- new 31.490023136138916 -- grad 6.598904609680176
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.016934406733817416 init-LR=0.009549150281252633 -- student-LR=0.016934406733817416 -- teacher-LR=1.6934406733817414e-05
+		 Valid evaluation at end of epoch: latest_acc:43.78 -- best val acc so far 43.78
+dual_update_step
+ old -- 31.490023136138916 -- new 37.9706826210022 -- grad 6.480659484863281
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.015772644703565566 init-LR=0.009549150281252633 -- student-LR=0.015772644703565566 -- teacher-LR=1.5772644703565565e-05
+		 Valid evaluation at end of epoch: latest_acc:41.60 -- best val acc so far 43.78
+dual_update_step
+ old -- 37.9706826210022 -- new 44.61369180679321 -- grad 6.643009185791016
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.014644660940672627 init-LR=0.009549150281252633 -- student-LR=0.014644660940672627 -- teacher-LR=1.4644660940672627e-05
+		 Valid evaluation at end of epoch: latest_acc:42.98 -- best val acc so far 43.78
+dual_update_step
+ old -- 44.61369180679321 -- new 50.991700649261475 -- grad 6.378008842468262
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.013551568628929435 init-LR=0.009549150281252633 -- student-LR=0.013551568628929435 -- teacher-LR=1.3551568628929434e-05
+		 Valid evaluation at end of epoch: latest_acc:43.02 -- best val acc so far 43.78
+dual_update_step
+ old -- 50.991700649261475 -- new 57.38137102127075 -- grad 6.389670372009277
+primal_budget_update_step
+ -- old epsilon=0.37636699414868613 -- new epsilon= 0.4 -- grad tensor(1.2747, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.012494446518477021 init-LR=0.009549150281252633 -- student-LR=0.012494446518477021 -- teacher-LR=1.2494446518477022e-05
+		 Valid evaluation at end of epoch: latest_acc:42.96 -- best val acc so far 43.78
+dual_update_step
+ old -- 57.38137102127075 -- new 63.66527271270752 -- grad 6.283901691436768
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.011474337861210543 init-LR=0.009549150281252633 -- student-LR=0.011474337861210543 -- teacher-LR=1.1474337861210543e-05
+		 Valid evaluation at end of epoch: latest_acc:43.84 -- best val acc so far 43.84
+dual_update_step
+ old -- 63.66527271270752 -- new 69.97054529190063 -- grad 6.305272579193115
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.01049224938121548 init-LR=0.009549150281252633 -- student-LR=0.01049224938121548 -- teacher-LR=1.049224938121548e-05
+		 Valid evaluation at end of epoch: latest_acc:42.14 -- best val acc so far 43.84
+dual_update_step
+ old -- 5.0 -- new 11.795649528503418 -- grad 6.795649528503418
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.009549150281252633 init-LR=0.009549150281252633 -- student-LR=0.009549150281252633 -- teacher-LR=9.549150281252633e-06
+		 Valid evaluation at end of epoch: latest_acc:42.64 -- best val acc so far 43.84
+dual_update_step
+ old -- 11.795649528503418 -- new 18.658490657806396 -- grad 6.8628411293029785
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.008645971286271915 init-LR=0.009549150281252633 -- student-LR=0.008645971286271915 -- teacher-LR=8.645971286271914e-06
+		 Valid evaluation at end of epoch: latest_acc:42.66 -- best val acc so far 43.84
+dual_update_step
+ old -- 18.658490657806396 -- new 25.413713455200195 -- grad 6.755222797393799
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.007783603724899258 init-LR=0.009549150281252633 -- student-LR=0.007783603724899258 -- teacher-LR=7.783603724899257e-06
+		 Valid evaluation at end of epoch: latest_acc:43.96 -- best val acc so far 43.96
+dual_update_step
+ old -- 25.413713455200195 -- new 32.18809175491333 -- grad 6.774378299713135
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.006962898649802813 init-LR=0.009549150281252633 -- student-LR=0.006962898649802813 -- teacher-LR=6.962898649802812e-06
+		 Valid evaluation at end of epoch: latest_acc:42.54 -- best val acc so far 43.96
+dual_update_step
+ old -- 32.18809175491333 -- new 38.99202013015747 -- grad 6.803928375244141
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.006184665997806821 init-LR=0.009549150281252633 -- student-LR=0.006184665997806821 -- teacher-LR=6.184665997806821e-06
+		 Valid evaluation at end of epoch: latest_acc:42.90 -- best val acc so far 43.96
+dual_update_step
+ old -- 38.99202013015747 -- new 45.75197458267212 -- grad 6.759954452514648
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.005449673790581611 init-LR=0.009549150281252633 -- student-LR=0.005449673790581611 -- teacher-LR=5.449673790581611e-06
+		 Valid evaluation at end of epoch: latest_acc:42.48 -- best val acc so far 43.96
+dual_update_step
+ old -- 45.75197458267212 -- new 52.443180084228516 -- grad 6.6912055015563965
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.004758647376699033 init-LR=0.009549150281252633 -- student-LR=0.004758647376699033 -- teacher-LR=4.758647376699032e-06
+		 Valid evaluation at end of epoch: latest_acc:44.18 -- best val acc so far 44.18
+dual_update_step
+ old -- 52.443180084228516 -- new 59.11008930206299 -- grad 6.666909217834473
+primal_budget_update_step
+ -- old epsilon=0.1914132505807338 -- new epsilon= 0.4 -- grad tensor(1.3146, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.004112268715800955 init-LR=0.009549150281252633 -- student-LR=0.004112268715800955 -- teacher-LR=4.112268715800954e-06
+		 Valid evaluation at end of epoch: latest_acc:44.08 -- best val acc so far 44.18
+dual_update_step
+ old -- 59.11008930206299 -- new 65.78326082229614 -- grad 6.673171520233154
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0035111757055874327 init-LR=0.009549150281252633 -- student-LR=0.0035111757055874327 -- teacher-LR=3.511175705587433e-06
+		 Valid evaluation at end of epoch: latest_acc:43.78 -- best val acc so far 44.18
+dual_update_step
+ old -- 65.78326082229614 -- new 72.40558528900146 -- grad 6.622324466705322
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0029559615522887273 init-LR=0.009549150281252633 -- student-LR=0.0029559615522887273 -- teacher-LR=2.9559615522887273e-06
+		 Valid evaluation at end of epoch: latest_acc:43.34 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 11.612319946289062 -- grad 6.6123199462890625
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0024471741852423235 init-LR=0.009549150281252633 -- student-LR=0.0024471741852423235 -- teacher-LR=2.4471741852423237e-06
+		 Valid evaluation at end of epoch: latest_acc:42.70 -- best val acc so far 44.18
+dual_update_step
+ old -- 11.612319946289062 -- new 18.17500925064087 -- grad 6.562689304351807
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0019853157161528524 init-LR=0.009549150281252633 -- student-LR=0.0019853157161528524 -- teacher-LR=1.9853157161528523e-06
+		 Valid evaluation at end of epoch: latest_acc:43.50 -- best val acc so far 44.18
+dual_update_step
+ old -- 18.17500925064087 -- new 24.675936222076416 -- grad 6.500926971435547
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0015708419435684518 init-LR=0.009549150281252633 -- student-LR=0.0015708419435684518 -- teacher-LR=1.570841943568452e-06
+		 Valid evaluation at end of epoch: latest_acc:43.64 -- best val acc so far 44.18
+dual_update_step
+ old -- 24.675936222076416 -- new 31.088576316833496 -- grad 6.41264009475708
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0012041619030626338 init-LR=0.009549150281252633 -- student-LR=0.0012041619030626338 -- teacher-LR=1.2041619030626339e-06
+		 Valid evaluation at end of epoch: latest_acc:43.96 -- best val acc so far 44.18
+dual_update_step
+ old -- 31.088576316833496 -- new 37.5700478553772 -- grad 6.481471538543701
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.000885637463565564 init-LR=0.009549150281252633 -- student-LR=0.000885637463565564 -- teacher-LR=8.85637463565564e-07
+		 Valid evaluation at end of epoch: latest_acc:44.10 -- best val acc so far 44.18
+dual_update_step
+ old -- 37.5700478553772 -- new 43.92312955856323 -- grad 6.353081703186035
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0006155829702431171 init-LR=0.009549150281252633 -- student-LR=0.0006155829702431171 -- teacher-LR=6.15582970243117e-07
+		 Valid evaluation at end of epoch: latest_acc:44.00 -- best val acc so far 44.18
+dual_update_step
+ old -- 43.92312955856323 -- new 50.289093017578125 -- grad 6.365963459014893
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0003942649342761118 init-LR=0.009549150281252633 -- student-LR=0.0003942649342761118 -- teacher-LR=3.9426493427611177e-07
+		 Valid evaluation at end of epoch: latest_acc:44.00 -- best val acc so far 44.18
+dual_update_step
+ old -- 50.289093017578125 -- new 56.59531259536743 -- grad 6.306219577789307
+primal_budget_update_step
+ -- old epsilon=0.3749106346213164 -- new epsilon= 0.4 -- grad tensor(1.2585, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0002219017698460002 init-LR=0.009549150281252633 -- student-LR=0.0002219017698460002 -- teacher-LR=2.219017698460002e-07
+		 Valid evaluation at end of epoch: latest_acc:43.36 -- best val acc so far 44.18
+dual_update_step
+ old -- 56.59531259536743 -- new 62.85827398300171 -- grad 6.262961387634277
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=9.866357858642206e-05 init-LR=0.009549150281252633 -- student-LR=9.866357858642206e-05 -- teacher-LR=9.866357858642205e-08
+		 Valid evaluation at end of epoch: latest_acc:43.80 -- best val acc so far 44.18
+dual_update_step
+ old -- 62.85827398300171 -- new 69.13870477676392 -- grad 6.280430793762207
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=2.467198171342e-05 init-LR=0.009549150281252633 -- student-LR=2.467198171342e-05 -- teacher-LR=2.467198171342e-08
+		 Valid evaluation at end of epoch: latest_acc:43.08 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 11.787455081939697 -- grad 6.787455081939697
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.1 init-LR=0.009549150281252633 -- student-LR=0.1 -- teacher-LR=0.0001
+		 Valid evaluation at end of epoch: latest_acc:43.90 -- best val acc so far 44.18
+dual_update_step
+ old -- 11.787455081939697 -- new 18.60550022125244 -- grad 6.818045139312744
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09997532801828658 init-LR=0.009549150281252633 -- student-LR=0.09997532801828658 -- teacher-LR=9.997532801828658e-05
+		 Valid evaluation at end of epoch: latest_acc:36.48 -- best val acc so far 44.18
+dual_update_step
+ old -- 18.60550022125244 -- new 26.190300941467285 -- grad 7.584800720214844
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09990133642141358 init-LR=0.009549150281252633 -- student-LR=0.09990133642141358 -- teacher-LR=9.990133642141359e-05
+		 Valid evaluation at end of epoch: latest_acc:40.76 -- best val acc so far 44.18
+dual_update_step
+ old -- 26.190300941467285 -- new 33.28658103942871 -- grad 7.096280097961426
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.099778098230154 init-LR=0.009549150281252633 -- student-LR=0.099778098230154 -- teacher-LR=9.977809823015401e-05
+		 Valid evaluation at end of epoch: latest_acc:38.76 -- best val acc so far 44.18
+dual_update_step
+ old -- 33.28658103942871 -- new 40.44735622406006 -- grad 7.160775184631348
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0996057350657239 init-LR=0.009549150281252633 -- student-LR=0.0996057350657239 -- teacher-LR=9.96057350657239e-05
+		 Valid evaluation at end of epoch: latest_acc:36.38 -- best val acc so far 44.18
+dual_update_step
+ old -- 40.44735622406006 -- new 48.0523886680603 -- grad 7.605032444000244
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0993844170297569 init-LR=0.009549150281252633 -- student-LR=0.0993844170297569 -- teacher-LR=9.938441702975689e-05
+		 Valid evaluation at end of epoch: latest_acc:41.24 -- best val acc so far 44.18
+dual_update_step
+ old -- 48.0523886680603 -- new 55.10771322250366 -- grad 7.055324554443359
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09911436253643445 init-LR=0.009549150281252633 -- student-LR=0.09911436253643445 -- teacher-LR=9.911436253643445e-05
+		 Valid evaluation at end of epoch: latest_acc:39.86 -- best val acc so far 44.18
+dual_update_step
+ old -- 55.10771322250366 -- new 62.28998947143555 -- grad 7.182276248931885
+primal_budget_update_step
+ -- old epsilon=0.18051622047681096 -- new epsilon= 0.4 -- grad tensor(1.3875, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09879583809693737 init-LR=0.009549150281252633 -- student-LR=0.09879583809693737 -- teacher-LR=9.879583809693738e-05
+		 Valid evaluation at end of epoch: latest_acc:39.78 -- best val acc so far 44.18
+dual_update_step
+ old -- 62.28998947143555 -- new 69.35164785385132 -- grad 7.0616583824157715
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09842915805643156 init-LR=0.009549150281252633 -- student-LR=0.09842915805643156 -- teacher-LR=9.842915805643155e-05
+		 Valid evaluation at end of epoch: latest_acc:39.22 -- best val acc so far 44.18
+dual_update_step
+ old -- 69.35164785385132 -- new 76.38784790039062 -- grad 7.036200046539307
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09801468428384716 init-LR=0.009549150281252633 -- student-LR=0.09801468428384716 -- teacher-LR=9.801468428384716e-05
+		 Valid evaluation at end of epoch: latest_acc:42.04 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 11.788426876068115 -- grad 6.788426876068115
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09755282581475769 init-LR=0.009549150281252633 -- student-LR=0.09755282581475769 -- teacher-LR=9.755282581475769e-05
+		 Valid evaluation at end of epoch: latest_acc:41.40 -- best val acc so far 44.18
+dual_update_step
+ old -- 11.788426876068115 -- new 18.739915370941162 -- grad 6.951488494873047
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09704403844771128 init-LR=0.009549150281252633 -- student-LR=0.09704403844771128 -- teacher-LR=9.704403844771128e-05
+		 Valid evaluation at end of epoch: latest_acc:38.98 -- best val acc so far 44.18
+dual_update_step
+ old -- 18.739915370941162 -- new 25.578577041625977 -- grad 6.8386616706848145
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09648882429441258 init-LR=0.009549150281252633 -- student-LR=0.09648882429441258 -- teacher-LR=9.648882429441257e-05
+		 Valid evaluation at end of epoch: latest_acc:38.84 -- best val acc so far 44.18
+dual_update_step
+ old -- 25.578577041625977 -- new 32.432148933410645 -- grad 6.853571891784668
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09588773128419906 init-LR=0.009549150281252633 -- student-LR=0.09588773128419906 -- teacher-LR=9.588773128419906e-05
+		 Valid evaluation at end of epoch: latest_acc:39.62 -- best val acc so far 44.18
+dual_update_step
+ old -- 32.432148933410645 -- new 39.26173496246338 -- grad 6.829586029052734
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09524135262330098 init-LR=0.009549150281252633 -- student-LR=0.09524135262330098 -- teacher-LR=9.524135262330098e-05
+		 Valid evaluation at end of epoch: latest_acc:40.98 -- best val acc so far 44.18
+dual_update_step
+ old -- 39.26173496246338 -- new 46.007455825805664 -- grad 6.745720863342285
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09455032620941839 init-LR=0.009549150281252633 -- student-LR=0.09455032620941839 -- teacher-LR=9.45503262094184e-05
+		 Valid evaluation at end of epoch: latest_acc:39.52 -- best val acc so far 44.18
+dual_update_step
+ old -- 46.007455825805664 -- new 52.73103857040405 -- grad 6.723582744598389
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09381533400219318 init-LR=0.009549150281252633 -- student-LR=0.09381533400219318 -- teacher-LR=9.381533400219318e-05
+		 Valid evaluation at end of epoch: latest_acc:41.12 -- best val acc so far 44.18
+dual_update_step
+ old -- 52.73103857040405 -- new 59.34185075759888 -- grad 6.610812187194824
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09303710135019719 init-LR=0.009549150281252633 -- student-LR=0.09303710135019719 -- teacher-LR=9.30371013501972e-05
+		 Valid evaluation at end of epoch: latest_acc:41.52 -- best val acc so far 44.18
+dual_update_step
+ old -- 59.34185075759888 -- new 65.88640451431274 -- grad 6.544553756713867
+primal_budget_update_step
+ -- old epsilon=0.38493354187540996 -- new epsilon= 0.4 -- grad tensor(1.4477, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09221639627510075 init-LR=0.009549150281252633 -- student-LR=0.09221639627510075 -- teacher-LR=9.221639627510076e-05
+		 Valid evaluation at end of epoch: latest_acc:40.68 -- best val acc so far 44.18
+dual_update_step
+ old -- 65.88640451431274 -- new 72.42693042755127 -- grad 6.540525913238525
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0913540287137281 init-LR=0.009549150281252633 -- student-LR=0.0913540287137281 -- teacher-LR=9.135402871372808e-05
+		 Valid evaluation at end of epoch: latest_acc:41.08 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 12.119136810302734 -- grad 7.119136810302734
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.09045084971874738 init-LR=0.009549150281252633 -- student-LR=0.09045084971874738 -- teacher-LR=9.045084971874738e-05
+		 Valid evaluation at end of epoch: latest_acc:41.48 -- best val acc so far 44.18
+dual_update_step
+ old -- 12.119136810302734 -- new 19.327392101287842 -- grad 7.208255290985107
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08950775061878452 init-LR=0.009549150281252633 -- student-LR=0.08950775061878452 -- teacher-LR=8.950775061878452e-05
+		 Valid evaluation at end of epoch: latest_acc:40.22 -- best val acc so far 44.18
+dual_update_step
+ old -- 19.327392101287842 -- new 26.422372817993164 -- grad 7.094980716705322
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08852566213878947 init-LR=0.009549150281252633 -- student-LR=0.08852566213878947 -- teacher-LR=8.852566213878947e-05
+		 Valid evaluation at end of epoch: latest_acc:40.08 -- best val acc so far 44.18
+dual_update_step
+ old -- 26.422372817993164 -- new 33.67592096328735 -- grad 7.2535481452941895
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08750555348152299 init-LR=0.009549150281252633 -- student-LR=0.08750555348152299 -- teacher-LR=8.750555348152298e-05
+		 Valid evaluation at end of epoch: latest_acc:40.36 -- best val acc so far 44.18
+dual_update_step
+ old -- 33.67592096328735 -- new 40.85270833969116 -- grad 7.176787376403809
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08644843137107058 init-LR=0.009549150281252633 -- student-LR=0.08644843137107058 -- teacher-LR=8.644843137107059e-05
+		 Valid evaluation at end of epoch: latest_acc:41.10 -- best val acc so far 44.18
+dual_update_step
+ old -- 40.85270833969116 -- new 47.92821264266968 -- grad 7.075504302978516
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08535533905932738 init-LR=0.009549150281252633 -- student-LR=0.08535533905932738 -- teacher-LR=8.535533905932738e-05
+		 Valid evaluation at end of epoch: latest_acc:41.96 -- best val acc so far 44.18
+dual_update_step
+ old -- 47.92821264266968 -- new 54.92856550216675 -- grad 7.00035285949707
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08422735529643444 init-LR=0.009549150281252633 -- student-LR=0.08422735529643444 -- teacher-LR=8.422735529643444e-05
+		 Valid evaluation at end of epoch: latest_acc:42.72 -- best val acc so far 44.18
+dual_update_step
+ old -- 54.92856550216675 -- new 61.87614727020264 -- grad 6.947581768035889
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0830655932661826 init-LR=0.009549150281252633 -- student-LR=0.0830655932661826 -- teacher-LR=8.306559326618259e-05
+		 Valid evaluation at end of epoch: latest_acc:40.00 -- best val acc so far 44.18
+dual_update_step
+ old -- 61.87614727020264 -- new 68.90812969207764 -- grad 7.031982421875
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08187119948743449 init-LR=0.009549150281252633 -- student-LR=0.08187119948743449 -- teacher-LR=8.18711994874345e-05
+		 Valid evaluation at end of epoch: latest_acc:40.10 -- best val acc so far 44.18
+dual_update_step
+ old -- 68.90812969207764 -- new 75.9240608215332 -- grad 7.015931129455566
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.08064535268264883 init-LR=0.009549150281252633 -- student-LR=0.08064535268264883 -- teacher-LR=8.064535268264883e-05
+		 Valid evaluation at end of epoch: latest_acc:39.68 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 12.057894229888916 -- grad 7.057894229888916
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07938926261462367 init-LR=0.009549150281252633 -- student-LR=0.07938926261462367 -- teacher-LR=7.938926261462367e-05
+		 Valid evaluation at end of epoch: latest_acc:41.64 -- best val acc so far 44.18
+dual_update_step
+ old -- 12.057894229888916 -- new 18.763145923614502 -- grad 6.705251693725586
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07810416889260655 init-LR=0.009549150281252633 -- student-LR=0.07810416889260655 -- teacher-LR=7.810416889260655e-05
+		 Valid evaluation at end of epoch: latest_acc:40.10 -- best val acc so far 44.18
+dual_update_step
+ old -- 18.763145923614502 -- new 25.652623176574707 -- grad 6.889477252960205
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07679133974894983 init-LR=0.009549150281252633 -- student-LR=0.07679133974894983 -- teacher-LR=7.679133974894983e-05
+		 Valid evaluation at end of epoch: latest_acc:40.26 -- best val acc so far 44.18
+dual_update_step
+ old -- 25.652623176574707 -- new 32.63412952423096 -- grad 6.98150634765625
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07545207078751857 init-LR=0.009549150281252633 -- student-LR=0.07545207078751857 -- teacher-LR=7.545207078751857e-05
+		 Valid evaluation at end of epoch: latest_acc:40.90 -- best val acc so far 44.18
+dual_update_step
+ old -- 32.63412952423096 -- new 39.293352127075195 -- grad 6.659222602844238
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07408768370508577 init-LR=0.009549150281252633 -- student-LR=0.07408768370508577 -- teacher-LR=7.408768370508576e-05
+		 Valid evaluation at end of epoch: latest_acc:41.84 -- best val acc so far 44.18
+dual_update_step
+ old -- 39.293352127075195 -- new 45.95686960220337 -- grad 6.663517475128174
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07269952498697733 init-LR=0.009549150281252633 -- student-LR=0.07269952498697733 -- teacher-LR=7.269952498697734e-05
+		 Valid evaluation at end of epoch: latest_acc:42.42 -- best val acc so far 44.18
+dual_update_step
+ old -- 45.95686960220337 -- new 52.554855823516846 -- grad 6.597986221313477
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.07128896457825364 init-LR=0.009549150281252633 -- student-LR=0.07128896457825364 -- teacher-LR=7.128896457825364e-05
+		 Valid evaluation at end of epoch: latest_acc:40.38 -- best val acc so far 44.18
+dual_update_step
+ old -- 52.554855823516846 -- new 59.10627269744873 -- grad 6.551416873931885
+primal_budget_update_step
+ -- old epsilon=0.3724202598295143 -- new epsilon= 0.4 -- grad tensor(1.3129, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06985739453173903 init-LR=0.009549150281252633 -- student-LR=0.06985739453173903 -- teacher-LR=6.985739453173903e-05
+		 Valid evaluation at end of epoch: latest_acc:42.18 -- best val acc so far 44.18
+dual_update_step
+ old -- 59.10627269744873 -- new 65.56699800491333 -- grad 6.4607253074646
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06840622763423392 init-LR=0.009549150281252633 -- student-LR=0.06840622763423392 -- teacher-LR=6.840622763423391e-05
+		 Valid evaluation at end of epoch: latest_acc:42.64 -- best val acc so far 44.18
+dual_update_step
+ old -- 65.56699800491333 -- new 72.04166269302368 -- grad 6.474664688110352
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06693689601226459 init-LR=0.009549150281252633 -- student-LR=0.06693689601226459 -- teacher-LR=6.693689601226458e-05
+		 Valid evaluation at end of epoch: latest_acc:41.32 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 12.184430599212646 -- grad 7.1844305992126465
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06545084971874737 init-LR=0.009549150281252633 -- student-LR=0.06545084971874737 -- teacher-LR=6.545084971874738e-05
+		 Valid evaluation at end of epoch: latest_acc:43.20 -- best val acc so far 44.18
+dual_update_step
+ old -- 12.184430599212646 -- new 19.228171825408936 -- grad 7.043741226196289
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06394955530196147 init-LR=0.009549150281252633 -- student-LR=0.06394955530196147 -- teacher-LR=6.394955530196147e-05
+		 Valid evaluation at end of epoch: latest_acc:41.92 -- best val acc so far 44.18
+dual_update_step
+ old -- 19.228171825408936 -- new 26.361990451812744 -- grad 7.133818626403809
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.062434494358242734 init-LR=0.009549150281252633 -- student-LR=0.062434494358242734 -- teacher-LR=6.243449435824273e-05
+		 Valid evaluation at end of epoch: latest_acc:42.16 -- best val acc so far 44.18
+dual_update_step
+ old -- 26.361990451812744 -- new 33.4176549911499 -- grad 7.055664539337158
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.06090716206982714 init-LR=0.009549150281252633 -- student-LR=0.06090716206982714 -- teacher-LR=6.090716206982714e-05
+		 Valid evaluation at end of epoch: latest_acc:41.20 -- best val acc so far 44.18
+dual_update_step
+ old -- 33.4176549911499 -- new 40.581032276153564 -- grad 7.163377285003662
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05936906572928624 init-LR=0.009549150281252633 -- student-LR=0.05936906572928624 -- teacher-LR=5.9369065729286245e-05
+		 Valid evaluation at end of epoch: latest_acc:41.96 -- best val acc so far 44.18
+dual_update_step
+ old -- 40.581032276153564 -- new 47.50865125656128 -- grad 6.927618980407715
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05782172325201155 init-LR=0.009549150281252633 -- student-LR=0.05782172325201155 -- teacher-LR=5.782172325201155e-05
+		 Valid evaluation at end of epoch: latest_acc:42.60 -- best val acc so far 44.18
+dual_update_step
+ old -- 47.50865125656128 -- new 54.50809383392334 -- grad 6.9994425773620605
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05626666167821523 init-LR=0.009549150281252633 -- student-LR=0.05626666167821523 -- teacher-LR=5.626666167821523e-05
+		 Valid evaluation at end of epoch: latest_acc:42.26 -- best val acc so far 44.18
+dual_update_step
+ old -- 54.50809383392334 -- new 61.463658809661865 -- grad 6.955564975738525
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05470541566592572 init-LR=0.009549150281252633 -- student-LR=0.05470541566592572 -- teacher-LR=5.4705415665925717e-05
+		 Valid evaluation at end of epoch: latest_acc:42.62 -- best val acc so far 44.18
+dual_update_step
+ old -- 61.463658809661865 -- new 68.33004093170166 -- grad 6.866382122039795
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05313952597646568 init-LR=0.009549150281252633 -- student-LR=0.05313952597646568 -- teacher-LR=5.313952597646568e-05
+		 Valid evaluation at end of epoch: latest_acc:43.06 -- best val acc so far 44.18
+dual_update_step
+ old -- 68.33004093170166 -- new 75.1543345451355 -- grad 6.824293613433838
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05157053795390642 init-LR=0.009549150281252633 -- student-LR=0.05157053795390642 -- teacher-LR=5.157053795390642e-05
+		 Valid evaluation at end of epoch: latest_acc:42.84 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 11.79551887512207 -- grad 6.79551887512207
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.05 init-LR=0.009549150281252633 -- student-LR=0.05 -- teacher-LR=5e-05
+		 Valid evaluation at end of epoch: latest_acc:42.08 -- best val acc so far 44.18
+dual_update_step
+ old -- 11.79551887512207 -- new 18.579325199127197 -- grad 6.783806324005127
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04842946204609359 init-LR=0.009549150281252633 -- student-LR=0.04842946204609359 -- teacher-LR=4.8429462046093585e-05
+		 Valid evaluation at end of epoch: latest_acc:41.26 -- best val acc so far 44.18
+dual_update_step
+ old -- 18.579325199127197 -- new 25.28281831741333 -- grad 6.703493118286133
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04686047402353433 init-LR=0.009549150281252633 -- student-LR=0.04686047402353433 -- teacher-LR=4.6860474023534335e-05
+		 Valid evaluation at end of epoch: latest_acc:42.52 -- best val acc so far 44.18
+dual_update_step
+ old -- 25.28281831741333 -- new 31.847322940826416 -- grad 6.564504623413086
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04529458433407429 init-LR=0.009549150281252633 -- student-LR=0.04529458433407429 -- teacher-LR=4.529458433407429e-05
+		 Valid evaluation at end of epoch: latest_acc:41.30 -- best val acc so far 44.18
+dual_update_step
+ old -- 31.847322940826416 -- new 38.44169235229492 -- grad 6.594369411468506
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0437333383217848 init-LR=0.009549150281252633 -- student-LR=0.0437333383217848 -- teacher-LR=4.3733338321784795e-05
+		 Valid evaluation at end of epoch: latest_acc:42.12 -- best val acc so far 44.18
+dual_update_step
+ old -- 38.44169235229492 -- new 44.96480131149292 -- grad 6.523108959197998
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.042178276747988463 init-LR=0.009549150281252633 -- student-LR=0.042178276747988463 -- teacher-LR=4.217827674798846e-05
+		 Valid evaluation at end of epoch: latest_acc:42.08 -- best val acc so far 44.18
+dual_update_step
+ old -- 44.96480131149292 -- new 51.55123567581177 -- grad 6.586434364318848
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.04063093427071377 init-LR=0.009549150281252633 -- student-LR=0.04063093427071377 -- teacher-LR=4.0630934270713774e-05
+		 Valid evaluation at end of epoch: latest_acc:42.86 -- best val acc so far 44.18
+dual_update_step
+ old -- 51.55123567581177 -- new 58.05352210998535 -- grad 6.502286434173584
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03909283793017289 init-LR=0.009549150281252633 -- student-LR=0.03909283793017289 -- teacher-LR=3.9092837930172884e-05
+		 Valid evaluation at end of epoch: latest_acc:41.22 -- best val acc so far 44.18
+dual_update_step
+ old -- 58.05352210998535 -- new 64.48988151550293 -- grad 6.436359405517578
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03756550564175726 init-LR=0.009549150281252633 -- student-LR=0.03756550564175726 -- teacher-LR=3.756550564175726e-05
+		 Valid evaluation at end of epoch: latest_acc:43.08 -- best val acc so far 44.18
+dual_update_step
+ old -- 64.48988151550293 -- new 70.86905527114868 -- grad 6.379173755645752
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.036050444698038545 init-LR=0.009549150281252633 -- student-LR=0.036050444698038545 -- teacher-LR=3.605044469803854e-05
+		 Valid evaluation at end of epoch: latest_acc:42.38 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 12.018450260162354 -- grad 7.0184502601623535
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03454915028125265 init-LR=0.009549150281252633 -- student-LR=0.03454915028125265 -- teacher-LR=3.454915028125264e-05
+		 Valid evaluation at end of epoch: latest_acc:42.88 -- best val acc so far 44.18
+dual_update_step
+ old -- 12.018450260162354 -- new 19.00307035446167 -- grad 6.984620094299316
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03306310398773543 init-LR=0.009549150281252633 -- student-LR=0.03306310398773543 -- teacher-LR=3.3063103987735433e-05
+		 Valid evaluation at end of epoch: latest_acc:43.60 -- best val acc so far 44.18
+dual_update_step
+ old -- 19.00307035446167 -- new 25.985424041748047 -- grad 6.982353687286377
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.03159377236576612 init-LR=0.009549150281252633 -- student-LR=0.03159377236576612 -- teacher-LR=3.159377236576612e-05
+		 Valid evaluation at end of epoch: latest_acc:42.62 -- best val acc so far 44.18
+dual_update_step
+ old -- 25.985424041748047 -- new 32.92572832107544 -- grad 6.940304279327393
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.030142605468260964 init-LR=0.009549150281252633 -- student-LR=0.030142605468260964 -- teacher-LR=3.0142605468260964e-05
+		 Valid evaluation at end of epoch: latest_acc:42.74 -- best val acc so far 44.18
+dual_update_step
+ old -- 32.92572832107544 -- new 39.82235145568848 -- grad 6.896623134613037
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02871103542174637 init-LR=0.009549150281252633 -- student-LR=0.02871103542174637 -- teacher-LR=2.8711035421746367e-05
+		 Valid evaluation at end of epoch: latest_acc:42.36 -- best val acc so far 44.18
+dual_update_step
+ old -- 39.82235145568848 -- new 46.724923610687256 -- grad 6.902572154998779
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.027300475013022664 init-LR=0.009549150281252633 -- student-LR=0.027300475013022664 -- teacher-LR=2.7300475013022663e-05
+		 Valid evaluation at end of epoch: latest_acc:42.90 -- best val acc so far 44.18
+dual_update_step
+ old -- 46.724923610687256 -- new 53.6842098236084 -- grad 6.959286212921143
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02591231629491423 init-LR=0.009549150281252633 -- student-LR=0.02591231629491423 -- teacher-LR=2.591231629491423e-05
+		 Valid evaluation at end of epoch: latest_acc:42.28 -- best val acc so far 44.18
+dual_update_step
+ old -- 53.6842098236084 -- new 60.48249530792236 -- grad 6.798285484313965
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.024547929212481435 init-LR=0.009549150281252633 -- student-LR=0.024547929212481435 -- teacher-LR=2.4547929212481435e-05
+		 Valid evaluation at end of epoch: latest_acc:43.28 -- best val acc so far 44.18
+dual_update_step
+ old -- 60.48249530792236 -- new 67.22309112548828 -- grad 6.740595817565918
+primal_budget_update_step
+ -- old epsilon=0.1746727521872033 -- new epsilon= 0.4 -- grad tensor(1.4790, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02320866025105016 init-LR=0.009549150281252633 -- student-LR=0.02320866025105016 -- teacher-LR=2.3208660251050158e-05
+		 Valid evaluation at end of epoch: latest_acc:42.82 -- best val acc so far 44.18
+dual_update_step
+ old -- 67.22309112548828 -- new 73.94822549819946 -- grad 6.725134372711182
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.021895831107393467 init-LR=0.009549150281252633 -- student-LR=0.021895831107393467 -- teacher-LR=2.1895831107393467e-05
+		 Valid evaluation at end of epoch: latest_acc:43.02 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 11.663015842437744 -- grad 6.663015842437744
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.02061073738537635 init-LR=0.009549150281252633 -- student-LR=0.02061073738537635 -- teacher-LR=2.061073738537635e-05
+		 Valid evaluation at end of epoch: latest_acc:42.72 -- best val acc so far 44.18
+dual_update_step
+ old -- 11.663015842437744 -- new 18.24958896636963 -- grad 6.586573123931885
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.019354647317351172 init-LR=0.009549150281252633 -- student-LR=0.019354647317351172 -- teacher-LR=1.935464731735117e-05
+		 Valid evaluation at end of epoch: latest_acc:42.70 -- best val acc so far 44.18
+dual_update_step
+ old -- 18.24958896636963 -- new 24.859196186065674 -- grad 6.609607219696045
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.018128800512565515 init-LR=0.009549150281252633 -- student-LR=0.018128800512565515 -- teacher-LR=1.8128800512565513e-05
+		 Valid evaluation at end of epoch: latest_acc:43.58 -- best val acc so far 44.18
+dual_update_step
+ old -- 24.859196186065674 -- new 31.40391778945923 -- grad 6.544721603393555
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.016934406733817416 init-LR=0.009549150281252633 -- student-LR=0.016934406733817416 -- teacher-LR=1.6934406733817414e-05
+		 Valid evaluation at end of epoch: latest_acc:42.80 -- best val acc so far 44.18
+dual_update_step
+ old -- 31.40391778945923 -- new 37.97401523590088 -- grad 6.57009744644165
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.015772644703565566 init-LR=0.009549150281252633 -- student-LR=0.015772644703565566 -- teacher-LR=1.5772644703565565e-05
+		 Valid evaluation at end of epoch: latest_acc:42.32 -- best val acc so far 44.18
+dual_update_step
+ old -- 37.97401523590088 -- new 44.44371843338013 -- grad 6.469703197479248
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.014644660940672627 init-LR=0.009549150281252633 -- student-LR=0.014644660940672627 -- teacher-LR=1.4644660940672627e-05
+		 Valid evaluation at end of epoch: latest_acc:42.98 -- best val acc so far 44.18
+dual_update_step
+ old -- 44.44371843338013 -- new 50.82262563705444 -- grad 6.378907203674316
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.013551568628929435 init-LR=0.009549150281252633 -- student-LR=0.013551568628929435 -- teacher-LR=1.3551568628929434e-05
+		 Valid evaluation at end of epoch: latest_acc:43.32 -- best val acc so far 44.18
+dual_update_step
+ old -- 50.82262563705444 -- new 57.2266058921814 -- grad 6.403980255126953
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.012494446518477021 init-LR=0.009549150281252633 -- student-LR=0.012494446518477021 -- teacher-LR=1.2494446518477022e-05
+		 Valid evaluation at end of epoch: latest_acc:43.70 -- best val acc so far 44.18
+dual_update_step
+ old -- 57.2266058921814 -- new 63.5898494720459 -- grad 6.363243579864502
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.011474337861210543 init-LR=0.009549150281252633 -- student-LR=0.011474337861210543 -- teacher-LR=1.1474337861210543e-05
+		 Valid evaluation at end of epoch: latest_acc:43.94 -- best val acc so far 44.18
+dual_update_step
+ old -- 63.5898494720459 -- new 69.84194707870483 -- grad 6.2520976066589355
+primal_budget_update_step
+ -- old epsilon=0.39241514956008383 -- new epsilon= 0.4 -- grad tensor(1.5228, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.01049224938121548 init-LR=0.009549150281252633 -- student-LR=0.01049224938121548 -- teacher-LR=1.049224938121548e-05
+		 Valid evaluation at end of epoch: latest_acc:42.68 -- best val acc so far 44.18
+dual_update_step
+ old -- 5.0 -- new 11.993580341339111 -- grad 6.993580341339111
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.009549150281252633 init-LR=0.009549150281252633 -- student-LR=0.009549150281252633 -- teacher-LR=9.549150281252633e-06
+		 Valid evaluation at end of epoch: latest_acc:43.40 -- best val acc so far 44.18
+dual_update_step
+ old -- 11.993580341339111 -- new 18.93388032913208 -- grad 6.940299987792969
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.008645971286271915 init-LR=0.009549150281252633 -- student-LR=0.008645971286271915 -- teacher-LR=8.645971286271914e-06
+		 Valid evaluation at end of epoch: latest_acc:43.38 -- best val acc so far 44.18
+dual_update_step
+ old -- 18.93388032913208 -- new 25.875667095184326 -- grad 6.941786766052246
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.007783603724899258 init-LR=0.009549150281252633 -- student-LR=0.007783603724899258 -- teacher-LR=7.783603724899257e-06
+		 Valid evaluation at end of epoch: latest_acc:43.98 -- best val acc so far 44.18
+dual_update_step
+ old -- 25.875667095184326 -- new 32.7613787651062 -- grad 6.885711669921875
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.006962898649802813 init-LR=0.009549150281252633 -- student-LR=0.006962898649802813 -- teacher-LR=6.962898649802812e-06
+		 Valid evaluation at end of epoch: latest_acc:42.90 -- best val acc so far 44.18
+dual_update_step
+ old -- 32.7613787651062 -- new 39.69309759140015 -- grad 6.931718826293945
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.006184665997806821 init-LR=0.009549150281252633 -- student-LR=0.006184665997806821 -- teacher-LR=6.184665997806821e-06
+		 Valid evaluation at end of epoch: latest_acc:43.50 -- best val acc so far 44.18
+dual_update_step
+ old -- 39.69309759140015 -- new 46.489781856536865 -- grad 6.796684265136719
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.005449673790581611 init-LR=0.009549150281252633 -- student-LR=0.005449673790581611 -- teacher-LR=5.449673790581611e-06
+		 Valid evaluation at end of epoch: latest_acc:43.82 -- best val acc so far 44.18
+dual_update_step
+ old -- 46.489781856536865 -- new 53.33258819580078 -- grad 6.842806339263916
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.004758647376699033 init-LR=0.009549150281252633 -- student-LR=0.004758647376699033 -- teacher-LR=4.758647376699032e-06
+		 Valid evaluation at end of epoch: latest_acc:44.24 -- best val acc so far 44.24
+dual_update_step
+ old -- 53.33258819580078 -- new 60.1137433052063 -- grad 6.781155109405518
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.004112268715800955 init-LR=0.009549150281252633 -- student-LR=0.004112268715800955 -- teacher-LR=4.112268715800954e-06
+		 Valid evaluation at end of epoch: latest_acc:43.08 -- best val acc so far 44.24
+dual_update_step
+ old -- 60.1137433052063 -- new 66.87771034240723 -- grad 6.763967037200928
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0035111757055874327 init-LR=0.009549150281252633 -- student-LR=0.0035111757055874327 -- teacher-LR=3.511175705587433e-06
+		 Valid evaluation at end of epoch: latest_acc:43.42 -- best val acc so far 44.24
+dual_update_step
+ old -- 66.87771034240723 -- new 73.56000471115112 -- grad 6.6822943687438965
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0029559615522887273 init-LR=0.009549150281252633 -- student-LR=0.0029559615522887273 -- teacher-LR=2.9559615522887273e-06
+		 Valid evaluation at end of epoch: latest_acc:42.26 -- best val acc so far 44.24
+dual_update_step
+ old -- 5.0 -- new 11.599411487579346 -- grad 6.599411487579346
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0024471741852423235 init-LR=0.009549150281252633 -- student-LR=0.0024471741852423235 -- teacher-LR=2.4471741852423237e-06
+		 Valid evaluation at end of epoch: latest_acc:44.26 -- best val acc so far 44.26
+dual_update_step
+ old -- 11.599411487579346 -- new 18.13536262512207 -- grad 6.535951137542725
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0019853157161528524 init-LR=0.009549150281252633 -- student-LR=0.0019853157161528524 -- teacher-LR=1.9853157161528523e-06
+		 Valid evaluation at end of epoch: latest_acc:42.48 -- best val acc so far 44.26
+dual_update_step
+ old -- 18.13536262512207 -- new 24.6448073387146 -- grad 6.509444713592529
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0015708419435684518 init-LR=0.009549150281252633 -- student-LR=0.0015708419435684518 -- teacher-LR=1.570841943568452e-06
+		 Valid evaluation at end of epoch: latest_acc:43.94 -- best val acc so far 44.26
+dual_update_step
+ old -- 24.6448073387146 -- new 31.141018867492676 -- grad 6.496211528778076
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0012041619030626338 init-LR=0.009549150281252633 -- student-LR=0.0012041619030626338 -- teacher-LR=1.2041619030626339e-06
+		 Valid evaluation at end of epoch: latest_acc:44.70 -- best val acc so far 44.70
+dual_update_step
+ old -- 31.141018867492676 -- new 37.59345293045044 -- grad 6.452434062957764
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.000885637463565564 init-LR=0.009549150281252633 -- student-LR=0.000885637463565564 -- teacher-LR=8.85637463565564e-07
+		 Valid evaluation at end of epoch: latest_acc:43.14 -- best val acc so far 44.70
+dual_update_step
+ old -- 37.59345293045044 -- new 43.9250693321228 -- grad 6.331616401672363
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0006155829702431171 init-LR=0.009549150281252633 -- student-LR=0.0006155829702431171 -- teacher-LR=6.15582970243117e-07
+		 Valid evaluation at end of epoch: latest_acc:42.96 -- best val acc so far 44.70
+dual_update_step
+ old -- 43.9250693321228 -- new 50.33503770828247 -- grad 6.409968376159668
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0003942649342761118 init-LR=0.009549150281252633 -- student-LR=0.0003942649342761118 -- teacher-LR=3.9426493427611177e-07
+		 Valid evaluation at end of epoch: latest_acc:44.58 -- best val acc so far 44.70
+dual_update_step
+ old -- 50.33503770828247 -- new 56.682981967926025 -- grad 6.347944259643555
+primal_budget_update_step
+ -- old epsilon=0.3695430905108381 -- new epsilon= 0.4 -- grad tensor(1.2600, device='cuda:0')
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=0.0002219017698460002 init-LR=0.009549150281252633 -- student-LR=0.0002219017698460002 -- teacher-LR=2.219017698460002e-07
+		 Valid evaluation at end of epoch: latest_acc:44.02 -- best val acc so far 44.70
+dual_update_step
+ old -- 56.682981967926025 -- new 62.94567632675171 -- grad 6.262694358825684
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=9.866357858642206e-05 init-LR=0.009549150281252633 -- student-LR=9.866357858642206e-05 -- teacher-LR=9.866357858642205e-08
+		 Valid evaluation at end of epoch: latest_acc:44.52 -- best val acc so far 44.70
+dual_update_step
+ old -- 62.94567632675171 -- new 69.255774974823 -- grad 6.310098648071289
+primal_budget_update_step
+['student']
+['student']
+['student']
+['gating']
+['gating']
+['gating']
+		 g's LR=2.467198171342e-05 init-LR=0.009549150281252633 -- student-LR=2.467198171342e-05 -- teacher-LR=2.467198171342e-08
+		 Valid evaluation at end of epoch: latest_acc:43.74 -- best val acc so far 44.70
+
+Result is from best val model of epoch:394
+***[2023-05-10 12:48:11]*** [Post-train] [Student] Test loss = 4.647751, accuracy@1 = 58.01, accuracy@5 = 85.33, error@1 = 41.99, error@5 = 14.67

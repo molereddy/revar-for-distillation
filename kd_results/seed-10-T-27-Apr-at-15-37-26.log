@@ -1,0 +1,62 @@
+Main Function with logger : Logger(dir=kd_results, use-tf=False, writer=None)
+Arguments : -------------------------------
+batch_size       : 1600
+class_num        : 100
+cutout_length    : 16
+data_path        : /home/prathamesh/code/data/cifar/
+dataset          : cifar100
+epochs           : 200
+eval_batch_size  : 1600
+global_rand_seed : -1
+label            : KD0.9
+loss_kd_frac     : 0.9
+lr               : 0.1
+model_name       : ResNet10_s
+momentum         : 0.9
+pretrained_student : True
+print_freq       : 100
+print_freq_eval  : 100
+rand_seed        : 10
+save_dir         : ./kd_results/
+wd               : 0.0005
+workers          : 8
+Python  Version  : 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Pillow  Version  : 9.2.0
+PyTorch Version  : 1.13.1
+cuDNN   Version  : 8500
+CUDA available   : True
+CUDA GPU numbers : 1
+CUDA_VISIBLE_DEVICES : 0
+using pretrained student model from
+model information : EfficientNetV2_s (CIFAR)
+--------------------------------------------------
+[Student]Params=0.08 MB, FLOPs=4.16 M ... = 0.00 G
+--------------------------------------------------
+train_data : Dataset CIFAR100
+    Number of datapoints: 50000
+    Root location: /home/prathamesh/code/data/cifar/
+    Split: Train
+    StandardTransform
+Transform: Compose(
+               RandomCrop(size=(32, 32), padding=4)
+               RandomHorizontalFlip(p=0.5)
+               AutoAugment CIFAR10 Policy
+               ToTensor()
+               CUTOUT(length=16)
+               Normalize(mean=[0.5070588235294118, 0.48666666666666664, 0.4407843137254902], std=[0.26745098039215687, 0.2564705882352941, 0.27607843137254906])
+           )
+valid_data : Dataset CIFAR100
+    Number of datapoints: 10000
+    Root location: /home/prathamesh/code/data/cifar/
+    Split: Test
+    StandardTransform
+Transform: Compose(
+               ToTensor()
+               Normalize(mean=[0.5070588235294118, 0.48666666666666664, 0.4407843137254902], std=[0.26745098039215687, 0.2564705882352941, 0.27607843137254906])
+           )
+Train Epoch:0
+
+[TRAIN] E: [0][ 0/32]	Loss 2.2130e+00 (2.2130e+00)	Acc@1  43.12 ( 43.12)	Acc@5  72.94 ( 72.94)
+[TRAIN] E: [0][31/32]	Loss 2.2352e+00 (2.4061e+00)	Acc@1  37.25 ( 38.35)	Acc@5  69.00 ( 68.63)
+[EVAL] E: [0][0/7]	Loss 1.9558e+00 (1.9558e+00)	Acc@1  50.31 ( 50.31)	Acc@5  79.88 ( 79.88)
+[EVAL] E: [0][6/7]	Loss 1.8514e+00 (1.9036e+00)	Acc@1  49.75 ( 50.47)	Acc@5  82.00 ( 80.32)

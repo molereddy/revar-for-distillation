@@ -1,0 +1,549 @@
+Main Function with logger : Logger(dir=meta_results, use-tf=False, writer=None)
+Arguments : -------------------------------
+batch_size       : 800
+cutout_length    : 16
+data_path        : /home/prathamesh/code/data/cifar/
+dataset          : cifar100
+epochs           : 200
+eval_batch_size  : 800
+file_name        : meta_seed-2_metalr-4_T-1e-05_200-epochs
+global_rand_seed : -1
+input_size       : 32
+inst_based       : True
+label            : 
+lr               : 0.1
+mcd_weight       : 0.1
+meta_interval    : 1
+meta_lr          : 1e-05
+meta_weight_decay : 0.0
+model_name       : ResNet10_s
+momentum         : 0.9
+pretrained_student : True
+print_freq       : 100
+print_freq_eval  : 100
+rand_seed        : 2
+save_dir         : ./meta_results/
+sched_cycles     : 4
+teacher          : ResNet10_l
+temperature      : 2
+unsup_adapt      : False
+wd               : 0.0005
+workers          : 8
+Python  Version  : 3.7.12 | packaged by conda-forge | (default, Oct 26 2021, 06:08:21)  [GCC 9.4.0]
+Pillow  Version  : 9.2.0
+PyTorch Version  : 1.13.1
+cuDNN   Version  : 8500
+CUDA available   : True
+CUDA GPU numbers : 1
+CUDA_VISIBLE_DEVICES : 0
+Namespace(batch_size=800, class_num=100, cutout_length=16, data_path='/home/prathamesh/code/data/cifar/', dataset='cifar100', epochs=200, eval_batch_size=800, file_name='meta_seed-2_metalr-4_T-1e-05_200-epochs', global_rand_seed=-1, input_size=32, inst_based=True, label='', lr=0.1, mcd_weight=0.1, meta_interval=1, meta_lr=1e-05, meta_weight_decay=0.0, model_name='ResNet10_s', momentum=0.9, pretrained_student=True, print_freq=100, print_freq_eval=100, rand_seed=2, save_dir='./meta_results/', sched_cycles=4, teacher='ResNet10_l', temperature=2, unsup_adapt=False, wd=0.0005, workers=8)
+Train:45000	, Valid:5000	, Test:10000
+
+--------------------------------------------------
+Student :ResNet10_s
+using pretrained student model from /home/anmolreddy/ce_results/CE_with_seed-2_cycles-1_cifar100-ResNet10_smodel_best.pth.tar
+***[2023-05-03 06:24:08]*** before training [Student(CE)] Test loss = 2.553155, accuracy@1 = 33.85, accuracy@5 = 65.83, error@1 = 66.15, error@5 = 34.17
+Scheduling LR update to student 4 time at 50-epoch intervals
+Teacher loaded....
+***[2023-05-03 06:24:09]*** [Teacher] Test loss = 1.043270, accuracy@1 = 70.22, accuracy@5 = 92.06, error@1 = 29.78, error@5 = 7.94
+model information : EfficientNetV2_s (CIFAR)
+--------------------------------------------------
+[Student]Params=0.08 MB, FLOPs=4.16 M ... = 0.00 G
+
+Started EPOCH:0
+[TRAIN] E: [0][ 0/57]	Loss 1.5696e+00 (1.5696e+00)	Acc@1  27.88 ( 27.88)	Acc@5  55.50 ( 55.50)
+[TRAIN] E: [0][56/57]	Loss 1.4335e+00 (1.5128e+00)	Acc@1  29.50 ( 28.31)	Acc@5  60.00 ( 58.12)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.497496	0.511595	0.520269	0.525775	0.541438 with std 0.008676
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.495574	0.503263	0.505427	0.507279	0.513299 with std 0.002745
+[EVAL] E: [0][0/7]	Loss 2.9784e+00 (2.9784e+00)	Acc@1  24.62 ( 24.62)	Acc@5  56.75 ( 56.75)
+[EVAL] E: [0][6/7]	Loss 2.6969e+00 (2.8797e+00)	Acc@1  28.00 ( 27.72)	Acc@5  60.50 ( 58.56)
+		 Valid evaluation at end of epoch:27.72 LR:0.00476 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:2.8797	latest_acc:27.72	LR:0.00 -- best val acc so far 27.72
+
+Started EPOCH:1
+Training epoch
+[TRAIN] E: [1][ 0/57]	Loss 1.5026e+00 (1.5026e+00)	Acc@1  29.62 ( 29.62)	Acc@5  59.50 ( 59.50)
+[TRAIN] E: [1][56/57]	Loss 2.2731e+00 (2.1875e+00)	Acc@1   8.00 ( 13.87)	Acc@5  28.50 ( 36.28)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.507528	0.514747	0.517373	0.524748	0.544632 with std 0.006649
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.478559	0.488558	0.493369	0.504493	0.516209 with std 0.008617
+[EVAL] E: [1][0/7]	Loss 4.3932e+00 (4.3932e+00)	Acc@1   9.62 (  9.62)	Acc@5  26.38 ( 26.38)
+[EVAL] E: [1][6/7]	Loss 4.5805e+00 (4.3747e+00)	Acc@1   6.00 (  8.34)	Acc@5  23.00 ( 25.60)
+		 Valid evaluation at end of epoch:8.34 LR:1.72047 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:4.3747	latest_acc:8.34	LR:1.72 -- best val acc so far 27.72
+
+Started EPOCH:2
+Training epoch
+[TRAIN] E: [2][ 0/57]	Loss 2.1865e+00 (2.1865e+00)	Acc@1  11.50 ( 11.50)	Acc@5  34.50 ( 34.50)
+[TRAIN] E: [2][56/57]	Loss 2.0881e+00 (2.1116e+00)	Acc@1  20.50 ( 14.62)	Acc@5  42.00 ( 38.44)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.511509	0.517270	0.518737	0.520448	0.528141 with std 0.002312
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.475380	0.482120	0.483552	0.484933	0.489824 with std 0.002057
+[EVAL] E: [2][0/7]	Loss 3.6253e+00 (3.6253e+00)	Acc@1  15.25 ( 15.25)	Acc@5  39.12 ( 39.12)
+[EVAL] E: [2][6/7]	Loss 3.5850e+00 (3.6156e+00)	Acc@1  17.00 ( 15.38)	Acc@5  40.50 ( 39.18)
+		 Valid evaluation at end of epoch:15.38 LR:0.03757 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.6156	latest_acc:15.38	LR:0.04 -- best val acc so far 27.72
+
+Started EPOCH:3
+Training epoch
+[TRAIN] E: [3][ 0/57]	Loss 2.0907e+00 (2.0907e+00)	Acc@1  17.12 ( 17.12)	Acc@5  39.38 ( 39.38)
+[TRAIN] E: [3][56/57]	Loss 1.9617e+00 (1.9974e+00)	Acc@1  15.00 ( 17.16)	Acc@5  43.50 ( 42.37)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.512344	0.518072	0.519619	0.521373	0.529793 with std 0.002393
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.474246	0.481327	0.482779	0.484191	0.489319 with std 0.002100
+[EVAL] E: [3][0/7]	Loss 3.6008e+00 (3.6008e+00)	Acc@1  15.00 ( 15.00)	Acc@5  39.50 ( 39.50)
+[EVAL] E: [3][6/7]	Loss 3.4622e+00 (3.5145e+00)	Acc@1  19.00 ( 16.76)	Acc@5  46.50 ( 41.52)
+		 Valid evaluation at end of epoch:16.76 LR:0.10816 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.5145	latest_acc:16.76	LR:0.11 -- best val acc so far 27.72
+
+Started EPOCH:4
+Training epoch
+[TRAIN] E: [4][ 0/57]	Loss 1.9311e+00 (1.9311e+00)	Acc@1  20.75 ( 20.75)	Acc@5  44.62 ( 44.62)
+[TRAIN] E: [4][56/57]	Loss 1.8309e+00 (1.9064e+00)	Acc@1  19.00 ( 19.12)	Acc@5  45.00 ( 45.09)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.513706	0.519439	0.520968	0.522731	0.530595 with std 0.002415
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.473219	0.480405	0.481842	0.483263	0.487733 with std 0.002113
+[EVAL] E: [4][0/7]	Loss 3.5494e+00 (3.5494e+00)	Acc@1  16.75 ( 16.75)	Acc@5  42.88 ( 42.88)
+[EVAL] E: [4][6/7]	Loss 3.3519e+00 (3.4328e+00)	Acc@1  20.50 ( 18.64)	Acc@5  50.00 ( 44.62)
+		 Valid evaluation at end of epoch:18.64 LR:0.07939 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.4328	latest_acc:18.64	LR:0.08 -- best val acc so far 27.72
+
+Started EPOCH:5
+Training epoch
+[TRAIN] E: [5][ 0/57]	Loss 1.9076e+00 (1.9076e+00)	Acc@1  21.62 ( 21.62)	Acc@5  46.12 ( 46.12)
+[TRAIN] E: [5][56/57]	Loss 1.9277e+00 (1.8761e+00)	Acc@1  19.00 ( 19.76)	Acc@5  45.00 ( 46.74)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.513969	0.520141	0.521718	0.523504	0.531484 with std 0.002475
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.472209	0.479764	0.481245	0.482723	0.487389 with std 0.002182
+[EVAL] E: [5][0/7]	Loss 3.4678e+00 (3.4678e+00)	Acc@1  17.00 ( 17.00)	Acc@5  44.88 ( 44.88)
+[EVAL] E: [5][6/7]	Loss 3.3076e+00 (3.3777e+00)	Acc@1  19.50 ( 19.58)	Acc@5  51.00 ( 46.36)
+		 Valid evaluation at end of epoch:19.58 LR:0.00779 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.3777	latest_acc:19.58	LR:0.01 -- best val acc so far 27.72
+
+Started EPOCH:6
+Training epoch
+[TRAIN] E: [6][ 0/57]	Loss 1.8973e+00 (1.8973e+00)	Acc@1  20.00 ( 20.00)	Acc@5  47.00 ( 47.00)
+[TRAIN] E: [6][56/57]	Loss 1.8301e+00 (1.8441e+00)	Acc@1  19.50 ( 20.52)	Acc@5  46.50 ( 47.60)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.514844	0.520826	0.522411	0.524231	0.534200 with std 0.002518
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.471360	0.478925	0.480442	0.481931	0.486757 with std 0.002224
+[EVAL] E: [6][0/7]	Loss 3.5067e+00 (3.5067e+00)	Acc@1  15.50 ( 15.50)	Acc@5  40.88 ( 40.88)
+[EVAL] E: [6][6/7]	Loss 3.3561e+00 (3.3885e+00)	Acc@1  20.50 ( 19.18)	Acc@5  48.50 ( 44.90)
+		 Valid evaluation at end of epoch:19.18 LR:0.09990 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.3885	latest_acc:19.18	LR:0.10 -- best val acc so far 27.72
+
+Started EPOCH:7
+Training epoch
+[TRAIN] E: [7][ 0/57]	Loss 1.8445e+00 (1.8445e+00)	Acc@1  21.00 ( 21.00)	Acc@5  47.62 ( 47.62)
+[TRAIN] E: [7][56/57]	Loss 1.6977e+00 (1.8181e+00)	Acc@1  25.00 ( 20.99)	Acc@5  53.00 ( 48.34)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.516005	0.522240	0.523922	0.525822	0.536130 with std 0.002648
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.469537	0.478537	0.480075	0.481569	0.486645 with std 0.002250
+[EVAL] E: [7][0/7]	Loss 3.3965e+00 (3.3965e+00)	Acc@1  18.88 ( 18.88)	Acc@5  45.88 ( 45.88)
+[EVAL] E: [7][6/7]	Loss 3.2081e+00 (3.2785e+00)	Acc@1  25.50 ( 21.48)	Acc@5  50.00 ( 48.32)
+		 Valid evaluation at end of epoch:21.48 LR:0.00351 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.2785	latest_acc:21.48	LR:0.00 -- best val acc so far 27.72
+
+Started EPOCH:8
+Training epoch
+[TRAIN] E: [8][ 0/57]	Loss 1.8308e+00 (1.8308e+00)	Acc@1  22.62 ( 22.62)	Acc@5  49.00 ( 49.00)
+[TRAIN] E: [8][56/57]	Loss 2.2451e+00 (2.1425e+00)	Acc@1  15.50 ( 14.98)	Acc@5  39.00 ( 39.30)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.517164	0.526300	0.529207	0.532554	0.550645 with std 0.004600
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.442661	0.467502	0.475585	0.479620	0.486550 with std 0.007631
+[EVAL] E: [8][0/7]	Loss 5.1268e+00 (5.1268e+00)	Acc@1   9.25 (  9.25)	Acc@5  27.12 ( 27.12)
+[EVAL] E: [8][6/7]	Loss 5.2163e+00 (5.0740e+00)	Acc@1   6.50 (  9.08)	Acc@5  29.00 ( 28.28)
+		 Valid evaluation at end of epoch:9.08 LR:2.39884 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:5.0740	latest_acc:9.08	LR:2.40 -- best val acc so far 27.72
+
+Started EPOCH:9
+Training epoch
+[TRAIN] E: [9][ 0/57]	Loss 2.2235e+00 (2.2235e+00)	Acc@1  15.62 ( 15.62)	Acc@5  39.75 ( 39.75)
+[TRAIN] E: [9][56/57]	Loss 2.1129e+00 (2.0829e+00)	Acc@1  15.00 ( 17.30)	Acc@5  43.00 ( 43.02)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.528772	0.541903	0.544913	0.548019	0.565236 with std 0.004864
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.430124	0.451111	0.454266	0.457249	0.469009 with std 0.005242
+[EVAL] E: [9][0/7]	Loss 3.5716e+00 (3.5716e+00)	Acc@1  13.62 ( 13.62)	Acc@5  40.75 ( 40.75)
+[EVAL] E: [9][6/7]	Loss 3.4501e+00 (3.4510e+00)	Acc@1  18.50 ( 17.74)	Acc@5  45.50 ( 43.74)
+		 Valid evaluation at end of epoch:17.74 LR:0.03455 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.4510	latest_acc:17.74	LR:0.03 -- best val acc so far 27.72
+
+Started EPOCH:10
+Training epoch
+[TRAIN] E: [10][ 0/57]	Loss 2.0443e+00 (2.0443e+00)	Acc@1  20.00 ( 20.00)	Acc@5  46.38 ( 46.38)
+[TRAIN] E: [10][56/57]	Loss 1.8783e+00 (1.9604e+00)	Acc@1  21.50 ( 19.63)	Acc@5  47.50 ( 46.85)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.534059	0.545115	0.548335	0.551931	0.578805 with std 0.005556
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.424766	0.449239	0.452434	0.455478	0.465791 with std 0.005526
+[EVAL] E: [10][0/7]	Loss 3.4156e+00 (3.4156e+00)	Acc@1  19.25 ( 19.25)	Acc@5  46.00 ( 46.00)
+[EVAL] E: [10][6/7]	Loss 3.2303e+00 (3.3348e+00)	Acc@1  23.50 ( 19.88)	Acc@5  49.50 ( 46.96)
+		 Valid evaluation at end of epoch:19.88 LR:0.12658 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.3348	latest_acc:19.88	LR:0.13 -- best val acc so far 27.72
+
+Started EPOCH:11
+Training epoch
+[TRAIN] E: [11][ 0/57]	Loss 1.8603e+00 (1.8603e+00)	Acc@1  22.75 ( 22.75)	Acc@5  52.62 ( 52.62)
+[TRAIN] E: [11][56/57]	Loss 1.8617e+00 (1.8690e+00)	Acc@1  23.00 ( 22.08)	Acc@5  52.00 ( 50.35)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.539659	0.551507	0.555295	0.559165	0.584749 with std 0.006497
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.422088	0.447313	0.450904	0.454308	0.464979 with std 0.006200
+[EVAL] E: [11][0/7]	Loss 3.3804e+00 (3.3804e+00)	Acc@1  19.25 ( 19.25)	Acc@5  46.38 ( 46.38)
+[EVAL] E: [11][6/7]	Loss 3.1830e+00 (3.2540e+00)	Acc@1  22.00 ( 20.98)	Acc@5  52.50 ( 49.40)
+		 Valid evaluation at end of epoch:20.98 LR:0.07679 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.2540	latest_acc:20.98	LR:0.08 -- best val acc so far 27.72
+
+Started EPOCH:12
+Training epoch
+[TRAIN] E: [12][ 0/57]	Loss 1.8310e+00 (1.8310e+00)	Acc@1  23.12 ( 23.12)	Acc@5  49.50 ( 49.50)
+[TRAIN] E: [12][56/57]	Loss 1.7995e+00 (1.8504e+00)	Acc@1  19.00 ( 22.58)	Acc@5  48.00 ( 51.01)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.540235	0.554063	0.558408	0.563141	0.597563 with std 0.007763
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.415305	0.445003	0.449003	0.452656	0.465358 with std 0.006874
+[EVAL] E: [12][0/7]	Loss 3.2487e+00 (3.2487e+00)	Acc@1  19.88 ( 19.88)	Acc@5  48.75 ( 48.75)
+[EVAL] E: [12][6/7]	Loss 3.1849e+00 (3.1848e+00)	Acc@1  24.50 ( 22.76)	Acc@5  53.50 ( 50.64)
+		 Valid evaluation at end of epoch:22.76 LR:0.01014 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.1848	latest_acc:22.76	LR:0.01 -- best val acc so far 27.72
+
+Started EPOCH:13
+Training epoch
+[TRAIN] E: [13][ 0/57]	Loss 1.8209e+00 (1.8209e+00)	Acc@1  22.62 ( 22.62)	Acc@5  52.25 ( 52.25)
+[TRAIN] E: [13][56/57]	Loss 1.8429e+00 (1.8380e+00)	Acc@1  25.50 ( 23.24)	Acc@5  49.00 ( 51.64)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.542855	0.557223	0.562221	0.567480	0.609639 with std 0.008903
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.409095	0.442683	0.446965	0.450905	0.463838 with std 0.007466
+[EVAL] E: [13][0/7]	Loss 3.3111e+00 (3.3111e+00)	Acc@1  21.62 ( 21.62)	Acc@5  48.50 ( 48.50)
+[EVAL] E: [13][6/7]	Loss 3.0671e+00 (3.2243e+00)	Acc@1  24.00 ( 22.38)	Acc@5  57.00 ( 49.92)
+		 Valid evaluation at end of epoch:22.38 LR:0.09961 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.2243	latest_acc:22.38	LR:0.10 -- best val acc so far 27.72
+
+Started EPOCH:14
+Training epoch
+[TRAIN] E: [14][ 0/57]	Loss 1.8397e+00 (1.8397e+00)	Acc@1  25.62 ( 25.62)	Acc@5  53.12 ( 53.12)
+[TRAIN] E: [14][56/57]	Loss 1.8534e+00 (1.8389e+00)	Acc@1  25.00 ( 23.82)	Acc@5  52.00 ( 52.20)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.545075	0.564369	0.571549	0.579534	0.640564 with std 0.013176
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.402908	0.439622	0.444545	0.449019	0.463212 with std 0.008524
+[EVAL] E: [14][0/7]	Loss 3.2851e+00 (3.2851e+00)	Acc@1  20.62 ( 20.62)	Acc@5  48.75 ( 48.75)
+[EVAL] E: [14][6/7]	Loss 2.9828e+00 (3.1217e+00)	Acc@1  25.00 ( 24.54)	Acc@5  58.00 ( 53.02)
+		 Valid evaluation at end of epoch:24.54 LR:0.00245 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.1217	latest_acc:24.54	LR:0.00 -- best val acc so far 27.72
+
+Started EPOCH:15
+Training epoch
+[TRAIN] E: [15][ 0/57]	Loss 1.8166e+00 (1.8166e+00)	Acc@1  26.12 ( 26.12)	Acc@5  57.12 ( 57.12)
+[TRAIN] E: [15][56/57]	Loss 2.4309e+00 (2.3775e+00)	Acc@1  13.50 ( 14.48)	Acc@5  37.00 ( 37.79)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.544189	0.566465	0.574128	0.582563	0.644804 with std 0.013662
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.353962	0.425861	0.435641	0.442914	0.462117 with std 0.013490
+[EVAL] E: [15][0/7]	Loss 8.4380e+00 (8.4380e+00)	Acc@1   2.12 (  2.12)	Acc@5  12.50 ( 12.50)
+[EVAL] E: [15][6/7]	Loss 8.7787e+00 (8.5575e+00)	Acc@1   2.00 (  2.86)	Acc@5   8.50 ( 11.50)
+		 Valid evaluation at end of epoch:2.86 LR:3.53258 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:8.5575	latest_acc:2.86	LR:3.53 -- best val acc so far 27.72
+
+Started EPOCH:16
+Training epoch
+[TRAIN] E: [16][ 0/57]	Loss 2.5627e+00 (2.5627e+00)	Acc@1  11.00 ( 11.00)	Acc@5  36.12 ( 36.12)
+[TRAIN] E: [16][56/57]	Loss 2.2796e+00 (2.4006e+00)	Acc@1  20.50 ( 15.79)	Acc@5  46.00 ( 40.67)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.560247	0.585880	0.594551	0.603682	0.670778 with std 0.015811
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.320369	0.389724	0.398561	0.406808	0.437839 with std 0.015910
+[EVAL] E: [16][0/7]	Loss 3.6481e+00 (3.6481e+00)	Acc@1  13.25 ( 13.25)	Acc@5  38.38 ( 38.38)
+[EVAL] E: [16][6/7]	Loss 3.5192e+00 (3.5425e+00)	Acc@1  14.00 ( 16.40)	Acc@5  45.00 ( 40.90)
+		 Valid evaluation at end of epoch:16.40 LR:0.03159 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.5425	latest_acc:16.40	LR:0.03 -- best val acc so far 27.72
+
+Started EPOCH:17
+Training epoch
+[TRAIN] E: [17][ 0/57]	Loss 2.3999e+00 (2.3999e+00)	Acc@1  16.88 ( 16.88)	Acc@5  42.50 ( 42.50)
+[TRAIN] E: [17][56/57]	Loss 2.1723e+00 (2.2263e+00)	Acc@1  21.50 ( 18.51)	Acc@5  43.50 ( 45.43)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.564825	0.589965	0.599148	0.608738	0.683889 with std 0.016894
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.306782	0.383785	0.393041	0.401485	0.430003 with std 0.016897
+[EVAL] E: [17][0/7]	Loss 3.6188e+00 (3.6188e+00)	Acc@1  15.62 ( 15.62)	Acc@5  40.50 ( 40.50)
+[EVAL] E: [17][6/7]	Loss 3.2752e+00 (3.5018e+00)	Acc@1  22.50 ( 18.16)	Acc@5  50.50 ( 44.08)
+		 Valid evaluation at end of epoch:18.16 LR:0.14832 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.5018	latest_acc:18.16	LR:0.15 -- best val acc so far 27.72
+
+Started EPOCH:18
+Training epoch
+[TRAIN] E: [18][ 0/57]	Loss 2.1208e+00 (2.1208e+00)	Acc@1  20.62 ( 20.62)	Acc@5  47.88 ( 47.88)
+[TRAIN] E: [18][56/57]	Loss 1.9617e+00 (2.1030e+00)	Acc@1  28.00 ( 21.21)	Acc@5  57.50 ( 49.08)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.567184	0.595915	0.605686	0.615957	0.690388 with std 0.018058
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.302381	0.378407	0.388067	0.396964	0.427273 with std 0.017740
+[EVAL] E: [18][0/7]	Loss 3.3813e+00 (3.3813e+00)	Acc@1  20.25 ( 20.25)	Acc@5  44.88 ( 44.88)
+[EVAL] E: [18][6/7]	Loss 3.2360e+00 (3.2638e+00)	Acc@1  23.50 ( 22.30)	Acc@5  53.50 ( 48.28)
+		 Valid evaluation at end of epoch:22.30 LR:0.07409 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.2638	latest_acc:22.30	LR:0.07 -- best val acc so far 27.72
+
+Started EPOCH:19
+Training epoch
+[TRAIN] E: [19][ 0/57]	Loss 2.0341e+00 (2.0341e+00)	Acc@1  20.00 ( 20.00)	Acc@5  50.75 ( 50.75)
+[TRAIN] E: [19][56/57]	Loss 2.0988e+00 (2.0800e+00)	Acc@1  18.50 ( 21.68)	Acc@5  47.50 ( 49.71)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.568663	0.598464	0.608840	0.619547	0.698350 with std 0.019012
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.294145	0.374618	0.384693	0.394016	0.426594 with std 0.018684
+[EVAL] E: [19][0/7]	Loss 3.3420e+00 (3.3420e+00)	Acc@1  19.75 ( 19.75)	Acc@5  44.75 ( 44.75)
+[EVAL] E: [19][6/7]	Loss 3.1972e+00 (3.2730e+00)	Acc@1  22.50 ( 20.82)	Acc@5  55.00 ( 48.86)
+		 Valid evaluation at end of epoch:20.82 LR:0.01289 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.2730	latest_acc:20.82	LR:0.01 -- best val acc so far 27.72
+
+Started EPOCH:20
+Training epoch
+[TRAIN] E: [20][ 0/57]	Loss 2.0283e+00 (2.0283e+00)	Acc@1  22.88 ( 22.88)	Acc@5  49.38 ( 49.38)
+[TRAIN] E: [20][56/57]	Loss 2.1590e+00 (2.0423e+00)	Acc@1  17.00 ( 22.38)	Acc@5  46.50 ( 50.50)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.571039	0.601113	0.611607	0.622679	0.701789 with std 0.019588
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.290507	0.370984	0.381389	0.391012	0.423871 with std 0.019313
+[EVAL] E: [20][0/7]	Loss 3.3781e+00 (3.3781e+00)	Acc@1  18.25 ( 18.25)	Acc@5  47.12 ( 47.12)
+[EVAL] E: [20][6/7]	Loss 3.2156e+00 (3.2528e+00)	Acc@1  18.00 ( 21.66)	Acc@5  50.50 ( 49.70)
+		 Valid evaluation at end of epoch:21.66 LR:0.09911 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.2528	latest_acc:21.66	LR:0.10 -- best val acc so far 27.72
+
+Started EPOCH:21
+Training epoch
+[TRAIN] E: [21][ 0/57]	Loss 2.0806e+00 (2.0806e+00)	Acc@1  21.50 ( 21.50)	Acc@5  48.75 ( 48.75)
+[TRAIN] E: [21][56/57]	Loss 1.9059e+00 (2.0303e+00)	Acc@1  22.00 ( 23.08)	Acc@5  54.50 ( 51.55)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.571142	0.604016	0.615037	0.626796	0.710400 with std 0.020529
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.281094	0.366447	0.377455	0.387823	0.423448 with std 0.020264
+[EVAL] E: [21][0/7]	Loss 3.3360e+00 (3.3360e+00)	Acc@1  19.00 ( 19.00)	Acc@5  46.62 ( 46.62)
+[EVAL] E: [21][6/7]	Loss 3.0804e+00 (3.2047e+00)	Acc@1  23.00 ( 22.58)	Acc@5  54.00 ( 50.62)
+		 Valid evaluation at end of epoch:22.58 LR:0.00157 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.2047	latest_acc:22.58	LR:0.00 -- best val acc so far 27.72
+
+Started EPOCH:22
+Training epoch
+[TRAIN] E: [22][ 0/57]	Loss 2.0069e+00 (2.0069e+00)	Acc@1  27.38 ( 27.38)	Acc@5  55.38 ( 55.38)
+[TRAIN] E: [22][56/57]	Loss 3.1646e+00 (2.7410e+00)	Acc@1   9.50 ( 12.26)	Acc@5  28.00 ( 33.17)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.566295	0.599404	0.610917	0.624396	0.730258 with std 0.021163
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.203596	0.349596	0.368534	0.381602	0.420647 with std 0.026682
+[EVAL] E: [22][0/7]	Loss 7.7158e+00 (7.7158e+00)	Acc@1   2.75 (  2.75)	Acc@5   8.12 (  8.12)
+[EVAL] E: [22][6/7]	Loss 7.9793e+00 (7.6944e+00)	Acc@1   0.50 (  2.86)	Acc@5   6.50 (  9.88)
+		 Valid evaluation at end of epoch:2.86 LR:5.63556 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:7.6944	latest_acc:2.86	LR:5.64 -- best val acc so far 27.72
+
+Started EPOCH:23
+Training epoch
+[TRAIN] E: [23][ 0/57]	Loss 3.4197e+00 (3.4197e+00)	Acc@1   8.38 (  8.38)	Acc@5  23.50 ( 23.50)
+[TRAIN] E: [23][56/57]	Loss 3.0524e+00 (3.1646e+00)	Acc@1   9.50 (  9.26)	Acc@5  30.50 ( 28.82)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.585420	0.630861	0.645508	0.660601	0.757719 with std 0.025812
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.157527	0.276261	0.295061	0.313164	0.382261 with std 0.032686
+[EVAL] E: [23][0/7]	Loss 3.9791e+00 (3.9791e+00)	Acc@1  10.12 ( 10.12)	Acc@5  28.50 ( 28.50)
+[EVAL] E: [23][6/7]	Loss 3.9108e+00 (3.9282e+00)	Acc@1  12.50 ( 10.88)	Acc@5  30.00 ( 31.06)
+		 Valid evaluation at end of epoch:10.88 LR:0.02871 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.9282	latest_acc:10.88	LR:0.03 -- best val acc so far 27.72
+
+Started EPOCH:24
+Training epoch
+[TRAIN] E: [24][ 0/57]	Loss 3.2800e+00 (3.2800e+00)	Acc@1   9.50 (  9.50)	Acc@5  33.00 ( 33.00)
+[TRAIN] E: [24][56/57]	Loss 2.7252e+00 (2.8528e+00)	Acc@1  15.00 ( 13.80)	Acc@5  43.00 ( 36.88)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.588062	0.637732	0.653319	0.669185	0.781018 with std 0.027413
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.134003	0.264181	0.283456	0.302038	0.371043 with std 0.033801
+[EVAL] E: [24][0/7]	Loss 3.7417e+00 (3.7417e+00)	Acc@1  14.75 ( 14.75)	Acc@5  35.88 ( 35.88)
+[EVAL] E: [24][6/7]	Loss 3.6421e+00 (3.6420e+00)	Acc@1  16.00 ( 15.34)	Acc@5  43.00 ( 38.72)
+		 Valid evaluation at end of epoch:15.34 LR:0.17415 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.6420	latest_acc:15.34	LR:0.17 -- best val acc so far 27.72
+
+Started EPOCH:25
+Training epoch
+[TRAIN] E: [25][ 0/57]	Loss 2.7504e+00 (2.7504e+00)	Acc@1  14.00 ( 14.00)	Acc@5  38.62 ( 38.62)
+[TRAIN] E: [25][56/57]	Loss 2.6997e+00 (2.6940e+00)	Acc@1  16.00 ( 16.18)	Acc@5  38.50 ( 41.18)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.595227	0.648633	0.665402	0.682757	0.788080 with std 0.029736
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.127451	0.248743	0.268800	0.288536	0.361823 with std 0.035887
+[EVAL] E: [25][0/7]	Loss 3.6418e+00 (3.6418e+00)	Acc@1  13.62 ( 13.62)	Acc@5  35.62 ( 35.62)
+[EVAL] E: [25][6/7]	Loss 3.3918e+00 (3.5956e+00)	Acc@1  18.00 ( 15.84)	Acc@5  38.50 ( 39.10)
+		 Valid evaluation at end of epoch:15.84 LR:0.07129 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.5956	latest_acc:15.84	LR:0.07 -- best val acc so far 27.72
+
+Started EPOCH:26
+Training epoch
+[TRAIN] E: [26][ 0/57]	Loss 2.6620e+00 (2.6620e+00)	Acc@1  18.50 ( 18.50)	Acc@5  42.88 ( 42.88)
+[TRAIN] E: [26][56/57]	Loss 2.6523e+00 (2.6713e+00)	Acc@1  17.00 ( 16.96)	Acc@5  41.50 ( 42.25)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.595190	0.653652	0.670989	0.688817	0.801928 with std 0.030947
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.113808	0.240475	0.261689	0.282280	0.362129 with std 0.037050
+[EVAL] E: [26][0/7]	Loss 3.5390e+00 (3.5390e+00)	Acc@1  16.12 ( 16.12)	Acc@5  40.62 ( 40.62)
+[EVAL] E: [26][6/7]	Loss 3.3359e+00 (3.5106e+00)	Acc@1  19.00 ( 17.24)	Acc@5  44.50 ( 42.54)
+		 Valid evaluation at end of epoch:17.24 LR:0.01610 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.5106	latest_acc:17.24	LR:0.02 -- best val acc so far 27.72
+
+Started EPOCH:27
+Training epoch
+[TRAIN] E: [27][ 0/57]	Loss 2.7000e+00 (2.7000e+00)	Acc@1  17.75 ( 17.75)	Acc@5  42.75 ( 42.75)
+[TRAIN] E: [27][56/57]	Loss 2.6423e+00 (2.6357e+00)	Acc@1  19.00 ( 17.86)	Acc@5  39.50 ( 43.52)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.596320	0.658864	0.676928	0.695620	0.809259 with std 0.031931
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.107673	0.232380	0.253723	0.275286	0.360243 with std 0.037782
+[EVAL] E: [27][0/7]	Loss 3.5972e+00 (3.5972e+00)	Acc@1  16.62 ( 16.62)	Acc@5  40.38 ( 40.38)
+[EVAL] E: [27][6/7]	Loss 3.2465e+00 (3.4970e+00)	Acc@1  16.50 ( 17.78)	Acc@5  49.50 ( 43.14)
+		 Valid evaluation at end of epoch:17.78 LR:0.09843 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.4970	latest_acc:17.78	LR:0.10 -- best val acc so far 27.72
+
+Started EPOCH:28
+Training epoch
+[TRAIN] E: [28][ 0/57]	Loss 2.6919e+00 (2.6919e+00)	Acc@1  16.62 ( 16.62)	Acc@5  42.38 ( 42.38)
+[TRAIN] E: [28][56/57]	Loss 2.6684e+00 (2.6193e+00)	Acc@1  20.50 ( 18.36)	Acc@5  48.00 ( 44.42)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.601468	0.664933	0.684079	0.703804	0.821379 with std 0.033506
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.096714	0.222891	0.245490	0.267552	0.352828 with std 0.039027
+[EVAL] E: [28][0/7]	Loss 3.5379e+00 (3.5379e+00)	Acc@1  17.38 ( 17.38)	Acc@5  44.50 ( 44.50)
+[EVAL] E: [28][6/7]	Loss 3.3067e+00 (3.4246e+00)	Acc@1  19.00 ( 18.64)	Acc@5  47.00 ( 45.54)
+		 Valid evaluation at end of epoch:18.64 LR:0.00089 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:3.4246	latest_acc:18.64	LR:0.00 -- best val acc so far 27.72
+
+Started EPOCH:29
+Training epoch
+[TRAIN] E: [29][ 0/57]	Loss 2.5025e+00 (2.5025e+00)	Acc@1  18.75 ( 18.75)	Acc@5  45.50 ( 45.50)
+[TRAIN] E: [29][56/57]	Loss 3.7731e+00 (3.5126e+00)	Acc@1   3.00 (  7.97)	Acc@5  16.00 ( 24.84)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.603551	0.663293	0.681652	0.700242	0.831195 with std 0.031930
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.093066	0.235633	0.258351	0.279800	0.361468 with std 0.037979
+[EVAL] E: [29][0/7]	Loss 5.8037e+00 (5.8037e+00)	Acc@1   2.00 (  2.00)	Acc@5   9.88 (  9.88)
+[EVAL] E: [29][6/7]	Loss 6.0571e+00 (5.9821e+00)	Acc@1   2.50 (  1.72)	Acc@5   7.50 (  8.14)
+		 Valid evaluation at end of epoch:1.72 LR:10.21308 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:5.9821	latest_acc:1.72	LR:10.21 -- best val acc so far 27.72
+
+Started EPOCH:30
+Training epoch
+[TRAIN] E: [30][ 0/57]	Loss 3.9896e+00 (3.9896e+00)	Acc@1   3.62 (  3.62)	Acc@5  14.75 ( 14.75)
+[TRAIN] E: [30][56/57]	Loss 3.9671e+00 (3.7878e+00)	Acc@1   5.50 (  4.72)	Acc@5  22.50 ( 17.09)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.600039	0.655111	0.671106	0.687771	0.785376 with std 0.027552
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.118828	0.232385	0.252820	0.272689	0.351572 with std 0.034712
+[EVAL] E: [30][0/7]	Loss 4.3554e+00 (4.3554e+00)	Acc@1   5.00 (  5.00)	Acc@5  18.12 ( 18.12)
+[EVAL] E: [30][6/7]	Loss 4.2221e+00 (4.3083e+00)	Acc@1   4.00 (  5.28)	Acc@5  20.00 ( 17.68)
+		 Valid evaluation at end of epoch:5.28 LR:0.02591 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:4.3083	latest_acc:5.28	LR:0.03 -- best val acc so far 27.72
+
+Started EPOCH:31
+Training epoch
+[TRAIN] E: [31][ 0/57]	Loss 3.7801e+00 (3.7801e+00)	Acc@1   6.00 (  6.00)	Acc@5  18.12 ( 18.12)
+[TRAIN] E: [31][56/57]	Loss 3.1675e+00 (3.5512e+00)	Acc@1  11.50 (  6.96)	Acc@5  28.50 ( 23.46)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.601477	0.657179	0.673576	0.690592	0.792620 with std 0.028147
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.108054	0.226870	0.247579	0.267938	0.348774 with std 0.035297
+[EVAL] E: [31][0/7]	Loss 4.2731e+00 (4.2731e+00)	Acc@1   7.12 (  7.12)	Acc@5  23.50 ( 23.50)
+[EVAL] E: [31][6/7]	Loss 4.0583e+00 (4.1023e+00)	Acc@1   7.50 (  7.86)	Acc@5  27.00 ( 26.02)
+		 Valid evaluation at end of epoch:7.86 LR:0.20507 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:4.1023	latest_acc:7.86	LR:0.21 -- best val acc so far 27.72
+
+Started EPOCH:32
+Training epoch
+[TRAIN] E: [32][ 0/57]	Loss 3.3038e+00 (3.3038e+00)	Acc@1   8.00 (  8.00)	Acc@5  26.12 ( 26.12)
+[TRAIN] E: [32][56/57]	Loss 3.4672e+00 (3.4077e+00)	Acc@1   8.00 (  8.80)	Acc@5  25.00 ( 27.51)
+alpha quartiles: 
+q0	q25	q50	q75	q100
+0.603570	0.663559	0.680871	0.698263	0.798506 with std 0.029184
+beta quartiles: 
+q0	q25	q50	q75	q100
+0.101373	0.217045	0.237892	0.259259	0.345220 with std 0.036180
+[EVAL] E: [32][0/7]	Loss 4.0183e+00 (4.0183e+00)	Acc@1   7.62 (  7.62)	Acc@5  26.88 ( 26.88)
+[EVAL] E: [32][6/7]	Loss 3.9926e+00 (4.0481e+00)	Acc@1   9.50 (  7.98)	Acc@5  28.50 ( 26.94)
+		 Valid evaluation at end of epoch:7.98 LR:0.06841 -- best val acc so far 27.72
+		 Valid evaluation at end of epoch: loss:4.0481	latest_acc:7.98	LR:0.07 -- best val acc so far 27.72
+
+Started EPOCH:33
+Training epoch
+[TRAIN] E: [33][ 0/57]	Loss 3.4217e+00 (3.4217e+00)	Acc@1   9.62 (  9.62)	Acc@5  27.50 ( 27.50)
