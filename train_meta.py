@@ -148,7 +148,7 @@ def main(args):
     base_model = base_model.cuda()
     network = base_model
     best_state_dict = copy.deepcopy( base_model.state_dict() )
-    ce_ptrained_path = "/home/anmolreddy/ce_results/CE_with_seed-{}_cycles-{}_{}-{}"\
+    ce_ptrained_path = "./ce_results/CE_with_seed-{}_cycles-{}_{}-{}"\
                         "model_best.pth.tar".format(args.rand_seed,
                                                     args.sched_cycles,
                                                     args.dataset,
@@ -183,7 +183,7 @@ def main(args):
     Teacher_model = get_model_from_name( model_config, args.teacher )
     model_name_t = args.teacher
     # teach_PATH="/home/shashank/disk/model_10l/disk-CE-cifar100-ResNet10_l-model_best.pth.tar"
-    teach_PATH = "/home/anmolreddy/pretrained/teacher_seed-{}_{}-{}"\
+    teach_PATH = "./pretrained/teacher_seed-{}_{}-{}"\
                     "model_best.pth.tar".format(args.rand_seed,
                                                 args.dataset,
                                                 args.teacher)
@@ -454,7 +454,7 @@ if __name__ == "__main__":
     
     #parser.add_argument('--lr', type=float, default=.1)
     parser.add_argument('--inst_based', type=bool, default=True)
-    parser.add_argument('--meta_interval', type=int, default=1)
+    parser.add_argument('--meta_interval', type=int, default=20)
     parser.add_argument('--mcd_weight', type=float, default=1.0)
     parser.add_argument('--meta_weight_decay', type=float, default=1e-4)
     parser.add_argument('--input_size', type=int, default=32)

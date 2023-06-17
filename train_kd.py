@@ -131,8 +131,8 @@ def main(args):
     base_model = get_model_from_name( model_config, args.model_name )
     model_name = args.model_name
     logger.log(("Student: {}".format(model_name)))
-    # ce_ptrained_path = "/home/anmolreddy/pretrained/disk-CE-cifar100-ResNet10_s-model_best.pth.tar"
-    ce_ptrained_path = "/home/anmolreddy/ce_results/CE_with_seed-{}_cycles-{}_{}-{}"\
+    # ce_ptrained_path = "./pretrained/disk-CE-cifar100-ResNet10_s-model_best.pth.tar"
+    ce_ptrained_path = "./ce_results/CE_with_seed-{}_cycles-{}_{}-{}"\
                         "model_best.pth.tar".format(args.rand_seed,
                                                     args.sched_cycles,
                                                     args.dataset,
@@ -167,7 +167,7 @@ def main(args):
     # TEACHER
     Teacher_model = get_model_from_name( model_config, args.teacher )
     # PATH="/home/shashank/disk/model_10l/disk-CE-cifar100-ResNet10_l-model_best.pth.tar"
-    teach_PATH = "/home/anmolreddy/pretrained/teacher_seed-{}_{}-{}"\
+    teach_PATH = "./pretrained/teacher_seed-{}_{}-{}"\
                     "model_best.pth.tar".format(args.rand_seed,
                                                 args.dataset,
                                                 args.teacher)
