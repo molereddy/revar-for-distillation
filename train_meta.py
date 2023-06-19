@@ -218,11 +218,13 @@ def main(args):
     # METANET
     if not args.inst_based: # inst_based is True, inst_based checks if our metanet will get instance-wise
         meta_net = MLP(hidden_size=args.meta_net_hidden_size,num_layers=args.meta_net_num_layers).to(device=args.device)
-    elif args.meta_lite:
+    elif args.meta_type == 'meta_lite':
         meta_net = InstanceMetaNetLite(num_layers=1).cuda()
         # meta_net = copy.deepcopy(network)
-    else:
+    elif args.meta_type == 'instance':
         meta_net = InstanceMetaNet(input_size=args.input_size).cuda()
+    else:
+        meta_net = ResNet32MetaNet(dropout_rate=0.0).cuda()
     
     meta_optimizer = torch.optim.Adam(meta_net.parameters(), lr=args.meta_lr, weight_decay=args.meta_weight_decay)
 
@@ -268,7 +270,7 @@ def main(args):
                 pseudo_loss_vector_CE = criterion_indiv(pseudo_outputs, targets) # [B]
                 pseudo_loss_vector_CE_reshape = torch.reshape(pseudo_loss_vector_CE, (-1, 1)) # [B, 1]
                 
-                if args.meta_lite:
+                if args.meta_type == 'meta_lite':
                     pseudo_hyperparams = meta_net(features)    
                 else:
                     pseudo_hyperparams = meta_net(inputs)
@@ -323,7 +325,7 @@ def main(args):
             with torch.no_grad():
                 _,teacher_outputs , _ = network_t(inputs)
             
-            if args.meta_lite:
+            if args.meta_type == 'meta_lite':
                 hyperparams = meta_net(features)    
             else:
                 hyperparams = meta_net(inputs)
@@ -460,7 +462,7 @@ if __name__ == "__main__":
     parser.add_argument('--input_size', type=int, default=32)
     parser.add_argument('--meta_lr', type=float, default=1e-4)
     parser.add_argument('--unsup_adapt', type=bool, default=False)
-    parser.add_argument('--meta_lite', type=int, default=0)
+    parser.add_argument('--meta_type', type=str, default='instance') # or meta_lite or resnet
     #####################################################################
     
     args = parser.parse_args()
@@ -482,8 +484,7 @@ if __name__ == "__main__":
                                                             args.temperature,
                                                             args.epochs,
                                                             args.sched_cycles)
-    if args.meta_lite==1:
-        args.file_name += "_lite_meta"
+    args.file_name += args.meta_type
     assert args.save_dir is not None, "save-path argument can not be None"
 
     main(args)

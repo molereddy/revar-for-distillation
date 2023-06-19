@@ -753,6 +753,37 @@ def get_cifar_models(config, model_name="", extra_path=None):
 
   raise ValueError('invalid model-name : {:}'.format(model_name))
 
+class ResNet32MetaNet(nn.Module):
+    def __init__(self, block=BasicBlock, num_blocks=[5, 5, 5], dropout_rate=0.2, use_sigmoid=False):
+        super(ResNet32, self).__init__()
+        self.in_planes = 16
+        self.conv1 = nn.Conv2d(3, 16, kernel_size=3, stride=1, padding=1, bias=False)
+        self.bn1 = nn.BatchNorm2d(16)
+        self.dropout_rate = dropout_rate
+        self.layer1 = self._make_layer(block, 16, num_blocks[0], stride=1)
+        self.layer2 = self._make_layer(block, 32, num_blocks[1], stride=2)
+        self.layer3 = self._make_layer(block, 64, num_blocks[2], stride=2, dropout_rate=self.dropout_rate)
+        self.linear = nn.Linear(64, 2)
+        self.apply(_weights_init)
+    def _make_layer(self, block, planes, num_blocks, stride, dropout_rate=0.):
+        strides = [stride] + [1]*(num_blocks-1)
+        layers = []
+        for stride in strides:
+            layers.append(block(self.in_planes, planes, dropout_rate, stride))
+            self.in_planes = planes * block.expansion
+        return nn.Sequential(*layers)
+    def forward(self, x):
+        out = functional.relu(self.bn1(self.conv1(x)))
+        out = self.layer1(out)
+        out = self.layer2(out)
+        out = self.layer3(out)
+        out = functional.avg_pool2d(out, out.size()[3])
+        out = out.view(out.size(0), -1)
+        out = self.linear(out)
+        out = torch.sigmoid(out)
+            
+        return out
+
 class InstanceMetaNet(nn.Module):
     "A cnn-network for instance specific weighting prediction"
     def __init__(self, out_features=16, in_features=3, num_layers=4, input_size=32):
