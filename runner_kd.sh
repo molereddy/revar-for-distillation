@@ -4,10 +4,10 @@ dataset='cifar100'
 data_path='/home/prathamesh/code/data/cifar/'
 save_dir='./kd_results/'
 
-batch_size=1000
-eval_batch_size=1000
+batch_size=200
+eval_batch_size=200
 
-epochs=200
+epochs=400
 lr=0.1
 wd=5e-4
 momentum=0.9
@@ -44,8 +44,8 @@ echo "S=$base_name"
 CUDA_VISIBLE_DEVICES="$GPU"  python train_kd.py --dataset $dataset --data_path $data_path \
     --teacher $teacher_name --model_name $base_name --save_dir $save_dir \
 	--eval_batch_size $eval_batch_size --batch_size $batch_size  \
-	--lr $lr --momentum $momentum \
-	--loss_kd_frac $2 --pretrained_student True \
-	--temperature 2 --epochs $3 --wd $wd --rand_seed $1
+	--lr $lr --momentum $momentum --sched_cycles 2 \
+	--loss_kd_frac 0.9 --pretrained_student True \
+	--temperature 2 --epochs 400 --wd $wd --rand_seed $1
 
 

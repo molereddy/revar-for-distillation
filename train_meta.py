@@ -148,9 +148,9 @@ def main(args):
     base_model = base_model.cuda()
     network = base_model
     best_state_dict = copy.deepcopy( base_model.state_dict() )
-    ce_ptrained_path = "./ce_results/CE_with_seed-{}_cycles-{}_{}-{}"\
+    ce_ptrained_path = "./ce_results/CE_with_seed-{}_cycles-4_{}-{}"\
                         "model_best.pth.tar".format(args.rand_seed,
-                                                    args.sched_cycles,
+                                                    # args.sched_cycles,
                                                     args.dataset,
                                                     args.model_name)
     if args.pretrained_student: # load CE-pretrained student
@@ -479,7 +479,7 @@ if __name__ == "__main__":
     parser.add_argument('--input_size', type=int, default=32)
     parser.add_argument('--meta_lr', type=float, default=1e-4)
     parser.add_argument('--unsup_adapt', type=bool, default=False)
-    parser.add_argument('--meta_type', type=str, default='instance') # or meta_lite or resnet
+    parser.add_argument('--meta_type', type=str, default='resnet') # or meta_lite or instance
     #####################################################################
     
     args = parser.parse_args()
