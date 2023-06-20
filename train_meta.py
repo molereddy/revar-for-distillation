@@ -222,14 +222,17 @@ def main(args):
         meta_net = InstanceMetaNetLite(num_layers=1).cuda()
         # meta_net = copy.deepcopy(network)
     elif args.meta_type == 'instance':
+        logger.log("Using Instance metanet....")
         meta_net = InstanceMetaNet(input_size=args.input_size).cuda()
     else:
-        meta_net = ResNet32MetaNet(dropout_rate=0.0).cuda()
+        logger.log("Using ResNet32 metanet....")
+        meta_net = ResNet32MetaNet().cuda()
     
     meta_optimizer = torch.optim.Adam(meta_net.parameters(), lr=args.meta_lr, weight_decay=args.meta_weight_decay)
 
     best_acc, best_epoch = 0.0, 0
     val_losses = []
+    log_alphas_collection = []
       
     Temp = args.temperature
     log_file_name = get_model_prefix( args )
@@ -254,7 +257,7 @@ def main(args):
             inputs = inputs.cuda()
             targets = labels.cuda(non_blocking=True)
             #train metanet
-            if (iteration + 1) % args.meta_interval == 0: # always true
+            if (iteration + 1) % args.meta_interval == 0:
 
                 # make a descent in a COPY OF THE STUDENT (in train data), metanet net will do a move on this move for metaloss
                 pseudo_net = get_model_from_name( model_config, args.model_name )
@@ -360,7 +363,9 @@ def main(args):
             
             if (iteration % args.print_freq == 0) or (iteration == len(train_loader)-1):
                 progress.display(iteration)
-        
+        if epoch%20==0 or epoch==args.epochs-1:
+            log_alphas_collection.append(torch.log(alphas))
+            log_betas_collection.append(torch.log(betas))
         logger.log("alpha quartiles: \nq0\tq25\tq50\tq75\tq100\n{:.6f}\t{:.6f}\t{:.6f}\t{:.6f}\t{:.6f} with std {:.6f}".format(
                                                                     torch.quantile(alphas, 0.0),
                                                                     torch.quantile(alphas, 0.25),
@@ -412,13 +417,25 @@ def main(args):
     )
     logger.log("Result is from best val model of epoch:{}".format(best_epoch))
     
+    plots_dir = os.path.join(args.save_dir, args.file_name)
+    if not os.path.exists(plots_dir):
+        os.mkdir(plots_dir)
+    
     # post valid loss
     fig, ax = plt.subplots()
     ax.plot(val_losses) 
     ax.set_title('Validation Loss')
     ax.set_xlabel('Epoch')
     ax.set_ylabel('Loss')   
-    fig.savefig(os.path.join(args.save_dir,'valid_loss-{}.png'.format(args.file_name)))
+    fig.savefig(os.path.join(plots_dir, 'valid_loss.png'))
+    
+    with open(os.path.join(plots_dir, 'alpha_dump.pkl'), 'wb') as f:
+        pickle.dump(log_alphas_collection, f)
+        logger.log("Saved intermediate weights to {}".format(os.path.join(plots_dir, 'alpha_dump.pkl')))
+    with open(os.path.join(plots_dir, 'beta_dump.pkl'), 'wb') as f:
+        pickle.dump(log_betas_collection, f)
+        logger.log("Saved intermediate weights to {}".format(os.path.join(plots_dir, 'beta_dump.pkl')))
+
 
 if __name__ == "__main__":
 
@@ -484,7 +501,7 @@ if __name__ == "__main__":
                                                             args.temperature,
                                                             args.epochs,
                                                             args.sched_cycles)
-    args.file_name += args.meta_type
+    args.file_name += '_'+args.meta_type
     assert args.save_dir is not None, "save-path argument can not be None"
 
     main(args)
