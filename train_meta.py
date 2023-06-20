@@ -233,6 +233,7 @@ def main(args):
     best_acc, best_epoch = 0.0, 0
     val_losses = []
     log_alphas_collection = []
+    log_betas_collection = []
       
     Temp = args.temperature
     log_file_name = get_model_prefix( args )
