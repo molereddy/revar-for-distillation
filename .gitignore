@@ -9,3 +9,5 @@ __pycache__/
 .vscode-server/
 .vscode/
 .ssh/
+meta_results/*.tar
+meta_results/*.png

@@ -205,7 +205,7 @@ def main(args):
             }, is_best, prefix=log_file_name
         )
 
-        logger.log('\t\t Valid eval after epoch: loss:{:.4f}\tlatest_acc:{:.2f}\tLR:{:.2f} -- best valacc {:.2f}'.format( val_loss,
+        logger.log('\t\t Valid eval after epoch: loss:{:.4f}\tlatest_acc:{:.2f}\tLR:{:.4f} -- best valacc {:.2f}'.format( val_loss,
                                                                                                                         val_acc1,
                                                                                                                         get_mlr(scheduler), 
                                                                                                                         best_acc))

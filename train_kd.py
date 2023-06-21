@@ -132,9 +132,9 @@ def main(args):
     model_name = args.model_name
     logger.log(("Student: {}".format(model_name)))
     # ce_ptrained_path = "./pretrained/disk-CE-cifar100-ResNet10_s-model_best.pth.tar"
-    ce_ptrained_path = "./ce_results/CE_with_seed-{}_cycles-{}_{}-{}"\
+    ce_ptrained_path = "./ce_results/CE_with_seed-{}_cycles-4_{}-{}"\
                         "model_best.pth.tar".format(args.rand_seed,
-                                                    args.sched_cycles,
+                                                    # args.sched_cycles,
                                                     args.dataset,
                                                     args.model_name)
     if args.pretrained_student:
@@ -270,7 +270,7 @@ def main(args):
             }, is_best, prefix=log_file_name)
 
 
-        logger.log('\t\t Valid eval after epoch: loss:{:.4f}\tlatest_acc:{:.2f}\tLR:{:.2f} -- best valacc {:.2f}'.format( val_loss,
+        logger.log('\t\t Valid eval after epoch: loss:{:.4f}\tlatest_acc:{:.2f}\tLR:{:.4f} -- best valacc {:.2f}'.format( val_loss,
                                                                                                                         val_acc1,
                                                                                                                         get_mlr(scheduler), 
                                                                                                                         best_acc))
